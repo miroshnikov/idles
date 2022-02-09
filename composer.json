@@ -1,6 +1,6 @@
 {
     "name": "miroshnikov/idles",
-    "description": "A PHP functional utility library, port of Lodash with lazy (idle) evaluation",
+    "description": "A PHP functional utility library, port of Lodash/Ramda with lazy (idle) evaluation",
     "type": "library",
     "license": "MIT",
     "authors": [
