@@ -1,6 +1,8 @@
 {
     "name": "miroshnikov/idles",
     "description": "A PHP functional utility library, port of Lodash/Ramda with lazy (idle) evaluation",
+    "keywords": ["functional", "utility", "lodash", "ramda", "lazy"],
+    "homepage" : "https://miroshnikov.github.io/idles/",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -9,7 +11,9 @@
             "email": "miroshnikov@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "php": ">=7.4"
+    },
     "require-dev": {
         "phpunit/phpunit": "^9.1",
         "friendsofphp/php-cs-fixer": "^2.16",
