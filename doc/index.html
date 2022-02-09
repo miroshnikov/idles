@@ -1,0 +1,3292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" class="viewport">
+            <link rel='stylesheet' type='text/css' href='./assets/styles.f0760b6017eade8f837c.css'>
+        <title>PHP Functional Library</title>
+    <meta name="description" content="A PHP functional utility library, port of JavaScript Lodash and Ramda with lazy (idle) evaluation">
+    <link rel="icon" href="./assets/logo.png">
+</head>
+<body>
+    <header>
+        <div>
+            <a href='/' title="Idles">IDLES</a>
+            <strong>PHP</strong> functional library
+        </div>
+        <div>
+            <a href="https://packagist.org/" title='Packagist'>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em">
+                    <path 
+                        fill="currentColor" 
+                        d="M13.214 23.975c-.098-.053-.329-.062-1.615-.062h-1.26l-.017-.088-.096-.431a3.622 3.622 0 0 1-.07-.354c.005-.007-.012-.056-.038-.107l-.048-.094-.547.085c-.301.046-.598.1-.659.116-.1.03-.11.03-.103.004.038-.14.044-.201.028-.266-.018-.07-.017-.072.238-.645.276-.622.266-.594.237-.634-.018-.025-.042-.02-.307.07-.159.05-.294.093-.301.09a16.82 16.82 0 0 1 .414-.732c.451-.773.566-.976.566-1.003 0-.01-.12-.146-.271-.304-.15-.157-.311-.329-.357-.384a.584.584 0 0 0-.112-.11c-.05-.017-.264-.231-.738-.734a16.196 16.196 0 0 0-.525-.542c-.062-.05-.077-.074-.107-.175a6.511 6.511 0 0 0-.291-.714l-.096-.201v-.178c0-.271-.056-.542-.277-1.331l-.054-.191-.087-.01c-.193-.017-.283-.123-.431-.504a6.231 6.231 0 0 0-.231-.472c-.1-.191-.221-.428-.271-.532l-.086-.185-.08-.01a.72.72 0 0 0-.361.05c-.12.05-.345.063-.618.037l-.399-.038-.199-.02-.107-.191c-.161-.284-.161-.285-.238-.324-.09-.046-.161-.046-.572 0l-.325.035-.245-.035c-.645-.094-.797-.166-.797-.375 0-.042-.045-.261-.102-.489-.13-.528-.218-1.126-.195-1.332.034-.294.273-.996.636-1.87l.142-.341.023-.547c.142-3.274.178-3.76.284-3.951.035-.062.468-.431.644-.552.335-.224 1.503-.8 2.802-1.379l.384-.171.195-.012.193-.01.522.329.521.329.423-.2.658-.308c.235-.108.236-.11.367-.253.184-.201.492-.566.592-.703.118-.161.395-.388.816-.672.147-.098.185-.116.569-.264l.231-.09h.49c.451 0 .502.003.655.037.358.078.652.193.686.267.022.05.07.08.187.12.14.048.311.168 1.224.863.489.373.472.366 1.539.719l.298.1.176.211c.201.241.358.404.404.419.07.022.485-.08 1.009-.249.266-.085.303-.093.351-.077.03.01.175.02.321.02.271.005.514.034 1.117.137.153.027.281.048.283.048.002 0 .244.419.537.933.293.512.61 1.048.705 1.192.167.249.174.264.189.375.026.191.08 1.008.09 1.309l.023.896c.02.843.036 1.04.09 1.154.093.199.276.747.572 1.719l.12.401.008.930-.14.728-.158.813-.016.083-.439.264-.441.265-.321-.016c-.179-.01-.335-.016-.349-.016-.03 0-.066.113-.135.411-.04.176-.042.178-.092.187l-.666.106c-.92.145-1.037.181-1.341.424-.264.211-.264.208-.556 1.681a16.97 16.97 0 0 1-.185.856c-.105.317-.941 1.708-1.246 2.074l-.165.199.064.228c.035.126.073.265.083.309.016.07.314 1.206.421 1.609l.038.14-.201-.084-.328-.136a.549.549 0 0 0-.13-.046c-.003.004.033.15.08.327.08.288.187.763.177.773-.003 0-.15-.008-.331-.022a6.185 6.185 0 0 0-.381-.02l-.055.005-.181.662c-.1.363-.184.664-.187.667-.01.007-.536-.02-1.005-.05-.54-.035-.7-.032-.836.017-.125.045-.241.05-.306.014l.002-.001zm1.957-.348c0-.026.023-.181.05-.345.027-.165.05-.337.05-.383 0-.056.013-.116.04-.175.02-.05.036-.09.033-.093-.002-.002-.368-.03-.813-.062-.637-.046-.86-.067-1.053-.103l-.244-.046-.58.072c-.414.05-.588.078-.607.095-.02.02-.201.042-.712.094-.376.038-.717.075-.756.083l-.072.013.004.083c.003.065.02.115.083.231.06.113.088.191.12.331.02.1.042.184.046.188.003.003.973.014 2.157.023 2.034.016 2.154.018 2.191.045.046.035.064.02.064-.05l-.001-.001zm-4.782-1.179c.873-.123 1.226-.168 1.572-.194.387-.028.897-.087 1.259-.143.057-.01.248-.02.424-.026l.321-.01.377.097.379.098.682.04c.377.023.687.04.69.036a2.93 2.93 0 0 0-.07-.229c-.042-.122-.11-.333-.155-.468l-.077-.244-.231-.072-.231-.073-.156.066-.156.065-1.776.057-1.774.058-.118-.06-.118-.057H9.8l-.269.597c-.148.328-.271.602-.276.609-.008.016-.124.03 1.134-.147zm6.127-1.036c0-.017-.431-1.435-.444-1.457-.007-.012-.05.024-.115.096l-.105.115.154.568.153.568.169.06c.181.064.191.067.191.05zm-6.788-.713l.191-.355-.057-.083c-.032-.046-.063-.08-.068-.073-.007.006-.142.238-.303.515s-.297.511-.302.517c-.004.01.072-.026.171-.075l.176-.09.192-.356zm2.957-.072c.106-.306.193-.562.193-.57a.856.856 0 0 0-.198-.075 3.495 3.495 0 0 1-.201-.066.578.578 0 0 1 .063-.11l.068-.104.405-.02c.706-.033 1.114-.155 1.51-.451.15-.11.214-.128.296-.085.07.04.12.128.106.191-.01.042-.028.056-.241.197-.201.13-.876.428-1.114.492-.136.035-.289.12-.323.181-.04.066-.159.92-.132.947.006.006 1.148-.04 1.33-.056.11-.008.117-.01.161-.067.024-.032.13-.153.238-.267.106-.113.301-.333.431-.488.13-.154.328-.381.437-.502.171-.189.263-.318.619-.857.878-1.324.937-1.441 1.003-1.969.045-.375.067-.447.214-.697.146-.249.294-.965.213-1.033-.072-.06-.153-.032-.427.15-.512.341-1.039.841-1.114 1.053-.034.095-.223.373-.285.418l-.519.369c-.582.414-.52.349-.849.879l-.11.174-.327.173-.328.171-.616.015c-1.23.028-1.288.022-1.943-.207l-.431-.153-.344-.303c-.191-.168-.53-.47-.754-.672l-.407-.368-.142-.321a28.99 28.99 0 0 1-.497-1.15c-.084-.226-.09-.231-.275-.428-.341-.361-.529-.757-.757-1.612-.045-.165-.078-.259-.1-.281-.018-.016-.028-.022-.023-.012.006.01 0 .046-.012.082-.157.441-.209.768-.249 1.559-.02.359-.02.351.096.983.225 1.226.296 1.5.409 1.565.04.024.165.146.291.286.341.376.448.485.604.61.285.231.735.71.901.961.04.06.102.14.135.177.15.163.462.6.899 1.259l.314.475.13-.007c.09-.006.329.012.74.054.336.035.635.064.665.065h.056l.191-.555zm-2.276.455a1.103 1.103 0 0 0-.122-.201c-.075-.107-.14-.195-.15-.191-.01.003-.138.268-.181.374-.01.031.341.044.453.018zm2.766-2.758c.046-.033.127-.055.376-.105.311-.06.375-.083.628-.211a.309.309 0 0 0 .092-.11.74.74 0 0 1 .11-.138c.04-.036.055-.062.055-.098 0-.078.227-.275 1.091-.946a.9.9 0 0 0 .245-.268c.074-.11.158-.211.263-.309.085-.08.291-.284.459-.451.168-.171.391-.376.497-.462a3.44 3.44 0 0 0 .241-.204c.03-.032.157-.106.335-.196.159-.08.295-.156.301-.168.018-.03.09-.06.508-.217.889-.331 1.479-.492 1.79-.492.08 0 .096-.052.067-.219-.068-.395-.296-.552-.808-.552h-.181l-.063-.067c-.06-.065-.067-.087-.124-.325-.115-.485-.185-.532-.742-.516-.435.013-.552.06-1.754.718-.602.331-1.035.702-1.543 1.33a.964.964 0 0 1-.11.123c-.311-.002-.303-.472.017-.949l.106-.157-.084-.035c-.236-.107-.532-.123-.74-.04-.291.116-1.023.525-1.117.622-.098.103-.187.106-.187.007 0-.122.114-.285.289-.411.04-.032.11-.088.153-.127a1.63 1.63 0 0 1 .435-.261c.147-.06.142-.052.09-.15-.14-.255-.525-.546-.915-.689-.05-.02-.169-.07-.263-.112-.221-.102-.331-.124-.672-.136-.244-.01-.283-.014-.267-.033.074-.09.311-.133.79-.144l.384-.01.248.11c.697.301.963.462 1.074.645.076.128.084.133.194.112.266-.05.518.032.765.249.135.12.184.13.274.063a.773.773 0 0 0 .273-.502c.035-.271-.06-1.136-.153-1.385-.07-.188-.057-.196.087-.046.171.178.171.178.326-.11.04-.076.103-.176.138-.221.291-.367.281-1.047-.017-1.347-.15-.15-.404-.291-.815-.446-.403-.155-.47-.211-.77-.628-.361-.506-.425-.567-.724-.708-.617-.293-2.101-.562-2.57-.467-.441.09-1.04.447-1.32.789-.175.213-.63.377-1.274.462-.84.108-1.254.828-1.041 1.806.04.191.038.189.165.034.405-.505 1.209-.976 1.93-1.13.575-.12 1.475-.126 2.01-.01l.096.022h-.144c-.75.01-1.904.257-2.722.584l-.176.07-.016.087c-.015.083-.022.093-.281.351-.536.539-.69.796-.775 1.286-.04.239.036.589.15.678.027.022.047.05.042.06a2.825 2.825 0 0 0-.026.225c-.076.845.323 1.866.96 2.453l.144.133.108-.09c.317-.259.859-.614.888-.582.043.05.034.09-.033.155-.085.082-.196.226-.496.642l-.259.361.007.104c.01.13.076.337.147.451.03.046.09.15.136.229.167.284.321.52.424.642.096.117.184.241.284.401.028.046.05.064.07.06.04-.01.09.026.279.204.186.171.083.122.845.408.823.309 1.131.369 1.465.286.09-.022.097-.022.168.015.09.047.09.047.163-.002v.005zm-6.348-3.82c.003-.003.02-.103.037-.225.017-.12.053-.286.08-.367l.193-.644c.177-.602.159-.55.178-.52.025.042.015-.01-.016-.074a1.69 1.69 0 0 1-.066-.171l-.034-.108.034-.588.034-.589-.055-.397a6.234 6.234 0 0 0-.064-.406c-.032-.032-.464.145-.599.245-.175.13-.401.679-.492 1.194-.12.694-.008 1.647.226 1.916.07.08.226.378.357.68l.034.077.075-.01a.347.347 0 0 0 .078-.013zm14.775-1.31c.126-.088.238-.177.246-.196.015-.037.213-1.099.281-1.507l.042-.257-.042-.447-.042-.446-.125-.48c-.124-.475-.128-.484-.264-.755-.216-.431-.194-.236-.379-3.358l-.035-.578-.053-.055c-.07-.075-.337-.458-.963-1.388a14.255 14.255 0 0 0-.546-.781 16.04 16.04 0 0 0-.821-.146c-.395-.055-.736-.025-1.055.094-.128.048-.14.05-.201.03-.138-.047-.293-.003-.569.164l-.145.087-.166-.221c-.191-.251-.194-.255-.57-.502-.64-.416-.716-.449-1.632-.692-.353-.094-.311-.062-.993-.742l-.535-.532-.585.008c-.989.015-1.482.06-1.6.142-.712.508-1.094.888-1.538 1.531l-.103.15-.386.184c-.422.203-1.034.392-1.201.369-.092-.012-.421-.18-.658-.341-.438-.291-.739-.326-1.088-.124-.284.163-.483.269-1.286.675-.861.437-.965.496-1.246.705l-.164.123-.143.288c-.311.626-.305.602-.321 1.415-.03 1.52-.035 2.008-.016 2.122.03.179.036.374.016.505-.028.171-.387 1.387-.585 1.977-.066.199-.135.52-.159.736-.01.07 0 .175.036.391.026.164.07.451.097.64.066.464.12.562.358.64.209.07.309.063.732-.045.793-.203.813-.197 1.134.378.078.137.112.184.143.193.105.03.725.01.866-.027l.194-.05.056-.015-.02-.096a2.414 2.414 0 0 1-.023-.624c.024-.268.064-.506.153-.889.004-.017-.006-.004-.022.03l-.03.06-.035-.157a1.876 1.876 0 0 0-.291-.672 6.435 6.435 0 0 1-.421-.87l-.093-.231.01-.161c.05-.718.224-1.186.597-1.595.227-.248.293-.351.325-.522.025-.13.106-.807.171-1.395l.057-.547.241-.715c.13-.394.231-.722.225-.728a9.003 9.003 0 0 0-.693-.321c-.124-.035-.412-.023-.632.027-.705.161-1.224.532-1.25.893-.007.08-.362.827-.395.828-.02 0-.074-.098-.093-.169-.02-.074-.012-.115.073-.351.032-.088.097-.307.145-.487.12-.443.14-.477.405-.599l.467-.221c.675-.325 1.657-.578 1.899-.49.143.05.359.226.552.446l.092.104-.09.246c-.458 1.266-.575 1.617-.606 1.823-.071.458-.066 1.465.008 1.695.058.188.054.195-.223.377-.477.316-.953.919-.973 1.233-.013.211.09.634.221.888.052.105.589.913.606.913.006 0 .03-.04.057-.09a1.9 1.9 0 0 1 .704-.773c.316-.204.317-.204.341-.313.161-.725.425-1.144.88-1.385l.197-.105-.095-.035c-.145-.053-.271-.143-.428-.308-.697-.733-.966-1.566-.688-2.127.02-.04.052-.122.072-.184.245-.755.931-1.164 1.842-1.101.896.063 1.294.296 1.618.94.311.624.294 1.191-.055 1.751l-.066.106.06-.058c.068-.063.766-.374.946-.421.268-.07.659-.03 1.894.193.499.09.584.125.823.341.05.048.09.076.09.064s-.01-.104-.025-.206c-.083-.617.034-1.401.269-1.786.284-.466 1.375-.883 1.974-.754.301.065.769.355 1.021.635.032.036.06.056.06.045 0-.01-.02-.325-.04-.699a11.12 11.12 0 0 1-.03-.689c.008-.006.144-.084.306-.174l.293-.161.052.04c.044.032.169.063.78.191l.763.164c.027.006.085.09.216.307.097.164.271.448.388.632.425.68.502.856.411.941-.093.087-.108.086-.169-.007-.03-.045-.201-.314-.379-.595a16.068 16.068 0 0 0-.351-.539c-.02-.02-.998-.346-1.487-.497-.239-.073-.492 1.151-.434 2.099.02.319.02.321.291.57.169.156.858 1.126.993 1.397l.067.136-.006.826-.005.825-.105.177c-.441.742-.694 1.021-.985 1.096-.161.04-.339.175-.324.241.005.022.013.154.02.291.006.167.016.253.027.253.01 0 .073-.01.14-.023.455-.087.958-.057 1.261.073.11.047.116.064.128.344.017.375.042.407.353.457.348.055.468.114.695.344l.128.13.462.002.462.002.245-.168zM9.954 3.808a13.19 13.19 0 0 0-.833-.494c-.338-.171-.351-.201-.117-.309.341-.157.474-.11.908.315.168.165.369.349.448.411.156.118.328.275.328.297 0 .027-.115.14-.14.14a8.7 8.7 0 0 1-.594-.36zm3.987.19a.518.518 0 0 1-.235-.191l-.042-.07.03-.068c.04-.095.076-.13.231-.231.074-.05.159-.11.188-.134.159-.14 1.179-.558 1.358-.558.1 0 .13.02.176.125a.63.63 0 0 0 .065.12c.05.056-.06.115-.341.179-.15.034-.502.176-.818.328l-.258.125-.148.201c-.08.11-.15.201-.15.201L13.94 4l.001-.002zm2.25 8.609c.117-.103.612-.334.898-.418.104-.03.171-.307.171-.72v-.234l-.092-.191c-.097-.201-.203-.378-.221-.371-.006.002-.203.251-.437.556l-.427.552.01.249.01.444c0 .225-.006.218.09.134l-.002-.001zm1.639-1.799l.344-.132.112-.169c.391-.592.512-.901.529-1.379l.01-.308-.228-.361c-.386-.607-.636-1.018-.722-1.187a.36.36 0 0 0-.062-.1c-.062-.04-.245.12-.458.401-.15.201-.226.254-.674.478-.592.295-.876.341-1.292.213a7.003 7.003 0 0 0-.552-.156c-.042 0 .133.206.294.347.126.11.221.161.346.181.191.03.547.231 1.094.612.303.214.261.133.291.55l.027.351.08.078c.1.098.214.251.381.51.07.112.13.205.132.205l.348-.134zm-1.719-3.119c.446-.164.704-.665.527-1.023-.194-.391-.634-.702-.998-.702-.425 0-.979.482-.979.853 0 .008.058-.038.127-.104.329-.311.692-.346 1.05-.105.385.258.469.77.173 1.064-.078.08-.067.08.1.02v-.003zm-7.704-.16a.963.963 0 0 1-.026-.396c.145-.778 1.09-1.005 1.51-.364l.064.1-.009-.129c-.069-.971-1.094-1.234-1.726-.443-.356.447-.299 1.13.105 1.274.103.036.107.034.08-.042h.002zm8.86-.527c.261-.439.226-1.053-.088-1.53-.421-.642-1.084-.841-1.806-.542-.559.231-.776.517-.825 1.081-.022.251-.012.281.058.176.238-.354.644-.547 1.094-.522.712.038 1.24.539 1.385 1.316l.034.183.008.04.04-.05a1.56 1.56 0 0 0 .1-.154v.002zm-1.431.09a.125.125 0 0 0 .04-.096.127.127 0 0 0-.04-.095.128.128 0 0 0-.096-.04c-.04 0-.07.013-.097.04a.13.13 0 0 0-.038.096c0 .123.146.185.233.098l-.002-.003zm-8.218-.209c.138-.773.732-1.289 1.48-1.289.485 0 .838.274 1.043.809.054.14.06.143.087.035.07-.274-.01-.848-.163-1.149-.26-.518-1.032-.779-1.751-.591-.415.106-.9.64-.997 1.097-.1.468-.038.849.191 1.167.077.108.077.108.11-.08v.001zm1.928 0a.128.128 0 0 0 .04-.096c0-.04-.013-.07-.04-.097-.027-.028-.056-.041-.096-.041s-.07.013-.096.04a.128.128 0 0 0-.04.097.136.136 0 0 0 .232.097z"
+                    />
+                </svg>                    
+            </a>
+            <a href="https://github.com/miroshnikov/idles" title='Github'>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" width="1em" height="1em">
+                    <path 
+                        fill="currentColor" 
+                        d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
+                    />
+                </svg>
+            </a>
+        </div>
+    </header>
+    <div>
+        <aside>
+        </aside>
+        <main>
+            <h1>IDLES - A PHP FUNCTIONAL UTILITY LIBRARY</h1>
+                <section>
+        <h2>What is it?</h2>
+        <p>
+            Idles library may be seen as <strong>a port of Javascript <a href="https://lodash.com/" target='_blank'>Lodash</a> and <a href="https://ramdajs.com/" target='_blank'>Ramda</a> 
+            libraries to PHP</strong>, as it tries to comply with Lodash and Ramda APIs as much as possible.
+            Though there are inevitable discrepancies in methods API considering the different nature of PHP and JavaScript languages.
+        </p>
+    </section>
+    <section>
+        <h2>Requirements</h2>
+        PHP: ^7.4
+    </section>  
+    <section>
+        <h2>Installation</h2>
+        <pre><code class='language-bash'>composer require miroshnikov/idles</code></pre>
+    </section>
+    <section>
+        <h2>Usage</h2>
+        <p>
+            All methods are in <strong>Idles\</strong> namespace and <strong>auto-curried</strong>.
+        </p>
+        <pre><code class='language-php'>use function Idles\{pipe, map, divide, ary, partial, curryN, filter};
+use const \Idles\_;
+pipe(
+    map(divide(_, 2)),
+    map(ary(1, partial('\round', [_, 0]))),
+    map(curryN(1, '\intval')),
+    filter(fn ($n) => $n % 2)
+)([2,3,4,8]);
+</code></pre>
+    </section>
+    <section>
+        <h2>Features</h2>
+        <p>
+            Most of the functions are <strong>lazy (idle)</strong> when given an <code>Iterator</code> or <code>Generator</code> as an input. 
+            Such function will not load an iterator into memory, but returns a new iterator that modifies the input iterator.
+            This behaviour is similar to <em>iterator adaptors</em> in Rust language or LINQ in C#.
+        </p>
+        <p>
+            Although when given an <code>array</code> such method will NOT be lazy and return a modified <code>array</code>. 
+            The rule is: <em>you will get back the same kind of iterable that you passed in as an argument</em>.
+        </p>
+        <p>
+            <a href='#collect'>collect</a> function may be used to turn an iterable of any kind into an array.
+        </p>
+        <pre><code class='language-php'>use function Idles\{pipe, map, filter, collect};
+
+$generator = (function () {
+    $fp = \fopen('/huge/file/with/numbers', 'r');
+    while (($s = \fgets($fp)) !== false) {
+        yield $s;
+    }
+})();
+
+$iterator = pipe(
+    map(fn ($v) => \intval(\trim($v), 10)),
+    filter(fn ($v) => $v % 2 == 0),
+    map(fn ($v) => "[$v]")
+    // ...
+)($generator);
+// nothing has happened so far, $generator is not consumed
+
+// now you can iterate over elements of $iterator with foreach
+// or convert it into an array in memory by iterator_to_array or collect
+$array = collect($iterator);</code></pre>
+        <p>
+            The comparison everywhere is <strong>a weak equality check (==)</strong>.
+        </p>
+        <p>
+            <strong>Binary safe, mb_*</strong> functions are used for string methods.
+        </p>
+    </section>
+    <section>
+        <h2>Array vs Record</h2>
+        <p>
+            The Idles library makes a distinction between arrays and records. 
+        </p>
+        <p>
+            <strong>Array</strong> has only numerical sequential indexes. This is what the <code>Array</code> is in JavaScript and many other languages.
+        </p>
+        <p>
+            <strong>Record</strong> may have both numerical and string keys. 
+            AKA hash, map, object, hash table, or associative array in other languages. 
+            This is what the <code>Object</code> is in JavaScript.
+        </p>
+        <p>
+            Methods from <strong>Array</strong> section do not retain string keys and always return indexed iterables.
+        </p>
+    </section>
+
+            <section id='Array'>
+
+            <h2>Array</h2>
+
+            
+                <article id='concat'>
+                    <h3>concat</h3>
+
+                    <pre><code class='language-php'>concat(?iterable $array, $value): iterable</code></pre>
+                                                                        <pre id="concatAll"><code class='language-php'>concatAll(array $values): iterable</code></pre>
+                                            
+                    <div>
+                        <p>Concatinates <code>$array</code> with additional iterables/values</p>
+
+                    </div>
+
+                    
+                                            <div>
+                            <h4>Returns</h4>
+                            Numerically indexed concatenated iterable
+                        </div>
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>concat(['a','b'], 'C');  // ['a', 'b', 'C']</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#merge'>merge</a>, </li>
+                                                                    <li><a href='#assign'>assign</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='drop'>
+                    <h3>drop</h3>
+
+                    <pre><code class='language-php'>drop(int $n, ?iterable $collection): iterable</code></pre>
+                    
+                    <div>
+                        <p>Skips the first <code>$n</code> elemens and returns the rest of the iterable</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>drop(1, [1, 2, 3]); // [2, 3]</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#dropRight'>dropRight</a>, </li>
+                                                                    <li><a href='#slice'>slice</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='dropRight'>
+                    <h3>dropRight</h3>
+
+                    <pre><code class='language-php'>dropRight(int $n, ?iterable $collection): iterable</code></pre>
+                    
+                    <div>
+                        <p>Skips the last <code>$n</code> elements</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>dropRight(2, [1, 2, 3]);  // [1]</code></pre>
+                    
+                                            <div>
+                            <h4>Alias</h4>
+                            <ul>
+                                                                    <li id="dropLast">dropLast</li>
+                                                            </ul>
+                        </div>
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#drop'>drop</a>, </li>
+                                                                    <li><a href='#slice'>slice</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='findIndex'>
+                    <h3>findIndex</h3>
+
+                    <pre><code class='language-php'>findIndex(callable $predicate, ?iterable $collection): int</code></pre>
+                                                                        <pre id="findIndexFrom"><code class='language-php'>findIndexFrom(callable $predicate, int $fromIndex, ?iterable $collection): int</code></pre>
+                                            
+                    <div>
+                        <p>Like <code>find</code> but returns the index of the first element predicate returns truthy for, <code>-1</code> if not found</p>
+
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$predicate</dt>
+                                    <dd>($value, $index, $collection): bool</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>findIndex(['b', 'a', 'b', 'c'], fn ($v) => $v == 'b', 1); // 2
+findIndexFrom(fn ($v) => $v == 'b', -2, ['a','b','a','b','c']) // 3 </code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#find'>find</a>, </li>
+                                                                    <li><a href='#indexOf'>indexOf</a>, </li>
+                                                                    <li><a href='#findLastIndex'>findLastIndex</a>, </li>
+                                                                    <li><a href='#includes'>includes</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='findLastIndex'>
+                    <h3>findLastIndex</h3>
+
+                    <pre><code class='language-php'>findLastIndex(callable $predicate, ?iterable $collection): int</code></pre>
+                                                                        <pre id="findLastIndexFrom"><code class='language-php'>findLastIndexFrom(callable $predicate, int $fromIndex, ?iterable $collection): int</code></pre>
+                                            
+                    <div>
+                        <p>Like <code>find</code> but returns the index of the last element predicate returns truthy for, <code>-1</code> if not found</p>
+
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$predicate</dt>
+                                    <dd>($value, $index, $collection): bool</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>findLastIndexFrom(fn ($v) => $v == 'b', 2, ['a', 'b', 'a', 'b']); // 1</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#find'>find</a>, </li>
+                                                                    <li><a href='#findIndex'>findIndex</a>, </li>
+                                                                    <li><a href='#indexOf'>indexOf</a>, </li>
+                                                                    <li><a href='#includes'>includes</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='flatten'>
+                    <h3>flatten</h3>
+
+                    <pre><code class='language-php'>flatten(?iterable $collection): iterable</code></pre>
+                    
+                    <div>
+                        <p>Flattens iterable a single level deep.</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>flatten(['a' => 'A', ['b' => 'B'], 'c' => 'C']);  // ['A', 'B', 'C']</code></pre>
+                    
+                                            <div>
+                            <h4>Alias</h4>
+                            <ul>
+                                                                    <li id="unnest">unnest</li>
+                                                            </ul>
+                        </div>
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#flattenDeep'>flattenDeep</a>, </li>
+                                                                    <li><a href='#flattenDepth'>flattenDepth</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='flattenDeep'>
+                    <h3>flattenDeep</h3>
+
+                    <pre><code class='language-php'>flattenDeep(?iterable $collection): iterable</code></pre>
+                    
+                    <div>
+                        <p>Recursively flattens iterable.</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>flattenDeep([1, [2, [3, [4]], 5]]);  // [1, 2, 3, 4, 5]</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#flattenDepth'>flattenDepth</a>, </li>
+                                                                    <li><a href='#flatten'>flatten</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='flattenDepth'>
+                    <h3>flattenDepth</h3>
+
+                    <pre><code class='language-php'>flattenDepth(int $depth, ?iterable $collection): iterable</code></pre>
+                    
+                    <div>
+                        <p>Recursively flatten array up to depth times.</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>flattenDepth(2, [1, [2, [3, [4]], 5]]);  // [1, 2, 3, [4], 5]</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#flattenDeep'>flattenDeep</a>, </li>
+                                                                    <li><a href='#flatten'>flatten</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='head'>
+                    <h3>head</h3>
+
+                    <pre><code class='language-php'>head(?iterable $collecton)</code></pre>
+                    
+                    <div>
+                        <p>Gets the first element of iterable</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>head([1, 2, 3]); // 1</code></pre>
+                    
+                                            <div>
+                            <h4>Alias</h4>
+                            <ul>
+                                                                    <li id="first">first</li>
+                                                            </ul>
+                        </div>
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#last'>last</a>, </li>
+                                                                    <li><a href='#slice'>slice</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='indexOf'>
+                    <h3>indexOf</h3>
+
+                    <pre><code class='language-php'>indexOf($value, ?iterable $collection): int</code></pre>
+                                                                        <pre id="indexOfFrom"><code class='language-php'>indexOfFrom($value, int $fromIndex, ?iterable $collection): int</code></pre>
+                                            
+                    <div>
+                        <p>Returns the index of the first occurrence of <code>$value</code> in <code>$collection</code>, else -1.</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>indexOf(2, [1, 2, 1, 2]); // 1</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#findIndex'>findIndex</a>, </li>
+                                                                    <li><a href='#find'>find</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='join'>
+                    <h3>join</h3>
+
+                    <pre><code class='language-php'>join(string $separator, ?iterable $collection): string</code></pre>
+                    
+                    <div>
+                        <p>Joins iterable elements separated by <code>$separator</code></p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>join('~', ['a', 'b', 'c']); // 'a~b~c'</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#split'>split</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='last'>
+                    <h3>last</h3>
+
+                    <pre><code class='language-php'>last(?iterable $collecton)</code></pre>
+                    
+                    <div>
+                        <p>Gets the last element of iterable</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>last([1, 2, 3]);  // 3</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#first'>first</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='remove'>
+                    <h3>remove</h3>
+
+                    <pre><code class='language-php'>remove(int $start, int $count, ?iterable $iterable): array</code></pre>
+                    
+                    <div>
+                        <p>Removes items from <code>$iterable</code> starting at <code>$start</code> and containing <code>$count</code> elements.</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>remove(2, 3, [1,2,3,4,5,6,7,8]); // [1,2,6,7,8]</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#without'>without</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='slice'>
+                    <h3>slice</h3>
+
+                    <pre><code class='language-php'>slice(int $start, int ?$end, ?iterable $collection): iterable</code></pre>
+                    
+                    <div>
+                        <p>Retruns a slice of <code>$iterable</code> from <code>$start</code> up to, but not including, <code>$end</code>.</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>$a = ['a','b','c','d','e'];
+slice(1, 3, $a2); // ['b','c']
+slice(1, -2, $a2); // ['b','c']
+slice(-4, -2, $a2); // ['b','c']</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#take'>take</a>, </li>
+                                                                    <li><a href='#takeRight'>takeRight</a>, </li>
+                                                                    <li><a href='#drop'>drop</a>, </li>
+                                                                    <li><a href='#dropRight'>dropRight</a>, </li>
+                                                                    <li><a href='#head'>head</a>, </li>
+                                                                    <li><a href='#last'>last</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='take'>
+                    <h3>take</h3>
+
+                    <pre><code class='language-php'>take(int $n, ?iterable $collection): iterable</code></pre>
+                    
+                    <div>
+                        <p>Takes n first elements from iterable</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>take(2, [1, 2, 3]);  // [1, 2]</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#slice'>slice</a>, </li>
+                                                                    <li><a href='#head'>head</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='takeRight'>
+                    <h3>takeRight</h3>
+
+                    <pre><code class='language-php'>takeRight(int $n, ?iterable $collection): array</code></pre>
+                    
+                    <div>
+                        <p>Returns a slice of iterable with n elements taken from the end.</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>takeRight(2, [1, 2, 3]);  // [2, 3]</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#slice'>slice</a>, </li>
+                                                                    <li><a href='#drop'>drop</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='without'>
+                    <h3>without</h3>
+
+                    <pre><code class='language-php'>without(array $values, ?iterable $collection): iterable</code></pre>
+                    
+                    <div>
+                        <p>Returns <code>$iterable</code> without <code>$values</code></p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>without([1, 2], [2, 1, 2, 3]);  // [3]</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#filter'>filter</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='zip'>
+                    <h3>zip</h3>
+
+                    <pre><code class='language-php'>zip(iterable $a, iterable $b): iterable</code></pre>
+                                                                        <pre id="zipAll"><code class='language-php'>zipAll(array $iterables): iterable</code></pre>
+                                            
+                    <div>
+                        <p>Creates an iterable of grouped elements, the first of which contains the first elements of the given iterables, the second of which contains the second elements, and so on.</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>$a =  ['a', 'b' ];
+$aa = ['AA','BB'];
+zip($a, $aa);  // [ ['a', 'AA'], ['b', 'BB'] ]</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#zipWith'>zipWith</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='zipWith'>
+                    <h3>zipWith</h3>
+
+                    <pre><code class='language-php'>zipWith(callable $iteratee, iterable $a, iterable $b): iterable</code></pre>
+                    
+                    <div>
+                        <p>Like <code>zip</code> except that it accepts <code>$iteratee</code> to specify how grouped values should be combined.</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>$a =  ['a', 'b' ];
+$aa = ['AA','BB'];
+zipWith(fn ($a,$b) => $a.'='.$b, $a, $aa);  // ["a=AA", "b=BB"]</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#zip'>zip</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+                   
+
+        </section>
+
+            <section id='Collection'>
+
+            <h2>Collection</h2>
+
+            
+                <article id='all'>
+                    <h3>all</h3>
+
+                    <pre><code class='language-php'>all(?callable $predicate, ?iterable $collection): bool</code></pre>
+                    
+                    <div>
+                        <p>Checks if <code>$predicate</code> returns <code>truthy</code> for all elements of <code>$collection</code>. Stop once it returns <code>falsey</code></p>
+
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$predicate</dt>
+                                    <dd>($value): bool</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>every('\is_numeric')([1,2,3]); // true
+
+$users = [
+    [ 'user' => 'barney', 'age' => 36, 'active' => true ],
+    [ 'user' => 'fred',   'age' => 40, 'active' => true ]
+];
+all(property('active'))($users); // true</code></pre>
+                    
+                                            <div>
+                            <h4>Alias</h4>
+                            <ul>
+                                                                    <li id="every">every</li>
+                                                            </ul>
+                        </div>
+                    
+                                    </article>
+
+            
+                <article id='any'>
+                    <h3>any</h3>
+
+                    <pre><code class='language-php'>any(callable $predicate, ?iterable $collection): bool</code></pre>
+                    
+                    <div>
+                        <p>Checks if <code>$predicate</code> returns truthy for any element of <code>$collection</code>. Stops on first found.</p>
+
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$predicate</dt>
+                                    <dd>($value, $key, $collection): bool</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>$users = [
+    [ 'user' => 'barney', 'active' => false ],
+    [ 'user' => 'fred',   'active' => true ]
+];
+any(fn ($r) => $r['active'] == true, $users); // true</code></pre>
+                    
+                                            <div>
+                            <h4>Alias</h4>
+                            <ul>
+                                                                    <li id="some">some</li>
+                                                            </ul>
+                        </div>
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#all'>all</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='each'>
+                    <h3>each</h3>
+
+                    <pre><code class='language-php'>each(callable $iteratee, ?iterable $collection): iterable</code></pre>
+                    
+                    <div>
+                        <p>Iterates over elements of <code>$collection</code>. Iteratee may exit iteration early by returning <code>false</code>.</p>
+
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$iteratee</dt>
+                                    <dd>($value, $key, $collection): ?bool</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>each(fn ($v) => print_r($v), [1,2,3]);</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#eachRight'>eachRight</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='filter'>
+                    <h3>filter</h3>
+
+                    <pre><code class='language-php'>filter(callable $predicate, ?iterable $collection): iterable</code></pre>
+                    
+                    <div>
+                        <p>Returns elements <code>$predicate</code> returns truthy for.</p>
+
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$predicate</dt>
+                                    <dd>($value, $key, $collection): bool</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>filter('is_numeric', ['a', 'b', 13]); // [13]</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#without'>without</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='find'>
+                    <h3>find</h3>
+
+                    <pre><code class='language-php'>find(?callable $predicate, ?iterable $collection)</code></pre>
+                                                                        <pre id="findFrom"><code class='language-php'>findFrom(?callable $predicate, int $fromIndex, ?iterable $collection)</code></pre>
+                                            
+                    <div>
+                        <p>Returns the first element <code>$predicate</code> returns truthy for.</p>
+
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$predicate</dt>
+                                    <dd>($value): bool</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#findIndex'>findIndex</a>, </li>
+                                                                    <li><a href='#indexOf'>indexOf</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='flatMap'>
+                    <h3>flatMap</h3>
+
+                    <pre><code class='language-php'>flatMap(callable $iteratee, ?iterable $collection): iterable</code></pre>
+                    
+                    <div>
+                        <p>Maps then flatten</p>
+
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$iteratee</dt>
+                                    <dd>($value, $key, $collection): mixed</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>flatMap(fn ($n) => [$n, $n], [1,2]); // [1, 1, 2, 2]</code></pre>
+                    
+                                            <div>
+                            <h4>Alias</h4>
+                            <ul>
+                                                                    <li id="chain">chain</li>
+                                                            </ul>
+                        </div>
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#flatMapDeep'>flatMapDeep</a>, </li>
+                                                                    <li><a href='#flatMapDepth'>flatMapDepth</a>, </li>
+                                                                    <li><a href='#map'>map</a>, </li>
+                                                                    <li><a href='#flatten'>flatten</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='flatMapDeep'>
+                    <h3>flatMapDeep</h3>
+
+                    <pre><code class='language-php'>flatMapDeep(callable $iteratee, ?iterable $collection): iterable</code></pre>
+                    
+                    <div>
+                        <p>Like <code>flatMap</code> but recursively flattens the results.</p>
+
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$iteratee</dt>
+                                    <dd>($value, $key, $collection): mixed</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>flatMapDeep(fn ($n) => [[[$n, $n]]], [1, 2]); // [1, 1, 2, 2]</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#flatMap'>flatMap</a>, </li>
+                                                                    <li><a href='#flatMapDepth'>flatMapDepth</a>, </li>
+                                                                    <li><a href='#map'>map</a>, </li>
+                                                                    <li><a href='#flatten'>flatten</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='flatMapDepth'>
+                    <h3>flatMapDepth</h3>
+
+                    <pre><code class='language-php'>flatMapDepth(callable $iteratee, int $depth, ?iterable $collection): iterable</code></pre>
+                    
+                    <div>
+                        <p>Like <code>flatMap</code> but flattens the mapped results up to <code>$depth</code> times</p>
+
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$iteratee</dt>
+                                    <dd>($value, $key, $collection): mixed</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>flatMapDepth(fn ($n) => [[[$n, $n]]], 2, [1, 2]); // [[1, 1], [2, 2]]</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#flatMap'>flatMap</a>, </li>
+                                                                    <li><a href='#flatMapDeep'>flatMapDeep</a>, </li>
+                                                                    <li><a href='#map'>map</a>, </li>
+                                                                    <li><a href='#flatten'>flatten</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='groupBy'>
+                    <h3>groupBy</h3>
+
+                    <pre><code class='language-php'>groupBy(callable $iteratee, ?iterable $collection): array</code></pre>
+                    
+                    <div>
+                        <p>Creates an array composed of keys generated from running each value through <code>$iteratee</code>.</p>
+
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$iteratee</dt>
+                                    <dd>($value): mixed</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>groupBy('strlen')(['one', 'two', 'three']); // [ '3' => ['one', 'two'], '5' => ['three'] ]</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#partition'>partition</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='includes'>
+                    <h3>includes</h3>
+
+                    <pre><code class='language-php'>includes($value, ?iterable $collection): bool</code></pre>
+                                                                        <pre id="includesFrom"><code class='language-php'>includesFrom($value, int $fromIndex, ?iterable $collection): bool</code></pre>
+                                            
+                    <div>
+                        <p>Checks if <code>$value</code> is in <code>$collection</code>.</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>includes(1, ['a' => 1, 'b' => 2]); // true</code></pre>
+                    
+                                            <div>
+                            <h4>Alias</h4>
+                            <ul>
+                                                                    <li id="contains">contains</li>
+                                                            </ul>
+                        </div>
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#find'>find</a>, </li>
+                                                                    <li><a href='#indexOf'>indexOf</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='indexBy'>
+                    <h3>indexBy</h3>
+
+                    <pre><code class='language-php'>indexBy(callable $iteratee, ?iterable $collection): iterable</code></pre>
+                    
+                    <div>
+                        <p>Creates a record composed of keys generated from the results of running each element of <code>$collection</code> through <code>$iteratee</code>.</p>
+
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$iteratee</dt>
+                                    <dd>($value): string|int</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>$a = [ [ 'code' => 97 ],  [ 'code' => 100 ] ];
+indexBy(fn ($r) => \chr($r['code']), $aa); // ['a' => [ 'code' => 97 ], 'd' => [ 'code' => 100 ]],</code></pre>
+                    
+                                            <div>
+                            <h4>Alias</h4>
+                            <ul>
+                                                                    <li id="keyBy">keyBy</li>
+                                                            </ul>
+                        </div>
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#groupBy'>groupBy</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='map'>
+                    <h3>map</h3>
+
+                    <pre><code class='language-php'>map(callable $iteratee, ?iterable $collection)</code></pre>
+                    
+                    <div>
+                        <p>Run each element in <code>$collection</code> through <code>$iteratee</code>.</p>
+
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$iteratee</dt>
+                                    <dd>($value, $key, $collection): mixed</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>map(fn ($n) => $n * $n, [4, 8]); // [16, 64]</code></pre>
+                    
+                                            <div>
+                            <h4>Alias</h4>
+                            <ul>
+                                                                    <li id="mapValues">mapValues</li>
+                                                            </ul>
+                        </div>
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#reduce'>reduce</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='orderBy'>
+                    <h3>orderBy</h3>
+
+                    <pre><code class='language-php'>orderBy(array $iteratees, array $orders, ?iterable $collection)</code></pre>
+                    
+                    <div>
+                        <p>Like <code>sortBy</code> but allows specifying the sort orders</p>
+
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$iteratees</dt>
+                                    <dd>[(mixed $value): mixed]</dd>
+                                                                    <dt>$orders</dt>
+                                    <dd>[&#039;asc&#039;|&#039;desc&#039;]</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>$users = [
+    [ 'user' => 'fred',   'age' => 48 ],
+    [ 'user' => 'barney', 'age' => 34 ],
+    [ 'user' => 'fred',   'age' => 40 ],
+    [ 'user' => 'barney', 'age' => 36 ]
+];
+orderBy([property('user'), property('age')], ['asc', 'desc'], $users);
+/*
+[
+    [ 'user' => 'barney', 'age' => 36 ],
+    [ 'user' => 'barney', 'age' => 34 ],
+    [ 'user' => 'fred',   'age' => 48 ],
+    [ 'user' => 'fred',   'age' => 40 ]
+]
+*/</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#sortBy'>sortBy</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='partition'>
+                    <h3>partition</h3>
+
+                    <pre><code class='language-php'>partition(callable $predicate, ?iterable $collection): array</code></pre>
+                    
+                    <div>
+                        <p>Split <code>$collection</code> into two groups, the first of which contains elements <code>$predicate</code> returns truthy for, the second of which contains elements <code>$predicate</code> returns falsey for.</p>
+
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$predicate</dt>
+                                    <dd>(mixed $value): bool</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>partition(
+    fn ($v) => stripos($v, 'A') !== false, 
+    ['a' => 'AA', 'b' => 'BB', 'c' => 'AAA']
+); 
+// [['a' => 'AA', 'c' => 'AAA'], ['b' => 'BB']]</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#filter'>filter</a>, </li>
+                                                                    <li><a href='#juxt'>juxt</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='reduce'>
+                    <h3>reduce</h3>
+
+                    <pre><code class='language-php'>reduce(callable $iteratee, $accumulator, ?iterable $collection)</code></pre>
+                    
+                    <div>
+                        <p>Reduces <code>$collection</code> to a value which is the accumulated result of running each element in collection through <code>$iteratee</code></p>
+
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$iteratee</dt>
+                                    <dd>($accumulator, $value, $key, $collection): mixed</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>reduce(ary(2, subtract(...)), 0, [1, 2, 3, 4]); // -10</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#reduceRight'>reduceRight</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='resolve'>
+                    <h3>resolve</h3>
+
+                    <pre><code class='language-php'>resolve(array $resolvers, array $record): array</code></pre>
+                    
+                    <div>
+                        <p>Adds new properties to <code>$record</code> using <code>$resolvers</code>.</p>
+
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$resolvers</dt>
+                                    <dd>[string =&gt; callable]</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>$users = [
+    [ 'name' => 'Steve', 'surname' => 'Jobs'  ],
+    [ 'name' => 'Bill',  'surname' => 'Gates' ]
+];                
+resolve([
+    'initials' => fn ($r) => $r['name'][0].$r['surname'][0]
+]); 
+/*
+[
+    [ 'name' => 'Steve', 'surname' => 'Jobs',  'initials' => 'SJ' ],
+    [ 'name' => 'Bill',  'surname' => 'Gates', 'initials' => 'BG' ]
+]
+*/</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#evolve'>evolve</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='sortBy'>
+                    <h3>sortBy</h3>
+
+                    <pre><code class='language-php'>sortBy(array $iteratees, ?iterable $collection): array</code></pre>
+                    
+                    <div>
+                        <p>Sorts <code>$collection</code> in ascending order according to <code>$iteratees</code>.</p>
+
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$iteratees</dt>
+                                    <dd>[(mixed $value): mixed]</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>$users = [
+    [ 'user' => 'fred',   'age' => 48 ],
+    [ 'user' => 'barney', 'age' => 36 ],
+    [ 'user' => 'fred',   'age' => 40 ],
+    [ 'user' => 'barney', 'age' => 34 ]
+];
+sortBy([property('user'), property('age')], $users);
+/*
+[
+    [ 'user' => 'barney', 'age' => 34 ],
+    [ 'user' => 'barney', 'age' => 36 ],
+    [ 'user' => 'fred',   'age' => 40 ],
+    [ 'user' => 'fred',   'age' => 48 ]
+]
+*/</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#orderBy'>orderBy</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='values'>
+                    <h3>values</h3>
+
+                    <pre><code class='language-php'>values(?iterable $collection): iterable</code></pre>
+                    
+                    <div>
+                        <p>Returns an indexed iterable of values in <code>$collection</code>.</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>values(['a' => 'AA', 'b' => 'BB']); // ['AA', 'BB']</code></pre>
+                    
+                    
+                                    </article>
+
+                   
+
+        </section>
+
+            <section id='Function'>
+
+            <h2>Function</h2>
+
+            
+                <article id='always'>
+                    <h3>always</h3>
+
+                    <pre><code class='language-php'>always($value)</code></pre>
+                    
+                    <div>
+                        <p>Returns a function that always returns the given value.</p>
+
+                    </div>
+
+                    
+                    
+                    
+                                            <div>
+                            <h4>Alias</h4>
+                            <ul>
+                                                                    <li id="constant">constant</li>
+                                                            </ul>
+                        </div>
+                    
+                                    </article>
+
+            
+                <article id='applyTo'>
+                    <h3>applyTo</h3>
+
+                    <pre><code class='language-php'>applyTo ($value, callable $interceptor)</code></pre>
+                    
+                    <div>
+                        <p>Returns <code>$interceptor($value)</code>.</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>$n13 = applyTo(13);
+$n13(add(100)); // 113</code></pre>
+                    
+                                            <div>
+                            <h4>Alias</h4>
+                            <ul>
+                                                                    <li id="thru">thru</li>
+                                                            </ul>
+                        </div>
+                    
+                                    </article>
+
+            
+                <article id='ary'>
+                    <h3>ary</h3>
+
+                    <pre><code class='language-php'>ary(int $n, callable $fn): callable</code></pre>
+                    
+                    <div>
+                        <p>Creates a function that invokes <code>$fn</code>, with up to <code>$n</code> arguments, ignoring any additional arguments.</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>map(ary(1, '\intval'), ['6', '8', '10']); // [6, 8, 10]</code></pre>
+                    
+                                            <div>
+                            <h4>Alias</h4>
+                            <ul>
+                                                                    <li id="nAry">nAry</li>
+                                                            </ul>
+                        </div>
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#unary'>unary</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='attempt'>
+                    <h3>attempt</h3>
+
+                    <pre><code class='language-php'>attempt(callable $fn)</code></pre>
+                    
+                    <div>
+                        <p>Calls <code>$fn</code>, returning either the result or the caught exception.</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>attempt(fn () => 'A'); // A
+attempt(fn () => throw new \Exception('Error')); // Exception('Error')</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#tryCatch'>tryCatch</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='compose'>
+                    <h3>compose</h3>
+
+                    <pre><code class='language-php'>compose(callable ...$funcs): callable</code></pre>
+                                                                        <pre id="flowRight"><code class='language-php'>flowRight(array $funcs): callable</code></pre>
+                                            
+                    <div>
+                        <p>Like <code>pipe</code> but invokes the functions from right to left.</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>compose('\strtoupper', fn ($s) => 'hello '.$s, '\trim')(' fred '); // 'HELLO FRED'</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#pipe'>pipe</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='curry'>
+                    <h3>curry</h3>
+
+                    <pre><code class='language-php'>curry(callable $f): callable</code></pre>
+                                                                        <pre id="curryN"><code class='language-php'>curryN(int $arity, callable $f): callable</code></pre>
+                                            
+                    <div>
+                        <p><code>\Idles\_</code> const may be used as a placeholder.</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>use const \Idles\_;
+
+$abc = fn ($a, $b, $c = 'c') => $a.$b.$c;
+curry($abc)('a')('b')('c'); // 'abc'
+curryN(2, $abc)('a')('b'); // 'abc'
+curry($abc)(_, 'b')(_, 'c')('a'); // 'abc'</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#partial'>partial</a>, </li>
+                                                                    <li><a href='#curryRight'>curryRight</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='curryRight'>
+                    <h3>curryRight</h3>
+
+                    <pre><code class='language-php'>curryRight(callable $f): callable</code></pre>
+                                                                        <pre id="curryRightN"><code class='language-php'>curryRightN(int $arity, callable $f): callable</code></pre>
+                                            
+                    <div>
+                        <p>Like <code>curry</code> but arguments are prepended.</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>use const \Idles\_;
+
+$abc = fn ($a, $b, $c = 'c') => $a.$b.$c;
+curryRight($abc)('c')('b')('a'); // 'abc'
+curryRight($abc)('b','c')('a'); // 'abc'
+curryRightN(2, $abc)('b')('a'); // 'abc'</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#partialRight'>partialRight</a>, </li>
+                                                                    <li><a href='#curry'>curry</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='juxt'>
+                    <h3>juxt</h3>
+
+                    <pre><code class='language-php'>juxt(array $iteratees): callable</code></pre>
+                    
+                    <div>
+                        <p>Retruns a function that invokes iteratees with the arguments it receives and returns their results.</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>$isOdd = fn ($n) => $n % 2;
+juxt([filter($isOdd), remove($isOdd)])([1,2,3,4,5,6,7,8,9]);
+// [[1,3,5,7,9], [2,4,6,8]]</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#applySpec'>applySpec</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='memoize'>
+                    <h3>memoize</h3>
+
+                    <pre><code class='language-php'>memoize(callable $func): callable</code></pre>
+                                                                        <pre id="memoizeWith"><code class='language-php'>memoizeWith(callable $resolver, callable $func): callable</code></pre>
+                                            
+                    <div>
+                        <p>Creates a function that memoizes the result of <code>$func</code>. <code>$resolver</code> returns map cache key, args[0] by default.</p>
+
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$resolver</dt>
+                                    <dd>(...$args): string|int</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#once'>once</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='negate'>
+                    <h3>negate</h3>
+
+                    <pre><code class='language-php'>negate(callable $predicate): callable</code></pre>
+                    
+                    <div>
+                        <p>Creates a function that negates the result of the <code>$predicate</code> function.</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>$isEven = fn ($n) => $n % 2 == 0;
+filter(negate($isEven), [1, 2, 3, 4, 5, 6]); // [1, 3, 5]</code></pre>
+                    
+                                            <div>
+                            <h4>Alias</h4>
+                            <ul>
+                                                                    <li id="complement">complement</li>
+                                                            </ul>
+                        </div>
+                    
+                                    </article>
+
+            
+                <article id='partial'>
+                    <h3>partial</h3>
+
+                    <pre><code class='language-php'>partial(callable $fn, array $partials): callable</code></pre>
+                    
+                    <div>
+                        <p>Creates a function that invokes <code>$fn</code> with <code>$partials</code> prepended to the arguments. <code>\Idles\_</code> const may be used as a placeholder.</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>use const \Idles\_;
+
+$abcd = fn ($a, $b, $c, $d) => $a.$b.$c.$d;
+partial($abcd, ['a', _, 'c'])('b', 'd')' // 'abcd'</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#curry'>curry</a>, </li>
+                                                                    <li><a href='#partialRight'>partialRight</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='partialRight'>
+                    <h3>partialRight</h3>
+
+                    <pre><code class='language-php'>partialRight(callable $fn, array $partials): callable</code></pre>
+                    
+                    <div>
+                        <p>Like <code>partial</code> but <code>$partials</code> are appended.</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>use const \Idles\_;
+
+$abcd = fn ($a, $b, $c, $d) => $a.$b.$c.$d;
+partialRight($abcd, ['b', _, 'd'])('a', 'c')); // 'abcd'</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#curryRight'>curryRight</a>, </li>
+                                                                    <li><a href='#partial'>partial</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='pipe'>
+                    <h3>pipe</h3>
+
+                    <pre><code class='language-php'>pipe(callable ...$funcs): callable</code></pre>
+                                                                        <pre id="flow"><code class='language-php'>flow(array $funcs): callable</code></pre>
+                                            
+                    <div>
+                        <p>Left-to-right function composition. The first argument may have any arity; the remaining arguments must be unary.</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>pipe('\trim', '\strtoupper')(' hello '); // 'HELLO'</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#compose'>compose</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='tap'>
+                    <h3>tap</h3>
+
+                    <pre><code class='language-php'>tap(callable $interceptor, $value)</code></pre>
+                    
+                    <div>
+                        <p>Calls <code>$interceptor($value)</code> then returns the original <code>$value</code></p>
+
+                    </div>
+
+                    
+                    
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#applyTo'>applyTo</a>, </li>
+                                                                    <li><a href='#tryCatch'>tryCatch</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='times'>
+                    <h3>times</h3>
+
+                    <pre><code class='language-php'>times(int $n, callable $iteratee): array</code></pre>
+                    
+                    <div>
+                        <p>Calls the iteratee <code>$n</code> times, returning an array of the results of each invocation.</p>
+
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$iteratee</dt>
+                                    <dd>(int $index): mixed</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>times(3, fn($i) => "$i"); // ['0', '1', '2']</code></pre>
+                    
+                    
+                                    </article>
+
+            
+                <article id='tryCatch'>
+                    <h3>tryCatch</h3>
+
+                    <pre><code class='language-php'>tryCatch(callable $tryer, callable $catcher, $value)</code></pre>
+                    
+                    <div>
+                        <p>Calls <code>$tryer</code>, if it throws, calls <code>$catcher</code></p>
+
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$tryer</dt>
+                                    <dd>($value): mixed</dd>
+                                                                    <dt>$catcher</dt>
+                                    <dd>(\Exception $e, $value): mixed</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>tryCatch(fn ($v) => "[$v]", fn ($err, $value) => [$err, $value])('A'); // '[A]'
+tryCatch(
+    fn ($v) => throw new \Exception('Error'),
+    fn (\Exception $err, $value) => [$err->getMessage(), $value]
+)('A'); // ['Error', 'A']</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#attempt'>attempt</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='unary'>
+                    <h3>unary</h3>
+
+                    <pre><code class='language-php'>unary(callable $fn): callable</code></pre>
+                    
+                    <div>
+                        <p><code>ary(1, $fn)</code></p>
+
+                    </div>
+
+                    
+                    
+                    
+                    
+                                    </article>
+
+                   
+
+        </section>
+
+            <section id='Logic'>
+
+            <h2>Logic</h2>
+
+            
+                <article id='allPass'>
+                    <h3>allPass</h3>
+
+                    <pre><code class='language-php'>allPass(array $predicates): callable</code></pre>
+                    
+                    <div>
+                        <p>Returns a function that checks if its arguments pass all <code>$predicates</code>.</p>
+
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$predicates</dt>
+                                    <dd>[(mixed ...$args): bool]</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>$bothStrings = fn (...$args) => all(ary(1, '\is_string'), $args);
+$equal = fn ($a, $b) => $a == $b;
+allPass([$bothStrings, $equal])('a', 'b'); // false
+allPass([$bothStrings, $equal])('a', 'a'); // true
+allPass([$bothStrings, $equal])(1, 1); // false</code></pre>
+                    
+                                            <div>
+                            <h4>Alias</h4>
+                            <ul>
+                                                                    <li id="overEvery">overEvery</li>
+                                                            </ul>
+                        </div>
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#anyPass'>anyPass</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='anyPass'>
+                    <h3>anyPass</h3>
+
+                    <pre><code class='language-php'>anyPass(array $predicates): callable</code></pre>
+                    
+                    <div>
+                        <p>Returns a function that checks if its arguments pass any of the <code>$predicates</code>.</p>
+
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$predicates</dt>
+                                    <dd>[(mixed ...$args): bool]</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>$bothStrings = fn (...$args) => all(ary(1, '\is_string'), $args);
+$equal = fn ($a, $b) => $a == $b;
+anyPass([$bothStrings, $equal])('a', 'b'); // true
+anyPass([$bothStrings, $equal])('1', 2); // false
+anyPass([$bothStrings, $equal])(1, 1); // true</code></pre>
+                    
+                                            <div>
+                            <h4>Alias</h4>
+                            <ul>
+                                                                    <li id="overSome">overSome</li>
+                                                            </ul>
+                        </div>
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#allPass'>allPass</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='cond'>
+                    <h3>cond</h3>
+
+                    <pre><code class='language-php'>cond(array $pairs): callable</code></pre>
+                    
+                    <div>
+                        <p>Iterates over <code>$pairs</code> and invokes the corresponding function of the first predicate to return truthy.</p>
+
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$pairs</dt>
+                                    <dd>[callable =&gt; callable]</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>$fn = cond([
+    [fn ($v) => $v == 0,    fn () => 'water freezes at 0°C'],
+    [fn ($v) => $v == 100,  fn () => 'water boils at 100°C'],
+    [fn () => true,         fn ($temp) => "nothing special happens at $temp °C"]
+]);
+$fn(0);     // 'water freezes at 0°C'
+$fn(50);    // 'nothing special happens at 50 °C'
+$fn(100);   // 'water boils at 100°C'</code></pre>
+                    
+                    
+                                    </article>
+
+            
+                <article id='defaultTo'>
+                    <h3>defaultTo</h3>
+
+                    <pre><code class='language-php'>defaultTo($default)($value)</code></pre>
+                    
+                    <div>
+                        <p>Returns <code>$value</code> ?? <code>$default</code></p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>defaultTo(10, null); // 10</code></pre>
+                    
+                    
+                                    </article>
+
+                   
+
+        </section>
+
+            <section id='Math'>
+
+            <h2>Math</h2>
+
+            
+                <article id='add'>
+                    <h3>add</h3>
+
+                    <pre><code class='language-php'>add(int|float $a, int|float $b): int|float</code></pre>
+                    
+                    <div>
+                        <p>$a + $b</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>add(100)(13); // 113</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#sum'>sum</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='divide'>
+                    <h3>divide</h3>
+
+                    <pre><code class='language-php'>divide(int|float $a, int|float $b): int|float</code></pre>
+                    
+                    <div>
+                        <p>$a / $b</p>
+
+                    </div>
+
+                    
+                    
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#modulo'>modulo</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='modulo'>
+                    <h3>modulo</h3>
+
+                    <pre><code class='language-php'>modulo(int|float $a, int|float $b): int</code></pre>
+                    
+                    <div>
+                        <p>$a % $b</p>
+
+                    </div>
+
+                    
+                    
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#divide'>divide</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='multiply'>
+                    <h3>multiply</h3>
+
+                    <pre><code class='language-php'>multiply(int|float $a, int|float $b): int|float</code></pre>
+                    
+                    <div>
+                        <p>$a * $b</p>
+
+                    </div>
+
+                    
+                    
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#add'>add</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='round'>
+                    <h3>round</h3>
+
+                    <pre><code class='language-php'>round(int $precision, int|float $number): float</code></pre>
+                    
+                    <div>
+                        <p>Rounds <code>$number</code>to specified <code>$precision</code></p>
+
+                    </div>
+
+                    
+                    
+                    
+                    
+                                    </article>
+
+            
+                <article id='subtract'>
+                    <h3>subtract</h3>
+
+                    <pre><code class='language-php'>subtract(int|float $a, int|float $b): int|float</code></pre>
+                    
+                    <div>
+                        <p>$a - $b</p>
+
+                    </div>
+
+                    
+                    
+                    
+                    
+                                    </article>
+
+            
+                <article id='sum'>
+                    <h3>sum</h3>
+
+                    <pre><code class='language-php'>sum(?iterable $collection)</code></pre>
+                    
+                    <div>
+                        <p>Sums elements in iterable</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>sum([4, 2, 8, 6]); // 20</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#sumWith'>sumWith</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='sumBy'>
+                    <h3>sumBy</h3>
+
+                    <pre><code class='language-php'>sumBy(?callable $iteratee, ?iterable $collection)</code></pre>
+                    
+                    <div>
+                        <p>Like <code>sum</code> but <code>$iteratee</code> is invoked for each element in iterable to generate the value to be summed.</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>$ns = [[ 'n'=> 4 ], [ 'n'=> 2 ], [ 'n'=> 8 ], [ 'n'=> 6 ]];
+sumBy(property('n'), $ns); // 20</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#sum'>sum</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+                   
+
+        </section>
+
+            <section id='Record'>
+
+            <h2>Record</h2>
+
+            
+                <article id='assignDeep'>
+                    <h3>assignDeep</h3>
+
+                    <pre><code class='language-php'>assignDeep(array $iterables): array</code></pre>
+                    
+                    <div>
+                        <p>Merges properties recursively, numeric keys are overwritten.</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>$a = ['a' => ['b' => '1', 'c' => 'C'], ['e' => 'E'], 'x'];
+$b = ['a' => ['b' => '2', 'd' => 'D'], ['f' => 'F'], 'y'];
+assignDeep([$a, $b]);
+// ['a' => ['b' => '2', 'c' => 'C', 'd' => 'D'], ['e' => 'E', 'f' => 'F'], 'y']</code></pre>
+                    
+                                            <div>
+                            <h4>Alias</h4>
+                            <ul>
+                                                                    <li id="extendDeep">extendDeep</li>
+                                                            </ul>
+                        </div>
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#mergeDeep'>mergeDeep</a>, </li>
+                                                                    <li><a href='#assign'>assign</a>, </li>
+                                                                    <li><a href='#concat'>concat</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='evolve'>
+                    <h3>evolve</h3>
+
+                    <pre><code class='language-php'>evolve(array $transformations, ?iterable $record): array</code></pre>
+                    
+                    <div>
+                        <p>Creates a new record by recursively calling transformation functions with <code>$record</code> properties.</p>
+
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$transformations</dt>
+                                    <dd>[string|int =&gt; (mixed $value): mixed]</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>$tomato = ['firstName' => '  Tomato ', 'data' => ['elapsed' => 100, 'remaining' => 1400], 'id' => 123];
+$transformations = [
+    'firstName' => '\trim',
+    'lastName' => '\trim',  // Will not get invoked.
+    'data' => [
+        'elapsed' => add(1), 
+        'remaining' => add(-1)
+    ]
+];
+evolve($transformations)($tomato);
+// ['firstName' => 'Tomato', 'data' =>  ['elapsed' =>  101, 'remaining' =>  1399], 'id' => 123]</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#resolve'>resolve</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='extend'>
+                    <h3>extend</h3>
+
+                    <pre><code class='language-php'>extend(?iterable $source1, ?iterable $source2): array</code></pre>
+                                                                        <pre id="extendAll"><code class='language-php'>extendAll(array $iterables): array</code></pre>
+                                            
+                    <div>
+                        <p>Merges properties, numeric keys are overwritten.</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>assign(
+    ['a', 'c' => 'C'], 
+    ['b', 'd' => 'D']
+); // ['b', 'c' => 'C', 'd' => 'D']</code></pre>
+                    
+                                            <div>
+                            <h4>Aliases</h4>
+                            <ul>
+                                                                    <li id="assign">assign, </li>
+                                                                    <li id="assignAll">assignAll</li>
+                                                            </ul>
+                        </div>
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#merge'>merge</a>, </li>
+                                                                    <li><a href='#concat'>concat</a>, </li>
+                                                                    <li><a href='#assignDeep'>assignDeep</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='has'>
+                    <h3>has</h3>
+
+                    <pre><code class='language-php'>has(string|int $key, ?iterable $record): bool</code></pre>
+                    
+                    <div>
+                        <p>Checks if <code>$record</code> has <code>$key</code></p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>$r = ['a' => 'A];
+has('a', $r); // true</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#hasPath'>hasPath</a>, </li>
+                                                                    <li><a href='#get'>get</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='hasPath'>
+                    <h3>hasPath</h3>
+
+                    <pre><code class='language-php'>hasPath(string|int|array $path, ?iterable $record): bool</code></pre>
+                    
+                    <div>
+                        <p>Checks if <code>$path</code> exists in <code>$record</code></p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>$r = [ 'a' => [ 'b' => 2 ] ];
+hasPath('a', $r); // true
+hasPath('a.b', $r); // true
+hasPath(['a', 'b'], $r); // true</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#path'>path</a>, </li>
+                                                                    <li><a href='#has'>has</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='invert'>
+                    <h3>invert</h3>
+
+                    <pre><code class='language-php'>invert(?iterable $collection): array</code></pre>
+                    
+                    <div>
+                        <p>Replaces keys with values. Duplicate keys are overwritten.</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>invert([ 'a' => 1, 'b' => 2, 'c' => 1 ]); // [1 => 'c', 2 => 'b']</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#invert'>invert</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='matches'>
+                    <h3>matches</h3>
+
+                    <pre><code class='language-php'>matches(array $spec, ?iterable $test): bool</code></pre>
+                    
+                    <div>
+                        <p>Check if the <code>$test</code> satisfies the <code>$spec</code></p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>$pred = matches(['a' => 1, 'b' => 2]);
+$pred(['a' => 1])); // false
+$pred(['a' => 1, 'b' => 2])); // true
+$pred(['a' => 1, 'b' => 2, 'c' => 3])); // true
+$pred(['a' => 1, 'b' => 1]));   // false</code></pre>
+                    
+                                            <div>
+                            <h4>Aliases</h4>
+                            <ul>
+                                                                    <li id="isMatch">isMatch, </li>
+                                                                    <li id="whereEq">whereEq</li>
+                                                            </ul>
+                        </div>
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#where'>where</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='merge'>
+                    <h3>merge</h3>
+
+                    <pre><code class='language-php'>merge(?iterable $source1, ?iterable $source2): array</code></pre>
+                                                                        <pre id="mergeAll"><code class='language-php'>mergeAll(array $iterables): array</code></pre>
+                                            
+                    <div>
+                        <p>Merges properties, numeric keys are appended.</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>merge(['a', 'c' => 'C'], ['b', 'd' => 'D']); // ['a', 'b', 'c' => 'C', 'd' => 'D']</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#assign'>assign</a>, </li>
+                                                                    <li><a href='#concat'>concat</a>, </li>
+                                                                    <li><a href='#mergeDeep'>mergeDeep</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='mergeDeep'>
+                    <h3>mergeDeep</h3>
+
+                    <pre><code class='language-php'>mergeDeep(array $iterables): array</code></pre>
+                    
+                    <div>
+                        <p>Merges properties recursively, numeric keys are appended.</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>$a = ['a' => ['b' => 1, 'c' => 'C'], ['e' => 'E'], 'x'];
+$b = ['a' => ['b' => 2, 'd' => 'D'], ['f' => 'F'], 'y'];
+mergeDeep([$a, $b]);
+// ['a' => ['b' => [1, 2], 'c' => 'C', 'd' => 'D'], ['e' => 'E'], 'x', ['f' => 'F'], 'y'],</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#assignDeep'>assignDeep</a>, </li>
+                                                                    <li><a href='#merge'>merge</a>, </li>
+                                                                    <li><a href='#concat'>concat</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='modifyPath'>
+                    <h3>modifyPath</h3>
+
+                    <pre><code class='language-php'>modifyPath(array|string|int $path, callable $updater, ?iterable $record)</code></pre>
+                    
+                    <div>
+                        <p>Creates new record by applying an <code>$updater</code> function to the value at the given <code>$path</code>.</p>
+
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$updater</dt>
+                                    <dd>(mixed $value): mixed</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>$a = [ 'a' => [ [ 'b' => [ 'c' => 3 ] ] ] ];
+modifyPath('a.0.b.c', fn ($n) => $n*$n, $a); // [ 'a' => [ [ 'b' => [ 'c' => 9 ] ] ] ]</code></pre>
+                    
+                                            <div>
+                            <h4>Alias</h4>
+                            <ul>
+                                                                    <li id="update">update</li>
+                                                            </ul>
+                        </div>
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#setPath'>setPath</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='omit'>
+                    <h3>omit</h3>
+
+                    <pre><code class='language-php'>omit(array $keys, ?iterable $collection): iterable</code></pre>
+                    
+                    <div>
+                        <p>The opposite of <code>pick</code>. Returns record without <code>$keys</code>.</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>omit(['a', 'd'], ['a' => 1, 'b' => 2, 'c' => 3, 'd' => 4]);
+// ['b' => 2, 'c' => 3]</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#without'>without</a>, </li>
+                                                                    <li><a href='#omitBy'>omitBy</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='omitBy'>
+                    <h3>omitBy</h3>
+
+                    <pre><code class='language-php'>omitBy(callable $predicate, ?iterable $record): iterable</code></pre>
+                    
+                    <div>
+                        <p>The opposite of <code>pickBy</code>. Returns properties of <code>$record</code> that <code>$predicate</code> returns falsey for.</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>omitBy(unary('\is_int'), ['a' => 1, 'b' => '2', 'c' => 3]); // ['b' => '2']</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#without'>without</a>, </li>
+                                                                    <li><a href='#omit'>omit</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='path'>
+                    <h3>path</h3>
+
+                    <pre><code class='language-php'>path(array|string $path, ?iterable $collection)</code></pre>
+                                                                        <pre id="pathOr"><code class='language-php'>pathOr($default, array|string $path, ?iterable $collection)</code></pre>
+                                            
+                    <div>
+                        <p>Retrieve the value at a given path.</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>$rec = [ 'a' => [[ 'b' => [ 'c' => 3 ] ]] ];
+path(['a', '0', 'b', 'c'], $rec); // 3
+path('a[0].b.c', $rec); // 3
+pathOr('default', 'a.b.c', $rec); // 'default'</code></pre>
+                    
+                                            <div>
+                            <h4>Alias</h4>
+                            <ul>
+                                                                    <li id="get">get</li>
+                                                            </ul>
+                        </div>
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#prop'>prop</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='pick'>
+                    <h3>pick</h3>
+
+                    <pre><code class='language-php'>pick(array $keys, ?iterable $collection): iterable</code></pre>
+                    
+                    <div>
+                        <p>Returns record containing only <code>$keys</code></p>
+
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$keys</dt>
+                                    <dd>[string|int]</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>pick(['a', 'd'], ['a' => 1, 'b' => 2, 'c' => 3, 'd' => 4]); 
+// ['a' => 1, 'd' => 4]</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#pickBy'>pickBy</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='pickBy'>
+                    <h3>pickBy</h3>
+
+                    <pre><code class='language-php'>pickBy(callable $predicate, ?iterable $record): iterable</code></pre>
+                    
+                    <div>
+                        <p>Returns record containing only keys <code>$predicate</code> returns truthy for.</p>
+
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$predicate</dt>
+                                    <dd>($value, $key): bool</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>$isUpperCase = fn ($val, $key) => \strtoupper($key) == $key;
+pickBy($isUpperCase, ['a' => 1, 'b' => 2, 'A' => 3, 'B' => 4]);
+// ['A' => 3, 'B' => 4]</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#pick'>pick</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='pluck'>
+                    <h3>pluck</h3>
+
+                    <pre><code class='language-php'>pluck(string|int $key, ?iterable $collection)</code></pre>
+                    
+                    <div>
+                        <p>Returns a new array by plucking the same named property off all records in the array supplied.</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>pluck(0, [[1, 2], [3, 4]]); // [1, 3]
+pluck('val', ['a' => ['val' => 3], 'b' => ['val' => 5]]); // ['a' => 3, 'b' => 5]</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#map'>map</a>, </li>
+                                                                    <li><a href='#props'>props</a>, </li>
+                                                                    <li><a href='#project'>project</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='prop'>
+                    <h3>prop</h3>
+
+                    <pre><code class='language-php'>prop(string|int $key, ?iterable $record)</code></pre>
+                                                                        <pre id="propOr"><code class='language-php'>propOr($default, string|int $key, ?iterable $record)</code></pre>
+                                            
+                    <div>
+                        <p>Return the specified property.</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>propOr('NO', 'b', ['a' => 'A']); // 'NO'</code></pre>
+                    
+                                            <div>
+                            <h4>Alias</h4>
+                            <ul>
+                                                                    <li id="property">property</li>
+                                                            </ul>
+                        </div>
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#path'>path</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='propEq'>
+                    <h3>propEq</h3>
+
+                    <pre><code class='language-php'>propEq(string|int $key, $value, ?iterable $record): bool</code></pre>
+                    
+                    <div>
+                        <p>Returns $record[$key] == $value</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>propEq('a', 'A', ['a' => 'A']); // true</code></pre>
+                    
+                                            <div>
+                            <h4>Alias</h4>
+                            <ul>
+                                                                    <li id="matchesProperty">matchesProperty</li>
+                                                            </ul>
+                        </div>
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#whereEq'>whereEq</a>, </li>
+                                                                    <li><a href='#propSatisfies'>propSatisfies</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='props'>
+                    <h3>props</h3>
+
+                    <pre><code class='language-php'>props(array $paths, ?iterable $collection): array</code></pre>
+                    
+                    <div>
+                        <p>Keys in, values out. Order is preserved.</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>$a = [ 'a' => [ [ 'b' => [ 'c' => 3 ] ], 4] ];
+props(['a.0.b.c', 'a.0.z', 'a.1'], $a); // [3, null, 4]</code></pre>
+                    
+                                            <div>
+                            <h4>Alias</h4>
+                            <ul>
+                                                                    <li id="at">at</li>
+                                                            </ul>
+                        </div>
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#get'>get</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='setPath'>
+                    <h3>setPath</h3>
+
+                    <pre><code class='language-php'>setPath($path, $value, ?iterable $record)</code></pre>
+                    
+                    <div>
+                        <p>Return copy <code>$record</code> with <code>$path</code> set  with <code>$value</code></p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>$a   = [ 'a' => [ [ 'b' => [ 'c' => 3 ] ] ] ];
+setPath('a.0.b.c', 113, $a);
+// [ 'a' => [ [ 'b' => [ 'c' => 113 ] ] ] ]</code></pre>
+                    
+                                            <div>
+                            <h4>Alias</h4>
+                            <ul>
+                                                                    <li id="assocPath">assocPath</li>
+                                                            </ul>
+                        </div>
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#set'>set</a>, </li>
+                                                                    <li><a href='#extend'>extend</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='where'>
+                    <h3>where</h3>
+
+                    <pre><code class='language-php'>where(array $spec, ?iterable $record): bool</code></pre>
+                    
+                    <div>
+                        <p>Checks if <code>$record</code> satisfies the spec by invoking the <code>$spec</code> properties with the corresponding properties of <code>$record</code>.</p>
+
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$spec</dt>
+                                    <dd>[string =&gt; ($value): bool]</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>$a = ['a' => 'A', 'b' => 'B'];
+where(['a' => fn ($v) => $v == 'A'], $a); // true</code></pre>
+                    
+                                            <div>
+                            <h4>Alias</h4>
+                            <ul>
+                                                                    <li id="conforms">conforms</li>
+                                                            </ul>
+                        </div>
+                    
+                                    </article>
+
+                   
+
+        </section>
+
+            <section id='String'>
+
+            <h2>String</h2>
+
+            
+                <article id='escape'>
+                    <h3>escape</h3>
+
+                    <pre><code class='language-php'>escape(string $s): string</code></pre>
+                    
+                    <div>
+                        <p>Converts the characters &quot;&amp;&quot;, &quot;&lt;&quot;, &quot;&gt;&quot;, '&quot;', and &quot;'&quot; to their corresponding HTML entities.</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>escape('fred, barney, & pebbles'); // 'fred, barney, &amp; pebbles'</code></pre>
+                    
+                    
+                                    </article>
+
+            
+                <article id='escapeRegExp'>
+                    <h3>escapeRegExp</h3>
+
+                    <pre><code class='language-php'>escapeRegExp(string $regexp): string</code></pre>
+                    
+                    <div>
+                        <p>Escapes regular expression</p>
+
+                    </div>
+
+                    
+                    
+                    
+                    
+                                    </article>
+
+            
+                <article id='split'>
+                    <h3>split</h3>
+
+                    <pre><code class='language-php'>split(string $separator, string $s): array</code></pre>
+                    
+                    <div>
+                        <p>Splits string by <code>$separator</code>.</p>
+
+                    </div>
+
+                    
+                    
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#join'>join</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='startsWith'>
+                    <h3>startsWith</h3>
+
+                    <pre><code class='language-php'>startsWith(string $target, string $s): bool</code></pre>
+                    
+                    <div>
+                        <p>If string starts with <code>$target</code>.</p>
+
+                    </div>
+
+                    
+                    
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#endsWith'>endsWith</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='toLower'>
+                    <h3>toLower</h3>
+
+                    <pre><code class='language-php'>toLower(string $s): string</code></pre>
+                    
+                    <div>
+                        <p>Converts string to lower case</p>
+
+                    </div>
+
+                    
+                    
+                    
+                    
+                                    </article>
+
+            
+                <article id='toUpper'>
+                    <h3>toUpper</h3>
+
+                    <pre><code class='language-php'>toUpper(string $s): string</code></pre>
+                    
+                    <div>
+                        <p>Converts string to upper case</p>
+
+                    </div>
+
+                    
+                    
+                    
+                    
+                                    </article>
+
+            
+                <article id='words'>
+                    <h3>words</h3>
+
+                    <pre><code class='language-php'>words(string $pattern, string $string): array</code></pre>
+                    
+                    <div>
+                        <p>Splits string into an array of its words.</p>
+
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$pattern</dt>
+                                    <dd>DON&#039;T use /pattern/ delimiters</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>words('\w+', 'aa bb cc'); // ['aa', 'bb', 'cc']</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#split'>split</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+                   
+
+        </section>
+
+            <section id='Util'>
+
+            <h2>Util</h2>
+
+            
+                <article id='collect'>
+                    <h3>collect</h3>
+
+                    <pre><code class='language-php'>collect(?iterable $iterable): array</code></pre>
+                    
+                    <div>
+                        <p>Collects any iterable into <code>array</code></p>
+
+                    </div>
+
+                    
+                    
+                    
+                    
+                                    </article>
+
+            
+                <article id='eq'>
+                    <h3>eq</h3>
+
+                    <pre><code class='language-php'>eq($value, $other): bool</code></pre>
+                    
+                    <div>
+                        <p>Returns <code>$value</code> == <code>$other</code></p>
+
+                    </div>
+
+                    
+                    
+                    
+                                            <div>
+                            <h4>Alias</h4>
+                            <ul>
+                                                                    <li id="identical">identical</li>
+                                                            </ul>
+                        </div>
+                    
+                                    </article>
+
+            
+                <article id='identity'>
+                    <h3>identity</h3>
+
+                    <pre><code class='language-php'>identity($value)</code></pre>
+                    
+                    <div>
+                        <p>Returns the first argument it receives.</p>
+
+                    </div>
+
+                    
+                    
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#always'>always</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='now'>
+                    <h3>now</h3>
+
+                    <pre><code class='language-php'>now(): int</code></pre>
+                    
+                    <div>
+                        <p>Returns the timestamp of the number of seconds</p>
+
+                    </div>
+
+                    
+                    
+                    
+                    
+                                    </article>
+
+            
+                <article id='size'>
+                    <h3>size</h3>
+
+                    <pre><code class='language-php'>size(array|Countable|object|string|callable $value): int</code></pre>
+                    
+                    <div>
+                        <p>Returns size of a countable, number of parameters of a function, lenght of string and number of properties of an object</p>
+
+                    </div>
+
+                    
+                    
+                    
+                                            <div>
+                            <h4>Alias</h4>
+                            <ul>
+                                                                    <li id="length">length</li>
+                                                            </ul>
+                        </div>
+                    
+                                    </article>
+
+            
+                <article id='T'>
+                    <h3>T</h3>
+
+                    <pre><code class='language-php'>T(...$args): bool</code></pre>
+                    
+                    <div>
+                        <p>Always returns <code>true</code></p>
+
+                    </div>
+
+                    
+                    
+                    
+                                            <div>
+                            <h4>Alias</h4>
+                            <ul>
+                                                                    <li id="stubTrue">stubTrue</li>
+                                                            </ul>
+                        </div>
+                    
+                                    </article>
+
+                   
+
+        </section>
+
+    
+        </main>
+    </div>
+            <script src='./assets/app.f0760b6017eade8f837c.js' defer></script>
+    </body>
+</html>
