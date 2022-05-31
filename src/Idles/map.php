@@ -5,7 +5,7 @@ namespace Idles;
 function _map(?iterable $collection, ?callable $iteratee = null): iterable
 {
     $collection ??= [];
-    $iteratee ??= fn($v) => $v;
+    $iteratee ??= fn ($v) => $v;
     
     if (\is_array($collection)) {
         $res = [];

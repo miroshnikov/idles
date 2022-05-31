@@ -2,7 +2,7 @@
 
 namespace Idles;
 
-function mergeAll(...$args): array
+function mergeAll(...$args)
 {
     return curryN(1, 
         fn (array $records) => \array_merge(...\array_map(fn ($record) => collect($record), $records))
@@ -16,9 +16,24 @@ function merge(...$args)
     )(...$args);
 }
 
-function mergeDeep(...$args): array
+function mergeDeep(...$args)
 {
     return curryN(1, 
         fn (array $records) => \array_merge_recursive(...\array_map(fn ($record) => collect($record), $records))
     )(...$args);
 }
+
+function mergeRight(...$args)
+{
+    return curryN(2, 
+        fn (?iterable $left, ?iterable $right) => merge($left, $right)
+    )(...$args);
+}
+
+function mergeLeft(...$args)
+{
+    return curryN(2, 
+        fn (?iterable $left, ?iterable $right) => merge($right, $left)
+    )(...$args);
+}
+

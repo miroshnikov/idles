@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0" class="viewport">
-            <link rel='stylesheet' type='text/css' href='./assets/styles.0ecafa1ba2876131c79d.css'>
+            <link rel='stylesheet' type='text/css' href='./assets/styles.c40ab283e564d9c8013c.css'>
         <title>PHP Functional Library</title>
     <meta name="description" content="A PHP functional utility library, port of JavaScript Lodash and Ramda with lazy (idle) evaluation">
     <link rel="icon" href="./assets/logo.png">
@@ -162,7 +162,7 @@ $array = collect($iterator);</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>concat(['a','b'], 'C');  // ['a', 'b', 'C']</code></pre>
+                        <pre><code class='language-php example'>concat([&#039;a&#039;,&#039;b&#039;], &#039;C&#039;);  // [&#039;a&#039;, &#039;b&#039;, &#039;C&#039;]</code></pre>
                     
                     
                                             <div>
@@ -260,8 +260,8 @@ $array = collect($iterator);</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>findIndex(['b', 'a', 'b', 'c'], fn ($v) => $v == 'b', 1); // 2
-findIndexFrom(fn ($v) => $v == 'b', -2, ['a','b','a','b','c']) // 3 </code></pre>
+                        <pre><code class='language-php example'>findIndex([&#039;b&#039;, &#039;a&#039;, &#039;b&#039;, &#039;c&#039;], fn ($v) =&gt; $v == &#039;b&#039;, 1); // 2
+findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039;,&#039;a&#039;,&#039;b&#039;,&#039;c&#039;]) // 3 </code></pre>
                     
                     
                                             <div>
@@ -299,7 +299,7 @@ findIndexFrom(fn ($v) => $v == 'b', -2, ['a','b','a','b','c']) // 3 </code></pre
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>findLastIndexFrom(fn ($v) => $v == 'b', 2, ['a', 'b', 'a', 'b']); // 1</code></pre>
+                        <pre><code class='language-php example'>findLastIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, 2, [&#039;a&#039;, &#039;b&#039;, &#039;a&#039;, &#039;b&#039;]); // 1</code></pre>
                     
                     
                                             <div>
@@ -329,7 +329,7 @@ findIndexFrom(fn ($v) => $v == 'b', -2, ['a','b','a','b','c']) // 3 </code></pre
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>flatten(['a' => 'A', ['b' => 'B'], 'c' => 'C']);  // ['A', 'B', 'C']</code></pre>
+                        <pre><code class='language-php example'>flatten([&#039;a&#039; =&gt; &#039;A&#039;, [&#039;b&#039; =&gt; &#039;B&#039;], &#039;c&#039; =&gt; &#039;C&#039;]);  // [&#039;A&#039;, &#039;B&#039;, &#039;C&#039;]</code></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -467,6 +467,104 @@ findIndexFrom(fn ($v) => $v == 'b', -2, ['a','b','a','b','c']) // 3 </code></pre
                                     </article>
 
             
+                <article id='intersection'>
+                    <h3>intersection</h3>
+
+                    <pre><code class='language-php'>intersection(?iterable $record1, ?iterable $record2): array</code></pre>
+                    
+                    <div>
+                        <p>Returns unique values that are included in both records</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>intersection([&#039;a&#039;, &#039;a&#039;, &#039;b&#039;], [&#039;c&#039;, &#039;a&#039;, &#039;a&#039;]); // [&#039;a&#039;]</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#intersectionBy'>intersectionBy</a>, </li>
+                                                                    <li><a href='#intersectionWith'>intersectionWith</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='intersectionBy'>
+                    <h3>intersectionBy</h3>
+
+                    <pre><code class='language-php'>intersectionBy(callable $iteratee, ?iterable $record1, ?iterable $record2): array</code></pre>
+                    
+                    <div>
+                        <p>Like <code>intersection</code> but invokes <code>$iteratee</code> for each element before comparison.</p>
+
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$iteratee</dt>
+                                    <dd>($value): mixed</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>intersectionBy(&#039;\floor&#039;, [2.1, 1.2], [2.3, 3.4]); // [2.1]</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#intersectionWith'>intersectionWith</a>, </li>
+                                                                    <li><a href='#intersection'>intersection</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='intersectionWith'>
+                    <h3>intersectionWith</h3>
+
+                    <pre><code class='language-php'>intersectionWith(callable $comparator, ?iterable $record1, ?iterable $record2): array</code></pre>
+                    
+                    <div>
+                        <p>Like <code>intersection</code> but invokes <code>$comparator</code> to compare elements.</p>
+
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$comparator</dt>
+                                    <dd>($a, $b): int</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>intersectionWith(fn ($a, $b) =&gt; $a &lt;=&gt; $b, [&#039;a&#039;, &#039;a&#039;, &#039;b&#039;], [&#039;c&#039;, &#039;a&#039;, &#039;a&#039;]); // [&#039;a&#039;]</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#intersectionBy'>intersectionBy</a>, </li>
+                                                                    <li><a href='#intersection'>intersection</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
                 <article id='join'>
                     <h3>join</h3>
 
@@ -482,7 +580,7 @@ findIndexFrom(fn ($v) => $v == 'b', -2, ['a','b','a','b','c']) // 3 </code></pre
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>join('~', ['a', 'b', 'c']); // 'a~b~c'</code></pre>
+                        <pre><code class='language-php example'>join(&#039;~&#039;, [&#039;a&#039;, &#039;b&#039;, &#039;c&#039;]); // &#039;a~b~c&#039;</code></pre>
                     
                     
                                             <div>
@@ -563,10 +661,10 @@ findIndexFrom(fn ($v) => $v == 'b', -2, ['a','b','a','b','c']) // 3 </code></pre
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$a = ['a','b','c','d','e'];
-slice(1, 3, $a2); // ['b','c']
-slice(1, -2, $a2); // ['b','c']
-slice(-4, -2, $a2); // ['b','c']</code></pre>
+                        <pre><code class='language-php example'>$a = [&#039;a&#039;,&#039;b&#039;,&#039;c&#039;,&#039;d&#039;,&#039;e&#039;];
+slice(1, 3, $a2); // [&#039;b&#039;,&#039;c&#039;]
+slice(1, -2, $a2); // [&#039;b&#039;,&#039;c&#039;]
+slice(-4, -2, $a2); // [&#039;b&#039;,&#039;c&#039;]</code></pre>
                     
                     
                                             <div>
@@ -682,9 +780,9 @@ slice(-4, -2, $a2); // ['b','c']</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$a =  ['a', 'b' ];
-$aa = ['AA','BB'];
-zip($a, $aa);  // [ ['a', 'AA'], ['b', 'BB'] ]</code></pre>
+                        <pre><code class='language-php example'>$a =  [&#039;a&#039;, &#039;b&#039; ];
+$aa = [&#039;AA&#039;,&#039;BB&#039;];
+zip($a, $aa);  // [ [&#039;a&#039;, &#039;AA&#039;], [&#039;b&#039;, &#039;BB&#039;] ]</code></pre>
                     
                     
                                             <div>
@@ -711,9 +809,9 @@ zip($a, $aa);  // [ ['a', 'AA'], ['b', 'BB'] ]</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$a =  ['a', 'b' ];
-$aa = ['AA','BB'];
-zipWith(fn ($a,$b) => $a.'='.$b, $a, $aa);  // ["a=AA", "b=BB"]</code></pre>
+                        <pre><code class='language-php example'>$a =  [&#039;a&#039;, &#039;b&#039; ];
+$aa = [&#039;AA&#039;,&#039;BB&#039;];
+zipWith(fn ($a,$b) =&gt; $a.&#039;=&#039;.$b, $a, $aa);  // [&quot;a=AA&quot;, &quot;b=BB&quot;]</code></pre>
                     
                     
                                             <div>
@@ -755,13 +853,13 @@ zipWith(fn ($a,$b) => $a.'='.$b, $a, $aa);  // ["a=AA", "b=BB"]</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>every('\is_numeric')([1,2,3]); // true
+                        <pre><code class='language-php example'>every(&#039;\is_numeric&#039;)([1,2,3]); // true
 
 $users = [
-    [ 'user' => 'barney', 'age' => 36, 'active' => true ],
-    [ 'user' => 'fred',   'age' => 40, 'active' => true ]
+    [ &#039;user&#039; =&gt; &#039;barney&#039;, &#039;age&#039; =&gt; 36, &#039;active&#039; =&gt; true ],
+    [ &#039;user&#039; =&gt; &#039;fred&#039;,   &#039;age&#039; =&gt; 40, &#039;active&#039; =&gt; true ]
 ];
-all(property('active'))($users); // true</code></pre>
+all(property(&#039;active&#039;))($users); // true</code></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -796,10 +894,10 @@ all(property('active'))($users); // true</code></pre>
                             <h4>Example</h4>
                         </div>
                         <pre><code class='language-php example'>$users = [
-    [ 'user' => 'barney', 'active' => false ],
-    [ 'user' => 'fred',   'active' => true ]
+    [ &#039;user&#039; =&gt; &#039;barney&#039;, &#039;active&#039; =&gt; false ],
+    [ &#039;user&#039; =&gt; &#039;fred&#039;,   &#039;active&#039; =&gt; true ]
 ];
-any(fn ($r) => $r['active'] == true, $users); // true</code></pre>
+any(fn ($r) =&gt; $r[&#039;active&#039;] == true, $users); // true</code></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -839,7 +937,7 @@ any(fn ($r) => $r['active'] == true, $users); // true</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>each(fn ($v) => print_r($v), [1,2,3]);</code></pre>
+                        <pre><code class='language-php example'>each(fn ($v) =&gt; print_r($v), [1,2,3]);</code></pre>
                     
                     
                                             <div>
@@ -873,7 +971,7 @@ any(fn ($r) => $r['active'] == true, $users); // true</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>filter('is_numeric', ['a', 'b', 13]); // [13]</code></pre>
+                        <pre><code class='language-php example'>filter(&#039;is_numeric&#039;, [&#039;a&#039;, &#039;b&#039;, 13]); // [13]</code></pre>
                     
                     
                                             <div>
@@ -939,7 +1037,7 @@ any(fn ($r) => $r['active'] == true, $users); // true</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>flatMap(fn ($n) => [$n, $n], [1,2]); // [1, 1, 2, 2]</code></pre>
+                        <pre><code class='language-php example'>flatMap(fn ($n) =&gt; [$n, $n], [1,2]); // [1, 1, 2, 2]</code></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -982,7 +1080,7 @@ any(fn ($r) => $r['active'] == true, $users); // true</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>flatMapDeep(fn ($n) => [[[$n, $n]]], [1, 2]); // [1, 1, 2, 2]</code></pre>
+                        <pre><code class='language-php example'>flatMapDeep(fn ($n) =&gt; [[[$n, $n]]], [1, 2]); // [1, 1, 2, 2]</code></pre>
                     
                     
                                             <div>
@@ -1019,7 +1117,7 @@ any(fn ($r) => $r['active'] == true, $users); // true</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>flatMapDepth(fn ($n) => [[[$n, $n]]], 2, [1, 2]); // [[1, 1], [2, 2]]</code></pre>
+                        <pre><code class='language-php example'>flatMapDepth(fn ($n) =&gt; [[[$n, $n]]], 2, [1, 2]); // [[1, 1], [2, 2]]</code></pre>
                     
                     
                                             <div>
@@ -1056,7 +1154,7 @@ any(fn ($r) => $r['active'] == true, $users); // true</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>groupBy('strlen')(['one', 'two', 'three']); // [ '3' => ['one', 'two'], '5' => ['three'] ]</code></pre>
+                        <pre><code class='language-php example'>groupBy(&#039;strlen&#039;)([&#039;one&#039;, &#039;two&#039;, &#039;three&#039;]); // [ &#039;3&#039; =&gt; [&#039;one&#039;, &#039;two&#039;], &#039;5&#039; =&gt; [&#039;three&#039;] ]</code></pre>
                     
                     
                                             <div>
@@ -1084,7 +1182,7 @@ any(fn ($r) => $r['active'] == true, $users); // true</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>includes(1, ['a' => 1, 'b' => 2]); // true</code></pre>
+                        <pre><code class='language-php example'>includes(1, [&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2]); // true</code></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -1125,8 +1223,8 @@ any(fn ($r) => $r['active'] == true, $users); // true</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$a = [ [ 'code' => 97 ],  [ 'code' => 100 ] ];
-indexBy(fn ($r) => \chr($r['code']), $aa); // ['a' => [ 'code' => 97 ], 'd' => [ 'code' => 100 ]],</code></pre>
+                        <pre><code class='language-php example'>$a = [ [ &#039;code&#039; =&gt; 97 ],  [ &#039;code&#039; =&gt; 100 ] ];
+indexBy(fn ($r) =&gt; \chr($r[&#039;code&#039;]), $aa); // [&#039;a&#039; =&gt; [ &#039;code&#039; =&gt; 97 ], &#039;d&#039; =&gt; [ &#039;code&#039; =&gt; 100 ]],</code></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -1166,7 +1264,7 @@ indexBy(fn ($r) => \chr($r['code']), $aa); // ['a' => [ 'code' => 97 ], 'd' => [
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>map(fn ($n) => $n * $n, [4, 8]); // [16, 64]</code></pre>
+                        <pre><code class='language-php example'>map(fn ($n) =&gt; $n * $n, [4, 8]); // [16, 64]</code></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -1209,18 +1307,18 @@ indexBy(fn ($r) => \chr($r['code']), $aa); // ['a' => [ 'code' => 97 ], 'd' => [
                             <h4>Example</h4>
                         </div>
                         <pre><code class='language-php example'>$users = [
-    [ 'user' => 'fred',   'age' => 48 ],
-    [ 'user' => 'barney', 'age' => 34 ],
-    [ 'user' => 'fred',   'age' => 40 ],
-    [ 'user' => 'barney', 'age' => 36 ]
+    [ &#039;user&#039; =&gt; &#039;fred&#039;,   &#039;age&#039; =&gt; 48 ],
+    [ &#039;user&#039; =&gt; &#039;barney&#039;, &#039;age&#039; =&gt; 34 ],
+    [ &#039;user&#039; =&gt; &#039;fred&#039;,   &#039;age&#039; =&gt; 40 ],
+    [ &#039;user&#039; =&gt; &#039;barney&#039;, &#039;age&#039; =&gt; 36 ]
 ];
-orderBy([property('user'), property('age')], ['asc', 'desc'], $users);
+orderBy([property(&#039;user&#039;), property(&#039;age&#039;)], [&#039;asc&#039;, &#039;desc&#039;], $users);
 /*
 [
-    [ 'user' => 'barney', 'age' => 36 ],
-    [ 'user' => 'barney', 'age' => 34 ],
-    [ 'user' => 'fred',   'age' => 48 ],
-    [ 'user' => 'fred',   'age' => 40 ]
+    [ &#039;user&#039; =&gt; &#039;barney&#039;, &#039;age&#039; =&gt; 36 ],
+    [ &#039;user&#039; =&gt; &#039;barney&#039;, &#039;age&#039; =&gt; 34 ],
+    [ &#039;user&#039; =&gt; &#039;fred&#039;,   &#039;age&#039; =&gt; 48 ],
+    [ &#039;user&#039; =&gt; &#039;fred&#039;,   &#039;age&#039; =&gt; 40 ]
 ]
 */</code></pre>
                     
@@ -1257,10 +1355,10 @@ orderBy([property('user'), property('age')], ['asc', 'desc'], $users);
                             <h4>Example</h4>
                         </div>
                         <pre><code class='language-php example'>partition(
-    fn ($v) => stripos($v, 'A') !== false, 
-    ['a' => 'AA', 'b' => 'BB', 'c' => 'AAA']
+    fn ($v) =&gt; stripos($v, &#039;A&#039;) !== false, 
+    [&#039;a&#039; =&gt; &#039;AA&#039;, &#039;b&#039; =&gt; &#039;BB&#039;, &#039;c&#039; =&gt; &#039;AAA&#039;]
 ); 
-// [['a' => 'AA', 'c' => 'AAA'], ['b' => 'BB']]</code></pre>
+// [[&#039;a&#039; =&gt; &#039;AA&#039;, &#039;c&#039; =&gt; &#039;AAA&#039;], [&#039;b&#039; =&gt; &#039;BB&#039;]]</code></pre>
                     
                     
                                             <div>
@@ -1330,16 +1428,16 @@ orderBy([property('user'), property('age')], ['asc', 'desc'], $users);
                             <h4>Example</h4>
                         </div>
                         <pre><code class='language-php example'>$users = [
-    [ 'name' => 'Steve', 'surname' => 'Jobs'  ],
-    [ 'name' => 'Bill',  'surname' => 'Gates' ]
+    [ &#039;name&#039; =&gt; &#039;Steve&#039;, &#039;surname&#039; =&gt; &#039;Jobs&#039;  ],
+    [ &#039;name&#039; =&gt; &#039;Bill&#039;,  &#039;surname&#039; =&gt; &#039;Gates&#039; ]
 ];                
 resolve([
-    'initials' => fn ($r) => $r['name'][0].$r['surname'][0]
+    &#039;initials&#039; =&gt; fn ($r) =&gt; $r[&#039;name&#039;][0].$r[&#039;surname&#039;][0]
 ]); 
 /*
 [
-    [ 'name' => 'Steve', 'surname' => 'Jobs',  'initials' => 'SJ' ],
-    [ 'name' => 'Bill',  'surname' => 'Gates', 'initials' => 'BG' ]
+    [ &#039;name&#039; =&gt; &#039;Steve&#039;, &#039;surname&#039; =&gt; &#039;Jobs&#039;,  &#039;initials&#039; =&gt; &#039;SJ&#039; ],
+    [ &#039;name&#039; =&gt; &#039;Bill&#039;,  &#039;surname&#039; =&gt; &#039;Gates&#039;, &#039;initials&#039; =&gt; &#039;BG&#039; ]
 ]
 */</code></pre>
                     
@@ -1376,18 +1474,18 @@ resolve([
                             <h4>Example</h4>
                         </div>
                         <pre><code class='language-php example'>$users = [
-    [ 'user' => 'fred',   'age' => 48 ],
-    [ 'user' => 'barney', 'age' => 36 ],
-    [ 'user' => 'fred',   'age' => 40 ],
-    [ 'user' => 'barney', 'age' => 34 ]
+    [ &#039;user&#039; =&gt; &#039;fred&#039;,   &#039;age&#039; =&gt; 48 ],
+    [ &#039;user&#039; =&gt; &#039;barney&#039;, &#039;age&#039; =&gt; 36 ],
+    [ &#039;user&#039; =&gt; &#039;fred&#039;,   &#039;age&#039; =&gt; 40 ],
+    [ &#039;user&#039; =&gt; &#039;barney&#039;, &#039;age&#039; =&gt; 34 ]
 ];
-sortBy([property('user'), property('age')], $users);
+sortBy([property(&#039;user&#039;), property(&#039;age&#039;)], $users);
 /*
 [
-    [ 'user' => 'barney', 'age' => 34 ],
-    [ 'user' => 'barney', 'age' => 36 ],
-    [ 'user' => 'fred',   'age' => 40 ],
-    [ 'user' => 'fred',   'age' => 48 ]
+    [ &#039;user&#039; =&gt; &#039;barney&#039;, &#039;age&#039; =&gt; 34 ],
+    [ &#039;user&#039; =&gt; &#039;barney&#039;, &#039;age&#039; =&gt; 36 ],
+    [ &#039;user&#039; =&gt; &#039;fred&#039;,   &#039;age&#039; =&gt; 40 ],
+    [ &#039;user&#039; =&gt; &#039;fred&#039;,   &#039;age&#039; =&gt; 48 ]
 ]
 */</code></pre>
                     
@@ -1416,7 +1514,7 @@ sortBy([property('user'), property('age')], $users);
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>values(['a' => 'AA', 'b' => 'BB']); // ['AA', 'BB']</code></pre>
+                        <pre><code class='language-php example'>values([&#039;a&#039; =&gt; &#039;AA&#039;, &#039;b&#039; =&gt; &#039;BB&#039;]); // [&#039;AA&#039;, &#039;BB&#039;]</code></pre>
                     
                     
                                             <div>
@@ -1502,7 +1600,7 @@ $n13(add(100)); // 113</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>map(ary(1, '\intval'), ['6', '8', '10']); // [6, 8, 10]</code></pre>
+                        <pre><code class='language-php example'>map(ary(1, &#039;\intval&#039;), [&#039;6&#039;, &#039;8&#039;, &#039;10&#039;]); // [6, 8, 10]</code></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -1535,8 +1633,8 @@ $n13(add(100)); // 113</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>attempt(fn () => 'A'); // A
-attempt(fn () => throw new \Exception('Error')); // Exception('Error')</code></pre>
+                        <pre><code class='language-php example'>attempt(fn () =&gt; &#039;A&#039;); // A
+attempt(fn () =&gt; throw new \Exception(&#039;Error&#039;)); // Exception(&#039;Error&#039;)</code></pre>
                     
                     
                                             <div>
@@ -1564,7 +1662,7 @@ attempt(fn () => throw new \Exception('Error')); // Exception('Error')</code></p
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>compose('\strtoupper', fn ($s) => 'hello '.$s, '\trim')(' fred '); // 'HELLO FRED'</code></pre>
+                        <pre><code class='language-php example'>compose(&#039;\strtoupper&#039;, fn ($s) =&gt; &#039;hello &#039;.$s, &#039;\trim&#039;)(&#039; fred &#039;); // &#039;HELLO FRED&#039;</code></pre>
                     
                     
                                             <div>
@@ -1594,10 +1692,10 @@ attempt(fn () => throw new \Exception('Error')); // Exception('Error')</code></p
                         </div>
                         <pre><code class='language-php example'>use const \Idles\_;
 
-$abc = fn ($a, $b, $c = 'c') => $a.$b.$c;
-curry($abc)('a')('b')('c'); // 'abc'
-curryN(2, $abc)('a')('b'); // 'abc'
-curry($abc)(_, 'b')(_, 'c')('a'); // 'abc'</code></pre>
+$abc = fn ($a, $b, $c = &#039;c&#039;) =&gt; $a.$b.$c;
+curry($abc)(&#039;a&#039;)(&#039;b&#039;)(&#039;c&#039;); // &#039;abc&#039;
+curryN(2, $abc)(&#039;a&#039;)(&#039;b&#039;); // &#039;abc&#039;
+curry($abc)(_, &#039;b&#039;)(_, &#039;c&#039;)(&#039;a&#039;); // &#039;abc&#039;</code></pre>
                     
                     
                                             <div>
@@ -1628,10 +1726,10 @@ curry($abc)(_, 'b')(_, 'c')('a'); // 'abc'</code></pre>
                         </div>
                         <pre><code class='language-php example'>use const \Idles\_;
 
-$abc = fn ($a, $b, $c = 'c') => $a.$b.$c;
-curryRight($abc)('c')('b')('a'); // 'abc'
-curryRight($abc)('b','c')('a'); // 'abc'
-curryRightN(2, $abc)('b')('a'); // 'abc'</code></pre>
+$abc = fn ($a, $b, $c = &#039;c&#039;) =&gt; $a.$b.$c;
+curryRight($abc)(&#039;c&#039;)(&#039;b&#039;)(&#039;a&#039;); // &#039;abc&#039;
+curryRight($abc)(&#039;b&#039;,&#039;c&#039;)(&#039;a&#039;); // &#039;abc&#039;
+curryRightN(2, $abc)(&#039;b&#039;)(&#039;a&#039;); // &#039;abc&#039;</code></pre>
                     
                     
                                             <div>
@@ -1659,7 +1757,7 @@ curryRightN(2, $abc)('b')('a'); // 'abc'</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$isOdd = fn ($n) => $n % 2;
+                        <pre><code class='language-php example'>$isOdd = fn ($n) =&gt; $n % 2;
 juxt([filter($isOdd), remove($isOdd)])([1,2,3,4,5,6,7,8,9]);
 // [[1,3,5,7,9], [2,4,6,8]]</code></pre>
                     
@@ -1719,7 +1817,7 @@ juxt([filter($isOdd), remove($isOdd)])([1,2,3,4,5,6,7,8,9]);
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$isEven = fn ($n) => $n % 2 == 0;
+                        <pre><code class='language-php example'>$isEven = fn ($n) =&gt; $n % 2 == 0;
 filter(negate($isEven), [1, 2, 3, 4, 5, 6]); // [1, 3, 5]</code></pre>
                     
                                             <div>
@@ -1749,8 +1847,8 @@ filter(negate($isEven), [1, 2, 3, 4, 5, 6]); // [1, 3, 5]</code></pre>
                         </div>
                         <pre><code class='language-php example'>use const \Idles\_;
 
-$abcd = fn ($a, $b, $c, $d) => $a.$b.$c.$d;
-partial($abcd, ['a', _, 'c'])('b', 'd')' // 'abcd'</code></pre>
+$abcd = fn ($a, $b, $c, $d) =&gt; $a.$b.$c.$d;
+partial($abcd, [&#039;a&#039;, _, &#039;c&#039;])(&#039;b&#039;, &#039;d&#039;)&#039; // &#039;abcd&#039;</code></pre>
                     
                     
                                             <div>
@@ -1780,8 +1878,8 @@ partial($abcd, ['a', _, 'c'])('b', 'd')' // 'abcd'</code></pre>
                         </div>
                         <pre><code class='language-php example'>use const \Idles\_;
 
-$abcd = fn ($a, $b, $c, $d) => $a.$b.$c.$d;
-partialRight($abcd, ['b', _, 'd'])('a', 'c')); // 'abcd'</code></pre>
+$abcd = fn ($a, $b, $c, $d) =&gt; $a.$b.$c.$d;
+partialRight($abcd, [&#039;b&#039;, _, &#039;d&#039;])(&#039;a&#039;, &#039;c&#039;)); // &#039;abcd&#039;</code></pre>
                     
                     
                                             <div>
@@ -1810,7 +1908,7 @@ partialRight($abcd, ['b', _, 'd'])('a', 'c')); // 'abcd'</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>pipe('\trim', '\strtoupper')(' hello '); // 'HELLO'</code></pre>
+                        <pre><code class='language-php example'>pipe(&#039;\trim&#039;, &#039;\strtoupper&#039;)(&#039; hello &#039;); // &#039;HELLO&#039;</code></pre>
                     
                     
                                             <div>
@@ -1868,7 +1966,7 @@ partialRight($abcd, ['b', _, 'd'])('a', 'c')); // 'abcd'</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>times(3, fn($i) => "$i"); // ['0', '1', '2']</code></pre>
+                        <pre><code class='language-php example'>times(3, fn($i) =&gt; &quot;$i&quot;); // [&#039;0&#039;, &#039;1&#039;, &#039;2&#039;]</code></pre>
                     
                     
                                     </article>
@@ -1898,11 +1996,11 @@ partialRight($abcd, ['b', _, 'd'])('a', 'c')); // 'abcd'</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>tryCatch(fn ($v) => "[$v]", fn ($err, $value) => [$err, $value])('A'); // '[A]'
+                        <pre><code class='language-php example'>tryCatch(fn ($v) =&gt; &quot;[$v]&quot;, fn ($err, $value) =&gt; [$err, $value])(&#039;A&#039;); // &#039;[A]&#039;
 tryCatch(
-    fn ($v) => throw new \Exception('Error'),
-    fn (\Exception $err, $value) => [$err->getMessage(), $value]
-)('A'); // ['Error', 'A']</code></pre>
+    fn ($v) =&gt; throw new \Exception(&#039;Error&#039;),
+    fn (\Exception $err, $value) =&gt; [$err-&gt;getMessage(), $value]
+)(&#039;A&#039;); // [&#039;Error&#039;, &#039;A&#039;]</code></pre>
                     
                     
                                             <div>
@@ -1961,10 +2059,10 @@ tryCatch(
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$bothStrings = fn (...$args) => all(ary(1, '\is_string'), $args);
-$equal = fn ($a, $b) => $a == $b;
-allPass([$bothStrings, $equal])('a', 'b'); // false
-allPass([$bothStrings, $equal])('a', 'a'); // true
+                        <pre><code class='language-php example'>$bothStrings = fn (...$args) =&gt; all(ary(1, &#039;\is_string&#039;), $args);
+$equal = fn ($a, $b) =&gt; $a == $b;
+allPass([$bothStrings, $equal])(&#039;a&#039;, &#039;b&#039;); // false
+allPass([$bothStrings, $equal])(&#039;a&#039;, &#039;a&#039;); // true
 allPass([$bothStrings, $equal])(1, 1); // false</code></pre>
                     
                                             <div>
@@ -2005,10 +2103,10 @@ allPass([$bothStrings, $equal])(1, 1); // false</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$bothStrings = fn (...$args) => all(ary(1, '\is_string'), $args);
-$equal = fn ($a, $b) => $a == $b;
-anyPass([$bothStrings, $equal])('a', 'b'); // true
-anyPass([$bothStrings, $equal])('1', 2); // false
+                        <pre><code class='language-php example'>$bothStrings = fn (...$args) =&gt; all(ary(1, &#039;\is_string&#039;), $args);
+$equal = fn ($a, $b) =&gt; $a == $b;
+anyPass([$bothStrings, $equal])(&#039;a&#039;, &#039;b&#039;); // true
+anyPass([$bothStrings, $equal])(&#039;1&#039;, 2); // false
 anyPass([$bothStrings, $equal])(1, 1); // true</code></pre>
                     
                                             <div>
@@ -2050,13 +2148,13 @@ anyPass([$bothStrings, $equal])(1, 1); // true</code></pre>
                             <h4>Example</h4>
                         </div>
                         <pre><code class='language-php example'>$fn = cond([
-    [fn ($v) => $v == 0,    fn () => 'water freezes at 0°C'],
-    [fn ($v) => $v == 100,  fn () => 'water boils at 100°C'],
-    [fn () => true,         fn ($temp) => "nothing special happens at $temp °C"]
+    [fn ($v) =&gt; $v == 0,    fn () =&gt; &#039;water freezes at 0°C&#039;],
+    [fn ($v) =&gt; $v == 100,  fn () =&gt; &#039;water boils at 100°C&#039;],
+    [fn () =&gt; true,         fn ($temp) =&gt; &quot;nothing special happens at $temp °C&quot;]
 ]);
-$fn(0);     // 'water freezes at 0°C'
-$fn(50);    // 'nothing special happens at 50 °C'
-$fn(100);   // 'water boils at 100°C'</code></pre>
+$fn(0);     // &#039;water freezes at 0°C&#039;
+$fn(50);    // &#039;nothing special happens at 50 °C&#039;
+$fn(100);   // &#039;water boils at 100°C&#039;</code></pre>
                     
                     
                                     </article>
@@ -2263,8 +2361,8 @@ $fn(100);   // 'water boils at 100°C'</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$ns = [[ 'n'=> 4 ], [ 'n'=> 2 ], [ 'n'=> 8 ], [ 'n'=> 6 ]];
-sumBy(property('n'), $ns); // 20</code></pre>
+                        <pre><code class='language-php example'>$ns = [[ &#039;n&#039;=&gt; 4 ], [ &#039;n&#039;=&gt; 2 ], [ &#039;n&#039;=&gt; 8 ], [ &#039;n&#039;=&gt; 6 ]];
+sumBy(property(&#039;n&#039;), $ns); // 20</code></pre>
                     
                     
                                             <div>
@@ -2299,10 +2397,10 @@ sumBy(property('n'), $ns); // 20</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$a = ['a' => ['b' => '1', 'c' => 'C'], ['e' => 'E'], 'x'];
-$b = ['a' => ['b' => '2', 'd' => 'D'], ['f' => 'F'], 'y'];
+                        <pre><code class='language-php example'>$a = [&#039;a&#039; =&gt; [&#039;b&#039; =&gt; &#039;1&#039;, &#039;c&#039; =&gt; &#039;C&#039;], [&#039;e&#039; =&gt; &#039;E&#039;], &#039;x&#039;];
+$b = [&#039;a&#039; =&gt; [&#039;b&#039; =&gt; &#039;2&#039;, &#039;d&#039; =&gt; &#039;D&#039;], [&#039;f&#039; =&gt; &#039;F&#039;], &#039;y&#039;];
 assignDeep([$a, $b]);
-// ['a' => ['b' => '2', 'c' => 'C', 'd' => 'D'], ['e' => 'E', 'f' => 'F'], 'y']</code></pre>
+// [&#039;a&#039; =&gt; [&#039;b&#039; =&gt; &#039;2&#039;, &#039;c&#039; =&gt; &#039;C&#039;, &#039;d&#039; =&gt; &#039;D&#039;], [&#039;e&#039; =&gt; &#039;E&#039;, &#039;f&#039; =&gt; &#039;F&#039;], &#039;y&#039;]</code></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -2344,17 +2442,17 @@ assignDeep([$a, $b]);
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$tomato = ['firstName' => '  Tomato ', 'data' => ['elapsed' => 100, 'remaining' => 1400], 'id' => 123];
+                        <pre><code class='language-php example'>$tomato = [&#039;firstName&#039; =&gt; &#039;  Tomato &#039;, &#039;data&#039; =&gt; [&#039;elapsed&#039; =&gt; 100, &#039;remaining&#039; =&gt; 1400], &#039;id&#039; =&gt; 123];
 $transformations = [
-    'firstName' => '\trim',
-    'lastName' => '\trim',  // Will not get invoked.
-    'data' => [
-        'elapsed' => add(1), 
-        'remaining' => add(-1)
+    &#039;firstName&#039; =&gt; &#039;\trim&#039;,
+    &#039;lastName&#039; =&gt; &#039;\trim&#039;,  // Will not get invoked.
+    &#039;data&#039; =&gt; [
+        &#039;elapsed&#039; =&gt; add(1), 
+        &#039;remaining&#039; =&gt; add(-1)
     ]
 ];
 evolve($transformations)($tomato);
-// ['firstName' => 'Tomato', 'data' =>  ['elapsed' =>  101, 'remaining' =>  1399], 'id' => 123]</code></pre>
+// [&#039;firstName&#039; =&gt; &#039;Tomato&#039;, &#039;data&#039; =&gt;  [&#039;elapsed&#039; =&gt;  101, &#039;remaining&#039; =&gt;  1399], &#039;id&#039; =&gt; 123]</code></pre>
                     
                     
                                             <div>
@@ -2383,9 +2481,9 @@ evolve($transformations)($tomato);
                             <h4>Example</h4>
                         </div>
                         <pre><code class='language-php example'>assign(
-    ['a', 'c' => 'C'], 
-    ['b', 'd' => 'D']
-); // ['b', 'c' => 'C', 'd' => 'D']</code></pre>
+    [&#039;a&#039;, &#039;c&#039; =&gt; &#039;C&#039;], 
+    [&#039;b&#039;, &#039;d&#039; =&gt; &#039;D&#039;]
+); // [&#039;b&#039;, &#039;c&#039; =&gt; &#039;C&#039;, &#039;d&#039; =&gt; &#039;D&#039;]</code></pre>
                     
                                             <div>
                             <h4>Aliases</h4>
@@ -2421,8 +2519,8 @@ evolve($transformations)($tomato);
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$r = ['a' => 'A];
-has('a', $r); // true</code></pre>
+                        <pre><code class='language-php example'>$r = [&#039;a&#039; =&gt; &#039;A];
+has(&#039;a&#039;, $r); // true</code></pre>
                     
                     
                                             <div>
@@ -2450,10 +2548,10 @@ has('a', $r); // true</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$r = [ 'a' => [ 'b' => 2 ] ];
-hasPath('a', $r); // true
-hasPath('a.b', $r); // true
-hasPath(['a', 'b'], $r); // true</code></pre>
+                        <pre><code class='language-php example'>$r = [ &#039;a&#039; =&gt; [ &#039;b&#039; =&gt; 2 ] ];
+hasPath(&#039;a&#039;, $r); // true
+hasPath(&#039;a.b&#039;, $r); // true
+hasPath([&#039;a&#039;, &#039;b&#039;], $r); // true</code></pre>
                     
                     
                                             <div>
@@ -2481,15 +2579,9 @@ hasPath(['a', 'b'], $r); // true</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>invert([ 'a' => 1, 'b' => 2, 'c' => 1 ]); // [1 => 'c', 2 => 'b']</code></pre>
+                        <pre><code class='language-php example'>invert([ &#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2, &#039;c&#039; =&gt; 1 ]); // [1 =&gt; &#039;c&#039;, 2 =&gt; &#039;b&#039;]</code></pre>
                     
                     
-                                            <div>
-                            <h4>See also</h4>
-                            <ul>
-                                                                    <li><a href='#invert'>invert</a></li>
-                                                            </ul>
-                        </div>
                                     </article>
 
             
@@ -2508,7 +2600,7 @@ hasPath(['a', 'b'], $r); // true</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>keys([ 'a'=> 1, 'b'=> 2, 'c'=> 3 ]); // ['a', 'b', 'c']</code></pre>
+                        <pre><code class='language-php example'>keys([ &#039;a&#039;=&gt; 1, &#039;b&#039;=&gt; 2, &#039;c&#039;=&gt; 3 ]); // [&#039;a&#039;, &#039;b&#039;, &#039;c&#039;]</code></pre>
                     
                     
                                             <div>
@@ -2535,11 +2627,11 @@ hasPath(['a', 'b'], $r); // true</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$pred = matches(['a' => 1, 'b' => 2]);
-$pred(['a' => 1])); // false
-$pred(['a' => 1, 'b' => 2])); // true
-$pred(['a' => 1, 'b' => 2, 'c' => 3])); // true
-$pred(['a' => 1, 'b' => 1]));   // false</code></pre>
+                        <pre><code class='language-php example'>$pred = matches([&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2]);
+$pred([&#039;a&#039; =&gt; 1])); // false
+$pred([&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2])); // true
+$pred([&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2, &#039;c&#039; =&gt; 3])); // true
+$pred([&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 1]));   // false</code></pre>
                     
                                             <div>
                             <h4>Aliases</h4>
@@ -2574,8 +2666,14 @@ $pred(['a' => 1, 'b' => 1]));   // false</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>merge(['a', 'c' => 'C'], ['b', 'd' => 'D']); // ['a', 'b', 'c' => 'C', 'd' => 'D']</code></pre>
+                        <pre><code class='language-php example'>merge([&#039;a&#039;, &#039;c&#039; =&gt; &#039;C&#039;], [&#039;b&#039;, &#039;d&#039; =&gt; &#039;D&#039;]); // [&#039;a&#039;, &#039;b&#039;, &#039;c&#039; =&gt; &#039;C&#039;, &#039;d&#039; =&gt; &#039;D&#039;]</code></pre>
                     
+                                            <div>
+                            <h4>Alias</h4>
+                            <ul>
+                                                                    <li id="mergeRight">mergeRight</li>
+                                                            </ul>
+                        </div>
                     
                                             <div>
                             <h4>See also</h4>
@@ -2603,10 +2701,10 @@ $pred(['a' => 1, 'b' => 1]));   // false</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$a = ['a' => ['b' => 1, 'c' => 'C'], ['e' => 'E'], 'x'];
-$b = ['a' => ['b' => 2, 'd' => 'D'], ['f' => 'F'], 'y'];
+                        <pre><code class='language-php example'>$a = [&#039;a&#039; =&gt; [&#039;b&#039; =&gt; 1, &#039;c&#039; =&gt; &#039;C&#039;], [&#039;e&#039; =&gt; &#039;E&#039;], &#039;x&#039;];
+$b = [&#039;a&#039; =&gt; [&#039;b&#039; =&gt; 2, &#039;d&#039; =&gt; &#039;D&#039;], [&#039;f&#039; =&gt; &#039;F&#039;], &#039;y&#039;];
 mergeDeep([$a, $b]);
-// ['a' => ['b' => [1, 2], 'c' => 'C', 'd' => 'D'], ['e' => 'E'], 'x', ['f' => 'F'], 'y'],</code></pre>
+// [&#039;a&#039; =&gt; [&#039;b&#039; =&gt; [1, 2], &#039;c&#039; =&gt; &#039;C&#039;, &#039;d&#039; =&gt; &#039;D&#039;], [&#039;e&#039; =&gt; &#039;E&#039;], &#039;x&#039;, [&#039;f&#039; =&gt; &#039;F&#039;], &#039;y&#039;],</code></pre>
                     
                     
                                             <div>
@@ -2615,6 +2713,71 @@ mergeDeep([$a, $b]);
                                                                     <li><a href='#assignDeep'>assignDeep</a>, </li>
                                                                     <li><a href='#merge'>merge</a>, </li>
                                                                     <li><a href='#concat'>concat</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='mergeLeft'>
+                    <h3>mergeLeft</h3>
+
+                    <pre><code class='language-php'>mergeLeft(?iterable $left, ?iterable $right): array</code></pre>
+                    
+                    <div>
+                        <p><code>merge($right, $left)</code></p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>$resetToDefault = mergeLeft([&#039;x&#039; =&gt; 0]);
+$resetToDefault([&#039;x&#039; =&gt; 5, &#039;y&#039; =&gt; 2]); // [&#039;x&#039; =&gt; 0, &#039;y&#039; =&gt; 2]</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#merge'>merge</a>, </li>
+                                                                    <li><a href='#mergeWith'>mergeWith</a>, </li>
+                                                                    <li><a href='#mergeDeep'>mergeDeep</a></li>
+                                                            </ul>
+                        </div>
+                                    </article>
+
+            
+                <article id='mergeWith'>
+                    <h3>mergeWith</h3>
+
+                    <pre><code class='language-php'>mergeWith(callable $customizer, ?iterable $left, ?iterable $right): array</code></pre>
+                    
+                    <div>
+                        <p>Like <code>merge</code> but if a key exists in both records, <code>$customizer</code> is called to the values associated with the key</p>
+
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$customizer</dt>
+                                    <dd>(mixed $a, mixed $b): mixed</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>mergeWith(concat(...), [&#039;a&#039; =&gt; [1], &#039;b&#039; =&gt; [2]], [&#039;a&#039; =&gt; [3], &#039;b&#039; =&gt; [4]]); // [&#039;a&#039; =&gt; [1,3], &#039;b&#039; =&gt; [2,4]]</code></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#merge'>merge</a>, </li>
+                                                                    <li><a href='#mergeDeep'>mergeDeep</a></li>
                                                             </ul>
                         </div>
                                     </article>
@@ -2642,8 +2805,8 @@ mergeDeep([$a, $b]);
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$a = [ 'a' => [ [ 'b' => [ 'c' => 3 ] ] ] ];
-modifyPath('a.0.b.c', fn ($n) => $n*$n, $a); // [ 'a' => [ [ 'b' => [ 'c' => 9 ] ] ] ]</code></pre>
+                        <pre><code class='language-php example'>$a = [ &#039;a&#039; =&gt; [ [ &#039;b&#039; =&gt; [ &#039;c&#039; =&gt; 3 ] ] ] ];
+modifyPath(&#039;a.0.b.c&#039;, fn ($n) =&gt; $n*$n, $a); // [ &#039;a&#039; =&gt; [ [ &#039;b&#039; =&gt; [ &#039;c&#039; =&gt; 9 ] ] ] ]</code></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -2676,8 +2839,8 @@ modifyPath('a.0.b.c', fn ($n) => $n*$n, $a); // [ 'a' => [ [ 'b' => [ 'c' => 9 ]
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>omit(['a', 'd'], ['a' => 1, 'b' => 2, 'c' => 3, 'd' => 4]);
-// ['b' => 2, 'c' => 3]</code></pre>
+                        <pre><code class='language-php example'>omit([&#039;a&#039;, &#039;d&#039;], [&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2, &#039;c&#039; =&gt; 3, &#039;d&#039; =&gt; 4]);
+// [&#039;b&#039; =&gt; 2, &#039;c&#039; =&gt; 3]</code></pre>
                     
                     
                                             <div>
@@ -2705,7 +2868,7 @@ modifyPath('a.0.b.c', fn ($n) => $n*$n, $a); // [ 'a' => [ [ 'b' => [ 'c' => 9 ]
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>omitBy(unary('\is_int'), ['a' => 1, 'b' => '2', 'c' => 3]); // ['b' => '2']</code></pre>
+                        <pre><code class='language-php example'>omitBy(unary(&#039;\is_int&#039;), [&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; &#039;2&#039;, &#039;c&#039; =&gt; 3]); // [&#039;b&#039; =&gt; &#039;2&#039;]</code></pre>
                     
                     
                                             <div>
@@ -2734,10 +2897,10 @@ modifyPath('a.0.b.c', fn ($n) => $n*$n, $a); // [ 'a' => [ [ 'b' => [ 'c' => 9 ]
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$rec = [ 'a' => [[ 'b' => [ 'c' => 3 ] ]] ];
-path(['a', '0', 'b', 'c'], $rec); // 3
-path('a[0].b.c', $rec); // 3
-pathOr('default', 'a.b.c', $rec); // 'default'</code></pre>
+                        <pre><code class='language-php example'>$rec = [ &#039;a&#039; =&gt; [[ &#039;b&#039; =&gt; [ &#039;c&#039; =&gt; 3 ] ]] ];
+path([&#039;a&#039;, &#039;0&#039;, &#039;b&#039;, &#039;c&#039;], $rec); // 3
+path(&#039;a[0].b.c&#039;, $rec); // 3
+pathOr(&#039;default&#039;, &#039;a.b.c&#039;, $rec); // &#039;default&#039;</code></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -2777,8 +2940,8 @@ pathOr('default', 'a.b.c', $rec); // 'default'</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>pick(['a', 'd'], ['a' => 1, 'b' => 2, 'c' => 3, 'd' => 4]); 
-// ['a' => 1, 'd' => 4]</code></pre>
+                        <pre><code class='language-php example'>pick([&#039;a&#039;, &#039;d&#039;], [&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2, &#039;c&#039; =&gt; 3, &#039;d&#039; =&gt; 4]); 
+// [&#039;a&#039; =&gt; 1, &#039;d&#039; =&gt; 4]</code></pre>
                     
                     
                                             <div>
@@ -2812,9 +2975,9 @@ pathOr('default', 'a.b.c', $rec); // 'default'</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$isUpperCase = fn ($val, $key) => \strtoupper($key) == $key;
-pickBy($isUpperCase, ['a' => 1, 'b' => 2, 'A' => 3, 'B' => 4]);
-// ['A' => 3, 'B' => 4]</code></pre>
+                        <pre><code class='language-php example'>$isUpperCase = fn ($val, $key) =&gt; \strtoupper($key) == $key;
+pickBy($isUpperCase, [&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2, &#039;A&#039; =&gt; 3, &#039;B&#039; =&gt; 4]);
+// [&#039;A&#039; =&gt; 3, &#039;B&#039; =&gt; 4]</code></pre>
                     
                     
                                             <div>
@@ -2842,7 +3005,7 @@ pickBy($isUpperCase, ['a' => 1, 'b' => 2, 'A' => 3, 'B' => 4]);
                             <h4>Example</h4>
                         </div>
                         <pre><code class='language-php example'>pluck(0, [[1, 2], [3, 4]]); // [1, 3]
-pluck('val', ['a' => ['val' => 3], 'b' => ['val' => 5]]); // ['a' => 3, 'b' => 5]</code></pre>
+pluck(&#039;val&#039;, [&#039;a&#039; =&gt; [&#039;val&#039; =&gt; 3], &#039;b&#039; =&gt; [&#039;val&#039; =&gt; 5]]); // [&#039;a&#039; =&gt; 3, &#039;b&#039; =&gt; 5]</code></pre>
                     
                     
                                             <div>
@@ -2872,7 +3035,7 @@ pluck('val', ['a' => ['val' => 3], 'b' => ['val' => 5]]); // ['a' => 3, 'b' => 5
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>propOr('NO', 'b', ['a' => 'A']); // 'NO'</code></pre>
+                        <pre><code class='language-php example'>propOr(&#039;NO&#039;, &#039;b&#039;, [&#039;a&#039; =&gt; &#039;A&#039;]); // &#039;NO&#039;</code></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -2905,7 +3068,7 @@ pluck('val', ['a' => ['val' => 3], 'b' => ['val' => 5]]); // ['a' => 3, 'b' => 5
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>propEq('a', 'A', ['a' => 'A']); // true</code></pre>
+                        <pre><code class='language-php example'>propEq(&#039;a&#039;, &#039;A&#039;, [&#039;a&#039; =&gt; &#039;A&#039;]); // true</code></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -2939,8 +3102,8 @@ pluck('val', ['a' => ['val' => 3], 'b' => ['val' => 5]]); // ['a' => 3, 'b' => 5
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$a = [ 'a' => [ [ 'b' => [ 'c' => 3 ] ], 4] ];
-props(['a.0.b.c', 'a.0.z', 'a.1'], $a); // [3, null, 4]</code></pre>
+                        <pre><code class='language-php example'>$a = [ &#039;a&#039; =&gt; [ [ &#039;b&#039; =&gt; [ &#039;c&#039; =&gt; 3 ] ], 4] ];
+props([&#039;a.0.b.c&#039;, &#039;a.0.z&#039;, &#039;a.1&#039;], $a); // [3, null, 4]</code></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -2973,9 +3136,9 @@ props(['a.0.b.c', 'a.0.z', 'a.1'], $a); // [3, null, 4]</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$a   = [ 'a' => [ [ 'b' => [ 'c' => 3 ] ] ] ];
-setPath('a.0.b.c', 113, $a);
-// [ 'a' => [ [ 'b' => [ 'c' => 113 ] ] ] ]</code></pre>
+                        <pre><code class='language-php example'>$a   = [ &#039;a&#039; =&gt; [ [ &#039;b&#039; =&gt; [ &#039;c&#039; =&gt; 3 ] ] ] ];
+setPath(&#039;a.0.b.c&#039;, 113, $a);
+// [ &#039;a&#039; =&gt; [ [ &#039;b&#039; =&gt; [ &#039;c&#039; =&gt; 113 ] ] ] ]</code></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -3016,8 +3179,8 @@ setPath('a.0.b.c', 113, $a);
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$a = ['a' => 'A', 'b' => 'B'];
-where(['a' => fn ($v) => $v == 'A'], $a); // true</code></pre>
+                        <pre><code class='language-php example'>$a = [&#039;a&#039; =&gt; &#039;A&#039;, &#039;b&#039; =&gt; &#039;B&#039;];
+where([&#039;a&#039; =&gt; fn ($v) =&gt; $v == &#039;A&#039;], $a); // true</code></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -3052,7 +3215,7 @@ where(['a' => fn ($v) => $v == 'A'], $a); // true</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>escape('fred, barney, & pebbles'); // 'fred, barney, &amp; pebbles'</code></pre>
+                        <pre><code class='language-php example'>escape(&#039;fred, barney, &amp; pebbles&#039;); // &#039;fred, barney, &amp;amp; pebbles&#039;</code></pre>
                     
                     
                                     </article>
@@ -3177,7 +3340,7 @@ where(['a' => fn ($v) => $v == 'A'], $a); // true</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>words('\w+', 'aa bb cc'); // ['aa', 'bb', 'cc']</code></pre>
+                        <pre><code class='language-php example'>words(&#039;\w+&#039;, &#039;aa bb cc&#039;); // [&#039;aa&#039;, &#039;bb&#039;, &#039;cc&#039;]</code></pre>
                     
                     
                                             <div>
@@ -3329,6 +3492,6 @@ where(['a' => fn ($v) => $v == 'A'], $a); // true</code></pre>
     
         </main>
     </div>
-            <script src='./assets/app.0ecafa1ba2876131c79d.js' defer></script>
+            <script src='./assets/app.c40ab283e564d9c8013c.js' defer></script>
     </body>
 </html>
