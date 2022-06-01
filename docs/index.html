@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0" class="viewport">
-            <link rel='stylesheet' type='text/css' href='./assets/styles.c40ab283e564d9c8013c.css'>
+            <link rel='stylesheet' type='text/css' href='./assets/styles.27067c561e713e21e9fb.css'>
         <title>PHP Functional Library</title>
     <meta name="description" content="A PHP functional utility library, port of JavaScript Lodash and Ramda with lazy (idle) evaluation">
     <link rel="icon" href="./assets/logo.png">
@@ -66,7 +66,7 @@
     <section>
         <h2>Usage</h2>
         <p>
-            All methods are in <strong>Idles\</strong> namespace and <strong>auto-curried</strong>.
+            All methods are in <strong>Idles\</strong> namespace, <strong>immutable</strong> and <strong>auto-curried</strong>.
         </p>
         <pre><code class='language-php'>use function Idles\{pipe, map, divide, ary, partial, curryN, filter};
 use const \Idles\_;
@@ -83,7 +83,7 @@ pipe(
         <p>
             Most of the functions are <strong>lazy (idle)</strong> when given an <code>Iterator</code> or <code>Generator</code> as an input. 
             Such function will not load an iterator into memory, but returns a new iterator that modifies the input iterator.
-            This behaviour is similar to <em>iterator adaptors</em> in Rust language or LINQ in C#.
+            This behaviour is similar to <em>iterator adaptors</em> in Rust language or <em>LINQ</em> in C#.
         </p>
         <p>
             Although when given an <code>array</code> such method will NOT be lazy and return a modified <code>array</code>. 
@@ -2420,6 +2420,28 @@ assignDeep([$a, $b]);
                                     </article>
 
             
+                <article id='defaults'>
+                    <h3>defaults</h3>
+
+                    <pre><code class='language-php'>defaults(?iterable $record1, ?iterable $record2): array</code></pre>
+                                                                        <pre id="defaultsAll"><code class='language-php'>defaultsAll(array $iterables)</code></pre>
+                                            
+                    <div>
+                        <p>Merges properties from right to left, numeric keys are overwritten.</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>defaultsAll([ [ &#039;a&#039; =&gt; 1 ], [ &#039;b&#039; =&gt; 2 ], [ &#039;a&#039; =&gt; 3 ] ]); // [ &#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2 ]</code></pre>
+                    
+                    
+                                    </article>
+
+            
                 <article id='evolve'>
                     <h3>evolve</h3>
 
@@ -3400,6 +3422,29 @@ where([&#039;a&#039; =&gt; fn ($v) =&gt; $v == &#039;A&#039;], $a); // true</cod
                                     </article>
 
             
+                <article id='F'>
+                    <h3>F</h3>
+
+                    <pre><code class='language-php'>F(...$args): bool</code></pre>
+                    
+                    <div>
+                        <p>Always returns <code>false</code></p>
+
+                    </div>
+
+                    
+                    
+                    
+                                            <div>
+                            <h4>Alias</h4>
+                            <ul>
+                                                                    <li id="stubFalse">stubFalse</li>
+                                                            </ul>
+                        </div>
+                    
+                                    </article>
+
+            
                 <article id='identity'>
                     <h3>identity</h3>
 
@@ -3492,6 +3537,6 @@ where([&#039;a&#039; =&gt; fn ($v) =&gt; $v == &#039;A&#039;], $a); // true</cod
     
         </main>
     </div>
-            <script src='./assets/app.c40ab283e564d9c8013c.js' defer></script>
+            <script src='./assets/app.27067c561e713e21e9fb.js' defer></script>
     </body>
 </html>

@@ -2,12 +2,12 @@
 
 namespace Idles;
 
-function stubTrue(...$_): callable
+function stubTrue(...$_): bool
 {
-    return fn () => true;
+    return true;
 }
 
-function T(...$_): callable
+function T(...$_): bool
 {
-    return fn () => true;
+    return true;
 }
