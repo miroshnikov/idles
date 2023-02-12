@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0" class="viewport">
-            <link rel='stylesheet' type='text/css' href='./assets/styles.a5bf304ddd073a1b3f36.css'>
+            <link rel='stylesheet' type='text/css' href='./assets/styles.8c29f650eef7ded19575.css'>
         <title>PHP Functional Library</title>
     <meta name="description" content="A PHP functional utility library, port of JavaScript Lodash and Ramda with lazy (idle) evaluation">
     <meta name="yandex-verification" content="7063684c222008b0" />
@@ -1751,10 +1751,10 @@ curryRightN(2, $abc)(&#039;b&#039;)(&#039;a&#039;); // &#039;abc&#039;</code></p
                 <article id='juxt'>
                     <h3>juxt</h3>
 
-                    <pre><code class='language-php'>juxt(array $iteratees): callable</code></pre>
+                    <pre><code class='language-php'>juxt(array $funcs): callable</code></pre>
                     
                     <div>
-                        <p>Retruns a function that invokes iteratees with the arguments it receives and returns their results.</p>
+                        <p>applies a list of functions to a list of values.</p>
 
                     </div>
 
@@ -1765,7 +1765,8 @@ curryRightN(2, $abc)(&#039;b&#039;)(&#039;a&#039;); // &#039;abc&#039;</code></p
                         </div>
                         <pre><code class='language-php example'>$isOdd = fn ($n) =&gt; $n % 2;
 juxt([filter($isOdd), remove($isOdd)])([1,2,3,4,5,6,7,8,9]);
-// [[1,3,5,7,9], [2,4,6,8]]</code></pre>
+// [[1,3,5,7,9], [2,4,6,8]]
+juxt([max(...), min(...)])(1,2,3,4); // [4,1]</code></pre>
                     
                     
                                             <div>
@@ -2448,9 +2449,15 @@ assignDeep([$a, $b]);
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>defaultsAll([ [ &#039;a&#039; =&gt; 1 ], [ &#039;b&#039; =&gt; 2 ], [ &#039;a&#039; =&gt; 3 ] ]); // [ &#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2 ]</code></pre>
+                        <pre><code class='language-php example'>defaultsAll([ [&#039;actual&#039;, &#039;a&#039;=&gt;1], [&#039;default&#039;, &#039;b&#039;=&gt;2], [&#039;a&#039;=&gt;3] ]) // [&#039;actual&#039;, &#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2]</code></pre>
                     
                     
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#mergeLeft'>mergeLeft</a></li>
+                                                            </ul>
+                        </div>
                                     </article>
 
             
@@ -2758,7 +2765,7 @@ mergeDeep([$a, $b]);
                     <pre><code class='language-php'>mergeLeft(?iterable $left, ?iterable $right): array</code></pre>
                     
                     <div>
-                        <p><code>merge($right, $left)</code></p>
+                        <p>calls <code>merge($right, $left)</code></p>
 
                     </div>
 
@@ -2775,8 +2782,7 @@ $resetToDefault([&#039;x&#039; =&gt; 5, &#039;y&#039; =&gt; 2]); // [&#039;x&#03
                             <h4>See also</h4>
                             <ul>
                                                                     <li><a href='#merge'>merge</a>, </li>
-                                                                    <li><a href='#mergeWith'>mergeWith</a>, </li>
-                                                                    <li><a href='#mergeDeep'>mergeDeep</a></li>
+                                                                    <li><a href='#defaults'>defaults</a></li>
                                                             </ul>
                         </div>
                                     </article>
@@ -2840,7 +2846,7 @@ $resetToDefault([&#039;x&#039; =&gt; 5, &#039;y&#039; =&gt; 2]); // [&#039;x&#03
                             <h4>Example</h4>
                         </div>
                         <pre><code class='language-php example'>$a = [ &#039;a&#039; =&gt; [ [ &#039;b&#039; =&gt; [ &#039;c&#039; =&gt; 3 ] ] ] ];
-modifyPath(&#039;a.0.b.c&#039;, fn ($n) =&gt; $n*$n, $a); // [ &#039;a&#039; =&gt; [ [ &#039;b&#039; =&gt; [ &#039;c&#039; =&gt; 9 ] ] ] ]</code></pre>
+modifyPath([&#039;a&#039;,0,&#039;b&#039;,&#039;c&#039;], fn ($n) =&gt; $n*$n, $a); // [ &#039;a&#039; =&gt; [ [ &#039;b&#039; =&gt; [ &#039;c&#039; =&gt; 9 ] ] ] ]</code></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -3171,7 +3177,7 @@ props([&#039;a.0.b.c&#039;, &#039;a.0.z&#039;, &#039;a.1&#039;], $a); // [3, nul
                             <h4>Example</h4>
                         </div>
                         <pre><code class='language-php example'>$a   = [ &#039;a&#039; =&gt; [ [ &#039;b&#039; =&gt; [ &#039;c&#039; =&gt; 3 ] ] ] ];
-setPath(&#039;a.0.b.c&#039;, 113, $a);
+setPath([&#039;a&#039;,0,&#039;b&#039;,&#039;c&#039;], 113, $a);  
 // [ &#039;a&#039; =&gt; [ [ &#039;b&#039; =&gt; [ &#039;c&#039; =&gt; 113 ] ] ] ]</code></pre>
                     
                                             <div>
@@ -3188,6 +3194,33 @@ setPath(&#039;a.0.b.c&#039;, 113, $a);
                                                                     <li><a href='#extend'>extend</a></li>
                                                             </ul>
                         </div>
+                                    </article>
+
+            
+                <article id='toPairs'>
+                    <h3>toPairs</h3>
+
+                    <pre><code class='language-php'>toPairs(?iterable $record): iterable</code></pre>
+                    
+                    <div>
+                        <p>Converts a record into an array of <code>[$key, $value]</code></p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example'>toPairs([&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2, &#039;c&#039; =&gt; 3]); // [[&#039;a&#039;, 1], [&#039;b&#039;, 2], [&#039;c&#039;, 3]]</code></pre>
+                    
+                                            <div>
+                            <h4>Alias</h4>
+                            <ul>
+                                                                    <li id="entries">entries</li>
+                                                            </ul>
+                        </div>
+                    
                                     </article>
 
             
@@ -3549,6 +3582,6 @@ where([&#039;a&#039; =&gt; fn ($v) =&gt; $v == &#039;A&#039;], $a); // true</cod
     
         </main>
     </div>
-            <script src='./assets/app.a5bf304ddd073a1b3f36.js' defer></script>
+            <script src='./assets/app.8c29f650eef7ded19575.js' defer></script>
     </body>
 </html>

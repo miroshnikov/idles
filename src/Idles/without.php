@@ -22,6 +22,7 @@ function _without(?iterable $collection, ...$values): iterable
             {
                 return !\in_array($this->getInnerIterator()->current(), $this->exclude);
             }
+            private $exclude;
         }
     );
 }

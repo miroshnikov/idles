@@ -8,3 +8,8 @@ function takeRight(...$args)
         fn (int $n, ?iterable $collection) => \array_slice(collect($collection), -$n)
     )(...$args);
 }
+
+function takeLast(...$args)
+{
+    return takeRight(...$args);
+}
