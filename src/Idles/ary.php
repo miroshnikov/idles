@@ -4,7 +4,8 @@ namespace Idles;
 
 function ary(...$args)
 {
-    return curryN(2,
+    return curryN(
+        2,
         fn (int $n, callable $fn) => fn (...$args) => $fn(...take($n, $args))
     )(...$args);
 }

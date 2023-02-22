@@ -4,7 +4,8 @@ namespace Idles;
 
 function paths(...$args)
 {
-    return curryN(2, 
+    return curryN(
+        2,
         function (array $paths, ?iterable $collection): array {
             $collection = collect($collection);
             $res = [];

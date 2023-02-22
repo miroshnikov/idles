@@ -15,7 +15,8 @@ function _reduce(?iterable $collection, callable $iteratee, $accumulator = null)
 
 function reduce(...$args)
 {
-    return curryN(3, 
+    return curryN(
+        3,
         fn (callable $iteratee, $accumulator, ?iterable $collection) => _reduce($collection, $iteratee, $accumulator)
     )(...$args);
 }

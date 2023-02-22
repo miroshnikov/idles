@@ -16,7 +16,8 @@ function _all(callable $predicate, ?iterable $collection): bool
 
 function all(...$args)
 {
-    return curryN(2, 
+    return curryN(
+        2,
         fn (callable $predicate, ?iterable $collection) => _all($predicate, $collection)
     )(...$args);
 }

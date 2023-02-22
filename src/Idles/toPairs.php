@@ -4,9 +4,7 @@ namespace Idles;
 
 function toPairs(?iterable $record): iterable
 {
-    if (empty($record)) {
-        return [];
-    }
+    $record ??= [];
     if (\is_array($record)) {
         $pairs = [];
         \array_walk($record, function ($v, $k) use (&$pairs) { $pairs[] = [$k, $v]; });

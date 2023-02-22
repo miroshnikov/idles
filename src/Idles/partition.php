@@ -4,7 +4,8 @@ namespace Idles;
 
 function partition(...$args)
 {
-    return curryN(2, 
+    return curryN(
+        2,
         function (callable $predicate, ?iterable $collection): array {
             $res = [[],[]];
             $collection ??= [];

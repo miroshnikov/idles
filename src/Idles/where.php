@@ -4,7 +4,8 @@ namespace Idles;
 
 function where(...$args)
 {
-    return curryN(2,
+    return curryN(
+        2,
         function (array $spec, ?iterable $record): bool {
             $record = collect($record);
             foreach ($spec as $prop => $f) {

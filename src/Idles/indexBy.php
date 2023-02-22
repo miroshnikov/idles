@@ -29,7 +29,7 @@ function _indexBy(?iterable $collection, ?callable $iteratee = null): iterable
 
 function indexBy(...$args)
 {
-    return curryN(2, fn (callable $iteratee, ?iterable $collection) => _indexBy($collection, $iteratee))(...$args);   
+    return curryN(2, fn (callable $iteratee, ?iterable $collection) => _indexBy($collection, $iteratee))(...$args);
 }
 
 function keyBy(...$args)

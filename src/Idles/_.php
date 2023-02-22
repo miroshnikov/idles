@@ -2,10 +2,13 @@
 
 namespace Idles;
 
-class Placeholder {};
+class Placeholder
+{
+}
 
-const _ = new Placeholder;
+const _ = new Placeholder();
 
-function isPlaceholder($value) {
+function isPlaceholder($value): bool
+{
     return \is_a($value, '\Idles\Placeholder');
 }

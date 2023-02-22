@@ -12,13 +12,15 @@ function _zipWith(callable $iteratee, iterable ...$arrays): iterable
     foreach ($arrays as $a) {
         $i->attachIterator(\is_array($a) ? new \ArrayIterator($a) : $a);
     }
-    return new class(new Iterators\ValuesIterator($i), $iteratee) extends \IteratorIterator {
-        function __construct($iterator, $iteratee) {
+    return new class (new Iterators\ValuesIterator($i), $iteratee) extends \IteratorIterator {
+        public function __construct($iterator, $iteratee)
+        {
             parent::__construct($iterator);
             $this->iteratee = $iteratee;
         }
         #[\ReturnTypeWillChange]
-        public function current() {
+        public function current()
+        {
             return ($this->iteratee)(...parent::current());
         }
         private $iteratee;
@@ -27,7 +29,8 @@ function _zipWith(callable $iteratee, iterable ...$arrays): iterable
 
 function zipWith(...$args)
 {
-    return curryN(3, 
+    return curryN(
+        3,
         fn (callable $iteratee, iterable $a, iterable $b) => _zipWith($iteratee, $a, $b)
     )(...$args);
 }
