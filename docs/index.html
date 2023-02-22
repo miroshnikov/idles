@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0" class="viewport">
-            <link rel='stylesheet' type='text/css' href='./assets/styles.8c29f650eef7ded19575.css'>
+            <link rel='stylesheet' type='text/css' href='./assets/styles.0784466212dd4b81ee72.css'>
         <title>PHP Functional Library</title>
     <meta name="description" content="A PHP functional utility library, port of JavaScript Lodash and Ramda with lazy (idle) evaluation">
     <meta name="yandex-verification" content="7063684c222008b0" />
@@ -53,9 +53,8 @@
                 <section>
         <h2>What is it?</h2>
         <p>
-            Idles library may be seen as <strong>a port of Javascript <a href="https://lodash.com/" target='_blank'>Lodash</a> and <a href="https://ramdajs.com/" target='_blank'>Ramda</a> 
-            libraries to PHP</strong>, as it tries to comply with Lodash and Ramda APIs as much as possible.
-            Though there are inevitable discrepancies in methods API considering the different nature of PHP and JavaScript languages.
+            Idles is a PHP functional utility library, a <strong>port of Javascript <a href="https://lodash.com/" target='_blank'>Lodash</a> and <a href="https://ramdajs.com/" target='_blank'>Ramda</a> 
+            libraries to PHP</strong>.
         </p>
     </section>
     <section>
@@ -75,8 +74,8 @@
 use const \Idles\_;
 pipe(
     map(divide(_, 2)),
-    map(ary(1, partial('\round', [_, 0]))),
-    map(curryN(1, '\intval')),
+    map(ary(1, partial(\round(...), [_, 0]))),
+    map(curryN(1, \intval(...))),
     filter(fn ($n) => $n % 2)
 )([2,3,4,8]);
 </code></pre>
@@ -165,7 +164,7 @@ $array = collect($iterator);</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>concat([&#039;a&#039;,&#039;b&#039;], &#039;C&#039;);  // [&#039;a&#039;, &#039;b&#039;, &#039;C&#039;]</code></pre>
+                        <pre><code class='language-php example line-numbers'>concat([&#039;a&#039;,&#039;b&#039;], &#039;C&#039;);  // [&#039;a&#039;, &#039;b&#039;, &#039;C&#039;]</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -174,6 +173,9 @@ $array = collect($iterator);</code></pre>
                                                                     <li><a href='#merge'>merge</a>, </li>
                                                                     <li><a href='#assign'>assign</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/concat.php">source</a>
                         </div>
                                     </article>
 
@@ -193,7 +195,7 @@ $array = collect($iterator);</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>drop(1, [1, 2, 3]); // [2, 3]</code></pre>
+                        <pre><code class='language-php example line-numbers'>drop(1, [1, 2, 3]); // [2, 3]</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -202,6 +204,9 @@ $array = collect($iterator);</code></pre>
                                                                     <li><a href='#dropRight'>dropRight</a>, </li>
                                                                     <li><a href='#slice'>slice</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/drop.php">source</a>
                         </div>
                                     </article>
 
@@ -221,7 +226,7 @@ $array = collect($iterator);</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>dropRight(2, [1, 2, 3]);  // [1]</code></pre>
+                        <pre><code class='language-php example line-numbers'>dropRight(2, [1, 2, 3]);  // [1]</code><span class='copy'></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -236,6 +241,9 @@ $array = collect($iterator);</code></pre>
                                                                     <li><a href='#drop'>drop</a>, </li>
                                                                     <li><a href='#slice'>slice</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/dropRight.php">source</a>
                         </div>
                                     </article>
 
@@ -263,8 +271,8 @@ $array = collect($iterator);</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>findIndex([&#039;b&#039;, &#039;a&#039;, &#039;b&#039;, &#039;c&#039;], fn ($v) =&gt; $v == &#039;b&#039;, 1); // 2
-findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039;,&#039;a&#039;,&#039;b&#039;,&#039;c&#039;]) // 3 </code></pre>
+                        <pre><code class='language-php example line-numbers'>findIndex([&#039;b&#039;, &#039;a&#039;, &#039;b&#039;, &#039;c&#039;], fn ($v) =&gt; $v == &#039;b&#039;, 1); // 2
+findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039;,&#039;a&#039;,&#039;b&#039;,&#039;c&#039;]) // 3 </code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -275,6 +283,9 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                                                                     <li><a href='#findLastIndex'>findLastIndex</a>, </li>
                                                                     <li><a href='#includes'>includes</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/findIndex.php">source</a>
                         </div>
                                     </article>
 
@@ -302,7 +313,7 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>findLastIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, 2, [&#039;a&#039;, &#039;b&#039;, &#039;a&#039;, &#039;b&#039;]); // 1</code></pre>
+                        <pre><code class='language-php example line-numbers'>findLastIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, 2, [&#039;a&#039;, &#039;b&#039;, &#039;a&#039;, &#039;b&#039;]); // 1</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -313,6 +324,9 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                                                                     <li><a href='#indexOf'>indexOf</a>, </li>
                                                                     <li><a href='#includes'>includes</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/findLastIndex.php">source</a>
                         </div>
                                     </article>
 
@@ -332,7 +346,7 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>flatten([&#039;a&#039; =&gt; &#039;A&#039;, [&#039;b&#039; =&gt; &#039;B&#039;], &#039;c&#039; =&gt; &#039;C&#039;]);  // [&#039;A&#039;, &#039;B&#039;, &#039;C&#039;]</code></pre>
+                        <pre><code class='language-php example line-numbers'>flatten([&#039;a&#039; =&gt; &#039;A&#039;, [&#039;b&#039; =&gt; &#039;B&#039;], &#039;c&#039; =&gt; &#039;C&#039;]);  // [&#039;A&#039;, &#039;B&#039;, &#039;C&#039;]</code><span class='copy'></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -347,6 +361,9 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                                                                     <li><a href='#flattenDeep'>flattenDeep</a>, </li>
                                                                     <li><a href='#flattenDepth'>flattenDepth</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/flatten.php">source</a>
                         </div>
                                     </article>
 
@@ -366,7 +383,7 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>flattenDeep([1, [2, [3, [4]], 5]]);  // [1, 2, 3, 4, 5]</code></pre>
+                        <pre><code class='language-php example line-numbers'>flattenDeep([1, [2, [3, [4]], 5]]);  // [1, 2, 3, 4, 5]</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -375,6 +392,9 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                                                                     <li><a href='#flattenDepth'>flattenDepth</a>, </li>
                                                                     <li><a href='#flatten'>flatten</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/flattenDeep.php">source</a>
                         </div>
                                     </article>
 
@@ -394,7 +414,7 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>flattenDepth(2, [1, [2, [3, [4]], 5]]);  // [1, 2, 3, [4], 5]</code></pre>
+                        <pre><code class='language-php example line-numbers'>flattenDepth(2, [1, [2, [3, [4]], 5]]);  // [1, 2, 3, [4], 5]</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -403,6 +423,39 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                                                                     <li><a href='#flattenDeep'>flattenDeep</a>, </li>
                                                                     <li><a href='#flatten'>flatten</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/flattenDepth.php">source</a>
+                        </div>
+                                    </article>
+
+            
+                <article id='fromPairs'>
+                    <h3>fromPairs</h3>
+
+                    <pre><code class='language-php'>fromPairs(?iterable $collection): array</code></pre>
+                    
+                    <div>
+                        <p>Creates a new record from a list key-value pairs. The inverse of <code>toPairs</code>.</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example line-numbers'>fromPairs([[&#039;a&#039;, 1], [&#039;b&#039;, 2], [&#039;c&#039;, 3]]); // [&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2, &#039;c&#039; =&gt; 3]</code><span class='copy'></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#toPairs'>toPairs</a></li>
+                                                            </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/fromPairs.php">source</a>
                         </div>
                                     </article>
 
@@ -422,7 +475,7 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>head([1, 2, 3]); // 1</code></pre>
+                        <pre><code class='language-php example line-numbers'>head([1, 2, 3]); // 1</code><span class='copy'></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -437,6 +490,9 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                                                                     <li><a href='#last'>last</a>, </li>
                                                                     <li><a href='#slice'>slice</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/head.php">source</a>
                         </div>
                                     </article>
 
@@ -457,7 +513,7 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>indexOf(2, [1, 2, 1, 2]); // 1</code></pre>
+                        <pre><code class='language-php example line-numbers'>indexOf(2, [1, 2, 1, 2]); // 1</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -466,6 +522,9 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                                                                     <li><a href='#findIndex'>findIndex</a>, </li>
                                                                     <li><a href='#find'>find</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/indexOf.php">source</a>
                         </div>
                                     </article>
 
@@ -485,7 +544,7 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>intersection([&#039;a&#039;, &#039;a&#039;, &#039;b&#039;], [&#039;c&#039;, &#039;a&#039;, &#039;a&#039;]); // [&#039;a&#039;]</code></pre>
+                        <pre><code class='language-php example line-numbers'>intersection([&#039;a&#039;, &#039;a&#039;, &#039;b&#039;], [&#039;c&#039;, &#039;a&#039;, &#039;a&#039;]); // [&#039;a&#039;]</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -494,6 +553,9 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                                                                     <li><a href='#intersectionBy'>intersectionBy</a>, </li>
                                                                     <li><a href='#intersectionWith'>intersectionWith</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/intersection.php">source</a>
                         </div>
                                     </article>
 
@@ -520,7 +582,7 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>intersectionBy(&#039;\floor&#039;, [2.1, 1.2], [2.3, 3.4]); // [2.1]</code></pre>
+                        <pre><code class='language-php example line-numbers'>intersectionBy(&#039;\floor&#039;, [2.1, 1.2], [2.3, 3.4]); // [2.1]</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -529,6 +591,9 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                                                                     <li><a href='#intersectionWith'>intersectionWith</a>, </li>
                                                                     <li><a href='#intersection'>intersection</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/intersectionBy.php">source</a>
                         </div>
                                     </article>
 
@@ -555,7 +620,7 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>intersectionWith(fn ($a, $b) =&gt; $a &lt;=&gt; $b, [&#039;a&#039;, &#039;a&#039;, &#039;b&#039;], [&#039;c&#039;, &#039;a&#039;, &#039;a&#039;]); // [&#039;a&#039;]</code></pre>
+                        <pre><code class='language-php example line-numbers'>intersectionWith(fn ($a, $b) =&gt; $a &lt;=&gt; $b, [&#039;a&#039;, &#039;a&#039;, &#039;b&#039;], [&#039;c&#039;, &#039;a&#039;, &#039;a&#039;]); // [&#039;a&#039;]</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -564,6 +629,9 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                                                                     <li><a href='#intersectionBy'>intersectionBy</a>, </li>
                                                                     <li><a href='#intersection'>intersection</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/intersectionWith.php">source</a>
                         </div>
                                     </article>
 
@@ -583,7 +651,7 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>join(&#039;~&#039;, [&#039;a&#039;, &#039;b&#039;, &#039;c&#039;]); // &#039;a~b~c&#039;</code></pre>
+                        <pre><code class='language-php example line-numbers'>join(&#039;~&#039;, [&#039;a&#039;, &#039;b&#039;, &#039;c&#039;]); // &#039;a~b~c&#039;</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -591,6 +659,9 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                             <ul>
                                                                     <li><a href='#split'>split</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/join.php">source</a>
                         </div>
                                     </article>
 
@@ -610,7 +681,7 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>last([1, 2, 3]);  // 3</code></pre>
+                        <pre><code class='language-php example line-numbers'>last([1, 2, 3]);  // 3</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -618,6 +689,42 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                             <ul>
                                                                     <li><a href='#first'>first</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/last.php">source</a>
+                        </div>
+                                    </article>
+
+            
+                <article id='nth'>
+                    <h3>nth</h3>
+
+                    <pre><code class='language-php'>nth(int $offset, ?iterable $collection)</code></pre>
+                    
+                    <div>
+                        <p>Returns the <code>$offset</code> element. If <code>$offset</code> is negative the element at index length + <code>$offset</code> is returned.</p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example line-numbers'>$list = [&#039;foo&#039;, &#039;bar&#039;, &#039;baz&#039;, &#039;quux&#039;];
+nth(1, $list)&#039; // &#039;bar&#039;
+nth(-1, $list); // &#039;quux&#039;
+nth(99, $list); // null</code><span class='copy'></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#prop'>prop</a></li>
+                                                            </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/nth.php">source</a>
                         </div>
                                     </article>
 
@@ -637,7 +744,7 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>remove(2, 3, [1,2,3,4,5,6,7,8]); // [1,2,6,7,8]</code></pre>
+                        <pre><code class='language-php example line-numbers'>remove(2, 3, [1,2,3,4,5,6,7,8]); // [1,2,6,7,8]</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -645,6 +752,9 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                             <ul>
                                                                     <li><a href='#without'>without</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/remove.php">source</a>
                         </div>
                                     </article>
 
@@ -664,10 +774,10 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$a = [&#039;a&#039;,&#039;b&#039;,&#039;c&#039;,&#039;d&#039;,&#039;e&#039;];
+                        <pre><code class='language-php example line-numbers'>$a = [&#039;a&#039;,&#039;b&#039;,&#039;c&#039;,&#039;d&#039;,&#039;e&#039;];
 slice(1, 3, $a2); // [&#039;b&#039;,&#039;c&#039;]
 slice(1, -2, $a2); // [&#039;b&#039;,&#039;c&#039;]
-slice(-4, -2, $a2); // [&#039;b&#039;,&#039;c&#039;]</code></pre>
+slice(-4, -2, $a2); // [&#039;b&#039;,&#039;c&#039;]</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -680,6 +790,9 @@ slice(-4, -2, $a2); // [&#039;b&#039;,&#039;c&#039;]</code></pre>
                                                                     <li><a href='#head'>head</a>, </li>
                                                                     <li><a href='#last'>last</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/slice.php">source</a>
                         </div>
                                     </article>
 
@@ -699,7 +812,7 @@ slice(-4, -2, $a2); // [&#039;b&#039;,&#039;c&#039;]</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>take(2, [1, 2, 3]);  // [1, 2]</code></pre>
+                        <pre><code class='language-php example line-numbers'>take(2, [1, 2, 3]);  // [1, 2]</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -708,6 +821,9 @@ slice(-4, -2, $a2); // [&#039;b&#039;,&#039;c&#039;]</code></pre>
                                                                     <li><a href='#slice'>slice</a>, </li>
                                                                     <li><a href='#head'>head</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/take.php">source</a>
                         </div>
                                     </article>
 
@@ -727,7 +843,7 @@ slice(-4, -2, $a2); // [&#039;b&#039;,&#039;c&#039;]</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>takeRight(2, [1, 2, 3]);  // [2, 3]</code></pre>
+                        <pre><code class='language-php example line-numbers'>takeRight(2, [1, 2, 3]);  // [2, 3]</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -736,6 +852,39 @@ slice(-4, -2, $a2); // [&#039;b&#039;,&#039;c&#039;]</code></pre>
                                                                     <li><a href='#slice'>slice</a>, </li>
                                                                     <li><a href='#drop'>drop</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/takeRight.php">source</a>
+                        </div>
+                                    </article>
+
+            
+                <article id='uniq'>
+                    <h3>uniq</h3>
+
+                    <pre><code class='language-php'>uniq(?iterable $collection): array</code></pre>
+                    
+                    <div>
+                        <p>Removes duplicates using <code>===</code></p>
+
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example line-numbers'>uniq([1, 1, 2, &#039;1&#039;]); // [1, 2, &#039;1&#039;]</code><span class='copy'></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#without'>without</a></li>
+                                                            </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/uniq.php">source</a>
                         </div>
                                     </article>
 
@@ -755,7 +904,7 @@ slice(-4, -2, $a2); // [&#039;b&#039;,&#039;c&#039;]</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>without([1, 2], [2, 1, 2, 3]);  // [3]</code></pre>
+                        <pre><code class='language-php example line-numbers'>without([1, 2], [2, 1, 2, 3]);  // [3]</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -763,6 +912,9 @@ slice(-4, -2, $a2); // [&#039;b&#039;,&#039;c&#039;]</code></pre>
                             <ul>
                                                                     <li><a href='#filter'>filter</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/without.php">source</a>
                         </div>
                                     </article>
 
@@ -783,9 +935,9 @@ slice(-4, -2, $a2); // [&#039;b&#039;,&#039;c&#039;]</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$a =  [&#039;a&#039;, &#039;b&#039; ];
+                        <pre><code class='language-php example line-numbers'>$a =  [&#039;a&#039;, &#039;b&#039; ];
 $aa = [&#039;AA&#039;,&#039;BB&#039;];
-zip($a, $aa);  // [ [&#039;a&#039;, &#039;AA&#039;], [&#039;b&#039;, &#039;BB&#039;] ]</code></pre>
+zip($a, $aa);  // [ [&#039;a&#039;, &#039;AA&#039;], [&#039;b&#039;, &#039;BB&#039;] ]</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -793,6 +945,9 @@ zip($a, $aa);  // [ [&#039;a&#039;, &#039;AA&#039;], [&#039;b&#039;, &#039;BB&#0
                             <ul>
                                                                     <li><a href='#zipWith'>zipWith</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/zip.php">source</a>
                         </div>
                                     </article>
 
@@ -812,9 +967,9 @@ zip($a, $aa);  // [ [&#039;a&#039;, &#039;AA&#039;], [&#039;b&#039;, &#039;BB&#0
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$a =  [&#039;a&#039;, &#039;b&#039; ];
+                        <pre><code class='language-php example line-numbers'>$a =  [&#039;a&#039;, &#039;b&#039; ];
 $aa = [&#039;AA&#039;,&#039;BB&#039;];
-zipWith(fn ($a,$b) =&gt; $a.&#039;=&#039;.$b, $a, $aa);  // [&quot;a=AA&quot;, &quot;b=BB&quot;]</code></pre>
+zipWith(fn ($a,$b) =&gt; $a.&#039;=&#039;.$b, $a, $aa);  // [&quot;a=AA&quot;, &quot;b=BB&quot;]</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -822,6 +977,9 @@ zipWith(fn ($a,$b) =&gt; $a.&#039;=&#039;.$b, $a, $aa);  // [&quot;a=AA&quot;, &
                             <ul>
                                                                     <li><a href='#zip'>zip</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/zipWith.php">source</a>
                         </div>
                                     </article>
 
@@ -856,13 +1014,13 @@ zipWith(fn ($a,$b) =&gt; $a.&#039;=&#039;.$b, $a, $aa);  // [&quot;a=AA&quot;, &
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>every(&#039;\is_numeric&#039;)([1,2,3]); // true
+                        <pre><code class='language-php example line-numbers'>every(&#039;\is_numeric&#039;)([1,2,3]); // true
 
 $users = [
     [ &#039;user&#039; =&gt; &#039;barney&#039;, &#039;age&#039; =&gt; 36, &#039;active&#039; =&gt; true ],
     [ &#039;user&#039; =&gt; &#039;fred&#039;,   &#039;age&#039; =&gt; 40, &#039;active&#039; =&gt; true ]
 ];
-all(property(&#039;active&#039;))($users); // true</code></pre>
+all(property(&#039;active&#039;))($users); // true</code><span class='copy'></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -896,11 +1054,11 @@ all(property(&#039;active&#039;))($users); // true</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$users = [
+                        <pre><code class='language-php example line-numbers'>$users = [
     [ &#039;user&#039; =&gt; &#039;barney&#039;, &#039;active&#039; =&gt; false ],
     [ &#039;user&#039; =&gt; &#039;fred&#039;,   &#039;active&#039; =&gt; true ]
 ];
-any(fn ($r) =&gt; $r[&#039;active&#039;] == true, $users); // true</code></pre>
+any(fn ($r) =&gt; $r[&#039;active&#039;] == true, $users); // true</code><span class='copy'></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -914,6 +1072,9 @@ any(fn ($r) =&gt; $r[&#039;active&#039;] == true, $users); // true</code></pre>
                             <ul>
                                                                     <li><a href='#all'>all</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/any.php">source</a>
                         </div>
                                     </article>
 
@@ -940,7 +1101,7 @@ any(fn ($r) =&gt; $r[&#039;active&#039;] == true, $users); // true</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>each(fn ($v) =&gt; print_r($v), [1,2,3]);</code></pre>
+                        <pre><code class='language-php example line-numbers'>each(fn ($v) =&gt; print_r($v), [1,2,3]);</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -948,6 +1109,9 @@ any(fn ($r) =&gt; $r[&#039;active&#039;] == true, $users); // true</code></pre>
                             <ul>
                                                                     <li><a href='#eachRight'>eachRight</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/each.php">source</a>
                         </div>
                                     </article>
 
@@ -974,7 +1138,7 @@ any(fn ($r) =&gt; $r[&#039;active&#039;] == true, $users); // true</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>filter(&#039;is_numeric&#039;, [&#039;a&#039;, &#039;b&#039;, 13]); // [13]</code></pre>
+                        <pre><code class='language-php example line-numbers'>filter(&#039;is_numeric&#039;, [&#039;a&#039;, &#039;b&#039;, 13]); // [13]</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -982,6 +1146,9 @@ any(fn ($r) =&gt; $r[&#039;active&#039;] == true, $users); // true</code></pre>
                             <ul>
                                                                     <li><a href='#without'>without</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/filter.php">source</a>
                         </div>
                                     </article>
 
@@ -1015,6 +1182,9 @@ any(fn ($r) =&gt; $r[&#039;active&#039;] == true, $users); // true</code></pre>
                                                                     <li><a href='#indexOf'>indexOf</a></li>
                                                             </ul>
                         </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/find.php">source</a>
+                        </div>
                                     </article>
 
             
@@ -1040,7 +1210,7 @@ any(fn ($r) =&gt; $r[&#039;active&#039;] == true, $users); // true</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>flatMap(fn ($n) =&gt; [$n, $n], [1,2]); // [1, 1, 2, 2]</code></pre>
+                        <pre><code class='language-php example line-numbers'>flatMap(fn ($n) =&gt; [$n, $n], [1,2]); // [1, 1, 2, 2]</code><span class='copy'></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -1057,6 +1227,9 @@ any(fn ($r) =&gt; $r[&#039;active&#039;] == true, $users); // true</code></pre>
                                                                     <li><a href='#map'>map</a>, </li>
                                                                     <li><a href='#flatten'>flatten</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/flatMap.php">source</a>
                         </div>
                                     </article>
 
@@ -1083,7 +1256,7 @@ any(fn ($r) =&gt; $r[&#039;active&#039;] == true, $users); // true</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>flatMapDeep(fn ($n) =&gt; [[[$n, $n]]], [1, 2]); // [1, 1, 2, 2]</code></pre>
+                        <pre><code class='language-php example line-numbers'>flatMapDeep(fn ($n) =&gt; [[[$n, $n]]], [1, 2]); // [1, 1, 2, 2]</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -1094,6 +1267,9 @@ any(fn ($r) =&gt; $r[&#039;active&#039;] == true, $users); // true</code></pre>
                                                                     <li><a href='#map'>map</a>, </li>
                                                                     <li><a href='#flatten'>flatten</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/flatMapDeep.php">source</a>
                         </div>
                                     </article>
 
@@ -1120,7 +1296,7 @@ any(fn ($r) =&gt; $r[&#039;active&#039;] == true, $users); // true</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>flatMapDepth(fn ($n) =&gt; [[[$n, $n]]], 2, [1, 2]); // [[1, 1], [2, 2]]</code></pre>
+                        <pre><code class='language-php example line-numbers'>flatMapDepth(fn ($n) =&gt; [[[$n, $n]]], 2, [1, 2]); // [[1, 1], [2, 2]]</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -1131,6 +1307,9 @@ any(fn ($r) =&gt; $r[&#039;active&#039;] == true, $users); // true</code></pre>
                                                                     <li><a href='#map'>map</a>, </li>
                                                                     <li><a href='#flatten'>flatten</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/flatMapDepth.php">source</a>
                         </div>
                                     </article>
 
@@ -1157,7 +1336,7 @@ any(fn ($r) =&gt; $r[&#039;active&#039;] == true, $users); // true</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>groupBy(&#039;strlen&#039;)([&#039;one&#039;, &#039;two&#039;, &#039;three&#039;]); // [ &#039;3&#039; =&gt; [&#039;one&#039;, &#039;two&#039;], &#039;5&#039; =&gt; [&#039;three&#039;] ]</code></pre>
+                        <pre><code class='language-php example line-numbers'>groupBy(&#039;strlen&#039;)([&#039;one&#039;, &#039;two&#039;, &#039;three&#039;]); // [ &#039;3&#039; =&gt; [&#039;one&#039;, &#039;two&#039;], &#039;5&#039; =&gt; [&#039;three&#039;] ]</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -1165,6 +1344,9 @@ any(fn ($r) =&gt; $r[&#039;active&#039;] == true, $users); // true</code></pre>
                             <ul>
                                                                     <li><a href='#partition'>partition</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/groupBy.php">source</a>
                         </div>
                                     </article>
 
@@ -1185,7 +1367,7 @@ any(fn ($r) =&gt; $r[&#039;active&#039;] == true, $users); // true</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>includes(1, [&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2]); // true</code></pre>
+                        <pre><code class='language-php example line-numbers'>includes(1, [&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2]); // true</code><span class='copy'></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -1200,6 +1382,9 @@ any(fn ($r) =&gt; $r[&#039;active&#039;] == true, $users); // true</code></pre>
                                                                     <li><a href='#find'>find</a>, </li>
                                                                     <li><a href='#indexOf'>indexOf</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/includes.php">source</a>
                         </div>
                                     </article>
 
@@ -1226,8 +1411,8 @@ any(fn ($r) =&gt; $r[&#039;active&#039;] == true, $users); // true</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$a = [ [ &#039;code&#039; =&gt; 97 ],  [ &#039;code&#039; =&gt; 100 ] ];
-indexBy(fn ($r) =&gt; \chr($r[&#039;code&#039;]), $aa); // [&#039;a&#039; =&gt; [ &#039;code&#039; =&gt; 97 ], &#039;d&#039; =&gt; [ &#039;code&#039; =&gt; 100 ]],</code></pre>
+                        <pre><code class='language-php example line-numbers'>$a = [ [ &#039;code&#039; =&gt; 97 ],  [ &#039;code&#039; =&gt; 100 ] ];
+indexBy(fn ($r) =&gt; \chr($r[&#039;code&#039;]), $aa); // [&#039;a&#039; =&gt; [ &#039;code&#039; =&gt; 97 ], &#039;d&#039; =&gt; [ &#039;code&#039; =&gt; 100 ]],</code><span class='copy'></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -1241,6 +1426,9 @@ indexBy(fn ($r) =&gt; \chr($r[&#039;code&#039;]), $aa); // [&#039;a&#039; =&gt; 
                             <ul>
                                                                     <li><a href='#groupBy'>groupBy</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/indexBy.php">source</a>
                         </div>
                                     </article>
 
@@ -1267,7 +1455,7 @@ indexBy(fn ($r) =&gt; \chr($r[&#039;code&#039;]), $aa); // [&#039;a&#039; =&gt; 
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>map(fn ($n) =&gt; $n * $n, [4, 8]); // [16, 64]</code></pre>
+                        <pre><code class='language-php example line-numbers'>map(fn ($n) =&gt; $n * $n, [4, 8]); // [16, 64]</code><span class='copy'></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -1281,6 +1469,9 @@ indexBy(fn ($r) =&gt; \chr($r[&#039;code&#039;]), $aa); // [&#039;a&#039; =&gt; 
                             <ul>
                                                                     <li><a href='#reduce'>reduce</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/map.php">source</a>
                         </div>
                                     </article>
 
@@ -1309,7 +1500,7 @@ indexBy(fn ($r) =&gt; \chr($r[&#039;code&#039;]), $aa); // [&#039;a&#039; =&gt; 
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$users = [
+                        <pre><code class='language-php example line-numbers'>$users = [
     [ &#039;user&#039; =&gt; &#039;fred&#039;,   &#039;age&#039; =&gt; 48 ],
     [ &#039;user&#039; =&gt; &#039;barney&#039;, &#039;age&#039; =&gt; 34 ],
     [ &#039;user&#039; =&gt; &#039;fred&#039;,   &#039;age&#039; =&gt; 40 ],
@@ -1323,7 +1514,7 @@ orderBy([property(&#039;user&#039;), property(&#039;age&#039;)], [&#039;asc&#039
     [ &#039;user&#039; =&gt; &#039;fred&#039;,   &#039;age&#039; =&gt; 48 ],
     [ &#039;user&#039; =&gt; &#039;fred&#039;,   &#039;age&#039; =&gt; 40 ]
 ]
-*/</code></pre>
+*/</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -1331,6 +1522,9 @@ orderBy([property(&#039;user&#039;), property(&#039;age&#039;)], [&#039;asc&#039
                             <ul>
                                                                     <li><a href='#sortBy'>sortBy</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/orderBy.php">source</a>
                         </div>
                                     </article>
 
@@ -1357,11 +1551,11 @@ orderBy([property(&#039;user&#039;), property(&#039;age&#039;)], [&#039;asc&#039
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>partition(
+                        <pre><code class='language-php example line-numbers'>partition(
     fn ($v) =&gt; stripos($v, &#039;A&#039;) !== false, 
     [&#039;a&#039; =&gt; &#039;AA&#039;, &#039;b&#039; =&gt; &#039;BB&#039;, &#039;c&#039; =&gt; &#039;AAA&#039;]
 ); 
-// [[&#039;a&#039; =&gt; &#039;AA&#039;, &#039;c&#039; =&gt; &#039;AAA&#039;], [&#039;b&#039; =&gt; &#039;BB&#039;]]</code></pre>
+// [[&#039;a&#039; =&gt; &#039;AA&#039;, &#039;c&#039; =&gt; &#039;AAA&#039;], [&#039;b&#039; =&gt; &#039;BB&#039;]]</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -1370,6 +1564,9 @@ orderBy([property(&#039;user&#039;), property(&#039;age&#039;)], [&#039;asc&#039
                                                                     <li><a href='#filter'>filter</a>, </li>
                                                                     <li><a href='#juxt'>juxt</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/partition.php">source</a>
                         </div>
                                     </article>
 
@@ -1396,7 +1593,7 @@ orderBy([property(&#039;user&#039;), property(&#039;age&#039;)], [&#039;asc&#039
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>reduce(ary(2, subtract(...)), 0, [1, 2, 3, 4]); // -10</code></pre>
+                        <pre><code class='language-php example line-numbers'>reduce(ary(2, subtract(...)), 0, [1, 2, 3, 4]); // -10</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -1404,6 +1601,9 @@ orderBy([property(&#039;user&#039;), property(&#039;age&#039;)], [&#039;asc&#039
                             <ul>
                                                                     <li><a href='#reduceRight'>reduceRight</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/reduce.php">source</a>
                         </div>
                                     </article>
 
@@ -1430,7 +1630,7 @@ orderBy([property(&#039;user&#039;), property(&#039;age&#039;)], [&#039;asc&#039
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$users = [
+                        <pre><code class='language-php example line-numbers'>$users = [
     [ &#039;name&#039; =&gt; &#039;Steve&#039;, &#039;surname&#039; =&gt; &#039;Jobs&#039;  ],
     [ &#039;name&#039; =&gt; &#039;Bill&#039;,  &#039;surname&#039; =&gt; &#039;Gates&#039; ]
 ];
@@ -1445,7 +1645,7 @@ map(
     [ &#039;name&#039; =&gt; &#039;Steve&#039;, &#039;surname&#039; =&gt; &#039;Jobs&#039;,  &#039;initials&#039; =&gt; &#039;SJ&#039; ],
     [ &#039;name&#039; =&gt; &#039;Bill&#039;,  &#039;surname&#039; =&gt; &#039;Gates&#039;, &#039;initials&#039; =&gt; &#039;BG&#039; ]
 ]
-*/</code></pre>
+*/</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -1453,6 +1653,9 @@ map(
                             <ul>
                                                                     <li><a href='#evolve'>evolve</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/resolve.php">source</a>
                         </div>
                                     </article>
 
@@ -1479,7 +1682,7 @@ map(
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$users = [
+                        <pre><code class='language-php example line-numbers'>$users = [
     [ &#039;user&#039; =&gt; &#039;fred&#039;,   &#039;age&#039; =&gt; 48 ],
     [ &#039;user&#039; =&gt; &#039;barney&#039;, &#039;age&#039; =&gt; 36 ],
     [ &#039;user&#039; =&gt; &#039;fred&#039;,   &#039;age&#039; =&gt; 40 ],
@@ -1493,7 +1696,7 @@ sortBy([property(&#039;user&#039;), property(&#039;age&#039;)], $users);
     [ &#039;user&#039; =&gt; &#039;fred&#039;,   &#039;age&#039; =&gt; 40 ],
     [ &#039;user&#039; =&gt; &#039;fred&#039;,   &#039;age&#039; =&gt; 48 ]
 ]
-*/</code></pre>
+*/</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -1501,6 +1704,9 @@ sortBy([property(&#039;user&#039;), property(&#039;age&#039;)], $users);
                             <ul>
                                                                     <li><a href='#orderBy'>orderBy</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/sortBy.php">source</a>
                         </div>
                                     </article>
 
@@ -1520,7 +1726,7 @@ sortBy([property(&#039;user&#039;), property(&#039;age&#039;)], $users);
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>values([&#039;a&#039; =&gt; &#039;AA&#039;, &#039;b&#039; =&gt; &#039;BB&#039;]); // [&#039;AA&#039;, &#039;BB&#039;]</code></pre>
+                        <pre><code class='language-php example line-numbers'>values([&#039;a&#039; =&gt; &#039;AA&#039;, &#039;b&#039; =&gt; &#039;BB&#039;]); // [&#039;AA&#039;, &#039;BB&#039;]</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -1528,6 +1734,9 @@ sortBy([property(&#039;user&#039;), property(&#039;age&#039;)], $users);
                             <ul>
                                                                     <li><a href='#keys'>keys</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/values.php">source</a>
                         </div>
                                     </article>
 
@@ -1578,8 +1787,8 @@ sortBy([property(&#039;user&#039;), property(&#039;age&#039;)], $users);
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$n13 = applyTo(13);
-$n13(add(100)); // 113</code></pre>
+                        <pre><code class='language-php example line-numbers'>$n13 = applyTo(13);
+$n13(add(100)); // 113</code><span class='copy'></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -1606,7 +1815,7 @@ $n13(add(100)); // 113</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>map(ary(1, &#039;\intval&#039;), [&#039;6&#039;, &#039;8&#039;, &#039;10&#039;]); // [6, 8, 10]</code></pre>
+                        <pre><code class='language-php example line-numbers'>map(ary(1, &#039;\intval&#039;), [&#039;6&#039;, &#039;8&#039;, &#039;10&#039;]); // [6, 8, 10]</code><span class='copy'></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -1620,6 +1829,9 @@ $n13(add(100)); // 113</code></pre>
                             <ul>
                                                                     <li><a href='#unary'>unary</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/ary.php">source</a>
                         </div>
                                     </article>
 
@@ -1639,8 +1851,8 @@ $n13(add(100)); // 113</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>attempt(fn () =&gt; &#039;A&#039;); // A
-attempt(fn () =&gt; throw new \Exception(&#039;Error&#039;)); // Exception(&#039;Error&#039;)</code></pre>
+                        <pre><code class='language-php example line-numbers'>attempt(fn () =&gt; &#039;A&#039;); // A
+attempt(fn () =&gt; throw new \Exception(&#039;Error&#039;)); // Exception(&#039;Error&#039;)</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -1648,6 +1860,9 @@ attempt(fn () =&gt; throw new \Exception(&#039;Error&#039;)); // Exception(&#039
                             <ul>
                                                                     <li><a href='#tryCatch'>tryCatch</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/attempt.php">source</a>
                         </div>
                                     </article>
 
@@ -1668,7 +1883,7 @@ attempt(fn () =&gt; throw new \Exception(&#039;Error&#039;)); // Exception(&#039
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>compose(&#039;\strtoupper&#039;, fn ($s) =&gt; &#039;hello &#039;.$s, &#039;\trim&#039;)(&#039; fred &#039;); // &#039;HELLO FRED&#039;</code></pre>
+                        <pre><code class='language-php example line-numbers'>compose(&#039;\strtoupper&#039;, fn ($s) =&gt; &#039;hello &#039;.$s, &#039;\trim&#039;)(&#039; fred &#039;); // &#039;HELLO FRED&#039;</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -1676,6 +1891,9 @@ attempt(fn () =&gt; throw new \Exception(&#039;Error&#039;)); // Exception(&#039
                             <ul>
                                                                     <li><a href='#pipe'>pipe</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/compose.php">source</a>
                         </div>
                                     </article>
 
@@ -1696,12 +1914,12 @@ attempt(fn () =&gt; throw new \Exception(&#039;Error&#039;)); // Exception(&#039
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>use const \Idles\_;
+                        <pre><code class='language-php example line-numbers'>use const \Idles\_;
 
 $abc = fn ($a, $b, $c = &#039;c&#039;) =&gt; $a.$b.$c;
 curry($abc)(&#039;a&#039;)(&#039;b&#039;)(&#039;c&#039;); // &#039;abc&#039;
 curryN(2, $abc)(&#039;a&#039;)(&#039;b&#039;); // &#039;abc&#039;
-curry($abc)(_, &#039;b&#039;)(_, &#039;c&#039;)(&#039;a&#039;); // &#039;abc&#039;</code></pre>
+curry($abc)(_, &#039;b&#039;)(_, &#039;c&#039;)(&#039;a&#039;); // &#039;abc&#039;</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -1710,6 +1928,9 @@ curry($abc)(_, &#039;b&#039;)(_, &#039;c&#039;)(&#039;a&#039;); // &#039;abc&#03
                                                                     <li><a href='#partial'>partial</a>, </li>
                                                                     <li><a href='#curryRight'>curryRight</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/curry.php">source</a>
                         </div>
                                     </article>
 
@@ -1730,12 +1951,12 @@ curry($abc)(_, &#039;b&#039;)(_, &#039;c&#039;)(&#039;a&#039;); // &#039;abc&#03
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>use const \Idles\_;
+                        <pre><code class='language-php example line-numbers'>use const \Idles\_;
 
 $abc = fn ($a, $b, $c = &#039;c&#039;) =&gt; $a.$b.$c;
 curryRight($abc)(&#039;c&#039;)(&#039;b&#039;)(&#039;a&#039;); // &#039;abc&#039;
 curryRight($abc)(&#039;b&#039;,&#039;c&#039;)(&#039;a&#039;); // &#039;abc&#039;
-curryRightN(2, $abc)(&#039;b&#039;)(&#039;a&#039;); // &#039;abc&#039;</code></pre>
+curryRightN(2, $abc)(&#039;b&#039;)(&#039;a&#039;); // &#039;abc&#039;</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -1744,6 +1965,9 @@ curryRightN(2, $abc)(&#039;b&#039;)(&#039;a&#039;); // &#039;abc&#039;</code></p
                                                                     <li><a href='#partialRight'>partialRight</a>, </li>
                                                                     <li><a href='#curry'>curry</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/curryRight.php">source</a>
                         </div>
                                     </article>
 
@@ -1763,10 +1987,10 @@ curryRightN(2, $abc)(&#039;b&#039;)(&#039;a&#039;); // &#039;abc&#039;</code></p
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$isOdd = fn ($n) =&gt; $n % 2;
+                        <pre><code class='language-php example line-numbers'>$isOdd = fn ($n) =&gt; $n % 2;
 juxt([filter($isOdd), remove($isOdd)])([1,2,3,4,5,6,7,8,9]);
 // [[1,3,5,7,9], [2,4,6,8]]
-juxt([max(...), min(...)])(1,2,3,4); // [4,1]</code></pre>
+juxt([max(...), min(...)])(1,2,3,4); // [4,1]</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -1774,6 +1998,9 @@ juxt([max(...), min(...)])(1,2,3,4); // [4,1]</code></pre>
                             <ul>
                                                                     <li><a href='#applySpec'>applySpec</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/juxt.php">source</a>
                         </div>
                                     </article>
 
@@ -1806,6 +2033,9 @@ juxt([max(...), min(...)])(1,2,3,4); // [4,1]</code></pre>
                                                                     <li><a href='#once'>once</a></li>
                                                             </ul>
                         </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/memoize.php">source</a>
+                        </div>
                                     </article>
 
             
@@ -1824,8 +2054,8 @@ juxt([max(...), min(...)])(1,2,3,4); // [4,1]</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$isEven = fn ($n) =&gt; $n % 2 == 0;
-filter(negate($isEven), [1, 2, 3, 4, 5, 6]); // [1, 3, 5]</code></pre>
+                        <pre><code class='language-php example line-numbers'>$isEven = fn ($n) =&gt; $n % 2 == 0;
+filter(negate($isEven), [1, 2, 3, 4, 5, 6]); // [1, 3, 5]</code><span class='copy'></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -1852,10 +2082,10 @@ filter(negate($isEven), [1, 2, 3, 4, 5, 6]); // [1, 3, 5]</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>use const \Idles\_;
+                        <pre><code class='language-php example line-numbers'>use const \Idles\_;
 
 $abcd = fn ($a, $b, $c, $d) =&gt; $a.$b.$c.$d;
-partial($abcd, [&#039;a&#039;, _, &#039;c&#039;])(&#039;b&#039;, &#039;d&#039;)&#039; // &#039;abcd&#039;</code></pre>
+partial($abcd, [&#039;a&#039;, _, &#039;c&#039;])(&#039;b&#039;, &#039;d&#039;)&#039; // &#039;abcd&#039;</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -1864,6 +2094,9 @@ partial($abcd, [&#039;a&#039;, _, &#039;c&#039;])(&#039;b&#039;, &#039;d&#039;)&
                                                                     <li><a href='#curry'>curry</a>, </li>
                                                                     <li><a href='#partialRight'>partialRight</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/partial.php">source</a>
                         </div>
                                     </article>
 
@@ -1883,10 +2116,10 @@ partial($abcd, [&#039;a&#039;, _, &#039;c&#039;])(&#039;b&#039;, &#039;d&#039;)&
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>use const \Idles\_;
+                        <pre><code class='language-php example line-numbers'>use const \Idles\_;
 
 $abcd = fn ($a, $b, $c, $d) =&gt; $a.$b.$c.$d;
-partialRight($abcd, [&#039;b&#039;, _, &#039;d&#039;])(&#039;a&#039;, &#039;c&#039;)); // &#039;abcd&#039;</code></pre>
+partialRight($abcd, [&#039;b&#039;, _, &#039;d&#039;])(&#039;a&#039;, &#039;c&#039;)); // &#039;abcd&#039;</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -1895,6 +2128,9 @@ partialRight($abcd, [&#039;b&#039;, _, &#039;d&#039;])(&#039;a&#039;, &#039;c&#0
                                                                     <li><a href='#curryRight'>curryRight</a>, </li>
                                                                     <li><a href='#partial'>partial</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/partialRight.php">source</a>
                         </div>
                                     </article>
 
@@ -1915,7 +2151,7 @@ partialRight($abcd, [&#039;b&#039;, _, &#039;d&#039;])(&#039;a&#039;, &#039;c&#0
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>pipe(&#039;\trim&#039;, &#039;\strtoupper&#039;)(&#039; hello &#039;); // &#039;HELLO&#039;</code></pre>
+                        <pre><code class='language-php example line-numbers'>pipe(&#039;\trim&#039;, &#039;\strtoupper&#039;)(&#039; hello &#039;); // &#039;HELLO&#039;</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -1923,6 +2159,9 @@ partialRight($abcd, [&#039;b&#039;, _, &#039;d&#039;])(&#039;a&#039;, &#039;c&#0
                             <ul>
                                                                     <li><a href='#compose'>compose</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/pipe.php">source</a>
                         </div>
                                     </article>
 
@@ -1947,6 +2186,9 @@ partialRight($abcd, [&#039;b&#039;, _, &#039;d&#039;])(&#039;a&#039;, &#039;c&#0
                                                                     <li><a href='#applyTo'>applyTo</a>, </li>
                                                                     <li><a href='#tryCatch'>tryCatch</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/tap.php">source</a>
                         </div>
                                     </article>
 
@@ -1973,7 +2215,7 @@ partialRight($abcd, [&#039;b&#039;, _, &#039;d&#039;])(&#039;a&#039;, &#039;c&#0
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>times(fn($i) =&gt; &quot;$i&quot;, 3); // [&#039;0&#039;, &#039;1&#039;, &#039;2&#039;]</code></pre>
+                        <pre><code class='language-php example line-numbers'>times(fn($i) =&gt; &quot;$i&quot;, 3); // [&#039;0&#039;, &#039;1&#039;, &#039;2&#039;]</code><span class='copy'></pre>
                     
                     
                                     </article>
@@ -2003,11 +2245,11 @@ partialRight($abcd, [&#039;b&#039;, _, &#039;d&#039;])(&#039;a&#039;, &#039;c&#0
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>tryCatch(fn ($v) =&gt; &quot;[$v]&quot;, fn ($err, $value) =&gt; [$err, $value])(&#039;A&#039;); // &#039;[A]&#039;
+                        <pre><code class='language-php example line-numbers'>tryCatch(fn ($v) =&gt; &quot;[$v]&quot;, fn ($err, $value) =&gt; [$err, $value])(&#039;A&#039;); // &#039;[A]&#039;
 tryCatch(
     fn ($v) =&gt; throw new \Exception(&#039;Error&#039;),
     fn (\Exception $err, $value) =&gt; [$err-&gt;getMessage(), $value]
-)(&#039;A&#039;); // [&#039;Error&#039;, &#039;A&#039;]</code></pre>
+)(&#039;A&#039;); // [&#039;Error&#039;, &#039;A&#039;]</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -2015,6 +2257,9 @@ tryCatch(
                             <ul>
                                                                     <li><a href='#attempt'>attempt</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/tryCatch.php">source</a>
                         </div>
                                     </article>
 
@@ -2038,6 +2283,9 @@ tryCatch(
                             <ul>
                                                                     <li><a href='#ary'>ary</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/unary.php">source</a>
                         </div>
                                     </article>
 
@@ -2072,11 +2320,11 @@ tryCatch(
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$bothStrings = fn (...$args) =&gt; all(ary(1, &#039;\is_string&#039;), $args);
+                        <pre><code class='language-php example line-numbers'>$bothStrings = fn (...$args) =&gt; all(ary(1, &#039;\is_string&#039;), $args);
 $equal = fn ($a, $b) =&gt; $a == $b;
 allPass([$bothStrings, $equal])(&#039;a&#039;, &#039;b&#039;); // false
 allPass([$bothStrings, $equal])(&#039;a&#039;, &#039;a&#039;); // true
-allPass([$bothStrings, $equal])(1, 1); // false</code></pre>
+allPass([$bothStrings, $equal])(1, 1); // false</code><span class='copy'></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -2090,6 +2338,9 @@ allPass([$bothStrings, $equal])(1, 1); // false</code></pre>
                             <ul>
                                                                     <li><a href='#anyPass'>anyPass</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/allPass.php">source</a>
                         </div>
                                     </article>
 
@@ -2116,11 +2367,11 @@ allPass([$bothStrings, $equal])(1, 1); // false</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$bothStrings = fn (...$args) =&gt; all(ary(1, &#039;\is_string&#039;), $args);
+                        <pre><code class='language-php example line-numbers'>$bothStrings = fn (...$args) =&gt; all(ary(1, &#039;\is_string&#039;), $args);
 $equal = fn ($a, $b) =&gt; $a == $b;
 anyPass([$bothStrings, $equal])(&#039;a&#039;, &#039;b&#039;); // true
 anyPass([$bothStrings, $equal])(&#039;1&#039;, 2); // false
-anyPass([$bothStrings, $equal])(1, 1); // true</code></pre>
+anyPass([$bothStrings, $equal])(1, 1); // true</code><span class='copy'></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -2134,6 +2385,9 @@ anyPass([$bothStrings, $equal])(1, 1); // true</code></pre>
                             <ul>
                                                                     <li><a href='#allPass'>allPass</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/anyPass.php">source</a>
                         </div>
                                     </article>
 
@@ -2160,14 +2414,14 @@ anyPass([$bothStrings, $equal])(1, 1); // true</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$fn = cond([
+                        <pre><code class='language-php example line-numbers'>$fn = cond([
     [fn ($v) =&gt; $v == 0,    fn () =&gt; &#039;water freezes at 0°C&#039;],
     [fn ($v) =&gt; $v == 100,  fn () =&gt; &#039;water boils at 100°C&#039;],
     [fn () =&gt; true,         fn ($temp) =&gt; &quot;nothing special happens at $temp °C&quot;]
 ]);
 $fn(0);     // &#039;water freezes at 0°C&#039;
 $fn(50);    // &#039;nothing special happens at 50 °C&#039;
-$fn(100);   // &#039;water boils at 100°C&#039;</code></pre>
+$fn(100);   // &#039;water boils at 100°C&#039;</code><span class='copy'></pre>
                     
                     
                                     </article>
@@ -2188,7 +2442,7 @@ $fn(100);   // &#039;water boils at 100°C&#039;</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>defaultTo(10, null); // 10</code></pre>
+                        <pre><code class='language-php example line-numbers'>defaultTo(10, null); // 10</code><span class='copy'></pre>
                     
                     
                                     </article>
@@ -2217,7 +2471,7 @@ $fn(100);   // &#039;water boils at 100°C&#039;</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>add(100)(13); // 113</code></pre>
+                        <pre><code class='language-php example line-numbers'>add(100)(13); // 113</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -2225,6 +2479,9 @@ $fn(100);   // &#039;water boils at 100°C&#039;</code></pre>
                             <ul>
                                                                     <li><a href='#sum'>sum</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/add.php">source</a>
                         </div>
                                     </article>
 
@@ -2249,6 +2506,9 @@ $fn(100);   // &#039;water boils at 100°C&#039;</code></pre>
                                                                     <li><a href='#modulo'>modulo</a></li>
                                                             </ul>
                         </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/divide.php">source</a>
+                        </div>
                                     </article>
 
             
@@ -2272,6 +2532,9 @@ $fn(100);   // &#039;water boils at 100°C&#039;</code></pre>
                                                                     <li><a href='#divide'>divide</a></li>
                                                             </ul>
                         </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/modulo.php">source</a>
+                        </div>
                                     </article>
 
             
@@ -2294,6 +2557,9 @@ $fn(100);   // &#039;water boils at 100°C&#039;</code></pre>
                             <ul>
                                                                     <li><a href='#add'>add</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/multiply.php">source</a>
                         </div>
                                     </article>
 
@@ -2347,7 +2613,7 @@ $fn(100);   // &#039;water boils at 100°C&#039;</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>sum([4, 2, 8, 6]); // 20</code></pre>
+                        <pre><code class='language-php example line-numbers'>sum([4, 2, 8, 6]); // 20</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -2355,6 +2621,9 @@ $fn(100);   // &#039;water boils at 100°C&#039;</code></pre>
                             <ul>
                                                                     <li><a href='#sumBy'>sumBy</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/sum.php">source</a>
                         </div>
                                     </article>
 
@@ -2374,8 +2643,8 @@ $fn(100);   // &#039;water boils at 100°C&#039;</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$ns = [[ &#039;n&#039;=&gt; 4 ], [ &#039;n&#039;=&gt; 2 ], [ &#039;n&#039;=&gt; 8 ], [ &#039;n&#039;=&gt; 6 ]];
-sumBy(property(&#039;n&#039;), $ns); // 20</code></pre>
+                        <pre><code class='language-php example line-numbers'>$ns = [[ &#039;n&#039;=&gt; 4 ], [ &#039;n&#039;=&gt; 2 ], [ &#039;n&#039;=&gt; 8 ], [ &#039;n&#039;=&gt; 6 ]];
+sumBy(property(&#039;n&#039;), $ns); // 20</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -2383,6 +2652,9 @@ sumBy(property(&#039;n&#039;), $ns); // 20</code></pre>
                             <ul>
                                                                     <li><a href='#sum'>sum</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/sumBy.php">source</a>
                         </div>
                                     </article>
 
@@ -2410,10 +2682,10 @@ sumBy(property(&#039;n&#039;), $ns); // 20</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$a = [&#039;a&#039; =&gt; [&#039;b&#039; =&gt; &#039;1&#039;, &#039;c&#039; =&gt; &#039;C&#039;], [&#039;e&#039; =&gt; &#039;E&#039;], &#039;x&#039;];
+                        <pre><code class='language-php example line-numbers'>$a = [&#039;a&#039; =&gt; [&#039;b&#039; =&gt; &#039;1&#039;, &#039;c&#039; =&gt; &#039;C&#039;], [&#039;e&#039; =&gt; &#039;E&#039;], &#039;x&#039;];
 $b = [&#039;a&#039; =&gt; [&#039;b&#039; =&gt; &#039;2&#039;, &#039;d&#039; =&gt; &#039;D&#039;], [&#039;f&#039; =&gt; &#039;F&#039;], &#039;y&#039;];
 assignDeep([$a, $b]);
-// [&#039;a&#039; =&gt; [&#039;b&#039; =&gt; &#039;2&#039;, &#039;c&#039; =&gt; &#039;C&#039;, &#039;d&#039; =&gt; &#039;D&#039;], [&#039;e&#039; =&gt; &#039;E&#039;, &#039;f&#039; =&gt; &#039;F&#039;], &#039;y&#039;]</code></pre>
+// [&#039;a&#039; =&gt; [&#039;b&#039; =&gt; &#039;2&#039;, &#039;c&#039; =&gt; &#039;C&#039;, &#039;d&#039; =&gt; &#039;D&#039;], [&#039;e&#039; =&gt; &#039;E&#039;, &#039;f&#039; =&gt; &#039;F&#039;], &#039;y&#039;]</code><span class='copy'></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -2429,6 +2701,9 @@ assignDeep([$a, $b]);
                                                                     <li><a href='#assign'>assign</a>, </li>
                                                                     <li><a href='#concat'>concat</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/assignDeep.php">source</a>
                         </div>
                                     </article>
 
@@ -2449,7 +2724,7 @@ assignDeep([$a, $b]);
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>defaultsAll([ [&#039;actual&#039;, &#039;a&#039;=&gt;1], [&#039;default&#039;, &#039;b&#039;=&gt;2], [&#039;a&#039;=&gt;3] ]) // [&#039;actual&#039;, &#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2]</code></pre>
+                        <pre><code class='language-php example line-numbers'>defaultsAll([ [&#039;actual&#039;, &#039;a&#039;=&gt;1], [&#039;default&#039;, &#039;b&#039;=&gt;2], [&#039;a&#039;=&gt;3] ]) // [&#039;actual&#039;, &#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2]</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -2457,6 +2732,9 @@ assignDeep([$a, $b]);
                             <ul>
                                                                     <li><a href='#mergeLeft'>mergeLeft</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/defaults.php">source</a>
                         </div>
                                     </article>
 
@@ -2483,7 +2761,7 @@ assignDeep([$a, $b]);
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$tomato = [&#039;firstName&#039; =&gt; &#039;  Tomato &#039;, &#039;data&#039; =&gt; [&#039;elapsed&#039; =&gt; 100, &#039;remaining&#039; =&gt; 1400], &#039;id&#039; =&gt; 123];
+                        <pre><code class='language-php example line-numbers'>$tomato = [&#039;firstName&#039; =&gt; &#039;  Tomato &#039;, &#039;data&#039; =&gt; [&#039;elapsed&#039; =&gt; 100, &#039;remaining&#039; =&gt; 1400], &#039;id&#039; =&gt; 123];
 $transformations = [
     &#039;firstName&#039; =&gt; &#039;\trim&#039;,
     &#039;lastName&#039; =&gt; &#039;\trim&#039;,  // Will not get invoked.
@@ -2493,7 +2771,7 @@ $transformations = [
     ]
 ];
 evolve($transformations)($tomato);
-// [&#039;firstName&#039; =&gt; &#039;Tomato&#039;, &#039;data&#039; =&gt;  [&#039;elapsed&#039; =&gt;  101, &#039;remaining&#039; =&gt;  1399], &#039;id&#039; =&gt; 123]</code></pre>
+// [&#039;firstName&#039; =&gt; &#039;Tomato&#039;, &#039;data&#039; =&gt;  [&#039;elapsed&#039; =&gt;  101, &#039;remaining&#039; =&gt;  1399], &#039;id&#039; =&gt; 123]</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -2501,6 +2779,9 @@ evolve($transformations)($tomato);
                             <ul>
                                                                     <li><a href='#resolve'>resolve</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/evolve.php">source</a>
                         </div>
                                     </article>
 
@@ -2521,10 +2802,10 @@ evolve($transformations)($tomato);
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>assign(
+                        <pre><code class='language-php example line-numbers'>assign(
     [&#039;a&#039;, &#039;c&#039; =&gt; &#039;C&#039;], 
     [&#039;b&#039;, &#039;d&#039; =&gt; &#039;D&#039;]
-); // [&#039;b&#039;, &#039;c&#039; =&gt; &#039;C&#039;, &#039;d&#039; =&gt; &#039;D&#039;]</code></pre>
+); // [&#039;b&#039;, &#039;c&#039; =&gt; &#039;C&#039;, &#039;d&#039; =&gt; &#039;D&#039;]</code><span class='copy'></pre>
                     
                                             <div>
                             <h4>Aliases</h4>
@@ -2541,6 +2822,9 @@ evolve($transformations)($tomato);
                                                                     <li><a href='#concat'>concat</a>, </li>
                                                                     <li><a href='#assignDeep'>assignDeep</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/extend.php">source</a>
                         </div>
                                     </article>
 
@@ -2560,8 +2844,8 @@ evolve($transformations)($tomato);
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$r = [&#039;a&#039; =&gt; &#039;A];
-has(&#039;a&#039;, $r); // true</code></pre>
+                        <pre><code class='language-php example line-numbers'>$r = [&#039;a&#039; =&gt; &#039;A];
+has(&#039;a&#039;, $r); // true</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -2570,6 +2854,9 @@ has(&#039;a&#039;, $r); // true</code></pre>
                                                                     <li><a href='#hasPath'>hasPath</a>, </li>
                                                                     <li><a href='#get'>get</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/has.php">source</a>
                         </div>
                                     </article>
 
@@ -2589,10 +2876,10 @@ has(&#039;a&#039;, $r); // true</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$r = [ &#039;a&#039; =&gt; [ &#039;b&#039; =&gt; 2 ] ];
+                        <pre><code class='language-php example line-numbers'>$r = [ &#039;a&#039; =&gt; [ &#039;b&#039; =&gt; 2 ] ];
 hasPath(&#039;a&#039;, $r); // true
 hasPath(&#039;a.b&#039;, $r); // true
-hasPath([&#039;a&#039;, &#039;b&#039;], $r); // true</code></pre>
+hasPath([&#039;a&#039;, &#039;b&#039;], $r); // true</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -2601,6 +2888,9 @@ hasPath([&#039;a&#039;, &#039;b&#039;], $r); // true</code></pre>
                                                                     <li><a href='#path'>path</a>, </li>
                                                                     <li><a href='#has'>has</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/hasPath.php">source</a>
                         </div>
                                     </article>
 
@@ -2620,7 +2910,7 @@ hasPath([&#039;a&#039;, &#039;b&#039;], $r); // true</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>invert([ &#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2, &#039;c&#039; =&gt; 1 ]); // [1 =&gt; &#039;c&#039;, 2 =&gt; &#039;b&#039;]</code></pre>
+                        <pre><code class='language-php example line-numbers'>invert([ &#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2, &#039;c&#039; =&gt; 1 ]); // [1 =&gt; &#039;c&#039;, 2 =&gt; &#039;b&#039;]</code><span class='copy'></pre>
                     
                     
                                     </article>
@@ -2641,7 +2931,7 @@ hasPath([&#039;a&#039;, &#039;b&#039;], $r); // true</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>keys([ &#039;a&#039;=&gt; 1, &#039;b&#039;=&gt; 2, &#039;c&#039;=&gt; 3 ]); // [&#039;a&#039;, &#039;b&#039;, &#039;c&#039;]</code></pre>
+                        <pre><code class='language-php example line-numbers'>keys([ &#039;a&#039;=&gt; 1, &#039;b&#039;=&gt; 2, &#039;c&#039;=&gt; 3 ]); // [&#039;a&#039;, &#039;b&#039;, &#039;c&#039;]</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -2649,6 +2939,9 @@ hasPath([&#039;a&#039;, &#039;b&#039;], $r); // true</code></pre>
                             <ul>
                                                                     <li><a href='#values'>values</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/keys.php">source</a>
                         </div>
                                     </article>
 
@@ -2668,11 +2961,11 @@ hasPath([&#039;a&#039;, &#039;b&#039;], $r); // true</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$pred = matches([&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2]);
+                        <pre><code class='language-php example line-numbers'>$pred = matches([&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2]);
 $pred([&#039;a&#039; =&gt; 1])); // false
 $pred([&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2])); // true
 $pred([&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2, &#039;c&#039; =&gt; 3])); // true
-$pred([&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 1]));   // false</code></pre>
+$pred([&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 1]));   // false</code><span class='copy'></pre>
                     
                                             <div>
                             <h4>Aliases</h4>
@@ -2687,6 +2980,9 @@ $pred([&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 1]));   // false</code></pre>
                             <ul>
                                                                     <li><a href='#where'>where</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/matches.php">source</a>
                         </div>
                                     </article>
 
@@ -2707,7 +3003,7 @@ $pred([&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 1]));   // false</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>merge([&#039;a&#039;, &#039;c&#039; =&gt; &#039;C&#039;], [&#039;b&#039;, &#039;d&#039; =&gt; &#039;D&#039;]); // [&#039;a&#039;, &#039;b&#039;, &#039;c&#039; =&gt; &#039;C&#039;, &#039;d&#039; =&gt; &#039;D&#039;]</code></pre>
+                        <pre><code class='language-php example line-numbers'>merge([&#039;a&#039;, &#039;c&#039; =&gt; &#039;C&#039;], [&#039;b&#039;, &#039;d&#039; =&gt; &#039;D&#039;]); // [&#039;a&#039;, &#039;b&#039;, &#039;c&#039; =&gt; &#039;C&#039;, &#039;d&#039; =&gt; &#039;D&#039;]</code><span class='copy'></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -2723,6 +3019,9 @@ $pred([&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 1]));   // false</code></pre>
                                                                     <li><a href='#concat'>concat</a>, </li>
                                                                     <li><a href='#mergeDeep'>mergeDeep</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/merge.php">source</a>
                         </div>
                                     </article>
 
@@ -2742,10 +3041,10 @@ $pred([&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 1]));   // false</code></pre>
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$a = [&#039;a&#039; =&gt; [&#039;b&#039; =&gt; 1, &#039;c&#039; =&gt; &#039;C&#039;], [&#039;e&#039; =&gt; &#039;E&#039;], &#039;x&#039;];
+                        <pre><code class='language-php example line-numbers'>$a = [&#039;a&#039; =&gt; [&#039;b&#039; =&gt; 1, &#039;c&#039; =&gt; &#039;C&#039;], [&#039;e&#039; =&gt; &#039;E&#039;], &#039;x&#039;];
 $b = [&#039;a&#039; =&gt; [&#039;b&#039; =&gt; 2, &#039;d&#039; =&gt; &#039;D&#039;], [&#039;f&#039; =&gt; &#039;F&#039;], &#039;y&#039;];
 mergeDeep([$a, $b]);
-// [&#039;a&#039; =&gt; [&#039;b&#039; =&gt; [1, 2], &#039;c&#039; =&gt; &#039;C&#039;, &#039;d&#039; =&gt; &#039;D&#039;], [&#039;e&#039; =&gt; &#039;E&#039;], &#039;x&#039;, [&#039;f&#039; =&gt; &#039;F&#039;], &#039;y&#039;],</code></pre>
+// [&#039;a&#039; =&gt; [&#039;b&#039; =&gt; [1, 2], &#039;c&#039; =&gt; &#039;C&#039;, &#039;d&#039; =&gt; &#039;D&#039;], [&#039;e&#039; =&gt; &#039;E&#039;], &#039;x&#039;, [&#039;f&#039; =&gt; &#039;F&#039;], &#039;y&#039;],</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -2755,6 +3054,9 @@ mergeDeep([$a, $b]);
                                                                     <li><a href='#merge'>merge</a>, </li>
                                                                     <li><a href='#concat'>concat</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/mergeDeep.php">source</a>
                         </div>
                                     </article>
 
@@ -2774,8 +3076,8 @@ mergeDeep([$a, $b]);
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$resetToDefault = mergeLeft([&#039;x&#039; =&gt; 0]);
-$resetToDefault([&#039;x&#039; =&gt; 5, &#039;y&#039; =&gt; 2]); // [&#039;x&#039; =&gt; 0, &#039;y&#039; =&gt; 2]</code></pre>
+                        <pre><code class='language-php example line-numbers'>$resetToDefault = mergeLeft([&#039;x&#039; =&gt; 0]);
+$resetToDefault([&#039;x&#039; =&gt; 5, &#039;y&#039; =&gt; 2]); // [&#039;x&#039; =&gt; 0, &#039;y&#039; =&gt; 2]</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -2784,6 +3086,9 @@ $resetToDefault([&#039;x&#039; =&gt; 5, &#039;y&#039; =&gt; 2]); // [&#039;x&#03
                                                                     <li><a href='#merge'>merge</a>, </li>
                                                                     <li><a href='#defaults'>defaults</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/mergeLeft.php">source</a>
                         </div>
                                     </article>
 
@@ -2810,7 +3115,7 @@ $resetToDefault([&#039;x&#039; =&gt; 5, &#039;y&#039; =&gt; 2]); // [&#039;x&#03
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>mergeWith(concat(...), [&#039;a&#039; =&gt; [1], &#039;b&#039; =&gt; [2]], [&#039;a&#039; =&gt; [3], &#039;b&#039; =&gt; [4]]); // [&#039;a&#039; =&gt; [1,3], &#039;b&#039; =&gt; [2,4]]</code></pre>
+                        <pre><code class='language-php example line-numbers'>mergeWith(concat(...), [&#039;a&#039; =&gt; [1], &#039;b&#039; =&gt; [2]], [&#039;a&#039; =&gt; [3], &#039;b&#039; =&gt; [4]]); // [&#039;a&#039; =&gt; [1,3], &#039;b&#039; =&gt; [2,4]]</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -2819,6 +3124,9 @@ $resetToDefault([&#039;x&#039; =&gt; 5, &#039;y&#039; =&gt; 2]); // [&#039;x&#03
                                                                     <li><a href='#merge'>merge</a>, </li>
                                                                     <li><a href='#mergeDeep'>mergeDeep</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/mergeWith.php">source</a>
                         </div>
                                     </article>
 
@@ -2845,8 +3153,8 @@ $resetToDefault([&#039;x&#039; =&gt; 5, &#039;y&#039; =&gt; 2]); // [&#039;x&#03
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$a = [ &#039;a&#039; =&gt; [ [ &#039;b&#039; =&gt; [ &#039;c&#039; =&gt; 3 ] ] ] ];
-modifyPath([&#039;a&#039;,0,&#039;b&#039;,&#039;c&#039;], fn ($n) =&gt; $n*$n, $a); // [ &#039;a&#039; =&gt; [ [ &#039;b&#039; =&gt; [ &#039;c&#039; =&gt; 9 ] ] ] ]</code></pre>
+                        <pre><code class='language-php example line-numbers'>$a = [ &#039;a&#039; =&gt; [ [ &#039;b&#039; =&gt; [ &#039;c&#039; =&gt; 3 ] ] ] ];
+modifyPath([&#039;a&#039;,0,&#039;b&#039;,&#039;c&#039;], fn ($n) =&gt; $n*$n, $a); // [ &#039;a&#039; =&gt; [ [ &#039;b&#039; =&gt; [ &#039;c&#039; =&gt; 9 ] ] ] ]</code><span class='copy'></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -2860,6 +3168,9 @@ modifyPath([&#039;a&#039;,0,&#039;b&#039;,&#039;c&#039;], fn ($n) =&gt; $n*$n, $
                             <ul>
                                                                     <li><a href='#setPath'>setPath</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/modifyPath.php">source</a>
                         </div>
                                     </article>
 
@@ -2879,8 +3190,8 @@ modifyPath([&#039;a&#039;,0,&#039;b&#039;,&#039;c&#039;], fn ($n) =&gt; $n*$n, $
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>omit([&#039;a&#039;, &#039;d&#039;], [&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2, &#039;c&#039; =&gt; 3, &#039;d&#039; =&gt; 4]);
-// [&#039;b&#039; =&gt; 2, &#039;c&#039; =&gt; 3]</code></pre>
+                        <pre><code class='language-php example line-numbers'>omit([&#039;a&#039;, &#039;d&#039;], [&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2, &#039;c&#039; =&gt; 3, &#039;d&#039; =&gt; 4]);
+// [&#039;b&#039; =&gt; 2, &#039;c&#039; =&gt; 3]</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -2889,6 +3200,9 @@ modifyPath([&#039;a&#039;,0,&#039;b&#039;,&#039;c&#039;], fn ($n) =&gt; $n*$n, $
                                                                     <li><a href='#without'>without</a>, </li>
                                                                     <li><a href='#omitBy'>omitBy</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/omit.php">source</a>
                         </div>
                                     </article>
 
@@ -2908,7 +3222,7 @@ modifyPath([&#039;a&#039;,0,&#039;b&#039;,&#039;c&#039;], fn ($n) =&gt; $n*$n, $
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>omitBy(unary(&#039;\is_int&#039;), [&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; &#039;2&#039;, &#039;c&#039; =&gt; 3]); // [&#039;b&#039; =&gt; &#039;2&#039;]</code></pre>
+                        <pre><code class='language-php example line-numbers'>omitBy(unary(&#039;\is_int&#039;), [&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; &#039;2&#039;, &#039;c&#039; =&gt; 3]); // [&#039;b&#039; =&gt; &#039;2&#039;]</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -2917,6 +3231,9 @@ modifyPath([&#039;a&#039;,0,&#039;b&#039;,&#039;c&#039;], fn ($n) =&gt; $n*$n, $
                                                                     <li><a href='#without'>without</a>, </li>
                                                                     <li><a href='#omit'>omit</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/omitBy.php">source</a>
                         </div>
                                     </article>
 
@@ -2937,10 +3254,10 @@ modifyPath([&#039;a&#039;,0,&#039;b&#039;,&#039;c&#039;], fn ($n) =&gt; $n*$n, $
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$rec = [ &#039;a&#039; =&gt; [[ &#039;b&#039; =&gt; [ &#039;c&#039; =&gt; 3 ] ]] ];
+                        <pre><code class='language-php example line-numbers'>$rec = [ &#039;a&#039; =&gt; [[ &#039;b&#039; =&gt; [ &#039;c&#039; =&gt; 3 ] ]] ];
 path([&#039;a&#039;, &#039;0&#039;, &#039;b&#039;, &#039;c&#039;], $rec); // 3
 path(&#039;a[0].b.c&#039;, $rec); // 3
-pathOr(&#039;default&#039;, &#039;a.b.c&#039;, $rec); // &#039;default&#039;</code></pre>
+pathOr(&#039;default&#039;, &#039;a.b.c&#039;, $rec); // &#039;default&#039;</code><span class='copy'></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -2954,6 +3271,9 @@ pathOr(&#039;default&#039;, &#039;a.b.c&#039;, $rec); // &#039;default&#039;</co
                             <ul>
                                                                     <li><a href='#prop'>prop</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/path.php">source</a>
                         </div>
                                     </article>
 
@@ -2980,8 +3300,8 @@ pathOr(&#039;default&#039;, &#039;a.b.c&#039;, $rec); // &#039;default&#039;</co
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>pick([&#039;a&#039;, &#039;d&#039;], [&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2, &#039;c&#039; =&gt; 3, &#039;d&#039; =&gt; 4]); 
-// [&#039;a&#039; =&gt; 1, &#039;d&#039; =&gt; 4]</code></pre>
+                        <pre><code class='language-php example line-numbers'>pick([&#039;a&#039;, &#039;d&#039;], [&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2, &#039;c&#039; =&gt; 3, &#039;d&#039; =&gt; 4]); 
+// [&#039;a&#039; =&gt; 1, &#039;d&#039; =&gt; 4]</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -2989,6 +3309,9 @@ pathOr(&#039;default&#039;, &#039;a.b.c&#039;, $rec); // &#039;default&#039;</co
                             <ul>
                                                                     <li><a href='#pickBy'>pickBy</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/pick.php">source</a>
                         </div>
                                     </article>
 
@@ -3015,9 +3338,9 @@ pathOr(&#039;default&#039;, &#039;a.b.c&#039;, $rec); // &#039;default&#039;</co
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$isUpperCase = fn ($val, $key) =&gt; \strtoupper($key) == $key;
+                        <pre><code class='language-php example line-numbers'>$isUpperCase = fn ($val, $key) =&gt; \strtoupper($key) == $key;
 pickBy($isUpperCase, [&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2, &#039;A&#039; =&gt; 3, &#039;B&#039; =&gt; 4]);
-// [&#039;A&#039; =&gt; 3, &#039;B&#039; =&gt; 4]</code></pre>
+// [&#039;A&#039; =&gt; 3, &#039;B&#039; =&gt; 4]</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -3025,6 +3348,9 @@ pickBy($isUpperCase, [&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2, &#039;A&#039
                             <ul>
                                                                     <li><a href='#pick'>pick</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/pickBy.php">source</a>
                         </div>
                                     </article>
 
@@ -3044,8 +3370,8 @@ pickBy($isUpperCase, [&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2, &#039;A&#039
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>pluck(0, [[1, 2], [3, 4]]); // [1, 3]
-pluck(&#039;val&#039;, [&#039;a&#039; =&gt; [&#039;val&#039; =&gt; 3], &#039;b&#039; =&gt; [&#039;val&#039; =&gt; 5]]); // [&#039;a&#039; =&gt; 3, &#039;b&#039; =&gt; 5]</code></pre>
+                        <pre><code class='language-php example line-numbers'>pluck(0, [[1, 2], [3, 4]]); // [1, 3]
+pluck(&#039;val&#039;, [&#039;a&#039; =&gt; [&#039;val&#039; =&gt; 3], &#039;b&#039; =&gt; [&#039;val&#039; =&gt; 5]]); // [&#039;a&#039; =&gt; 3, &#039;b&#039; =&gt; 5]</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -3055,6 +3381,9 @@ pluck(&#039;val&#039;, [&#039;a&#039; =&gt; [&#039;val&#039; =&gt; 3], &#039;b&#
                                                                     <li><a href='#props'>props</a>, </li>
                                                                     <li><a href='#project'>project</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/pluck.php">source</a>
                         </div>
                                     </article>
 
@@ -3075,7 +3404,7 @@ pluck(&#039;val&#039;, [&#039;a&#039; =&gt; [&#039;val&#039; =&gt; 3], &#039;b&#
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>propOr(&#039;NO&#039;, &#039;b&#039;, [&#039;a&#039; =&gt; &#039;A&#039;]); // &#039;NO&#039;</code></pre>
+                        <pre><code class='language-php example line-numbers'>propOr(&#039;NO&#039;, &#039;b&#039;, [&#039;a&#039; =&gt; &#039;A&#039;]); // &#039;NO&#039;</code><span class='copy'></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -3089,6 +3418,9 @@ pluck(&#039;val&#039;, [&#039;a&#039; =&gt; [&#039;val&#039; =&gt; 3], &#039;b&#
                             <ul>
                                                                     <li><a href='#path'>path</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/prop.php">source</a>
                         </div>
                                     </article>
 
@@ -3108,7 +3440,7 @@ pluck(&#039;val&#039;, [&#039;a&#039; =&gt; [&#039;val&#039; =&gt; 3], &#039;b&#
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>propEq(&#039;a&#039;, &#039;A&#039;, [&#039;a&#039; =&gt; &#039;A&#039;]); // true</code></pre>
+                        <pre><code class='language-php example line-numbers'>propEq(&#039;a&#039;, &#039;A&#039;, [&#039;a&#039; =&gt; &#039;A&#039;]); // true</code><span class='copy'></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -3123,6 +3455,9 @@ pluck(&#039;val&#039;, [&#039;a&#039; =&gt; [&#039;val&#039; =&gt; 3], &#039;b&#
                                                                     <li><a href='#whereEq'>whereEq</a>, </li>
                                                                     <li><a href='#propSatisfies'>propSatisfies</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/propEq.php">source</a>
                         </div>
                                     </article>
 
@@ -3142,8 +3477,8 @@ pluck(&#039;val&#039;, [&#039;a&#039; =&gt; [&#039;val&#039; =&gt; 3], &#039;b&#
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$a = [ &#039;a&#039; =&gt; [ [ &#039;b&#039; =&gt; [ &#039;c&#039; =&gt; 3 ] ], 4] ];
-props([&#039;a.0.b.c&#039;, &#039;a.0.z&#039;, &#039;a.1&#039;], $a); // [3, null, 4]</code></pre>
+                        <pre><code class='language-php example line-numbers'>$a = [ &#039;a&#039; =&gt; [ [ &#039;b&#039; =&gt; [ &#039;c&#039; =&gt; 3 ] ], 4] ];
+props([&#039;a.0.b.c&#039;, &#039;a.0.z&#039;, &#039;a.1&#039;], $a); // [3, null, 4]</code><span class='copy'></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -3157,6 +3492,9 @@ props([&#039;a.0.b.c&#039;, &#039;a.0.z&#039;, &#039;a.1&#039;], $a); // [3, nul
                             <ul>
                                                                     <li><a href='#get'>get</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/props.php">source</a>
                         </div>
                                     </article>
 
@@ -3176,9 +3514,9 @@ props([&#039;a.0.b.c&#039;, &#039;a.0.z&#039;, &#039;a.1&#039;], $a); // [3, nul
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$a   = [ &#039;a&#039; =&gt; [ [ &#039;b&#039; =&gt; [ &#039;c&#039; =&gt; 3 ] ] ] ];
+                        <pre><code class='language-php example line-numbers'>$a   = [ &#039;a&#039; =&gt; [ [ &#039;b&#039; =&gt; [ &#039;c&#039; =&gt; 3 ] ] ] ];
 setPath([&#039;a&#039;,0,&#039;b&#039;,&#039;c&#039;], 113, $a);  
-// [ &#039;a&#039; =&gt; [ [ &#039;b&#039; =&gt; [ &#039;c&#039; =&gt; 113 ] ] ] ]</code></pre>
+// [ &#039;a&#039; =&gt; [ [ &#039;b&#039; =&gt; [ &#039;c&#039; =&gt; 113 ] ] ] ]</code><span class='copy'></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -3193,6 +3531,9 @@ setPath([&#039;a&#039;,0,&#039;b&#039;,&#039;c&#039;], 113, $a);
                                                                     <li><a href='#set'>set</a>, </li>
                                                                     <li><a href='#extend'>extend</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/setPath.php">source</a>
                         </div>
                                     </article>
 
@@ -3212,7 +3553,7 @@ setPath([&#039;a&#039;,0,&#039;b&#039;,&#039;c&#039;], 113, $a);
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>toPairs([&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2, &#039;c&#039; =&gt; 3]); // [[&#039;a&#039;, 1], [&#039;b&#039;, 2], [&#039;c&#039;, 3]]</code></pre>
+                        <pre><code class='language-php example line-numbers'>toPairs([&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2, &#039;c&#039; =&gt; 3]); // [[&#039;a&#039;, 1], [&#039;b&#039;, 2], [&#039;c&#039;, 3]]</code><span class='copy'></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -3246,8 +3587,8 @@ setPath([&#039;a&#039;,0,&#039;b&#039;,&#039;c&#039;], 113, $a);
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>$a = [&#039;a&#039; =&gt; &#039;A&#039;, &#039;b&#039; =&gt; &#039;B&#039;];
-where([&#039;a&#039; =&gt; fn ($v) =&gt; $v == &#039;A&#039;], $a); // true</code></pre>
+                        <pre><code class='language-php example line-numbers'>$a = [&#039;a&#039; =&gt; &#039;A&#039;, &#039;b&#039; =&gt; &#039;B&#039;];
+where([&#039;a&#039; =&gt; fn ($v) =&gt; $v == &#039;A&#039;], $a); // true</code><span class='copy'></pre>
                     
                                             <div>
                             <h4>Alias</h4>
@@ -3282,7 +3623,7 @@ where([&#039;a&#039; =&gt; fn ($v) =&gt; $v == &#039;A&#039;], $a); // true</cod
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>escape(&#039;fred, barney, &amp; pebbles&#039;); // &#039;fred, barney, &amp;amp; pebbles&#039;</code></pre>
+                        <pre><code class='language-php example line-numbers'>escape(&#039;fred, barney, &amp; pebbles&#039;); // &#039;fred, barney, &amp;amp; pebbles&#039;</code><span class='copy'></pre>
                     
                     
                                     </article>
@@ -3325,6 +3666,9 @@ where([&#039;a&#039; =&gt; fn ($v) =&gt; $v == &#039;A&#039;], $a); // true</cod
                                                                     <li><a href='#join'>join</a></li>
                                                             </ul>
                         </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/split.php">source</a>
+                        </div>
                                     </article>
 
             
@@ -3347,6 +3691,9 @@ where([&#039;a&#039; =&gt; fn ($v) =&gt; $v == &#039;A&#039;], $a); // true</cod
                             <ul>
                                                                     <li><a href='#endsWith'>endsWith</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/startsWith.php">source</a>
                         </div>
                                     </article>
 
@@ -3407,7 +3754,7 @@ where([&#039;a&#039; =&gt; fn ($v) =&gt; $v == &#039;A&#039;], $a); // true</cod
                                             <div>
                             <h4>Example</h4>
                         </div>
-                        <pre><code class='language-php example'>words(&#039;\w+&#039;, &#039;aa bb cc&#039;); // [&#039;aa&#039;, &#039;bb&#039;, &#039;cc&#039;]</code></pre>
+                        <pre><code class='language-php example line-numbers'>words(&#039;\w+&#039;, &#039;aa bb cc&#039;); // [&#039;aa&#039;, &#039;bb&#039;, &#039;cc&#039;]</code><span class='copy'></pre>
                     
                     
                                             <div>
@@ -3415,6 +3762,9 @@ where([&#039;a&#039; =&gt; fn ($v) =&gt; $v == &#039;A&#039;], $a); // true</cod
                             <ul>
                                                                     <li><a href='#split'>split</a></li>
                                                             </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/words.php">source</a>
                         </div>
                                     </article>
 
@@ -3510,6 +3860,9 @@ where([&#039;a&#039; =&gt; fn ($v) =&gt; $v == &#039;A&#039;], $a); // true</cod
                                                                     <li><a href='#always'>always</a></li>
                                                             </ul>
                         </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/identity.php">source</a>
+                        </div>
                                     </article>
 
             
@@ -3582,6 +3935,6 @@ where([&#039;a&#039; =&gt; fn ($v) =&gt; $v == &#039;A&#039;], $a); // true</cod
     
         </main>
     </div>
-            <script src='./assets/app.8c29f650eef7ded19575.js' defer></script>
+            <script src='./assets/app.0784466212dd4b81ee72.js' defer></script>
     </body>
 </html>
