@@ -117,6 +117,8 @@
             "src/Idles/tryCatch.php",
             "src/Idles/unary.php",
             "src/Idles/uniq.php",
+            "src/Idles/uniqBy.php",
+            "src/Idles/uniqWith.php",
             "src/Idles/values.php",
             "src/Idles/where.php",
             "src/Idles/without.php",

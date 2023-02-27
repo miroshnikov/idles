@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0" class="viewport">
-            <link rel='stylesheet' type='text/css' href='./assets/styles.67f237273c6a4ce833fb.css'>
+            <link rel='stylesheet' type='text/css' href='./assets/styles.72d080566862ac2b01b7.css'>
         <title>PHP Functional Library</title>
     <meta name="description" content="A PHP functional utility library, port of JavaScript Lodash and Ramda with lazy (idle) evaluation">
     <meta name="yandex-verification" content="7063684c222008b0" />
@@ -23,7 +23,7 @@
 <body>
     <header>
         <div>
-            <a href='/idles/' title="Idles">IDLES</a>
+            <a href='/' title="Idles">IDLES</a>
             <strong>PHP</strong> functional library
         </div>
         <div>
@@ -53,8 +53,8 @@
                 <section>
         <h2>What is it?</h2>
         <p>
-            Idles is a PHP functional utility library, a <strong>port of Javascript <a href="https://lodash.com/" target='_blank'>Lodash</a> and <a href="https://ramdajs.com/" target='_blank'>Ramda</a> 
-            libraries to PHP</strong>.
+            Idles is a PHP functional utility library, a <strong>port of Javascript <a href="https://lodash.com/" target='_blank'>Lodash/Fp</a> and <a href="https://ramdajs.com/" target='_blank'>Ramda</a> 
+            libraries to PHP</strong>, a set of <strong>side-effect free</strong> and <strong>automatically curried</strong> functions.
         </p>
     </section>
     <section>
@@ -68,10 +68,10 @@
     <section>
         <h2>Usage</h2>
         <p>
-            All methods are in <strong>Idles\</strong> namespace, <strong>immutable</strong> and <strong>auto-curried</strong>.
+            All methods are in <strong>Idles\</strong> namespace, <strong>immutable</strong>, <strong>pure</strong> and <strong>auto-curried</strong>.
         </p>
         <pre><code class='language-php'>use function Idles\{pipe, map, divide, ary, partial, curryN, filter};
-use const \Idles\_;
+use const Idles\_;
 pipe(
     map(divide(_, 2)),
     map(ary(1, partial(\round(...), [_, 0]))),
@@ -115,10 +115,10 @@ $iterator = pipe(
 // or convert it into an array in memory by iterator_to_array or collect
 $array = collect($iterator);</code></pre>
         <p>
-            The comparison everywhere is <strong>a weak equality check (==)</strong>.
+            <strong>Binary safe, mb_*</strong> functions are used for string methods.
         </p>
         <p>
-            <strong>Binary safe, mb_*</strong> functions are used for string methods.
+            The comparison everywhere by default is <strong>a weak equality check (==)</strong>.
         </p>
     </section>
     <section>
@@ -135,8 +135,9 @@ $array = collect($iterator);</code></pre>
             This is what the <code>Object</code> is in JavaScript.
         </p>
         <p>
-            Methods from <strong>Array</strong> section do not retain string keys and always return indexed iterables.
+            Methods from Array and Collection sections do not retain string keys and return indexed iterables.
         </p>
+        <pre><code class='language-php'>filter(fn ($v) => $v == 'a' || $v == 'C')(['a', 'b', 'c' => 'C']); // ['a', 'C']</code></pre>
     </section>
 
             <section id='Array'>
@@ -152,7 +153,6 @@ $array = collect($iterator);</code></pre>
                                             
                     <div>
                         <p>Concatinates <code>$array</code> with additional iterables/values</p>
-
                     </div>
 
                     
@@ -187,7 +187,6 @@ $array = collect($iterator);</code></pre>
                     
                     <div>
                         <p>Skips the first <code>$n</code> elemens and returns the rest of the iterable</p>
-
                     </div>
 
                     
@@ -218,7 +217,6 @@ $array = collect($iterator);</code></pre>
                     
                     <div>
                         <p>Skips the last <code>$n</code> elements</p>
-
                     </div>
 
                     
@@ -256,7 +254,6 @@ $array = collect($iterator);</code></pre>
                                             
                     <div>
                         <p>Like <code>find</code> but returns the index of the first element predicate returns truthy for, <code>-1</code> if not found</p>
-
                     </div>
 
                                             <div>
@@ -298,7 +295,6 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                                             
                     <div>
                         <p>Like <code>find</code> but returns the index of the last element predicate returns truthy for, <code>-1</code> if not found</p>
-
                     </div>
 
                                             <div>
@@ -338,7 +334,6 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                     
                     <div>
                         <p>Flattens iterable a single level deep.</p>
-
                     </div>
 
                     
@@ -375,7 +370,6 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                     
                     <div>
                         <p>Recursively flattens iterable.</p>
-
                     </div>
 
                     
@@ -406,7 +400,6 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                     
                     <div>
                         <p>Recursively flatten array up to depth times.</p>
-
                     </div>
 
                     
@@ -437,7 +430,6 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                     
                     <div>
                         <p>Creates a new record from a list key-value pairs. The inverse of <code>toPairs</code>.</p>
-
                     </div>
 
                     
@@ -467,7 +459,6 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                     
                     <div>
                         <p>Gets the first element of iterable</p>
-
                     </div>
 
                     
@@ -505,7 +496,6 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                                             
                     <div>
                         <p>Returns the index of the first occurrence of <code>$value</code> in <code>$collection</code>, else -1.</p>
-
                     </div>
 
                     
@@ -536,7 +526,6 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                     
                     <div>
                         <p>Returns unique values that are included in both records</p>
-
                     </div>
 
                     
@@ -567,7 +556,6 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                     
                     <div>
                         <p>Like <code>intersection</code> but invokes <code>$iteratee</code> for each element before comparison.</p>
-
                     </div>
 
                                             <div>
@@ -605,7 +593,6 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                     
                     <div>
                         <p>Like <code>intersection</code> but invokes <code>$comparator</code> to compare elements.</p>
-
                     </div>
 
                                             <div>
@@ -643,7 +630,6 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                     
                     <div>
                         <p>Joins iterable elements separated by <code>$separator</code></p>
-
                     </div>
 
                     
@@ -673,7 +659,6 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                     
                     <div>
                         <p>Gets the last element of iterable</p>
-
                     </div>
 
                     
@@ -703,7 +688,6 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                     
                     <div>
                         <p>Returns the <code>$offset</code> element. If <code>$offset</code> is negative the element at index length + <code>$offset</code> is returned.</p>
-
                     </div>
 
                     
@@ -736,7 +720,6 @@ nth(99, $list); // null</code><span class='copy'></pre>
                     
                     <div>
                         <p>Removes items from <code>$iterable</code> starting at <code>$start</code> and containing <code>$count</code> elements.</p>
-
                     </div>
 
                     
@@ -766,7 +749,6 @@ nth(99, $list); // null</code><span class='copy'></pre>
                     
                     <div>
                         <p>Retruns a slice of <code>$iterable</code> from <code>$start</code> up to, but not including, <code>$end</code>.</p>
-
                     </div>
 
                     
@@ -804,7 +786,6 @@ slice(-4, -2, $a2); // [&#039;b&#039;,&#039;c&#039;]</code><span class='copy'></
                     
                     <div>
                         <p>Takes n first elements from iterable</p>
-
                     </div>
 
                     
@@ -835,7 +816,6 @@ slice(-4, -2, $a2); // [&#039;b&#039;,&#039;c&#039;]</code><span class='copy'></
                     
                     <div>
                         <p>Returns a slice of iterable with n elements taken from the end.</p>
-
                     </div>
 
                     
@@ -866,7 +846,6 @@ slice(-4, -2, $a2); // [&#039;b&#039;,&#039;c&#039;]</code><span class='copy'></
                     
                     <div>
                         <p>Removes duplicates using <code>===</code></p>
-
                     </div>
 
                     
@@ -889,6 +868,78 @@ slice(-4, -2, $a2); // [&#039;b&#039;,&#039;c&#039;]</code><span class='copy'></
                                     </article>
 
             
+                <article id='uniqueBy'>
+                    <h3>uniqueBy</h3>
+
+                    <pre><code class='language-php'>uniqBy(callable $iteratee, ?iterable $collection): array</code></pre>
+                    
+                    <div>
+                        <p>Like <code>uniq</code> but apply <code>$iteratee</code> fist</p>
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$iteratee</dt>
+                                    <dd>($value): mixed</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example line-numbers'>uniqBy(\abs(...))([-1, -5, 2, 10, 1, 2]); // [-1, -5, 2, 10]</code><span class='copy'></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#uniq'>uniq</a></li>
+                                                            </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/uniqueBy.php">source</a>
+                        </div>
+                                    </article>
+
+            
+                <article id='uniqWith'>
+                    <h3>uniqWith</h3>
+
+                    <pre><code class='language-php'>uniqWith(callable $predicate, ?iterable $collection): array</code></pre>
+                    
+                    <div>
+                        <p>Like <code>uniq</code> but uses <code>$predicate</code> to compare elements</p>
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$predicate</dt>
+                                    <dd>($a, $b): bool</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                        </div>
+                        <pre><code class='language-php example line-numbers'>uniqWith(fn ($a, $b) =&gt; $a == $b)([1, &#039;1&#039;, 2, 1]); // [1, 2]</code><span class='copy'></pre>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#uniq'>uniq</a></li>
+                                                            </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/uniqWith.php">source</a>
+                        </div>
+                                    </article>
+
+            
                 <article id='without'>
                     <h3>without</h3>
 
@@ -896,7 +947,6 @@ slice(-4, -2, $a2); // [&#039;b&#039;,&#039;c&#039;]</code><span class='copy'></
                     
                     <div>
                         <p>Returns <code>$iterable</code> without <code>$values</code></p>
-
                     </div>
 
                     
@@ -927,7 +977,6 @@ slice(-4, -2, $a2); // [&#039;b&#039;,&#039;c&#039;]</code><span class='copy'></
                                             
                     <div>
                         <p>Creates an iterable of grouped elements, the first of which contains the first elements of the given iterables, the second of which contains the second elements, and so on.</p>
-
                     </div>
 
                     
@@ -959,7 +1008,6 @@ zip($a, $aa);  // [ [&#039;a&#039;, &#039;AA&#039;], [&#039;b&#039;, &#039;BB&#0
                     
                     <div>
                         <p>Like <code>zip</code> except that it accepts <code>$iteratee</code> to specify how grouped values should be combined.</p>
-
                     </div>
 
                     
@@ -999,7 +1047,6 @@ zipWith(fn ($a,$b) =&gt; $a.&#039;=&#039;.$b, $a, $aa);  // [&quot;a=AA&quot;, &
                     
                     <div>
                         <p>Checks if <code>$predicate</code> returns <code>truthy</code> for all elements of <code>$collection</code>. Stop once it returns <code>falsey</code></p>
-
                     </div>
 
                                             <div>
@@ -1039,7 +1086,6 @@ all(property(&#039;active&#039;))($users); // true</code><span class='copy'></pr
                     
                     <div>
                         <p>Checks if <code>$predicate</code> returns truthy for any element of <code>$collection</code>. Stops on first found.</p>
-
                     </div>
 
                                             <div>
@@ -1086,7 +1132,6 @@ any(fn ($r) =&gt; $r[&#039;active&#039;] == true, $users); // true</code><span c
                     
                     <div>
                         <p>Iterates over elements of <code>$collection</code>. Iteratee may exit iteration early by returning <code>false</code>.</p>
-
                     </div>
 
                                             <div>
@@ -1123,7 +1168,6 @@ any(fn ($r) =&gt; $r[&#039;active&#039;] == true, $users); // true</code><span c
                     
                     <div>
                         <p>Returns elements <code>$predicate</code> returns truthy for.</p>
-
                     </div>
 
                                             <div>
@@ -1161,7 +1205,6 @@ any(fn ($r) =&gt; $r[&#039;active&#039;] == true, $users); // true</code><span c
                                             
                     <div>
                         <p>Returns the first element <code>$predicate</code> returns truthy for.</p>
-
                     </div>
 
                                             <div>
@@ -1195,7 +1238,6 @@ any(fn ($r) =&gt; $r[&#039;active&#039;] == true, $users); // true</code><span c
                     
                     <div>
                         <p>Maps then flatten</p>
-
                     </div>
 
                                             <div>
@@ -1241,7 +1283,6 @@ any(fn ($r) =&gt; $r[&#039;active&#039;] == true, $users); // true</code><span c
                     
                     <div>
                         <p>Like <code>flatMap</code> but recursively flattens the results.</p>
-
                     </div>
 
                                             <div>
@@ -1281,7 +1322,6 @@ any(fn ($r) =&gt; $r[&#039;active&#039;] == true, $users); // true</code><span c
                     
                     <div>
                         <p>Like <code>flatMap</code> but flattens the mapped results up to <code>$depth</code> times</p>
-
                     </div>
 
                                             <div>
@@ -1321,7 +1361,6 @@ any(fn ($r) =&gt; $r[&#039;active&#039;] == true, $users); // true</code><span c
                     
                     <div>
                         <p>Creates an array composed of keys generated from running each value through <code>$iteratee</code>.</p>
-
                     </div>
 
                                             <div>
@@ -1359,7 +1398,6 @@ any(fn ($r) =&gt; $r[&#039;active&#039;] == true, $users); // true</code><span c
                                             
                     <div>
                         <p>Checks if <code>$value</code> is in <code>$collection</code>.</p>
-
                     </div>
 
                     
@@ -1396,7 +1434,6 @@ any(fn ($r) =&gt; $r[&#039;active&#039;] == true, $users); // true</code><span c
                     
                     <div>
                         <p>Creates a record composed of keys generated from the results of running each element of <code>$collection</code> through <code>$iteratee</code>.</p>
-
                     </div>
 
                                             <div>
@@ -1440,7 +1477,6 @@ indexBy(fn ($r) =&gt; \chr($r[&#039;code&#039;]), $aa); // [&#039;a&#039; =&gt; 
                     
                     <div>
                         <p>Run each element in <code>$collection</code> through <code>$iteratee</code>.</p>
-
                     </div>
 
                                             <div>
@@ -1483,7 +1519,6 @@ indexBy(fn ($r) =&gt; \chr($r[&#039;code&#039;]), $aa); // [&#039;a&#039; =&gt; 
                     
                     <div>
                         <p>Like <code>sortBy</code> but allows specifying the sort orders</p>
-
                     </div>
 
                                             <div>
@@ -1536,7 +1571,6 @@ orderBy([property(&#039;user&#039;), property(&#039;age&#039;)], [&#039;asc&#039
                     
                     <div>
                         <p>Split <code>$collection</code> into two groups, the first of which contains elements <code>$predicate</code> returns truthy for, the second of which contains elements <code>$predicate</code> returns falsey for.</p>
-
                     </div>
 
                                             <div>
@@ -1578,7 +1612,6 @@ orderBy([property(&#039;user&#039;), property(&#039;age&#039;)], [&#039;asc&#039
                     
                     <div>
                         <p>Reduces <code>$collection</code> to a value which is the accumulated result of running each element in collection through <code>$iteratee</code></p>
-
                     </div>
 
                                             <div>
@@ -1615,7 +1648,6 @@ orderBy([property(&#039;user&#039;), property(&#039;age&#039;)], [&#039;asc&#039
                     
                     <div>
                         <p>Adds new properties to <code>$record</code> using <code>$resolvers</code>.</p>
-
                     </div>
 
                                             <div>
@@ -1667,7 +1699,6 @@ map(
                     
                     <div>
                         <p>Sorts <code>$collection</code> in ascending order according to <code>$iteratees</code>.</p>
-
                     </div>
 
                                             <div>
@@ -1718,7 +1749,6 @@ sortBy([property(&#039;user&#039;), property(&#039;age&#039;)], $users);
                     
                     <div>
                         <p>Returns an indexed iterable of values in <code>$collection</code>.</p>
-
                     </div>
 
                     
@@ -1756,7 +1786,6 @@ sortBy([property(&#039;user&#039;), property(&#039;age&#039;)], $users);
                     
                     <div>
                         <p>Returns a function that always returns the given value.</p>
-
                     </div>
 
                     
@@ -1779,7 +1808,6 @@ sortBy([property(&#039;user&#039;), property(&#039;age&#039;)], $users);
                     
                     <div>
                         <p>Returns <code>$interceptor($value)</code>.</p>
-
                     </div>
 
                     
@@ -1807,7 +1835,6 @@ $n13(add(100)); // 113</code><span class='copy'></pre>
                     
                     <div>
                         <p>Creates a function that invokes <code>$fn</code>, with up to <code>$n</code> arguments, ignoring any additional arguments.</p>
-
                     </div>
 
                     
@@ -1843,7 +1870,6 @@ $n13(add(100)); // 113</code><span class='copy'></pre>
                     
                     <div>
                         <p>Calls <code>$fn</code>, returning either the result or the caught exception.</p>
-
                     </div>
 
                     
@@ -1875,7 +1901,6 @@ attempt(fn () =&gt; throw new \Exception(&#039;Error&#039;)); // Exception(&#039
                                             
                     <div>
                         <p>Like <code>pipe</code> but invokes the functions from right to left.</p>
-
                     </div>
 
                     
@@ -1906,7 +1931,6 @@ attempt(fn () =&gt; throw new \Exception(&#039;Error&#039;)); // Exception(&#039
                                             
                     <div>
                         <p><code>\Idles\_</code> const may be used as a placeholder.</p>
-
                     </div>
 
                     
@@ -1943,7 +1967,6 @@ curry($abc)(_, &#039;b&#039;)(_, &#039;c&#039;)(&#039;a&#039;); // &#039;abc&#03
                                             
                     <div>
                         <p>Like <code>curry</code> but arguments are prepended.</p>
-
                     </div>
 
                     
@@ -1979,7 +2002,6 @@ curryRightN(2, $abc)(&#039;b&#039;)(&#039;a&#039;); // &#039;abc&#039;</code><sp
                     
                     <div>
                         <p>applies a list of functions to a list of values.</p>
-
                     </div>
 
                     
@@ -2013,7 +2035,6 @@ juxt([max(...), min(...)])(1,2,3,4); // [4,1]</code><span class='copy'></pre>
                                             
                     <div>
                         <p>Creates a function that memoizes the result of <code>$func</code>. <code>$resolver</code> returns map cache key, args[0] by default.</p>
-
                     </div>
 
                                             <div>
@@ -2046,7 +2067,6 @@ juxt([max(...), min(...)])(1,2,3,4); // [4,1]</code><span class='copy'></pre>
                     
                     <div>
                         <p>Creates a function that negates the result of the <code>$predicate</code> function.</p>
-
                     </div>
 
                     
@@ -2074,7 +2094,6 @@ filter(negate($isEven), [1, 2, 3, 4, 5, 6]); // [1, 3, 5]</code><span class='cop
                     
                     <div>
                         <p>Creates a function that invokes <code>$fn</code> with <code>$partials</code> prepended to the arguments. <code>\Idles\_</code> const may be used as a placeholder.</p>
-
                     </div>
 
                     
@@ -2108,7 +2127,6 @@ partial($abcd, [&#039;a&#039;, _, &#039;c&#039;])(&#039;b&#039;, &#039;d&#039;)&
                     
                     <div>
                         <p>Like <code>partial</code> but <code>$partials</code> are appended.</p>
-
                     </div>
 
                     
@@ -2143,7 +2161,6 @@ partialRight($abcd, [&#039;b&#039;, _, &#039;d&#039;])(&#039;a&#039;, &#039;c&#0
                                             
                     <div>
                         <p>Left-to-right function composition. The first argument may have any arity; the remaining arguments must be unary.</p>
-
                     </div>
 
                     
@@ -2173,7 +2190,6 @@ partialRight($abcd, [&#039;b&#039;, _, &#039;d&#039;])(&#039;a&#039;, &#039;c&#0
                     
                     <div>
                         <p>Calls <code>$interceptor($value)</code> then returns the original <code>$value</code></p>
-
                     </div>
 
                     
@@ -2200,7 +2216,6 @@ partialRight($abcd, [&#039;b&#039;, _, &#039;d&#039;])(&#039;a&#039;, &#039;c&#0
                     
                     <div>
                         <p>Calls the iteratee <code>$n</code> times, returning an array of the results of each invocation.</p>
-
                     </div>
 
                                             <div>
@@ -2228,7 +2243,6 @@ partialRight($abcd, [&#039;b&#039;, _, &#039;d&#039;])(&#039;a&#039;, &#039;c&#0
                     
                     <div>
                         <p>Calls <code>$tryer</code>, if it throws, calls <code>$catcher</code></p>
-
                     </div>
 
                                             <div>
@@ -2271,7 +2285,6 @@ tryCatch(
                     
                     <div>
                         <p><code>ary(1, $fn)</code></p>
-
                     </div>
 
                     
@@ -2305,7 +2318,6 @@ tryCatch(
                     
                     <div>
                         <p>Returns a function that checks if its arguments pass all <code>$predicates</code>.</p>
-
                     </div>
 
                                             <div>
@@ -2352,7 +2364,6 @@ allPass([$bothStrings, $equal])(1, 1); // false</code><span class='copy'></pre>
                     
                     <div>
                         <p>Returns a function that checks if its arguments pass any of the <code>$predicates</code>.</p>
-
                     </div>
 
                                             <div>
@@ -2399,7 +2410,6 @@ anyPass([$bothStrings, $equal])(1, 1); // true</code><span class='copy'></pre>
                     
                     <div>
                         <p>Iterates over <code>$pairs</code> and invokes the corresponding function of the first predicate to return truthy.</p>
-
                     </div>
 
                                             <div>
@@ -2434,7 +2444,6 @@ $fn(100);   // &#039;water boils at 100°C&#039;</code><span class='copy'></pre>
                     
                     <div>
                         <p>Returns <code>$value</code> ?? <code>$default</code></p>
-
                     </div>
 
                     
@@ -2463,7 +2472,6 @@ $fn(100);   // &#039;water boils at 100°C&#039;</code><span class='copy'></pre>
                     
                     <div>
                         <p>$a + $b</p>
-
                     </div>
 
                     
@@ -2493,7 +2501,6 @@ $fn(100);   // &#039;water boils at 100°C&#039;</code><span class='copy'></pre>
                     
                     <div>
                         <p>$a / $b</p>
-
                     </div>
 
                     
@@ -2519,7 +2526,6 @@ $fn(100);   // &#039;water boils at 100°C&#039;</code><span class='copy'></pre>
                     
                     <div>
                         <p>$a % $b</p>
-
                     </div>
 
                     
@@ -2545,7 +2551,6 @@ $fn(100);   // &#039;water boils at 100°C&#039;</code><span class='copy'></pre>
                     
                     <div>
                         <p>$a * $b</p>
-
                     </div>
 
                     
@@ -2571,7 +2576,6 @@ $fn(100);   // &#039;water boils at 100°C&#039;</code><span class='copy'></pre>
                     
                     <div>
                         <p>Rounds <code>$number</code>to specified <code>$precision</code></p>
-
                     </div>
 
                     
@@ -2588,7 +2592,6 @@ $fn(100);   // &#039;water boils at 100°C&#039;</code><span class='copy'></pre>
                     
                     <div>
                         <p>$a - $b</p>
-
                     </div>
 
                     
@@ -2605,7 +2608,6 @@ $fn(100);   // &#039;water boils at 100°C&#039;</code><span class='copy'></pre>
                     
                     <div>
                         <p>Sums elements in iterable</p>
-
                     </div>
 
                     
@@ -2635,7 +2637,6 @@ $fn(100);   // &#039;water boils at 100°C&#039;</code><span class='copy'></pre>
                     
                     <div>
                         <p>Like <code>sum</code> but <code>$iteratee</code> is invoked for each element in iterable to generate the value to be summed.</p>
-
                     </div>
 
                     
@@ -2674,7 +2675,6 @@ sumBy(property(&#039;n&#039;), $ns); // 20</code><span class='copy'></pre>
                     
                     <div>
                         <p>Merges properties recursively, numeric keys are overwritten.</p>
-
                     </div>
 
                     
@@ -2716,7 +2716,6 @@ assignDeep([$a, $b]);
                                             
                     <div>
                         <p>Merges properties from right to left, numeric keys are overwritten.</p>
-
                     </div>
 
                     
@@ -2746,7 +2745,6 @@ assignDeep([$a, $b]);
                     
                     <div>
                         <p>Creates a new record by recursively calling transformation functions with <code>$record</code> properties.</p>
-
                     </div>
 
                                             <div>
@@ -2794,7 +2792,6 @@ evolve($transformations)($tomato);
                                             
                     <div>
                         <p>Merges properties, numeric keys are overwritten.</p>
-
                     </div>
 
                     
@@ -2836,7 +2833,6 @@ evolve($transformations)($tomato);
                     
                     <div>
                         <p>Checks if <code>$record</code> has <code>$key</code></p>
-
                     </div>
 
                     
@@ -2868,7 +2864,6 @@ has(&#039;a&#039;, $r); // true</code><span class='copy'></pre>
                     
                     <div>
                         <p>Checks if <code>$path</code> exists in <code>$record</code></p>
-
                     </div>
 
                     
@@ -2902,7 +2897,6 @@ hasPath([&#039;a&#039;, &#039;b&#039;], $r); // true</code><span class='copy'></
                     
                     <div>
                         <p>Replaces keys with values. Duplicate keys are overwritten.</p>
-
                     </div>
 
                     
@@ -2923,7 +2917,6 @@ hasPath([&#039;a&#039;, &#039;b&#039;], $r); // true</code><span class='copy'></
                     
                     <div>
                         <p>Returns an indexed iterable of keys in <code>$record</code>.</p>
-
                     </div>
 
                     
@@ -2953,7 +2946,6 @@ hasPath([&#039;a&#039;, &#039;b&#039;], $r); // true</code><span class='copy'></
                     
                     <div>
                         <p>Check if the <code>$test</code> satisfies the <code>$spec</code></p>
-
                     </div>
 
                     
@@ -2995,7 +2987,6 @@ $pred([&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 1]));   // false</code><span c
                                             
                     <div>
                         <p>Merges properties, numeric keys are appended.</p>
-
                     </div>
 
                     
@@ -3033,7 +3024,6 @@ $pred([&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 1]));   // false</code><span c
                     
                     <div>
                         <p>Merges properties recursively, numeric keys are appended.</p>
-
                     </div>
 
                     
@@ -3068,7 +3058,6 @@ mergeDeep([$a, $b]);
                     
                     <div>
                         <p>calls <code>merge($right, $left)</code></p>
-
                     </div>
 
                     
@@ -3100,7 +3089,6 @@ $resetToDefault([&#039;x&#039; =&gt; 5, &#039;y&#039; =&gt; 2]); // [&#039;x&#03
                     
                     <div>
                         <p>Like <code>merge</code> but if a key exists in both records, <code>$customizer</code> is called to the values associated with the key</p>
-
                     </div>
 
                                             <div>
@@ -3138,7 +3126,6 @@ $resetToDefault([&#039;x&#039; =&gt; 5, &#039;y&#039; =&gt; 2]); // [&#039;x&#03
                     
                     <div>
                         <p>Creates new record by applying an <code>$updater</code> function to the value at the given <code>$path</code>.</p>
-
                     </div>
 
                                             <div>
@@ -3182,7 +3169,6 @@ modifyPath([&#039;a&#039;,0,&#039;b&#039;,&#039;c&#039;], fn ($n) =&gt; $n*$n, $
                     
                     <div>
                         <p>The opposite of <code>pick</code>. Returns record without <code>$keys</code>.</p>
-
                     </div>
 
                     
@@ -3214,7 +3200,6 @@ modifyPath([&#039;a&#039;,0,&#039;b&#039;,&#039;c&#039;], fn ($n) =&gt; $n*$n, $
                     
                     <div>
                         <p>The opposite of <code>pickBy</code>. Returns properties of <code>$record</code> that <code>$predicate</code> returns falsey for.</p>
-
                     </div>
 
                     
@@ -3246,7 +3231,6 @@ modifyPath([&#039;a&#039;,0,&#039;b&#039;,&#039;c&#039;], fn ($n) =&gt; $n*$n, $
                                             
                     <div>
                         <p>Retrieve the value at a given path.</p>
-
                     </div>
 
                     
@@ -3285,7 +3269,6 @@ pathOr(&#039;default&#039;, &#039;a.b.c&#039;, $rec); // &#039;default&#039;</co
                     
                     <div>
                         <p>Returns record containing only <code>$keys</code></p>
-
                     </div>
 
                                             <div>
@@ -3323,7 +3306,6 @@ pathOr(&#039;default&#039;, &#039;a.b.c&#039;, $rec); // &#039;default&#039;</co
                     
                     <div>
                         <p>Returns record containing only keys <code>$predicate</code> returns truthy for.</p>
-
                     </div>
 
                                             <div>
@@ -3362,7 +3344,6 @@ pickBy($isUpperCase, [&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2, &#039;A&#039
                     
                     <div>
                         <p>Returns a new array by plucking the same named property off all records in the array supplied.</p>
-
                     </div>
 
                     
@@ -3396,7 +3377,6 @@ pluck(&#039;val&#039;, [&#039;a&#039; =&gt; [&#039;val&#039; =&gt; 3], &#039;b&#
                                             
                     <div>
                         <p>Return the specified property.</p>
-
                     </div>
 
                     
@@ -3432,7 +3412,6 @@ pluck(&#039;val&#039;, [&#039;a&#039; =&gt; [&#039;val&#039; =&gt; 3], &#039;b&#
                     
                     <div>
                         <p>Returns $record[$key] == $value</p>
-
                     </div>
 
                     
@@ -3469,7 +3448,6 @@ pluck(&#039;val&#039;, [&#039;a&#039; =&gt; [&#039;val&#039; =&gt; 3], &#039;b&#
                     
                     <div>
                         <p>Keys in, values out. Order is preserved.</p>
-
                     </div>
 
                     
@@ -3506,7 +3484,6 @@ props([&#039;a.0.b.c&#039;, &#039;a.0.z&#039;, &#039;a.1&#039;], $a); // [3, nul
                     
                     <div>
                         <p>Return copy <code>$record</code> with <code>$path</code> set  with <code>$value</code></p>
-
                     </div>
 
                     
@@ -3545,7 +3522,6 @@ setPath([&#039;a&#039;,0,&#039;b&#039;,&#039;c&#039;], 113, $a);
                     
                     <div>
                         <p>Converts a record into an array of <code>[$key, $value]</code></p>
-
                     </div>
 
                     
@@ -3572,7 +3548,6 @@ setPath([&#039;a&#039;,0,&#039;b&#039;,&#039;c&#039;], 113, $a);
                     
                     <div>
                         <p>Checks if <code>$record</code> satisfies the spec by invoking the <code>$spec</code> properties with the corresponding properties of <code>$record</code>.</p>
-
                     </div>
 
                                             <div>
@@ -3615,7 +3590,6 @@ where([&#039;a&#039; =&gt; fn ($v) =&gt; $v == &#039;A&#039;], $a); // true</cod
                     
                     <div>
                         <p>Converts the characters &quot;&amp;&quot;, &quot;&lt;&quot;, &quot;&gt;&quot;, '&quot;', and &quot;'&quot; to their corresponding HTML entities.</p>
-
                     </div>
 
                     
@@ -3636,7 +3610,6 @@ where([&#039;a&#039; =&gt; fn ($v) =&gt; $v == &#039;A&#039;], $a); // true</cod
                     
                     <div>
                         <p>Escapes regular expression</p>
-
                     </div>
 
                     
@@ -3653,7 +3626,6 @@ where([&#039;a&#039; =&gt; fn ($v) =&gt; $v == &#039;A&#039;], $a); // true</cod
                     
                     <div>
                         <p>Splits string by <code>$separator</code>.</p>
-
                     </div>
 
                     
@@ -3679,7 +3651,6 @@ where([&#039;a&#039; =&gt; fn ($v) =&gt; $v == &#039;A&#039;], $a); // true</cod
                     
                     <div>
                         <p>If string starts with <code>$target</code>.</p>
-
                     </div>
 
                     
@@ -3705,7 +3676,6 @@ where([&#039;a&#039; =&gt; fn ($v) =&gt; $v == &#039;A&#039;], $a); // true</cod
                     
                     <div>
                         <p>Converts string to lower case</p>
-
                     </div>
 
                     
@@ -3722,7 +3692,6 @@ where([&#039;a&#039; =&gt; fn ($v) =&gt; $v == &#039;A&#039;], $a); // true</cod
                     
                     <div>
                         <p>Converts string to upper case</p>
-
                     </div>
 
                     
@@ -3739,7 +3708,6 @@ where([&#039;a&#039; =&gt; fn ($v) =&gt; $v == &#039;A&#039;], $a); // true</cod
                     
                     <div>
                         <p>Splits string into an array of its words.</p>
-
                     </div>
 
                                             <div>
@@ -3784,7 +3752,6 @@ where([&#039;a&#039; =&gt; fn ($v) =&gt; $v == &#039;A&#039;], $a); // true</cod
                     
                     <div>
                         <p>Collects any iterable into <code>array</code></p>
-
                     </div>
 
                     
@@ -3801,7 +3768,6 @@ where([&#039;a&#039; =&gt; fn ($v) =&gt; $v == &#039;A&#039;], $a); // true</cod
                     
                     <div>
                         <p>Returns <code>$value</code> == <code>$other</code></p>
-
                     </div>
 
                     
@@ -3824,7 +3790,6 @@ where([&#039;a&#039; =&gt; fn ($v) =&gt; $v == &#039;A&#039;], $a); // true</cod
                     
                     <div>
                         <p>Always returns <code>false</code></p>
-
                     </div>
 
                     
@@ -3847,7 +3812,6 @@ where([&#039;a&#039; =&gt; fn ($v) =&gt; $v == &#039;A&#039;], $a); // true</cod
                     
                     <div>
                         <p>Returns the first argument it receives.</p>
-
                     </div>
 
                     
@@ -3873,7 +3837,6 @@ where([&#039;a&#039; =&gt; fn ($v) =&gt; $v == &#039;A&#039;], $a); // true</cod
                     
                     <div>
                         <p>Returns the timestamp of the number of seconds</p>
-
                     </div>
 
                     
@@ -3890,7 +3853,6 @@ where([&#039;a&#039; =&gt; fn ($v) =&gt; $v == &#039;A&#039;], $a); // true</cod
                     
                     <div>
                         <p>Returns size of a countable, number of parameters of a function, lenght of string and number of properties of an object</p>
-
                     </div>
 
                     
@@ -3913,7 +3875,6 @@ where([&#039;a&#039; =&gt; fn ($v) =&gt; $v == &#039;A&#039;], $a); // true</cod
                     
                     <div>
                         <p>Always returns <code>true</code></p>
-
                     </div>
 
                     
@@ -3935,6 +3896,6 @@ where([&#039;a&#039; =&gt; fn ($v) =&gt; $v == &#039;A&#039;], $a); // true</cod
     
         </main>
     </div>
-            <script src='./assets/app.67f237273c6a4ce833fb.js' defer></script>
+            <script src='./assets/app.72d080566862ac2b01b7.js' defer></script>
     </body>
 </html>

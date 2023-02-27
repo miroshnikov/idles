@@ -1,7 +1,11 @@
 # IDLES
-A PHP functional utility library, port of javascript Lodash/Ramda libraries to PHP with lazy (idle) evaluation.
+A PHP functional utility library, port of Javascript Lodash/Ramda libraries to PHP.
 
-Go to __[https://idlephp.tech/](https://idlephp.tech/)__ for more details.
+All functions are <strong>side-effect free</strong> and <strong>automatically curried</strong>, data is <strong>immutable</strong>.
+
+Most functions are <em>lazy</em>: when passed an Iterator or Generator as an input, returns a modified Iterator.
+
+Go to __[https://idlephp.tech](https://idlephp.tech)__ for more details.
 
 ## Array
 ### [concat](https://idlephp.tech/#concat)
@@ -179,6 +183,22 @@ uniq(?iterable $collection): array
 ```
 
 Removes duplicates using `===`
+
+### [uniqueBy](https://idlephp.tech/#uniqueBy)
+
+```php
+uniqBy(callable $iteratee, ?iterable $collection): array
+```
+
+Like `uniq` but apply `$iteratee` fist
+
+### [uniqWith](https://idlephp.tech/#uniqWith)
+
+```php
+uniqWith(callable $predicate, ?iterable $collection): array
+```
+
+Like `uniq` but uses `$predicate` to compare elements
 
 ### [without](https://idlephp.tech/#without)
 
