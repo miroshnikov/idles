@@ -38,7 +38,8 @@ function unnest(...$args)
 
 function flattenDeep(...$args)
 {
-    return curryN(1, 
+    return curryN(
+        1,
         fn (?iterable $collection) => _flattenDepth($collection, \PHP_INT_MAX)
     )(...$args);
 }
