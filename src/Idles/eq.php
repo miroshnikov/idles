@@ -4,9 +4,7 @@ namespace Idles;
 
 function eq(...$args)
 {
-    return curryN(2, 
-        fn ($value, $other) => $value == $other
-    )(...$args);
+    return curryN(2, fn ($a, $b) => $a == $b)(...$args);
 }
 
 function identical(...$args)

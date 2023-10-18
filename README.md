@@ -9,7 +9,9 @@ A PHP functional utility library, port of Javascript Lodash/Fp and Ramda librari
 
 All functions are <strong>side-effect free</strong> and <strong>automatically curried</strong>, data is <strong>immutable</strong>.
 
-Most functions are <em>lazy</em>: when passed an Iterator or Generator as an input, returns a modified Iterator.
+The iterable collection parameter is usually supplied last to make currying convenient.
+
+<strong>Lazy / delayed evaluation</strong> is supported in functional pipelines.
 
 Go to __[https://idlephp.tech](https://idlephp.tech)__ for more details.
 
@@ -556,6 +558,14 @@ anyPass(array $predicates): callable
 
 Returns a function that checks if its arguments pass any of the `$predicates`.
 
+#### [both](https://idlephp.tech/#both)
+
+```php
+both(callable $func1, callable $func2): callable
+```
+
+Resulting function returns `$func1(...$args)` if it is falsy or `$func2(...$args)` otherwise, short-circuited
+
 #### [cond](https://idlephp.tech/#cond)
 
 ```php
@@ -572,6 +582,46 @@ defaultTo($default)($value)
 
 Returns `$value` ?? `$default`
 
+#### [either](https://idlephp.tech/#either)
+
+```php
+either(callable $func1, callable $func2): callable
+```
+
+Resulting function returns `$func1(...$args)` if it is truthy or `$func2(...$args)` otherwise, short-circuited.
+
+#### [ifElse](https://idlephp.tech/#ifElse)
+
+```php
+ifElse(callable $predicate, callable $onTrue, callable $onFalse): callable
+```
+
+Resulting function returns `$onTrue(...$args)` if `$predicate(...$args)` is truthy or `$onFalse(...$args)` otherwise.
+
+#### [not](https://idlephp.tech/#not)
+
+```php
+not($a): bool
+```
+
+returns `!$a`
+
+#### [unless](https://idlephp.tech/#unless)
+
+```php
+unless(callable $predicate, callable $whenFalse, mixed $value)
+```
+
+Returns `$predicate($value) ? $value : $whenFalse($value)`
+
+#### [when](https://idlephp.tech/#when)
+
+```php
+when(callable $predicate, callable $whenTrue, mixed $value)
+```
+
+Returns `$predicate($value) ? $whenTrue($value) : $value`
+
     
 ### Math
 #### [add](https://idlephp.tech/#add)
@@ -582,6 +632,14 @@ add(int|float $a, int|float $b): int|float
 
 $a + $b
 
+#### [dec](https://idlephp.tech/#dec)
+
+```php
+dec(int $number): int
+```
+
+Returns $number - 1
+
 #### [divide](https://idlephp.tech/#divide)
 
 ```php
@@ -589,6 +647,46 @@ divide(int|float $a, int|float $b): int|float
 ```
 
 $a / $b
+
+#### [gt](https://idlephp.tech/#gt)
+
+```php
+gt($a, $b): bool
+```
+
+$a > $b
+
+#### [gte](https://idlephp.tech/#gte)
+
+```php
+gte($a, $b): bool
+```
+
+$a >= $b
+
+#### [inc](https://idlephp.tech/#inc)
+
+```php
+inc(int $number): int
+```
+
+Returns $number + 1
+
+#### [lt](https://idlephp.tech/#lt)
+
+```php
+lt($a, $b): bool
+```
+
+$a < $b
+
+#### [lte](https://idlephp.tech/#lte)
+
+```php
+lte($a, $b): bool
+```
+
+$a <= $b
 
 #### [modulo](https://idlephp.tech/#modulo)
 
@@ -927,10 +1025,18 @@ Collects any iterable into `array`
 #### [eq](https://idlephp.tech/#eq)
 
 ```php
-eq($value, $other): bool
+eq($a, $b): bool
 ```
 
-Returns `$value` == `$other`
+`$a` == `$b`
+
+#### [equals](https://idlephp.tech/#equals)
+
+```php
+equals($a, $b): bool
+```
+
+`$a` === `$b`
 
 #### [F](https://idlephp.tech/#F)
 

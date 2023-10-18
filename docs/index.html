@@ -3,23 +3,21 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0" class="viewport">
-            <link rel='stylesheet' type='text/css' href='./assets/styles.44c3a654ccb4fbab8aaf.css'>
+            <link rel='stylesheet' type='text/css' href='./assets/styles.1bf58bbfe054afc8ed31.css'>
         <title>PHP Functional Library</title>
     <meta name="description" content="A PHP functional utility library, port of JavaScript Lodash and Ramda with lazy (idle) evaluation">
-    <meta name="yandex-verification" content="7063684c222008b0" />
+    <meta name="yandex-verification" content="7063684c222008b0">
     <link rel="icon" href="./assets/logo.png">  
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HHE3W29KC0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-HHE3W29KC0');
+    </script>
 </head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HHE3W29KC0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-HHE3W29KC0');
-</script>
-
 <body>
     <header>
         <div>
@@ -27,7 +25,12 @@
             <strong>PHP</strong> functional library
         </div>
         <div>
-                        <a href="https://github.com/miroshnikov/idles" title='Github'>
+                        <a href="#" title='Theme' id='theme-picker'>
+                <svg height="1em" viewBox="0 0 512 512"><path fill="currentColor" d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"/></svg>
+                <svg height="1em" viewBox="0 0 384 512"><path fill="currentColor" d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"/></svg>
+                theme
+            </a>
+            <a href="https://github.com/miroshnikov/idles" title='Github'>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" width="1em" height="1em">
                     <path 
                         fill="currentColor" 
@@ -42,12 +45,21 @@
         <aside>
         </aside>
         <main>
-            <h1>IDLES - A PHP FUNCTIONAL UTILITY LIBRARY</h1>
-                <section>
+            <h1>PHP FUNCTIONAL UTILITY LIBRARY</h1>
+                <div class='buttons'>
+        <a class="github-button" href="https://github.com/miroshnikov/idles" data-color-scheme="no-preference: dark_dimmed; light: light; dark: dark_dimmed;" data-icon="octicon-star" data-size="large" aria-label="Star miroshnikov/idles on GitHub">Star</a>
+        <a class="github-button" href="https://github.com/miroshnikov/idles/discussions" data-color-scheme="no-preference: dark_dimmed; light: light; dark: dark_dimmed;" data-icon="octicon-comment-discussion" data-size="large" aria-label="Discuss miroshnikov/idles on GitHub">Discuss</a>
+        <a class="github-button" href="https://github.com/miroshnikov/idles/issues" data-color-scheme="no-preference: dark_dimmed; light: light; dark: dark_dimmed;" data-icon="octicon-issue-opened" data-size="large" aria-label="Issue miroshnikov/idles on GitHub">Issue</a>
+    </div>
+
+    <section>
         <h2>What is it?</h2>
         <p>
-            Idles is a PHP functional utility library, a <strong>port of Javascript <a href="https://lodash.com/" target='_blank'>Lodash/Fp</a> and <a href="https://ramdajs.com/" target='_blank'>Ramda</a> 
-            libraries to PHP</strong>, a set of <strong>side-effect free</strong> and <strong>automatically curried</strong> functions.
+            Idles is a PHP functional utility library, a <strong>port of Javascript <a href="https://lodash.com/" target='_blank'>Lodash/Fp</a> and 
+            <a href="https://ramdajs.com/" target='_blank'>Ramda</a> libraries to PHP language</strong>.
+            It comprises a set of <strong>side-effect free</strong>, <strong>immutable</strong> and <strong>automatically curried</strong> functions that support <strong>lazy evaluation</strong>.
+            The iterable collection parameter is usually supplied last to make currying convenient.
+            Such design makes it easy to create <strong>functional pipelines</strong> with a possibility of delayed evaluation.
         </p>
     </section>
     <section>
@@ -76,12 +88,13 @@ pipe(
     <section>
         <h2>Features</h2>
         <p>
-            Most of the functions are <strong>lazy (idle)</strong> when given an <code>Iterator</code> or <code>Generator</code> as an input. 
-            Such function will not load an iterator into memory, but returns a new iterator that modifies the input iterator.
-            This behaviour is similar to <em>iterator adaptors</em> in Rust language or <em>LINQ</em> in C#.
+            Most of the functions take any kind of <code>iterable</code> as a collection parameter and become
+            <strong>lazy</strong> when given an <code>Iterator</code> or <code>Generator</code> as an input. 
+            When piped intermediate lazy operations are applied to every element of the iterator one after the other without collection all elements in memory array.
+            Lazy pipelines operate on a "pull," rather than a "push" basis.
         </p>
         <p>
-            Although when given an <code>array</code> such method will NOT be lazy and return a modified <code>array</code>. 
+            Although when given an <code>array</code> such method will NOT be lazy and return a modified <code>array</code> like a build-in PHP <code>array_...</code> function.
             The rule is: <em>you will get back the same kind of iterable that you passed in as an argument</em>.
         </p>
         <p>
@@ -102,7 +115,7 @@ $iterator = pipe(
     map(fn ($v) => "[$v]")
     // ...
 )($generator);
-// nothing has happened so far, $generator is not consumed
+// nothing has happened so far, no data has been requested
 
 // now you can iterate over elements of $iterator with foreach
 // or convert it into an array in memory by iterator_to_array or collect
@@ -130,7 +143,22 @@ $array = collect($iterator);</code></pre>
         <p>
             Methods from Array and Collection sections do not retain string keys and return indexed iterables.
         </p>
-        <pre><code class='language-php'>filter(fn ($v) => $v == 'a' || $v == 'C')(['a', 'b', 'c' => 'C']); // ['a', 'C']</code></pre>
+        <pre><code class='language-php'>filter(fn ($v) => $v == 'a' || $v == 'C')(['a', 'b', 'c' => 'C']); // ['a', 'C']</code></pre>       
+    </section>
+    <section>
+        <h2>Placeholder</h2>
+        <p>
+            <code>Idles\_</code> is a special <strong>placeholder</strong> used to specify "gaps" within curried or partially applied functions.
+        </p>
+        <pre><code class='language-php'>use function Idles\{curryN, partial};
+use const Idles\_;
+
+$greet = curryN(3, \str_replace(...))('{name}', _, 'Hello, {name}!');
+// or
+$greet = partial(\str_replace(...), ['{name}', _, 'Hello, {name}!']);
+$greet('Alice'); // Hello, Alice!
+</code></pre>
+    <p></p>
     </section>
 
             <section id='Array'>
@@ -157,7 +185,7 @@ $array = collect($iterator);</code></pre>
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>concat([&#039;a&#039;,&#039;b&#039;], &#039;C&#039;);  // [&#039;a&#039;, &#039;b&#039;, &#039;C&#039;]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -188,7 +216,7 @@ $array = collect($iterator);</code></pre>
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>drop(1, [1, 2, 3]); // [2, 3]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -219,7 +247,7 @@ $array = collect($iterator);</code></pre>
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>dropRight(2, [1, 2, 3]);  // [1]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                                             <div>
@@ -265,7 +293,7 @@ $array = collect($iterator);</code></pre>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>findIndex([&#039;b&#039;, &#039;a&#039;, &#039;b&#039;, &#039;c&#039;], fn ($v) =&gt; $v == &#039;b&#039;, 1); // 2
 findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039;,&#039;a&#039;,&#039;b&#039;,&#039;c&#039;]) // 3 </code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -306,7 +334,7 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>findLastIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, 2, [&#039;a&#039;, &#039;b&#039;, &#039;a&#039;, &#039;b&#039;]); // 1</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -339,7 +367,7 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>flatten([&#039;a&#039; =&gt; &#039;A&#039;, [&#039;b&#039; =&gt; &#039;B&#039;], &#039;c&#039; =&gt; &#039;C&#039;]);  // [&#039;A&#039;, &#039;B&#039;, &#039;C&#039;]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                                             <div>
@@ -376,7 +404,7 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>flattenDeep([1, [2, [3, [4]], 5]]);  // [1, 2, 3, 4, 5]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -407,7 +435,7 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>flattenDepth(2, [1, [2, [3, [4]], 5]]);  // [1, 2, 3, [4], 5]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -438,7 +466,7 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>fromPairs([[&#039;a&#039;, 1], [&#039;b&#039;, 2], [&#039;c&#039;, 3]]); // [&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2, &#039;c&#039; =&gt; 3]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -468,7 +496,7 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>head([1, 2, 3]); // 1</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                                             <div>
@@ -506,7 +534,7 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>indexOf(2, [1, 2, 1, 2]); // 1</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -537,7 +565,7 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>intersection([&#039;a&#039;, &#039;a&#039;, &#039;b&#039;], [&#039;c&#039;, &#039;a&#039;, &#039;a&#039;]); // [&#039;a&#039;]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -575,7 +603,7 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>intersectionBy(&#039;\floor&#039;, [2.1, 1.2], [2.3, 3.4]); // [2.1]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -613,7 +641,7 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>intersectionWith(fn ($a, $b) =&gt; $a &lt;=&gt; $b, [&#039;a&#039;, &#039;a&#039;, &#039;b&#039;], [&#039;c&#039;, &#039;a&#039;, &#039;a&#039;]); // [&#039;a&#039;]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -644,7 +672,7 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>join(&#039;~&#039;, [&#039;a&#039;, &#039;b&#039;, &#039;c&#039;]); // &#039;a~b~c&#039;</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -674,7 +702,7 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>last([1, 2, 3]);  // 3</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -704,10 +732,10 @@ findIndexFrom(fn ($v) =&gt; $v == &#039;b&#039;, -2, [&#039;a&#039;,&#039;b&#039
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>$list = [&#039;foo&#039;, &#039;bar&#039;, &#039;baz&#039;, &#039;quux&#039;];
-nth(1, $list)&#039; // &#039;bar&#039;
+nth(1, $list); // &#039;bar&#039;
 nth(-1, $list); // &#039;quux&#039;
 nth(99, $list); // null</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -737,7 +765,7 @@ nth(99, $list); // null</code></pre>
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>remove(2, 3, [1,2,3,4,5,6,7,8]); // [1,2,6,7,8]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -770,7 +798,7 @@ nth(99, $list); // null</code></pre>
 slice(1, 3, $a2); // [&#039;b&#039;,&#039;c&#039;]
 slice(1, -2, $a2); // [&#039;b&#039;,&#039;c&#039;]
 slice(-4, -2, $a2); // [&#039;b&#039;,&#039;c&#039;]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -805,7 +833,7 @@ slice(-4, -2, $a2); // [&#039;b&#039;,&#039;c&#039;]</code></pre>
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>take(2, [1, 2, 3]);  // [1, 2]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -836,7 +864,7 @@ slice(-4, -2, $a2); // [&#039;b&#039;,&#039;c&#039;]</code></pre>
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>takeRight(2, [1, 2, 3]);  // [2, 3]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -867,7 +895,7 @@ slice(-4, -2, $a2); // [&#039;b&#039;,&#039;c&#039;]</code></pre>
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>uniq([1, 1, 2, &#039;1&#039;]); // [1, 2, &#039;1&#039;]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -904,7 +932,7 @@ slice(-4, -2, $a2); // [&#039;b&#039;,&#039;c&#039;]</code></pre>
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>uniqBy(\abs(...))([-1, -5, 2, 10, 1, 2]); // [-1, -5, 2, 10]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -941,7 +969,7 @@ slice(-4, -2, $a2); // [&#039;b&#039;,&#039;c&#039;]</code></pre>
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>uniqWith(fn ($a, $b) =&gt; $a == $b)([1, &#039;1&#039;, 2, 1]); // [1, 2]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -971,7 +999,7 @@ slice(-4, -2, $a2); // [&#039;b&#039;,&#039;c&#039;]</code></pre>
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>without([1, 2], [2, 1, 2, 3]);  // [3]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -1004,7 +1032,7 @@ slice(-4, -2, $a2); // [&#039;b&#039;,&#039;c&#039;]</code></pre>
                             <pre><code class='language-php example line-numbers'>$a =  [&#039;a&#039;, &#039;b&#039; ];
 $aa = [&#039;AA&#039;,&#039;BB&#039;];
 zip($a, $aa);  // [ [&#039;a&#039;, &#039;AA&#039;], [&#039;b&#039;, &#039;BB&#039;] ]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -1036,7 +1064,7 @@ zip($a, $aa);  // [ [&#039;a&#039;, &#039;AA&#039;], [&#039;b&#039;, &#039;BB&#0
                             <pre><code class='language-php example line-numbers'>$a =  [&#039;a&#039;, &#039;b&#039; ];
 $aa = [&#039;AA&#039;,&#039;BB&#039;];
 zipWith(fn ($a,$b) =&gt; $a.&#039;=&#039;.$b, $a, $aa);  // [&quot;a=AA&quot;, &quot;b=BB&quot;]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -1087,7 +1115,7 @@ $users = [
     [ &#039;user&#039; =&gt; &#039;fred&#039;,   &#039;age&#039; =&gt; 40, &#039;active&#039; =&gt; true ]
 ];
 all(property(&#039;active&#039;))($users); // true</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                                             <div>
@@ -1125,7 +1153,7 @@ all(property(&#039;active&#039;))($users); // true</code></pre>
     [ &#039;user&#039; =&gt; &#039;fred&#039;,   &#039;active&#039; =&gt; true ]
 ];
 any(fn ($r) =&gt; $r[&#039;active&#039;] == true, $users); // true</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                                             <div>
@@ -1168,7 +1196,7 @@ any(fn ($r) =&gt; $r[&#039;active&#039;] == true, $users); // true</code></pre>
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>each(fn ($v) =&gt; print_r($v), [1,2,3]);</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -1205,7 +1233,7 @@ any(fn ($r) =&gt; $r[&#039;active&#039;] == true, $users); // true</code></pre>
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>filter(&#039;is_numeric&#039;, [&#039;a&#039;, &#039;b&#039;, 13]); // [13]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -1276,7 +1304,7 @@ any(fn ($r) =&gt; $r[&#039;active&#039;] == true, $users); // true</code></pre>
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>flatMap(fn ($n) =&gt; [$n, $n], [1,2]); // [1, 1, 2, 2]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                                             <div>
@@ -1322,7 +1350,7 @@ any(fn ($r) =&gt; $r[&#039;active&#039;] == true, $users); // true</code></pre>
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>flatMapDeep(fn ($n) =&gt; [[[$n, $n]]], [1, 2]); // [1, 1, 2, 2]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -1362,7 +1390,7 @@ any(fn ($r) =&gt; $r[&#039;active&#039;] == true, $users); // true</code></pre>
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>flatMapDepth(fn ($n) =&gt; [[[$n, $n]]], 2, [1, 2]); // [[1, 1], [2, 2]]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -1402,7 +1430,7 @@ any(fn ($r) =&gt; $r[&#039;active&#039;] == true, $users); // true</code></pre>
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>groupBy(&#039;strlen&#039;)([&#039;one&#039;, &#039;two&#039;, &#039;three&#039;]); // [ &#039;3&#039; =&gt; [&#039;one&#039;, &#039;two&#039;], &#039;5&#039; =&gt; [&#039;three&#039;] ]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -1433,7 +1461,7 @@ any(fn ($r) =&gt; $r[&#039;active&#039;] == true, $users); // true</code></pre>
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>includes(1, [&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2]); // true</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                                             <div>
@@ -1478,7 +1506,7 @@ any(fn ($r) =&gt; $r[&#039;active&#039;] == true, $users); // true</code></pre>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>$a = [ [ &#039;code&#039; =&gt; 97 ],  [ &#039;code&#039; =&gt; 100 ] ];
 indexBy(fn ($r) =&gt; \chr($r[&#039;code&#039;]), $aa); // [&#039;a&#039; =&gt; [ &#039;code&#039; =&gt; 97 ], &#039;d&#039; =&gt; [ &#039;code&#039; =&gt; 100 ]],</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                                             <div>
@@ -1521,7 +1549,7 @@ indexBy(fn ($r) =&gt; \chr($r[&#039;code&#039;]), $aa); // [&#039;a&#039; =&gt; 
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>map(fn ($n) =&gt; $n * $n, [4, 8]); // [16, 64]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                                             <div>
@@ -1580,7 +1608,7 @@ orderBy([property(&#039;user&#039;), property(&#039;age&#039;)], [&#039;asc&#039
     [ &#039;user&#039; =&gt; &#039;fred&#039;,   &#039;age&#039; =&gt; 40 ]
 ]
 */</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -1621,7 +1649,7 @@ orderBy([property(&#039;user&#039;), property(&#039;age&#039;)], [&#039;asc&#039
     [&#039;a&#039; =&gt; &#039;AA&#039;, &#039;b&#039; =&gt; &#039;BB&#039;, &#039;c&#039; =&gt; &#039;AAA&#039;]
 ); 
 // [[&#039;a&#039; =&gt; &#039;AA&#039;, &#039;c&#039; =&gt; &#039;AAA&#039;], [&#039;b&#039; =&gt; &#039;BB&#039;]]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -1659,7 +1687,7 @@ orderBy([property(&#039;user&#039;), property(&#039;age&#039;)], [&#039;asc&#039
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>reduce(ary(2, subtract(...)), 0, [1, 2, 3, 4]); // -10</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -1711,7 +1739,7 @@ map(
     [ &#039;name&#039; =&gt; &#039;Bill&#039;,  &#039;surname&#039; =&gt; &#039;Gates&#039;, &#039;initials&#039; =&gt; &#039;BG&#039; ]
 ]
 */</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -1762,7 +1790,7 @@ sortBy([property(&#039;user&#039;), property(&#039;age&#039;)], $users);
     [ &#039;user&#039; =&gt; &#039;fred&#039;,   &#039;age&#039; =&gt; 48 ]
 ]
 */</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -1792,7 +1820,7 @@ sortBy([property(&#039;user&#039;), property(&#039;age&#039;)], $users);
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>values([&#039;a&#039; =&gt; &#039;AA&#039;, &#039;b&#039; =&gt; &#039;BB&#039;]); // [&#039;AA&#039;, &#039;BB&#039;]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -1853,7 +1881,7 @@ sortBy([property(&#039;user&#039;), property(&#039;age&#039;)], $users);
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>$n13 = applyTo(13);
 $n13(add(100)); // 113</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                                             <div>
@@ -1880,7 +1908,7 @@ $n13(add(100)); // 113</code></pre>
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>map(ary(1, &#039;\intval&#039;), [&#039;6&#039;, &#039;8&#039;, &#039;10&#039;]); // [6, 8, 10]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                                             <div>
@@ -1917,7 +1945,7 @@ $n13(add(100)); // 113</code></pre>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>attempt(fn () =&gt; &#039;A&#039;); // A
 attempt(fn () =&gt; throw new \Exception(&#039;Error&#039;)); // Exception(&#039;Error&#039;)</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -1948,7 +1976,7 @@ attempt(fn () =&gt; throw new \Exception(&#039;Error&#039;)); // Exception(&#039
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>compose(&#039;\strtoupper&#039;, fn ($s) =&gt; &#039;hello &#039;.$s, &#039;\trim&#039;)(&#039; fred &#039;); // &#039;HELLO FRED&#039;</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -1984,7 +2012,7 @@ $abc = fn ($a, $b, $c = &#039;c&#039;) =&gt; $a.$b.$c;
 curry($abc)(&#039;a&#039;)(&#039;b&#039;)(&#039;c&#039;); // &#039;abc&#039;
 curryN(2, $abc)(&#039;a&#039;)(&#039;b&#039;); // &#039;abc&#039;
 curry($abc)(_, &#039;b&#039;)(_, &#039;c&#039;)(&#039;a&#039;); // &#039;abc&#039;</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -2021,7 +2049,7 @@ $abc = fn ($a, $b, $c = &#039;c&#039;) =&gt; $a.$b.$c;
 curryRight($abc)(&#039;c&#039;)(&#039;b&#039;)(&#039;a&#039;); // &#039;abc&#039;
 curryRight($abc)(&#039;b&#039;,&#039;c&#039;)(&#039;a&#039;); // &#039;abc&#039;
 curryRightN(2, $abc)(&#039;b&#039;)(&#039;a&#039;); // &#039;abc&#039;</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -2052,7 +2080,7 @@ curryRightN(2, $abc)(&#039;b&#039;)(&#039;a&#039;); // &#039;abc&#039;</code></p
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>flip(fn ($a, $b, $c, $d) =&gt; [$a, $b, $c, $d])(1, 2)(3, 4); // [2, 1, 3, 4]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -2086,7 +2114,7 @@ curryRightN(2, $abc)(&#039;b&#039;)(&#039;a&#039;); // &#039;abc&#039;</code></p
 $isOdd = fn ($n) =&gt; $n % 2;
 juxt([filter($isOdd), remove($isOdd)])([1,2,3,4,5,6,7,8,9]);
 // [[1,3,5,7,9], [2,4,6,8]]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -2150,7 +2178,7 @@ juxt([filter($isOdd), remove($isOdd)])([1,2,3,4,5,6,7,8,9]);
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>$isEven = fn ($n) =&gt; $n % 2 == 0;
 filter(negate($isEven), [1, 2, 3, 4, 5, 6]); // [1, 3, 5]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                                             <div>
@@ -2179,7 +2207,7 @@ filter(negate($isEven), [1, 2, 3, 4, 5, 6]); // [1, 3, 5]</code></pre>
                             <pre><code class='language-php example line-numbers'>$addOneOnce = once(fn ($x) =&gt; $x + 1);
 $addOneOnce(10); // 11
 $addOneOnce(50); // 11</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -2211,8 +2239,8 @@ $addOneOnce(50); // 11</code></pre>
                             <pre><code class='language-php example line-numbers'>use const \Idles\_;
 
 $abcd = fn ($a, $b, $c, $d) =&gt; $a.$b.$c.$d;
-partial($abcd, [&#039;a&#039;, _, &#039;c&#039;])(&#039;b&#039;, &#039;d&#039;)&#039; // &#039;abcd&#039;</code></pre>
-                            <span class='copy'>
+partial($abcd, [&#039;a&#039;, _, &#039;c&#039;])(&#039;b&#039;, &#039;d&#039;); // &#039;abcd&#039;</code></pre>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -2246,7 +2274,7 @@ partial($abcd, [&#039;a&#039;, _, &#039;c&#039;])(&#039;b&#039;, &#039;d&#039;)&
 
 $abcd = fn ($a, $b, $c, $d) =&gt; $a.$b.$c.$d;
 partialRight($abcd, [&#039;b&#039;, _, &#039;d&#039;])(&#039;a&#039;, &#039;c&#039;)); // &#039;abcd&#039;</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -2278,7 +2306,7 @@ partialRight($abcd, [&#039;b&#039;, _, &#039;d&#039;])(&#039;a&#039;, &#039;c&#0
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>pipe(&#039;\trim&#039;, &#039;\strtoupper&#039;)(&#039; hello &#039;); // &#039;HELLO&#039;</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -2341,7 +2369,7 @@ partialRight($abcd, [&#039;b&#039;, _, &#039;d&#039;])(&#039;a&#039;, &#039;c&#0
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>times(fn($i) =&gt; &quot;$i&quot;, 3); // [&#039;0&#039;, &#039;1&#039;, &#039;2&#039;]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -2375,7 +2403,7 @@ tryCatch(
     fn ($v) =&gt; throw new \Exception(&#039;Error&#039;),
     fn (\Exception $err, $value) =&gt; [$err-&gt;getMessage(), $value]
 )(&#039;A&#039;); // [&#039;Error&#039;, &#039;A&#039;]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -2449,7 +2477,7 @@ $equal = fn ($a, $b) =&gt; $a == $b;
 allPass([$bothStrings, $equal])(&#039;a&#039;, &#039;b&#039;); // false
 allPass([$bothStrings, $equal])(&#039;a&#039;, &#039;a&#039;); // true
 allPass([$bothStrings, $equal])(1, 1); // false</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                                             <div>
@@ -2496,7 +2524,7 @@ $equal = fn ($a, $b) =&gt; $a == $b;
 anyPass([$bothStrings, $equal])(&#039;a&#039;, &#039;b&#039;); // true
 anyPass([$bothStrings, $equal])(&#039;1&#039;, 2); // false
 anyPass([$bothStrings, $equal])(1, 1); // true</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                                             <div>
@@ -2514,6 +2542,47 @@ anyPass([$bothStrings, $equal])(1, 1); // true</code></pre>
                         </div>
                         <div class="links">
                             <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/anyPass.php">source</a>
+                        </div>
+                                    </article>
+
+            
+                <article id='both'>
+                    <h3>both</h3>
+
+                    <pre><code class='language-php'>both(callable $func1, callable $func2): callable</code></pre>
+                    
+                    <div>
+                        <p>Resulting function returns <code>$func1(...$args)</code> if it is falsy or <code>$func2(...$args)</code> otherwise, short-circuited</p>
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$func1</dt>
+                                    <dd>(mixed ...$args): mixed</dd>
+                                                                    <dt>$func2</dt>
+                                    <dd>(mixed ...$args): mixed</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                            <pre><code class='language-php example line-numbers'>both(identity(...), always(&#039;&#039;))(&#039;value&#039;);  // &#039;&#039;
+both(always(&#039;a&#039;), identity(...))(&#039;b&#039;);     // b</code></pre>
+                            <span class='copy'></span>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#either'>either</a>, </li>
+                                                                    <li><a href='#allPass'>allPass</a></li>
+                                                            </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/both.php">source</a>
                         </div>
                                     </article>
 
@@ -2546,7 +2615,7 @@ anyPass([$bothStrings, $equal])(1, 1); // true</code></pre>
 $fn(0);     // &#039;water freezes at 0°C&#039;
 $fn(50);    // &#039;nothing special happens at 50 °C&#039;
 $fn(100);   // &#039;water boils at 100°C&#039;</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -2567,10 +2636,210 @@ $fn(100);   // &#039;water boils at 100°C&#039;</code></pre>
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>defaultTo(10, null); // 10</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
+                                    </article>
+
+            
+                <article id='either'>
+                    <h3>either</h3>
+
+                    <pre><code class='language-php'>either(callable $func1, callable $func2): callable</code></pre>
+                    
+                    <div>
+                        <p>Resulting function returns <code>$func1(...$args)</code> if it is truthy or <code>$func2(...$args)</code> otherwise, short-circuited.</p>
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$func1</dt>
+                                    <dd>(mixed ...$args): mixed</dd>
+                                                                    <dt>$func2</dt>
+                                    <dd>(mixed ...$args): mixed</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                            <pre><code class='language-php example line-numbers'>either(always(&#039;a&#039;), identity(...))(&#039;b&#039;);  // a
+either(always(&#039;&#039;), identity(...))(&#039;b&#039;);   // b</code></pre>
+                            <span class='copy'></span>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#both'>both</a>, </li>
+                                                                    <li><a href='#anyPass'>anyPass</a></li>
+                                                            </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/either.php">source</a>
+                        </div>
+                                    </article>
+
+            
+                <article id='ifElse'>
+                    <h3>ifElse</h3>
+
+                    <pre><code class='language-php'>ifElse(callable $predicate, callable $onTrue, callable $onFalse): callable</code></pre>
+                    
+                    <div>
+                        <p>Resulting function returns <code>$onTrue(...$args)</code> if <code>$predicate(...$args)</code> is truthy or <code>$onFalse(...$args)</code> otherwise.</p>
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$predicate</dt>
+                                    <dd>(mixed ...$args): bool</dd>
+                                                                    <dt>$onTrue</dt>
+                                    <dd>(mixed ...$args): mixed</dd>
+                                                                    <dt>$onFalse</dt>
+                                    <dd>(mixed ...$args): mixed</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                            <pre><code class='language-php example line-numbers'>$f = ifElse(equals(&#039;a&#039;), always(&#039;T&#039;), always(&#039;F&#039;));
+$f(&#039;a&#039;);  // T
+$f(&#039;b&#039;);  // F</code></pre>
+                            <span class='copy'></span>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#unless'>unless</a>, </li>
+                                                                    <li><a href='#when'>when</a>, </li>
+                                                                    <li><a href='#cond'>cond</a></li>
+                                                            </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/ifElse.php">source</a>
+                        </div>
+                                    </article>
+
+            
+                <article id='not'>
+                    <h3>not</h3>
+
+                    <pre><code class='language-php'>not($a): bool</code></pre>
+                    
+                    <div>
+                        <p>returns <code>!$a</code></p>
+                    </div>
+
+                    
+                    
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#negate'>negate</a></li>
+                                                            </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/not.php">source</a>
+                        </div>
+                                    </article>
+
+            
+                <article id='unless'>
+                    <h3>unless</h3>
+
+                    <pre><code class='language-php'>unless(callable $predicate, callable $whenFalse, mixed $value)</code></pre>
+                    
+                    <div>
+                        <p>Returns <code>$predicate($value) ? $value : $whenFalse($value)</code></p>
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$predicate</dt>
+                                    <dd>(mixed $value): bool</dd>
+                                                                    <dt>$whenFalse</dt>
+                                    <dd>(mixed $value): mixed</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                            <pre><code class='language-php example line-numbers'>$safeInc = unless(\is_null(...), inc(...));
+$safeInc(null); // null
+$safeInc(1);    // 2</code></pre>
+                            <span class='copy'></span>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#ifElse'>ifElse</a>, </li>
+                                                                    <li><a href='#when'>when</a>, </li>
+                                                                    <li><a href='#cond'>cond</a></li>
+                                                            </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/unless.php">source</a>
+                        </div>
+                                    </article>
+
+            
+                <article id='when'>
+                    <h3>when</h3>
+
+                    <pre><code class='language-php'>when(callable $predicate, callable $whenTrue, mixed $value)</code></pre>
+                    
+                    <div>
+                        <p>Returns <code>$predicate($value) ? $whenTrue($value) : $value</code></p>
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$predicate</dt>
+                                    <dd>(mixed $value): bool</dd>
+                                                                    <dt>$whenTrue</dt>
+                                    <dd>(mixed $value): mixed</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                            <pre><code class='language-php example line-numbers'>$truncate = when(
+    pipe(size(...), gt(_, 10)),
+    pipe(partial(\mb_substr(...), [_, 0, 10]), fn ($s) =&gt; $s.&#039;…&#039;)
+);
+$truncate(&#039;12345&#039;); // &#039;12345&#039;
+$truncate(&#039;0123456789ABC&#039;);  // &#039;0123456789…&#039;</code></pre>
+                            <span class='copy'></span>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#ifElse'>ifElse</a>, </li>
+                                                                    <li><a href='#unless'>unless</a>, </li>
+                                                                    <li><a href='#cond'>cond</a></li>
+                                                            </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/when.php">source</a>
+                        </div>
                                     </article>
 
                    
@@ -2596,7 +2865,7 @@ $fn(100);   // &#039;water boils at 100°C&#039;</code></pre>
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>add(100)(13); // 113</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -2608,6 +2877,31 @@ $fn(100);   // &#039;water boils at 100°C&#039;</code></pre>
                         </div>
                         <div class="links">
                             <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/add.php">source</a>
+                        </div>
+                                    </article>
+
+            
+                <article id='dec'>
+                    <h3>dec</h3>
+
+                    <pre><code class='language-php'>dec(int $number): int</code></pre>
+                    
+                    <div>
+                        <p>Returns $number - 1</p>
+                    </div>
+
+                    
+                    
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#inc'>inc</a></li>
+                                                            </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/dec.php">source</a>
                         </div>
                                     </article>
 
@@ -2633,6 +2927,159 @@ $fn(100);   // &#039;water boils at 100°C&#039;</code></pre>
                         </div>
                         <div class="links">
                             <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/divide.php">source</a>
+                        </div>
+                                    </article>
+
+            
+                <article id='gt'>
+                    <h3>gt</h3>
+
+                    <pre><code class='language-php'>gt($a, $b): bool</code></pre>
+                    
+                    <div>
+                        <p>$a &gt; $b</p>
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                            <pre><code class='language-php example line-numbers'>gt(100)(13); // true</code></pre>
+                            <span class='copy'></span>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#gte'>gte</a>, </li>
+                                                                    <li><a href='#lt'>lt</a>, </li>
+                                                                    <li><a href='#lte'>lte</a></li>
+                                                            </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/gt.php">source</a>
+                        </div>
+                                    </article>
+
+            
+                <article id='gte'>
+                    <h3>gte</h3>
+
+                    <pre><code class='language-php'>gte($a, $b): bool</code></pre>
+                    
+                    <div>
+                        <p>$a &gt;= $b</p>
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                            <pre><code class='language-php example line-numbers'>gte(13)(13); // true</code></pre>
+                            <span class='copy'></span>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#gt'>gt</a>, </li>
+                                                                    <li><a href='#lt'>lt</a>, </li>
+                                                                    <li><a href='#lte'>lte</a></li>
+                                                            </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/gte.php">source</a>
+                        </div>
+                                    </article>
+
+            
+                <article id='inc'>
+                    <h3>inc</h3>
+
+                    <pre><code class='language-php'>inc(int $number): int</code></pre>
+                    
+                    <div>
+                        <p>Returns $number + 1</p>
+                    </div>
+
+                    
+                    
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#dec'>dec</a></li>
+                                                            </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/inc.php">source</a>
+                        </div>
+                                    </article>
+
+            
+                <article id='lt'>
+                    <h3>lt</h3>
+
+                    <pre><code class='language-php'>lt($a, $b): bool</code></pre>
+                    
+                    <div>
+                        <p>$a &lt; $b</p>
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                            <pre><code class='language-php example line-numbers'>lt(100)(13); // false</code></pre>
+                            <span class='copy'></span>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#gt'>gt</a>, </li>
+                                                                    <li><a href='#lte'>lte</a>, </li>
+                                                                    <li><a href='#gte'>gte</a></li>
+                                                            </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/lt.php">source</a>
+                        </div>
+                                    </article>
+
+            
+                <article id='lte'>
+                    <h3>lte</h3>
+
+                    <pre><code class='language-php'>lte($a, $b): bool</code></pre>
+                    
+                    <div>
+                        <p>$a &lt;= $b</p>
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                            <pre><code class='language-php example line-numbers'>lte(13)(13); // true</code></pre>
+                            <span class='copy'></span>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#gt'>gt</a>, </li>
+                                                                    <li><a href='#lt'>lt</a>, </li>
+                                                                    <li><a href='#gte'>gte</a></li>
+                                                            </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/lte.php">source</a>
                         </div>
                                     </article>
 
@@ -2733,7 +3180,7 @@ $fn(100);   // &#039;water boils at 100°C&#039;</code></pre>
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>sum([4, 2, 8, 6]); // 20</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -2764,7 +3211,7 @@ $fn(100);   // &#039;water boils at 100°C&#039;</code></pre>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>$ns = [[ &#039;n&#039;=&gt; 4 ], [ &#039;n&#039;=&gt; 2 ], [ &#039;n&#039;=&gt; 8 ], [ &#039;n&#039;=&gt; 6 ]];
 sumBy(property(&#039;n&#039;), $ns); // 20</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -2805,7 +3252,7 @@ sumBy(property(&#039;n&#039;), $ns); // 20</code></pre>
 $b = [&#039;a&#039; =&gt; [&#039;b&#039; =&gt; &#039;2&#039;, &#039;d&#039; =&gt; &#039;D&#039;], [&#039;f&#039; =&gt; &#039;F&#039;], &#039;y&#039;];
 assignDeep([$a, $b]);
 // [&#039;a&#039; =&gt; [&#039;b&#039; =&gt; &#039;2&#039;, &#039;c&#039; =&gt; &#039;C&#039;, &#039;d&#039; =&gt; &#039;D&#039;], [&#039;e&#039; =&gt; &#039;E&#039;, &#039;f&#039; =&gt; &#039;F&#039;], &#039;y&#039;]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                                             <div>
@@ -2844,7 +3291,7 @@ assignDeep([$a, $b]);
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>defaultsAll([ [&#039;actual&#039;, &#039;a&#039;=&gt;1], [&#039;default&#039;, &#039;b&#039;=&gt;2], [&#039;a&#039;=&gt;3] ]) // [&#039;actual&#039;, &#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -2891,7 +3338,7 @@ $transformations = [
 ];
 evolve($transformations)($tomato);
 // [&#039;firstName&#039; =&gt; &#039;Tomato&#039;, &#039;data&#039; =&gt;  [&#039;elapsed&#039; =&gt;  101, &#039;remaining&#039; =&gt;  1399], &#039;id&#039; =&gt; 123]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -2925,7 +3372,7 @@ evolve($transformations)($tomato);
     [&#039;a&#039;, &#039;c&#039; =&gt; &#039;C&#039;], 
     [&#039;b&#039;, &#039;d&#039; =&gt; &#039;D&#039;]
 ); // [&#039;b&#039;, &#039;c&#039; =&gt; &#039;C&#039;, &#039;d&#039; =&gt; &#039;D&#039;]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                                             <div>
@@ -2965,7 +3412,7 @@ evolve($transformations)($tomato);
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>$r = [&#039;a&#039; =&gt; &#039;A];
 has(&#039;a&#039;, $r); // true</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -2999,7 +3446,7 @@ has(&#039;a&#039;, $r); // true</code></pre>
 hasPath(&#039;a&#039;, $r); // true
 hasPath(&#039;a.b&#039;, $r); // true
 hasPath([&#039;a&#039;, &#039;b&#039;], $r); // true</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -3030,7 +3477,7 @@ hasPath([&#039;a&#039;, &#039;b&#039;], $r); // true</code></pre>
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>invert([ &#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2, &#039;c&#039; =&gt; 1 ]); // [1 =&gt; &#039;c&#039;, 2 =&gt; &#039;b&#039;]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -3051,7 +3498,7 @@ hasPath([&#039;a&#039;, &#039;b&#039;], $r); // true</code></pre>
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>keys([ &#039;a&#039;=&gt; 1, &#039;b&#039;=&gt; 2, &#039;c&#039;=&gt; 3 ]); // [&#039;a&#039;, &#039;b&#039;, &#039;c&#039;]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -3085,7 +3532,7 @@ $pred([&#039;a&#039; =&gt; 1])); // false
 $pred([&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2])); // true
 $pred([&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2, &#039;c&#039; =&gt; 3])); // true
 $pred([&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 1]));   // false</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                                             <div>
@@ -3123,7 +3570,7 @@ $pred([&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 1]));   // false</code></pre>
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>merge([&#039;a&#039;, &#039;c&#039; =&gt; &#039;C&#039;], [&#039;b&#039;, &#039;d&#039; =&gt; &#039;D&#039;]); // [&#039;a&#039;, &#039;b&#039;, &#039;c&#039; =&gt; &#039;C&#039;, &#039;d&#039; =&gt; &#039;D&#039;]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                                             <div>
@@ -3164,7 +3611,7 @@ $pred([&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 1]));   // false</code></pre>
 $b = [&#039;a&#039; =&gt; [&#039;b&#039; =&gt; 2, &#039;d&#039; =&gt; &#039;D&#039;], [&#039;f&#039; =&gt; &#039;F&#039;], &#039;y&#039;];
 mergeDeep([$a, $b]);
 // [&#039;a&#039; =&gt; [&#039;b&#039; =&gt; [1, 2], &#039;c&#039; =&gt; &#039;C&#039;, &#039;d&#039; =&gt; &#039;D&#039;], [&#039;e&#039; =&gt; &#039;E&#039;], &#039;x&#039;, [&#039;f&#039; =&gt; &#039;F&#039;], &#039;y&#039;],</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -3197,7 +3644,7 @@ mergeDeep([$a, $b]);
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>$resetToDefault = mergeLeft([&#039;x&#039; =&gt; 0]);
 $resetToDefault([&#039;x&#039; =&gt; 5, &#039;y&#039; =&gt; 2]); // [&#039;x&#039; =&gt; 0, &#039;y&#039; =&gt; 2]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -3235,7 +3682,7 @@ $resetToDefault([&#039;x&#039; =&gt; 5, &#039;y&#039; =&gt; 2]); // [&#039;x&#03
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>mergeWith(concat(...), [&#039;a&#039; =&gt; [1], &#039;b&#039; =&gt; [2]], [&#039;a&#039; =&gt; [3], &#039;b&#039; =&gt; [4]]); // [&#039;a&#039; =&gt; [1,3], &#039;b&#039; =&gt; [2,4]]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -3274,7 +3721,7 @@ $resetToDefault([&#039;x&#039; =&gt; 5, &#039;y&#039; =&gt; 2]); // [&#039;x&#03
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>$a = [ &#039;a&#039; =&gt; [ [ &#039;b&#039; =&gt; [ &#039;c&#039; =&gt; 3 ] ] ] ];
 modifyPath([&#039;a&#039;,0,&#039;b&#039;,&#039;c&#039;], fn ($n) =&gt; $n*$n, $a); // [ &#039;a&#039; =&gt; [ [ &#039;b&#039; =&gt; [ &#039;c&#039; =&gt; 9 ] ] ] ]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                                             <div>
@@ -3315,7 +3762,7 @@ modifyPath([&#039;a&#039;,0,&#039;b&#039;,&#039;c&#039;], fn ($n) =&gt; $n*$n, $
 );
 $matchPhrases([&#039;foo&#039;, &#039;bar&#039;, &#039;baz&#039;]);
 // [&quot;must&quot; =&gt; [[&quot;match_phrase&quot; =&gt; &#039;foo&#039;], [&quot;match_phrase&quot; =&gt; &#039;bar&#039;], [&quot;match_phrase&quot; =&gt; &#039;baz&#039;]]]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -3337,7 +3784,7 @@ $matchPhrases([&#039;foo&#039;, &#039;bar&#039;, &#039;baz&#039;]);
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>omit([&#039;a&#039;, &#039;d&#039;], [&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2, &#039;c&#039; =&gt; 3, &#039;d&#039; =&gt; 4]);
 // [&#039;b&#039; =&gt; 2, &#039;c&#039; =&gt; 3]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -3368,7 +3815,7 @@ $matchPhrases([&#039;foo&#039;, &#039;bar&#039;, &#039;baz&#039;]);
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>omitBy(unary(&#039;\is_int&#039;), [&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; &#039;2&#039;, &#039;c&#039; =&gt; 3]); // [&#039;b&#039; =&gt; &#039;2&#039;]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -3403,7 +3850,7 @@ $matchPhrases([&#039;foo&#039;, &#039;bar&#039;, &#039;baz&#039;]);
 path([&#039;a&#039;, &#039;0&#039;, &#039;b&#039;, &#039;c&#039;], $rec); // 3
 path(&#039;a[0].b.c&#039;, $rec); // 3
 pathOr(&#039;default&#039;, &#039;a.b.c&#039;, $rec); // &#039;default&#039;</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                                             <div>
@@ -3447,7 +3894,7 @@ pathOr(&#039;default&#039;, &#039;a.b.c&#039;, $rec); // &#039;default&#039;</co
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>pick([&#039;a&#039;, &#039;d&#039;], [&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2, &#039;c&#039; =&gt; 3, &#039;d&#039; =&gt; 4]); 
 // [&#039;a&#039; =&gt; 1, &#039;d&#039; =&gt; 4]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -3486,7 +3933,7 @@ pathOr(&#039;default&#039;, &#039;a.b.c&#039;, $rec); // &#039;default&#039;</co
                             <pre><code class='language-php example line-numbers'>$isUpperCase = fn ($val, $key) =&gt; \strtoupper($key) == $key;
 pickBy($isUpperCase, [&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2, &#039;A&#039; =&gt; 3, &#039;B&#039; =&gt; 4]);
 // [&#039;A&#039; =&gt; 3, &#039;B&#039; =&gt; 4]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -3517,7 +3964,7 @@ pickBy($isUpperCase, [&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2, &#039;A&#039
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>pluck(0, [[1, 2], [3, 4]]); // [1, 3]
 pluck(&#039;val&#039;, [&#039;a&#039; =&gt; [&#039;val&#039; =&gt; 3], &#039;b&#039; =&gt; [&#039;val&#039; =&gt; 5]]); // [&#039;a&#039; =&gt; 3, &#039;b&#039; =&gt; 5]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -3550,7 +3997,7 @@ pluck(&#039;val&#039;, [&#039;a&#039; =&gt; [&#039;val&#039; =&gt; 3], &#039;b&#
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>propOr(&#039;NO&#039;, &#039;b&#039;, [&#039;a&#039; =&gt; &#039;A&#039;]); // &#039;NO&#039;</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                                             <div>
@@ -3586,7 +4033,7 @@ pluck(&#039;val&#039;, [&#039;a&#039; =&gt; [&#039;val&#039; =&gt; 3], &#039;b&#
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>propEq(&#039;a&#039;, &#039;A&#039;, [&#039;a&#039; =&gt; &#039;A&#039;]); // true</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                                             <div>
@@ -3624,7 +4071,7 @@ pluck(&#039;val&#039;, [&#039;a&#039; =&gt; [&#039;val&#039; =&gt; 3], &#039;b&#
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>$a = [ &#039;a&#039; =&gt; [ [ &#039;b&#039; =&gt; [ &#039;c&#039; =&gt; 3 ] ], 4] ];
 props([&#039;a.0.b.c&#039;, &#039;a.0.z&#039;, &#039;a.1&#039;], $a); // [3, null, 4]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                                             <div>
@@ -3662,7 +4109,7 @@ props([&#039;a.0.b.c&#039;, &#039;a.0.z&#039;, &#039;a.1&#039;], $a); // [3, nul
                             <pre><code class='language-php example line-numbers'>$a   = [ &#039;a&#039; =&gt; [ [ &#039;b&#039; =&gt; [ &#039;c&#039; =&gt; 3 ] ] ] ];
 setPath([&#039;a&#039;,0,&#039;b&#039;,&#039;c&#039;], 113, $a);  
 // [ &#039;a&#039; =&gt; [ [ &#039;b&#039; =&gt; [ &#039;c&#039; =&gt; 113 ] ] ] ]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                                             <div>
@@ -3699,7 +4146,7 @@ setPath([&#039;a&#039;,0,&#039;b&#039;,&#039;c&#039;], 113, $a);
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>toPairs([&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2, &#039;c&#039; =&gt; 3]); // [[&#039;a&#039;, 1], [&#039;b&#039;, 2], [&#039;c&#039;, 3]]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                                             <div>
@@ -3734,7 +4181,7 @@ setPath([&#039;a&#039;,0,&#039;b&#039;,&#039;c&#039;], 113, $a);
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>$a = [&#039;a&#039; =&gt; &#039;A&#039;, &#039;b&#039; =&gt; &#039;B&#039;];
 where([&#039;a&#039; =&gt; fn ($v) =&gt; $v == &#039;A&#039;], $a); // true</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                                             <div>
@@ -3769,7 +4216,7 @@ where([&#039;a&#039; =&gt; fn ($v) =&gt; $v == &#039;A&#039;], $a); // true</cod
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>escape(&#039;fred, barney, &amp; pebbles&#039;); // &#039;fred, barney, &amp;amp; pebbles&#039;</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -3895,7 +4342,7 @@ where([&#039;a&#039; =&gt; fn ($v) =&gt; $v == &#039;A&#039;], $a); // true</cod
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>words(&#039;\w+&#039;, &#039;aa bb cc&#039;); // [&#039;aa&#039;, &#039;bb&#039;, &#039;cc&#039;]</code></pre>
-                            <span class='copy'>
+                            <span class='copy'></span>
                         </div>
                     
                     
@@ -3938,10 +4385,10 @@ where([&#039;a&#039; =&gt; fn ($v) =&gt; $v == &#039;A&#039;], $a); // true</cod
                 <article id='eq'>
                     <h3>eq</h3>
 
-                    <pre><code class='language-php'>eq($value, $other): bool</code></pre>
+                    <pre><code class='language-php'>eq($a, $b): bool</code></pre>
                     
                     <div>
-                        <p>Returns <code>$value</code> == <code>$other</code></p>
+                        <p><code>$a</code> == <code>$b</code></p>
                     </div>
 
                     
@@ -3951,6 +4398,28 @@ where([&#039;a&#039; =&gt; fn ($v) =&gt; $v == &#039;A&#039;], $a); // true</cod
                             <h4>Alias</h4>
                             <ul>
                                                                     <li id="identical">identical</li>
+                                                            </ul>
+                        </div>
+                    
+                                    </article>
+
+            
+                <article id='equals'>
+                    <h3>equals</h3>
+
+                    <pre><code class='language-php'>equals($a, $b): bool</code></pre>
+                    
+                    <div>
+                        <p><code>$a</code> === <code>$b</code></p>
+                    </div>
+
+                    
+                    
+                    
+                                            <div>
+                            <h4>Alias</h4>
+                            <ul>
+                                                                    <li id="isEqual">isEqual</li>
                                                             </ul>
                         </div>
                     
@@ -4075,6 +4544,7 @@ where([&#039;a&#039; =&gt; fn ($v) =&gt; $v == &#039;A&#039;], $a); // true</cod
 
         </main>
     </div>
-                <script src='./assets/app.44c3a654ccb4fbab8aaf.js' defer></script>
-    </body>
+            <script src='./assets/app.1bf58bbfe054afc8ed31.js' defer></script>
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+</body>
 </html>
