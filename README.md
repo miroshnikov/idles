@@ -13,13 +13,17 @@ The iterable collection parameter is usually supplied last to make currying conv
 
 <strong>Lazy / delayed evaluation</strong> is supported in functional pipelines.
 
-Go to __[https://idlephp.tech](https://idlephp.tech)__ for more details.
+Go to __[https://idlephp.tech](https://idlephp.tech)__ for more details, documentation and examples.
 
 ## Requirements
 `PHP 7.4` or higher
 
 ## Installation
 `composer require miroshnikov/idles`
+
+> [!NOTE]  
+> Idles is currently under active development. 
+> Roadmap is to add all methods from Lodash and Ramda libraries and some functional tools.
 
 ## Documentation
 
@@ -1068,7 +1072,7 @@ Returns the timestamp of the number of seconds
 size(array|Countable|object|string|callable $value): int
 ```
 
-Returns size of a countable, number of parameters of a function, lenght of string and number of properties of an object
+Returns size of a countable, number of parameters of a function, lenght of string or number of properties of an object
 
 #### [T](https://idlephp.tech/#T)
 
