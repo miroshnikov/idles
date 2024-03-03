@@ -21,6 +21,7 @@ Go to __[https://idlephp.tech](https://idlephp.tech)__ for more details, documen
 ## Installation
 `composer require miroshnikov/idles`
 
+## Roadmap
 > [!NOTE]  
 > Idles is currently under active development. 
 > Roadmap is to add all methods from Lodash and Ramda libraries and some functional tools.
@@ -1058,6 +1059,22 @@ identity($value)
 
 Returns the first argument it receives.
 
+#### [just](https://idlephp.tech/#just)
+
+```php
+just($value): Optional
+```
+
+Returns an Optional with the specified non-null value
+
+#### [nothing](https://idlephp.tech/#nothing)
+
+```php
+nothing(): Optional
+```
+
+Returns an empty Optional
+
 #### [now](https://idlephp.tech/#now)
 
 ```php
@@ -1065,6 +1082,23 @@ now(): int
 ```
 
 Returns the timestamp of the number of seconds
+
+#### [Optional](https://idlephp.tech/#Optional)
+
+```php
+just(mixed $value): Optional
+```
+
+Maybe/Option monad (container) which may or may not contain a non-null value. Has methods:
+
+`isPresent(): bool` - `true` if not empty              
+`isEmpty(): bool` - `true` if empty        
+`get(): mixed` - returns value, throw exception if empty         
+`orElse(mixed $default): mixed` - returns the contained value if the optional is nonempty or `$default`        
+`orElseThrow(Exception $e)` - returns the contained value, if present, otherwise throw an exception        
+`map(callable $f): Optional` - If a value is present, apply the `$f` to it, and if the result is non-null, return an Optional describing the result       
+`flatMap(callable $f): Optional` - use instead of `map` if `$f` returns Optional          
+`filter(callable $predicate): Optional` - if a value is present and matches the `$predicate`, return an Optional with the value, otherwise an empty Optional.  
 
 #### [size](https://idlephp.tech/#size)
 

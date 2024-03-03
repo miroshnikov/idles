@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0" class="viewport">
-            <link rel='stylesheet' type='text/css' href='./assets/styles.0b7445a2ce6808bd0868.css'>
+            <link rel='stylesheet' type='text/css' href='./assets/styles.de26d64b2952bd50ab35.css'>
         <title>PHP Functional Library</title>
     <meta name="description" content="A PHP functional utility library, port of JavaScript Lodash and Ramda with lazy (idle) evaluation">
     <meta name="yandex-verification" content="7063684c222008b0">
@@ -5312,6 +5312,84 @@ where([&#039;a&#039; =&gt; fn ($v) =&gt; $v == &#039;A&#039;], $a); // true</cod
                                     </article>
 
             
+                <article id='just'>
+                    <h3>just</h3>
+
+                    <ul>
+                                                                    </ul>
+
+                    <pre><code class='language-php'>just($value): Optional</code></pre>
+                    
+                    <div>
+                        <p>Returns an Optional with the specified non-null value</p>
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                            <pre><code class='language-php example line-numbers'>just(&#039;abc&#039;)-&gt;map(\strtoupper(...))-&gt;get(); // ABC
+just(113)
+    -&gt;filter(fn($n) =&gt; $n &gt; 100)
+    -&gt;filter(fn($n) =&gt; $n &lt; 120)
+    -&gt;get();    // 113</code></pre>
+                            <span class='copy'></span>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#Optional'>Optional</a>, </li>
+                                                                    <li><a href='#nothing'>nothing</a></li>
+                                                            </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/just.php" 
+                                title="View source on GitHub"
+                                class="code">
+                            </a>
+                        </div>
+                                    </article>
+
+            
+                <article id='nothing'>
+                    <h3>nothing</h3>
+
+                    <ul>
+                                                                    </ul>
+
+                    <pre><code class='language-php'>nothing(): Optional</code></pre>
+                    
+                    <div>
+                        <p>Returns an empty Optional</p>
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                            <pre><code class='language-php example line-numbers'>nothing()-&gt;map(\strtoupper(...))-&gt;orElse(&#039;ABC&#039;); // ABC</code></pre>
+                            <span class='copy'></span>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#Optional'>Optional</a>, </li>
+                                                                    <li><a href='#just'>just</a></li>
+                                                            </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/nothing.php" 
+                                title="View source on GitHub"
+                                class="code">
+                            </a>
+                        </div>
+                                    </article>
+
+            
                 <article id='now'>
                     <h3>now</h3>
 
@@ -5328,6 +5406,47 @@ where([&#039;a&#039; =&gt; fn ($v) =&gt; $v == &#039;A&#039;], $a); // true</cod
                     
                     
                     
+                                    </article>
+
+            
+                <article id='Optional'>
+                    <h3>Optional</h3>
+
+                    <ul>
+                                                                    </ul>
+
+                    <pre><code class='language-php'>just(mixed $value): Optional</code></pre>
+                                                                        <pre id="nothing"><code class='language-php'>nothing(): Optional</code></pre>
+                                            
+                    <div>
+                        <p>Maybe/Option monad (container) which may or may not contain a non-null value. Has methods:</p>
+<p><code>isPresent(): bool</code> - <code>true</code> if not empty<br />
+<code>isEmpty(): bool</code> - <code>true</code> if empty<br />
+<code>get(): mixed</code> - returns value, throw exception if empty<br />
+<code>orElse(mixed $default): mixed</code> - returns the contained value if the optional is nonempty or <code>$default</code><br />
+<code>orElseThrow(Exception $e)</code> - returns the contained value, if present, otherwise throw an exception<br />
+<code>map(callable $f): Optional</code> - If a value is present, apply the <code>$f</code> to it, and if the result is non-null, return an Optional describing the result<br />
+<code>flatMap(callable $f): Optional</code> - use instead of <code>map</code> if <code>$f</code> returns Optional<br />
+<code>filter(callable $predicate): Optional</code> - if a value is present and matches the <code>$predicate</code>, return an Optional with the value, otherwise an empty Optional.  </p>
+                    </div>
+
+                    
+                    
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#just'>just</a>, </li>
+                                                                    <li><a href='#nothing'>nothing</a></li>
+                                                            </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/Optional.php" 
+                                title="View source on GitHub"
+                                class="code">
+                            </a>
+                        </div>
                                     </article>
 
             
@@ -5392,7 +5511,7 @@ where([&#039;a&#039; =&gt; fn ($v) =&gt; $v == &#039;A&#039;], $a); // true</cod
 
         </main>
     </div>
-            <script src='./assets/app.0b7445a2ce6808bd0868.js' defer></script>
+            <script src='./assets/app.de26d64b2952bd50ab35.js' defer></script>
         <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 </html>
