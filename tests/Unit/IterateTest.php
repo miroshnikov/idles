@@ -3,7 +3,7 @@
 use function Idles\{iterate, inc, take, pipe, collect};
 
 describe('iterate', function () {
-    it('calculates the sum of two numbers', function() {
+    it('returns a lazy iterable of x, (f x), (f (f x)) etc', function() {
         expect(
           pipe(
             take(5),
