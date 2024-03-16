@@ -70,6 +70,7 @@
             "src/Idles/intersection.php",
             "src/Idles/invert.php",
             "src/Idles/isMatch.php",
+            "src/Idles/iterate.php",
             "src/Idles/join.php",
             "src/Idles/just.php",
             "src/Idles/juxt.php",
