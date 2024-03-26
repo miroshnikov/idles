@@ -524,7 +524,7 @@ Calls `$interceptor($value)` then returns the original `$value`
 #### [times](https://idlephp.tech/#times)
 
 ```php
-times(int $n, callable $iteratee): array
+times(callable $iteratee, int $n): array
 ```
 
 Calls the iteratee `$n` times, returning an array of the results of each invocation.
@@ -1058,6 +1058,14 @@ identity($value)
 ```
 
 Returns the first argument it receives.
+
+#### [iterate](https://idlephp.tech/#iterate)
+
+```php
+iterate(callable $f, $value): iterable
+```
+
+Returns a generator of `$value`, `$f($value)`, `$f($f($value))` etc.
 
 #### [just](https://idlephp.tech/#just)
 

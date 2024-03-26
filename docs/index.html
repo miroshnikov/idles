@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0" class="viewport">
-            <link rel='stylesheet' type='text/css' href='./assets/styles.31177aa21b73d920aef3.css'>
+            <link rel='stylesheet' type='text/css' href='./assets/styles.fb8e7bc3e62e00d1266e.css'>
         <title>PHP Functional Library</title>
     <meta name="description" content="A PHP functional utility library, port of JavaScript Lodash and Ramda with lazy (idle) evaluation">
     <meta name="yandex-verification" content="7063684c222008b0">
@@ -5312,6 +5312,39 @@ where([&#039;a&#039; =&gt; fn ($v) =&gt; $v == &#039;A&#039;], $a); // true</cod
                                     </article>
 
             
+                <article id='iterate'>
+                    <h3>iterate</h3>
+
+                    <ul>
+                                                    <li>
+                                <a class='lazy' href="#lazy-evaluation" title="Lazy evaluation"></a>
+                            </li>
+                                                                            <li>
+                                <a class='numerical' href="#array-vs-record" title="Numerical sequential indexes"></a>
+                            </li>
+                                            </ul>
+
+                    <pre><code class='language-php'>iterate(callable $f, $value): iterable</code></pre>
+                    
+                    <div>
+                        <p>Returns a generator of <code>$value</code>, <code>$f($value)</code>, <code>$f($f($value))</code> etc.</p>
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                            <pre><code class='language-php example line-numbers'>pipe(
+    take(5),
+    collect(...)
+)(iterate(inc(...), 1)); // [1, 2, 3, 4, 5]</code></pre>
+                            <span class='copy'></span>
+                        </div>
+                    
+                    
+                                    </article>
+
+            
                 <article id='just'>
                     <h3>just</h3>
 
@@ -5511,7 +5544,7 @@ just(113)
 
         </main>
     </div>
-            <script src='./assets/app.31177aa21b73d920aef3.js' defer></script>
+            <script src='./assets/app.fb8e7bc3e62e00d1266e.js' defer></script>
         <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 </html>

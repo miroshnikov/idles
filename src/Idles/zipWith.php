@@ -4,8 +4,13 @@ namespace Idles;
 
 function _zipWith(callable $iteratee, iterable ...$arrays): iterable
 {
+    if (!\count($arrays)) {
+        return [];
+    }
+
     if (find(fn ($a) => \is_a($a, '\Iterator'), $arrays) === null) {
-        return \array_map($iteratee, ...$arrays);
+        $minLength = \array_reduce($arrays, fn ($min, $a) => \min($min, \count($a)), \PHP_INT_MAX);
+        return \array_map($iteratee, ...\array_map(fn ($a) => \array_slice($a, 0, $minLength), $arrays));
     }
 
     $i = new \MultipleIterator();
