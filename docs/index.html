@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0" class="viewport">
-            <link rel='stylesheet' type='text/css' href='./assets/styles.fb8e7bc3e62e00d1266e.css'>
+            <link rel='stylesheet' type='text/css' href='./assets/styles.5cae8bbfd2a1cec5cf60.css'>
         <title>PHP Functional Library</title>
     <meta name="description" content="A PHP functional utility library, port of JavaScript Lodash and Ramda with lazy (idle) evaluation">
     <meta name="yandex-verification" content="7063684c222008b0">
@@ -4179,53 +4179,6 @@ hasPath([&#039;a&#039;, &#039;b&#039;], $r); // true</code></pre>
                                     </article>
 
             
-                <article id='matches'>
-                    <h3>matches</h3>
-
-                    <ul>
-                                                                    </ul>
-
-                    <pre><code class='language-php'>matches(array $spec, ?iterable $test): bool</code></pre>
-                    
-                    <div>
-                        <p>Check if the <code>$test</code> satisfies the <code>$spec</code></p>
-                    </div>
-
-                    
-                    
-                                            <div>
-                            <h4>Example</h4>
-                            <pre><code class='language-php example line-numbers'>$pred = matches([&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2]);
-$pred([&#039;a&#039; =&gt; 1])); // false
-$pred([&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2])); // true
-$pred([&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2, &#039;c&#039; =&gt; 3])); // true
-$pred([&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 1]));   // false</code></pre>
-                            <span class='copy'></span>
-                        </div>
-                    
-                                            <div>
-                            <h4>Aliases</h4>
-                            <ul>
-                                                                    <li id="isMatch">isMatch, </li>
-                                                                    <li id="whereEq">whereEq</li>
-                                                            </ul>
-                        </div>
-                    
-                                            <div>
-                            <h4>See also</h4>
-                            <ul>
-                                                                    <li><a href='#where'>where</a></li>
-                                                            </ul>
-                        </div>
-                        <div class="links">
-                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/matches.php" 
-                                title="View source on GitHub"
-                                class="code">
-                            </a>
-                        </div>
-                                    </article>
-
-            
                 <article id='merge'>
                     <h3>merge</h3>
 
@@ -4982,6 +4935,118 @@ where([&#039;a&#039; =&gt; fn ($v) =&gt; $v == &#039;A&#039;], $a); // true</cod
                                                             </ul>
                         </div>
                     
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#whereEq'>whereEq</a>, </li>
+                                                                    <li><a href='#whereAny'>whereAny</a></li>
+                                                            </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/where.php" 
+                                title="View source on GitHub"
+                                class="code">
+                            </a>
+                        </div>
+                                    </article>
+
+            
+                <article id='whereAny'>
+                    <h3>whereAny</h3>
+
+                    <ul>
+                                                                    </ul>
+
+                    <pre><code class='language-php'>whereAny(array $spec, ?iterable $record): bool</code></pre>
+                    
+                    <div>
+                        <p>Checks if <code>$record</code> satisfies the spec by invoking the <code>$spec</code> properties with the corresponding properties of <code>$record</code>. Returns <code>true</code> if at least one of the predicates returns <code>true</code>.</p>
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$spec</dt>
+                                    <dd>[string =&gt; ($value): bool]</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                            <pre><code class='language-php example line-numbers'>$objects = [
+    [ &#039;a&#039; =&gt; 2, &#039;b&#039; =&gt; 1 ],
+    [ &#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2 ]
+];
+$pred = whereAny([
+    &#039;a&#039; =&gt; gt(_, 10),
+    &#039;b&#039; =&gt; lt(_, 2)
+]);
+filter($pred, $objects); // [[ &#039;a&#039; =&gt; 2, &#039;b&#039; =&gt; 1 ]]</code></pre>
+                            <span class='copy'></span>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#where'>where</a>, </li>
+                                                                    <li><a href='#whereEq'>whereEq</a></li>
+                                                            </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/whereAny.php" 
+                                title="View source on GitHub"
+                                class="code">
+                            </a>
+                        </div>
+                                    </article>
+
+            
+                <article id='whereEq'>
+                    <h3>whereEq</h3>
+
+                    <ul>
+                                                                    </ul>
+
+                    <pre><code class='language-php'>whereEq(array $spec, ?iterable $test): bool</code></pre>
+                    
+                    <div>
+                        <p>Check if the <code>$test</code> satisfies the <code>$spec</code></p>
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                            <pre><code class='language-php example line-numbers'>$pred = whereEq([&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2]);
+$pred([&#039;a&#039; =&gt; 1])); // false
+$pred([&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2])); // true
+$pred([&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 2, &#039;c&#039; =&gt; 3])); // true
+$pred([&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 1]));   // false</code></pre>
+                            <span class='copy'></span>
+                        </div>
+                    
+                                            <div>
+                            <h4>Alias</h4>
+                            <ul>
+                                                                    <li id="matches">matches</li>
+                                                            </ul>
+                        </div>
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#where'>where</a>, </li>
+                                                                    <li><a href='#whereAny'>whereAny</a></li>
+                                                            </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/whereEq.php" 
+                                title="View source on GitHub"
+                                class="code">
+                            </a>
+                        </div>
                                     </article>
 
                    
@@ -5544,7 +5609,7 @@ just(113)
 
         </main>
     </div>
-            <script src='./assets/app.fb8e7bc3e62e00d1266e.js' defer></script>
+            <script src='./assets/app.5cae8bbfd2a1cec5cf60.js' defer></script>
         <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 
 namespace Idles;
 
-function isMatch(...$args)
+function whereEq(...$args)
 {
     return curryN(2, 
         function (array $spec, ?iterable $test): bool {
@@ -14,10 +14,5 @@ function isMatch(...$args)
 
 function matches(...$args)
 {
-    return isMatch(...$args);
-}
-
-function whereEq(...$args)
-{
-    return isMatch(...$args);
+    return whereEq(...$args);
 }

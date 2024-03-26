@@ -807,14 +807,6 @@ keys(?iterable $record): iterable
 
 Returns an indexed iterable of keys in `$record`.
 
-#### [matches](https://idlephp.tech/#matches)
-
-```php
-matches(array $spec, ?iterable $test): bool
-```
-
-Check if the `$test` satisfies the `$spec`
-
 #### [merge](https://idlephp.tech/#merge)
 
 ```php
@@ -958,6 +950,22 @@ where(array $spec, ?iterable $record): bool
 ```
 
 Checks if `$record` satisfies the spec by invoking the `$spec` properties with the corresponding properties of `$record`.
+
+#### [whereAny](https://idlephp.tech/#whereAny)
+
+```php
+whereAny(array $spec, ?iterable $record): bool
+```
+
+Checks if `$record` satisfies the spec by invoking the `$spec` properties with the corresponding properties of `$record`. Returns `true` if at least one of the predicates returns `true`.
+
+#### [whereEq](https://idlephp.tech/#whereEq)
+
+```php
+whereEq(array $spec, ?iterable $test): bool
+```
+
+Check if the `$test` satisfies the `$spec`
 
     
 ### String
