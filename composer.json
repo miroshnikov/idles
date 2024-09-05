@@ -115,6 +115,7 @@
             "src/Idles/setPath.php",
             "src/Idles/size.php",
             "src/Idles/slice.php",
+            "src/Idles/sort.php",
             "src/Idles/sortBy.php",
             "src/Idles/split.php",
             "src/Idles/startsWith.php",
