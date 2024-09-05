@@ -375,13 +375,29 @@ resolve(array $resolvers, array $record): array
 
 Adds new properties to `$record` using `$resolvers`.
 
+#### [sort](https://idlephp.tech/#sort)
+
+```php
+sort(array $comparator, ?iterable $collection): array
+```
+
+Sorts `$collection` using `$comparator` comparison (`$a <=> $b`) function
+
 #### [sortBy](https://idlephp.tech/#sortBy)
 
 ```php
-sortBy(array $iteratees, ?iterable $collection): array
+sortBy(array $comparators, ?iterable $collection): array
 ```
 
-Sorts `$collection` in ascending order according to `$iteratees`.
+Sorts `$collection` in ascending order according to `$comparators`.
+
+#### [sortWith](https://idlephp.tech/#sortWith)
+
+```php
+sortWith(array $comparators, ?iterable $collection): array
+```
+
+Sorts a `$collection` according to an array of comparison (`$a <=> $b`) functions
 
 #### [values](https://idlephp.tech/#values)
 
@@ -417,6 +433,14 @@ ary(int $n, callable $fn): callable
 
 Creates a function that invokes `$fn`, with up to `$n` arguments, ignoring any additional arguments.
 
+#### [ascend](https://idlephp.tech/#ascend)
+
+```php
+ascend(callable $func, $a, $b): callable
+```
+
+Makes an ascending comparator function out of a function that returns a value that can be compared with `<=>`
+
 #### [attempt](https://idlephp.tech/#attempt)
 
 ```php
@@ -449,6 +473,14 @@ curryRight(callable $f): callable
 
 Like `curry` but arguments are prepended.
 
+#### [descend](https://idlephp.tech/#descend)
+
+```php
+descend(callable $func, $a, $b): callable
+```
+
+Makes an descending comparator function out of a function that returns a value that can be compared with `<=>`
+
 #### [flip](https://idlephp.tech/#flip)
 
 ```php
@@ -463,7 +495,7 @@ Returns a new curried function with the first two arguments reversed
 juxt(array $funcs): callable
 ```
 
-applies a list of functions to a list of values.
+Applies a list of functions to a list of values.
 
 #### [memoize](https://idlephp.tech/#memoize)
 

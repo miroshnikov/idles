@@ -5,6 +5,11 @@ namespace Idles;
 function _orderBy(?iterable $collection, array $iteratees, array $orders): array
 {
     $collection = collect($collection ?? []);
+
+    if (!$iteratees) {
+        return $collection;
+    }
+
     if (!$collection) {
         return [];
     }
@@ -18,7 +23,7 @@ function _orderBy(?iterable $collection, array $iteratees, array $orders): array
     $arrays = concat(flatMap(fn ($iteratee, $i) => [map($iteratee, $collection), $orders[$i]], $iteratees), [$indexes]);
     \array_multisort(...$arrays);
 
-    return collect(map(fn ($i) => $collection[$i], last($arrays)));
+    return map(fn ($i) => $collection[$i], last($arrays));
 }
 
 function orderBy(...$args)

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0" class="viewport">
-            <link rel='stylesheet' type='text/css' href='./assets/styles.5cae8bbfd2a1cec5cf60.css'>
+            <link rel='stylesheet' type='text/css' href='./assets/styles.3639202b63058092f23f.css'>
         <title>PHP Functional Library</title>
     <meta name="description" content="A PHP functional utility library, port of JavaScript Lodash and Ramda with lazy (idle) evaluation">
     <meta name="yandex-verification" content="7063684c222008b0">
@@ -207,7 +207,8 @@ $greet('Alice'); // Hello, Alice!
                     
                                             <div>
                             <h4>Example</h4>
-                            <pre><code class='language-php example line-numbers'>concat([&#039;a&#039;,&#039;b&#039;], &#039;C&#039;);  // [&#039;a&#039;, &#039;b&#039;, &#039;C&#039;]</code></pre>
+                            <pre><code class='language-php example line-numbers'>concat([&#039;a&#039;,&#039;b&#039;], [&#039;c&#039;, &#039;d&#039;])&#039; // [&#039;a&#039;, &#039;b&#039;, &#039;c&#039;, &#039;d&#039;]
+concat([&#039;a&#039;,&#039;b&#039;], &#039;C&#039;);  // [&#039;a&#039;, &#039;b&#039;, &#039;C&#039;]</code></pre>
                             <span class='copy'></span>
                         </div>
                     
@@ -2120,22 +2121,68 @@ map(
                                     </article>
 
             
+                <article id='sort'>
+                    <h3>sort</h3>
+
+                    <ul>
+                                                                    </ul>
+
+                    <pre><code class='language-php'>sort(array $comparator, ?iterable $collection): array</code></pre>
+                    
+                    <div>
+                        <p>Sorts <code>$collection</code> using <code>$comparator</code> comparison (<code>$a &lt;=&gt; $b</code>) function</p>
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$comparator</dt>
+                                    <dd>(mixed $a, mixed $b): int</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                            <pre><code class='language-php example line-numbers'>$diff = fn ($a, $b) =&gt; $a - $b;
+sort($diff, [4,2,7,5]); // [2, 4, 5, 7]</code></pre>
+                            <span class='copy'></span>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#sortBy'>sortBy</a>, </li>
+                                                                    <li><a href='#sortWith'>sortWith</a>, </li>
+                                                                    <li><a href='#orderBy'>orderBy</a></li>
+                                                            </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/sort.php" 
+                                title="View source on GitHub"
+                                class="code">
+                            </a>
+                        </div>
+                                    </article>
+
+            
                 <article id='sortBy'>
                     <h3>sortBy</h3>
 
                     <ul>
                                                                     </ul>
 
-                    <pre><code class='language-php'>sortBy(array $iteratees, ?iterable $collection): array</code></pre>
+                    <pre><code class='language-php'>sortBy(array $comparators, ?iterable $collection): array</code></pre>
                     
                     <div>
-                        <p>Sorts <code>$collection</code> in ascending order according to <code>$iteratees</code>.</p>
+                        <p>Sorts <code>$collection</code> in ascending order according to <code>$comparators</code>.</p>
                     </div>
 
                                             <div>
                             <h4>Arguments</h4>
                             <dl>
-                                                                    <dt>$iteratees</dt>
+                                                                    <dt>$comparators</dt>
                                     <dd>[(mixed $value): mixed]</dd>
                                                             </dl>
                         </div>
@@ -2170,6 +2217,60 @@ sortBy([property(&#039;user&#039;), property(&#039;age&#039;)], $users);
                         </div>
                         <div class="links">
                             <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/sortBy.php" 
+                                title="View source on GitHub"
+                                class="code">
+                            </a>
+                        </div>
+                                    </article>
+
+            
+                <article id='sortWith'>
+                    <h3>sortWith</h3>
+
+                    <ul>
+                                                                    </ul>
+
+                    <pre><code class='language-php'>sortWith(array $comparators, ?iterable $collection): array</code></pre>
+                    
+                    <div>
+                        <p>Sorts a <code>$collection</code> according to an array of comparison (<code>$a &lt;=&gt; $b</code>) functions</p>
+                    </div>
+
+                                            <div>
+                            <h4>Arguments</h4>
+                            <dl>
+                                                                    <dt>$comparators</dt>
+                                    <dd>[(mixed $a, mixed $b): int]</dd>
+                                                            </dl>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                            <pre><code class='language-php example line-numbers'>$people = [
+    [ &#039;name&#039; =&gt; &#039;clara&#039;, &#039;age&#039; =&gt; 40],
+    [ &#039;name&#039; =&gt; &#039;bob&#039;,   &#039;age&#039; =&gt; 30],
+    [ &#039;name&#039; =&gt; &#039;alice&#039;, &#039;age&#039; =&gt; 40],
+];
+sortWith(
+    [ descend(prop(&#039;age&#039;)), ascend(prop(&#039;name&#039;)) ],
+    $people
+); 
+// alice, clara, bob</code></pre>
+                            <span class='copy'></span>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#sort'>sort</a>, </li>
+                                                                    <li><a href='#sortBy'>sortBy</a>, </li>
+                                                                    <li><a href='#orderBy'>orderBy</a></li>
+                                                            </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/sortWith.php" 
                                 title="View source on GitHub"
                                 class="code">
                             </a>
@@ -2318,6 +2419,48 @@ $n13(add(100)); // 113</code></pre>
                         </div>
                         <div class="links">
                             <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/ary.php" 
+                                title="View source on GitHub"
+                                class="code">
+                            </a>
+                        </div>
+                                    </article>
+
+            
+                <article id='ascend'>
+                    <h3>ascend</h3>
+
+                    <ul>
+                                                                    </ul>
+
+                    <pre><code class='language-php'>ascend(callable $func, $a, $b): callable</code></pre>
+                    
+                    <div>
+                        <p>Makes an ascending comparator function out of a function that returns a value that can be compared with <code>&lt;=&gt;</code></p>
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                            <pre><code class='language-php example line-numbers'>$byAge = ascend(prop(&#039;age&#039;));
+$people = [
+    [ &#039;name&#039; =&gt; &#039;Emma&#039;,    &#039;age&#039; =&gt; 70 ],
+    [ &#039;name&#039; =&gt; &#039;Peter&#039;,   &#039;age&#039; =&gt; 78 ],
+    [ &#039;name&#039; =&gt; &#039;Mikhail&#039;, &#039;age&#039; =&gt; 62 ],
+];
+sort($byAge, $people); // Mikhail, Emma, Peter</code></pre>
+                            <span class='copy'></span>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#descend'>descend</a></li>
+                                                            </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/ascend.php" 
                                 title="View source on GitHub"
                                 class="code">
                             </a>
@@ -2485,6 +2628,48 @@ curryRightN(2, $abc)(&#039;b&#039;)(&#039;a&#039;); // &#039;abc&#039;</code></p
                                     </article>
 
             
+                <article id='descend'>
+                    <h3>descend</h3>
+
+                    <ul>
+                                                                    </ul>
+
+                    <pre><code class='language-php'>descend(callable $func, $a, $b): callable</code></pre>
+                    
+                    <div>
+                        <p>Makes an descending comparator function out of a function that returns a value that can be compared with <code>&lt;=&gt;</code></p>
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                            <pre><code class='language-php example line-numbers'>$byAge = descend(prop(&#039;age&#039;));
+$people = [
+    [ &#039;name&#039; =&gt; &#039;Emma&#039;,    &#039;age&#039; =&gt; 70 ],
+    [ &#039;name&#039; =&gt; &#039;Peter&#039;,   &#039;age&#039; =&gt; 78 ],
+    [ &#039;name&#039; =&gt; &#039;Mikhail&#039;, &#039;age&#039; =&gt; 62 ],
+];
+sort($byAge, $people); // Peter, Emma, Mikhail </code></pre>
+                            <span class='copy'></span>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#ascend'>ascend</a></li>
+                                                            </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/descend.php" 
+                                title="View source on GitHub"
+                                class="code">
+                            </a>
+                        </div>
+                                    </article>
+
+            
                 <article id='flip'>
                     <h3>flip</h3>
 
@@ -2530,7 +2715,7 @@ curryRightN(2, $abc)(&#039;b&#039;)(&#039;a&#039;); // &#039;abc&#039;</code></p
                     <pre><code class='language-php'>juxt(array $funcs): callable</code></pre>
                     
                     <div>
-                        <p>applies a list of functions to a list of values.</p>
+                        <p>Applies a list of functions to a list of values.</p>
                     </div>
 
                     
@@ -5609,7 +5794,7 @@ just(113)
 
         </main>
     </div>
-            <script src='./assets/app.5cae8bbfd2a1cec5cf60.js' defer></script>
+            <script src='./assets/app.3639202b63058092f23f.js' defer></script>
         <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 </html>
