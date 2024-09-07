@@ -911,6 +911,14 @@ path(array|string $path, ?iterable $collection)
 
 Retrieve the value at a given path.
 
+#### [paths](https://idlephp.tech/#paths)
+
+```php
+paths(array $paths, ?iterable $collection): array
+```
+
+Keys in, values out. Order is preserved.
+
 #### [pick](https://idlephp.tech/#pick)
 
 ```php
@@ -950,14 +958,6 @@ propEq(string|int $key, $value, ?iterable $record): bool
 ```
 
 Returns $record[$key] == $value
-
-#### [props](https://idlephp.tech/#props)
-
-```php
-props(array $paths, ?iterable $collection): array
-```
-
-Keys in, values out. Order is preserved.
 
 #### [setPath](https://idlephp.tech/#setPath)
 

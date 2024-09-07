@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0" class="viewport">
-            <link rel='stylesheet' type='text/css' href='./assets/styles.3639202b63058092f23f.css'>
+            <link rel='stylesheet' type='text/css' href='./assets/styles.da18775660c7956d1bf0.css'>
         <title>PHP Functional Library</title>
     <meta name="description" content="A PHP functional utility library, port of JavaScript Lodash and Ramda with lazy (idle) evaluation">
     <meta name="yandex-verification" content="7063684c222008b0">
@@ -4738,6 +4738,51 @@ pathOr(&#039;default&#039;, &#039;a.b.c&#039;, $rec); // &#039;default&#039;</co
                                     </article>
 
             
+                <article id='paths'>
+                    <h3>paths</h3>
+
+                    <ul>
+                                                                    </ul>
+
+                    <pre><code class='language-php'>paths(array $paths, ?iterable $collection): array</code></pre>
+                    
+                    <div>
+                        <p>Keys in, values out. Order is preserved.</p>
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                            <pre><code class='language-php example line-numbers'>$a = [ &#039;a&#039; =&gt; [ [ &#039;b&#039; =&gt; [ &#039;c&#039; =&gt; 3 ] ], 4] ];
+paths([[&#039;a&#039;,0,&#039;b&#039;,&#039;c&#039;], [&#039;a&#039;,0,&#039;z&#039;], [&#039;a&#039;,1]], $a); // [3, null, 4]
+paths([&#039;a.0.b.c&#039;, &#039;a.0.z&#039;, &#039;a.1&#039;], $a); // [3, null, 4]</code></pre>
+                            <span class='copy'></span>
+                        </div>
+                    
+                                            <div>
+                            <h4>Aliases</h4>
+                            <ul>
+                                                                    <li id="at">at, </li>
+                                                                    <li id="props">props</li>
+                                                            </ul>
+                        </div>
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#get'>get</a></li>
+                                                            </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/paths.php" 
+                                title="View source on GitHub"
+                                class="code">
+                            </a>
+                        </div>
+                                    </article>
+
+            
                 <article id='pick'>
                     <h3>pick</h3>
 
@@ -4954,49 +4999,6 @@ pluck(&#039;val&#039;, [&#039;a&#039; =&gt; [&#039;val&#039; =&gt; 3], &#039;b&#
                         </div>
                         <div class="links">
                             <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/propEq.php" 
-                                title="View source on GitHub"
-                                class="code">
-                            </a>
-                        </div>
-                                    </article>
-
-            
-                <article id='props'>
-                    <h3>props</h3>
-
-                    <ul>
-                                                                    </ul>
-
-                    <pre><code class='language-php'>props(array $paths, ?iterable $collection): array</code></pre>
-                    
-                    <div>
-                        <p>Keys in, values out. Order is preserved.</p>
-                    </div>
-
-                    
-                    
-                                            <div>
-                            <h4>Example</h4>
-                            <pre><code class='language-php example line-numbers'>$a = [ &#039;a&#039; =&gt; [ [ &#039;b&#039; =&gt; [ &#039;c&#039; =&gt; 3 ] ], 4] ];
-props([&#039;a.0.b.c&#039;, &#039;a.0.z&#039;, &#039;a.1&#039;], $a); // [3, null, 4]</code></pre>
-                            <span class='copy'></span>
-                        </div>
-                    
-                                            <div>
-                            <h4>Alias</h4>
-                            <ul>
-                                                                    <li id="at">at</li>
-                                                            </ul>
-                        </div>
-                    
-                                            <div>
-                            <h4>See also</h4>
-                            <ul>
-                                                                    <li><a href='#get'>get</a></li>
-                                                            </ul>
-                        </div>
-                        <div class="links">
-                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/props.php" 
                                 title="View source on GitHub"
                                 class="code">
                             </a>
@@ -5794,7 +5796,7 @@ just(113)
 
         </main>
     </div>
-            <script src='./assets/app.3639202b63058092f23f.js' defer></script>
+            <script src='./assets/app.da18775660c7956d1bf0.js' defer></script>
         <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 </html>

@@ -9,12 +9,17 @@ function paths(...$args)
         function (array $paths, ?iterable $collection): array {
             $collection = collect($collection);
             $res = [];
-            foreach (flatten($paths) as $path) {
+            foreach ($paths as $path) {
                 $res[] = path($path, $collection);
             }
             return $res;
         }
     )(...$args);
+}
+
+function props(...$args)
+{
+    return paths(...$args);
 }
 
 function at(...$args)
