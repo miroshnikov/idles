@@ -760,7 +760,7 @@ $a - $b
 #### [sum](https://idlephp.tech/#sum)
 
 ```php
-sum(?iterable $collection)
+sum(?iterable $collection): int|float
 ```
 
 Sums elements in iterable
@@ -768,7 +768,7 @@ Sums elements in iterable
 #### [sumBy](https://idlephp.tech/#sumBy)
 
 ```php
-sumBy(?callable $iteratee, ?iterable $collection)
+sumBy(?callable $iteratee, ?iterable $collection): int|float
 ```
 
 Like `sum` but `$iteratee` is invoked for each element in iterable to generate the value to be summed.

@@ -124,6 +124,7 @@
             "src/Idles/startsWith.php",
             "src/Idles/subtract.php",
             "src/Idles/sum.php",
+            "src/Idles/sumBy.php",
             "src/Idles/T.php",
             "src/Idles/take.php",
             "src/Idles/takeRight.php",
