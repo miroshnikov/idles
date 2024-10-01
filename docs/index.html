@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0" class="viewport">
-            <link rel='stylesheet' type='text/css' href='./assets/styles.4f68cd99bbc1a65892fa.css'>
+            <link rel='stylesheet' type='text/css' href='./assets/styles.e5a41f36ef9bc1718d5b.css'>
         <title>PHP Functional Library</title>
     <meta name="description" content="A PHP functional utility library, port of JavaScript Lodash and Ramda with lazy (idle) evaluation">
     <meta name="yandex-verification" content="7063684c222008b0">
@@ -222,6 +222,80 @@ concat([&#039;a&#039;,&#039;b&#039;], &#039;C&#039;);  // [&#039;a&#039;, &#039;
                         </div>
                         <div class="links">
                             <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/concat.php" 
+                                title="View source on GitHub"
+                                class="code">
+                            </a>
+                        </div>
+                                    </article>
+
+            
+                <article id='count'>
+                    <h3>count</h3>
+
+                    <ul>
+                                                                    </ul>
+
+                    <pre><code class='language-php'>count(callable $predicate, ?iterable $collection): int</code></pre>
+                    
+                    <div>
+                        <p>Counts the number of items in <code>$collection</code> matching the <code>$predicate</code></p>
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                            <pre><code class='language-php example line-numbers'>$even = fn ($x) =&gt; $x % 2 == 0;
+count($even, [1, 2, 3, 4, 5]); // 2</code></pre>
+                            <span class='copy'></span>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#countBy'>countBy</a></li>
+                                                            </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/count.php" 
+                                title="View source on GitHub"
+                                class="code">
+                            </a>
+                        </div>
+                                    </article>
+
+            
+                <article id='countBy'>
+                    <h3>countBy</h3>
+
+                    <ul>
+                                                                    </ul>
+
+                    <pre><code class='language-php'>countBy(callable $iteratee, ?iterable $collection): array</code></pre>
+                    
+                    <div>
+                        <p>Returns an array: [<code>$iteratee($value)</code> =&gt; number of times the <code>$iteratee($value)</code> was found in <code>$collection</code>]</p>
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                            <pre><code class='language-php example line-numbers'>$numbers = [1.0, 1.1, 1.2, 2.0, 3.0, 2.2];
+countBy(\floor(...))($numbers);  // [1 =&gt; 3, 2 =&gt; 2, 3 =&gt; 1]</code></pre>
+                            <span class='copy'></span>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#count'>count</a></li>
+                                                            </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/countBy.php" 
                                 title="View source on GitHub"
                                 class="code">
                             </a>
@@ -5796,7 +5870,7 @@ just(113)
 
         </main>
     </div>
-            <script src='./assets/app.4f68cd99bbc1a65892fa.js' defer></script>
+            <script src='./assets/app.e5a41f36ef9bc1718d5b.js' defer></script>
         <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 </html>

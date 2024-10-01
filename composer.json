@@ -39,6 +39,8 @@
             "src/Idles/concat.php",
             "src/Idles/cond.php",
             "src/Idles/constant.php",
+            "src/Idles/count.php",
+            "src/Idles/countBy.php",
             "src/Idles/curry.php",
             "src/Idles/dec.php",
             "src/Idles/defaults.php",

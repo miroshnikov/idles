@@ -37,6 +37,22 @@ concat(?iterable $array, $value): iterable
 
 Concatinates `$array` with additional iterables/values
 
+#### [count](https://idlephp.tech/#count)
+
+```php
+count(callable $predicate, ?iterable $collection): int
+```
+
+Counts the number of items in `$collection` matching the `$predicate`
+
+#### [countBy](https://idlephp.tech/#countBy)
+
+```php
+countBy(callable $iteratee, ?iterable $collection): array
+```
+
+Returns an array: [`$iteratee($value)` => number of times the `$iteratee($value)` was found in `$collection`]
+
 #### [drop](https://idlephp.tech/#drop)
 
 ```php
