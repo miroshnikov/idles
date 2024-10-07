@@ -26,6 +26,7 @@ function concatAll(array $values)
 
 function concat(...$args)
 {
+    static $arity = 2;
     return curryN(2, 
         fn (?iterable $array, $value): iterable => concatAll([$array, $value])
     )(...$args);

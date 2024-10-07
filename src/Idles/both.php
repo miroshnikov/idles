@@ -4,6 +4,7 @@ namespace Idles;
 
 function both(...$args)
 {
+    static $arity = 2;
     return curryN(
         2,
         fn (callable $f1, callable $f2) => function (...$args) use ($f1, $f2) { 

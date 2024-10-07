@@ -4,6 +4,7 @@ namespace Idles;
 
 function any(...$args)
 {
+    static $arity = 2;
     return curryN(2, 
         function (callable $predicate, ?iterable $collection): bool {
             $collection ??= [];
@@ -19,5 +20,6 @@ function any(...$args)
 
 function some(...$args)
 {
+    static $arity = 2;
     return any(...$args);
 }

@@ -13,6 +13,7 @@ namespace Idles;
 
 function count(...$args)
 {
+    static $arity = 2;
     return curryN(2, 
         function (callable $predicate, ?iterable $collection): int {
             $collection ??= [];

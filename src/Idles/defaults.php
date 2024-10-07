@@ -14,6 +14,7 @@ function defaultsAll(array $iterables): array
 
 function defaults(...$args)
 {
+    static $arity = 2;
     return curryN(2, 
         fn (?iterable $record1, ?iterable $record2): array => defaultsAll([$record1, $record2])
     )(...$args);

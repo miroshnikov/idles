@@ -9,7 +9,7 @@ function size(/*array|Countable|object|string|callable*/ $value): int
     }
 
     if (\is_callable($value)) {
-        return (new \ReflectionFunction($value))->getNumberOfParameters();
+        return arity($value);
     }
 
     if (\is_object($value)) {

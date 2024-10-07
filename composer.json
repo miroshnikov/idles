@@ -29,6 +29,7 @@
             "src/Idles/any.php",
             "src/Idles/anyPass.php",
             "src/Idles/applyTo.php",
+            "src/Idles/arity.php",
             "src/Idles/ary.php",
             "src/Idles/ascend.php",
             "src/Idles/assign.php",

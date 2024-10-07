@@ -2,7 +2,8 @@
 
 namespace Idles;
 
-function indexOfPlaceholder(array $args): int {
+function indexOfPlaceholder(array $args): int 
+{
     foreach ($args as $i => $arg) {
         if (isPlaceholder($arg)) {
             return $i;
