@@ -111,6 +111,7 @@
             "src/Idles/pick.php",
             "src/Idles/pipe.php",
             "src/Idles/pluck.php",
+            "src/Idles/project.php",
             "src/Idles/prop.php",
             "src/Idles/propEq.php",
             "src/Idles/reduce.php",

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0" class="viewport">
-            <link rel='stylesheet' type='text/css' href='./assets/styles.e5a41f36ef9bc1718d5b.css'>
+            <link rel='stylesheet' type='text/css' href='./assets/styles.14216a16b202df5da9d3.css'>
         <title>PHP Functional Library</title>
     <meta name="description" content="A PHP functional utility library, port of JavaScript Lodash and Ramda with lazy (idle) evaluation">
     <meta name="yandex-verification" content="7063684c222008b0">
@@ -4994,6 +4994,52 @@ pluck(&#039;val&#039;, [&#039;a&#039; =&gt; [&#039;val&#039; =&gt; 3], &#039;b&#
                                     </article>
 
             
+                <article id='project'>
+                    <h3>project</h3>
+
+                    <ul>
+                                                    <li>
+                                <a class='lazy' href="#lazy-evaluation" title="Lazy evaluation"></a>
+                            </li>
+                                                                    </ul>
+
+                    <pre><code class='language-php'>project(array $props, ?iterable $collection)</code></pre>
+                    
+                    <div>
+                        <p>Like SQL <code>select</code> statement.</p>
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                            <pre><code class='language-php example line-numbers'>$kids =  [
+    [ &#039;name&#039; =&gt; &#039;Abby&#039;, &#039;age&#039; =&gt; 7, &#039;hair&#039; =&gt; &#039;blond&#039;, &#039;grade&#039; =&gt; 2 ],
+    [ &#039;name&#039; =&gt; &#039;Fred&#039;, &#039;age&#039; =&gt; 12, &#039;hair&#039; =&gt; &#039;brown&#039;, &#039;grade&#039; =&gt; 7 ]
+];
+project([&#039;name&#039;, &#039;grade&#039;], $kids); // [[&#039;name&#039; =&gt; &#039;Abby&#039;, &#039;grade&#039; =&gt; 2], [ &#039;name&#039; =&gt; &#039;Fred&#039;, &#039;grade&#039; =&gt; 7 ]]</code></pre>
+                            <span class='copy'></span>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#pick'>pick</a>, </li>
+                                                                    <li><a href='#pluck'>pluck</a>, </li>
+                                                                    <li><a href='#props'>props</a>, </li>
+                                                                    <li><a href='#prop'>prop</a></li>
+                                                            </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/project.php" 
+                                title="View source on GitHub"
+                                class="code">
+                            </a>
+                        </div>
+                                    </article>
+
+            
                 <article id='prop'>
                     <h3>prop</h3>
 
@@ -5870,7 +5916,7 @@ just(113)
 
         </main>
     </div>
-            <script src='./assets/app.e5a41f36ef9bc1718d5b.js' defer></script>
+            <script src='./assets/app.14216a16b202df5da9d3.js' defer></script>
         <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 </html>

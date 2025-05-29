@@ -959,6 +959,14 @@ pluck(string|int $key, ?iterable $collection)
 
 Returns a new array by plucking the same named property off all records in the array supplied.
 
+#### [project](https://idlephp.tech/#project)
+
+```php
+project(array $props, ?iterable $collection)
+```
+
+Like SQL `select` statement.
+
 #### [prop](https://idlephp.tech/#prop)
 
 ```php
