@@ -2,7 +2,10 @@
 
 namespace Idles;
 
-function toPath(/*string|int|array*/ $value): array
+/**
+ * @param string|int|array $value 
+ */
+function toPath($value): array
 {
     if (\is_array($value)) {
         return $value;
@@ -12,8 +15,8 @@ function toPath(/*string|int|array*/ $value): array
         $matches = [];
         $path = [];
         $offset = 0;
-        while (preg_match($pattern, $value, $matches, \PREG_OFFSET_CAPTURE, $offset)) {
-            $offset = $matches[0][1] + strlen($matches[0][0]);
+        while (\preg_match($pattern, $value, $matches, \PREG_OFFSET_CAPTURE, $offset)) {
+            $offset = $matches[0][1] + \strlen($matches[0][0]);
             $item = last($matches)[0];
             if (\is_numeric($item)) {
                 $item = (int)$item;

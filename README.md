@@ -529,6 +529,14 @@ negate(callable $predicate): callable
 
 Creates a function that negates the result of the `$predicate` function.
 
+#### [nthArg](https://idlephp.tech/#nthArg)
+
+```php
+nthArg(int $n): callable
+```
+
+Returns a function which returns its `$n`th argument.
+
 #### [once](https://idlephp.tech/#once)
 
 ```php
@@ -560,6 +568,14 @@ pipe(callable ...$funcs): callable
 ```
 
 Left-to-right function composition. The first argument may have any arity; the remaining arguments must be unary.
+
+#### [rearg](https://idlephp.tech/#rearg)
+
+```php
+rearg(array $indexes, callable $f): callable
+```
+
+Returns a function that invokes `$f` with arguments rearranged by `props($indexes)`
 
 #### [tap](https://idlephp.tech/#tap)
 
