@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0" class="viewport">
-            <link rel='stylesheet' type='text/css' href='./assets/styles.8184d40558d98e527f8d.css'>
+            <link rel='stylesheet' type='text/css' href='./assets/styles.c6d3fc0bc34fd770782e.css'>
         <title>PHP Functional Library</title>
     <meta name="description" content="A PHP functional utility library, port of JavaScript Lodash and Ramda with lazy (idle) evaluation">
     <meta name="yandex-verification" content="7063684c222008b0">
@@ -2427,6 +2427,42 @@ sortWith(
                                     </article>
 
             
+                <article id='apply'>
+                    <h3>apply</h3>
+
+                    <ul>
+                                                                    </ul>
+
+                    <pre><code class='language-php'>apply(callable $fn, ?iterable $args)</code></pre>
+                    
+                    <div>
+                        <p>Calls <code>$fn(...$args)</code></p>
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                            <pre><code class='language-php example line-numbers'>    apply(\max(...), [1, 2, 3, -99, 42, 6, 7]); // 42</code></pre>
+                            <span class='copy'></span>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#unapply'>unapply</a></li>
+                                                            </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/apply.php" 
+                                title="View source on GitHub"
+                                class="code">
+                            </a>
+                        </div>
+                                    </article>
+
+            
                 <article id='applyTo'>
                     <h3>applyTo</h3>
 
@@ -3228,6 +3264,42 @@ tryCatch(
                         </div>
                         <div class="links">
                             <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/tryCatch.php" 
+                                title="View source on GitHub"
+                                class="code">
+                            </a>
+                        </div>
+                                    </article>
+
+            
+                <article id='unapply'>
+                    <h3>unapply</h3>
+
+                    <ul>
+                                                                    </ul>
+
+                    <pre><code class='language-php'>unapply(callable $fn)</code></pre>
+                    
+                    <div>
+                        <p>Returns <code>fn (...$args) =&gt; $fn($args)</code></p>
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                            <pre><code class='language-php example line-numbers'>    unapply(\json_encode(...))(1,2,3); // &#039;[1,2,3]&#039;</code></pre>
+                            <span class='copy'></span>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#apply'>apply</a></li>
+                                                            </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/unapply.php" 
                                 title="View source on GitHub"
                                 class="code">
                             </a>
@@ -5994,7 +6066,7 @@ just(113)
 
         </main>
     </div>
-            <script src='./assets/app.8184d40558d98e527f8d.js' defer></script>
+            <script src='./assets/app.c6d3fc0bc34fd770782e.js' defer></script>
         <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 </html>

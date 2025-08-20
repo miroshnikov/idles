@@ -433,6 +433,14 @@ always($value)
 
 Returns a function that always returns the given value.
 
+#### [apply](https://idlephp.tech/#apply)
+
+```php
+apply(callable $fn, ?iterable $args)
+```
+
+Calls `$fn(...$args)`
+
 #### [applyTo](https://idlephp.tech/#applyTo)
 
 ```php
@@ -600,6 +608,14 @@ tryCatch(callable $tryer, callable $catcher, $value)
 ```
 
 Calls `$tryer`, if it throws, calls `$catcher`
+
+#### [unapply](https://idlephp.tech/#unapply)
+
+```php
+unapply(callable $fn)
+```
+
+Returns `fn (...$args) => $fn($args)`
 
 #### [unary](https://idlephp.tech/#unary)
 

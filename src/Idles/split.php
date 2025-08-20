@@ -2,6 +2,8 @@
 
 /**
  * @param string $separator doesn't use /pattern/ delimiters
+ * 
+ * @return string[]|false
  */
 
 namespace Idles;
