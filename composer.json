@@ -145,6 +145,7 @@
             "src/Idles/toArray.php",
             "src/Idles/toUpper.php",
             "src/Idles/toLower.php",
+            "src/Idles/trim.php",
             "src/Idles/toPairs.php",
             "src/Idles/toPath.php",
             "src/Idles/tryCatch.php",

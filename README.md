@@ -1137,6 +1137,14 @@ toUpper(string $s): string
 
 Converts string to upper case
 
+#### [trim](https://idlephp.tech/#trim)
+
+```php
+trim(string $characters, string $string): string
+```
+
+Strip characters from the beginning and end of a string.
+
 #### [words](https://idlephp.tech/#words)
 
 ```php
