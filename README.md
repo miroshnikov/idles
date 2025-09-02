@@ -197,6 +197,38 @@ slice(int $start, int ?$end, ?iterable $collection): iterable
 
 Retruns a slice of `$iterable` from `$start` up to, but not including, `$end`.
 
+#### [splitAt](https://idlephp.tech/#splitAt)
+
+```php
+splitAt(int $index, array|string $array): array
+```
+
+Splits a given array or string at a given index.
+
+#### [splitEvery](https://idlephp.tech/#splitEvery)
+
+```php
+splitEvery(int $length, array|string $array): array
+```
+
+Splits an array or string into slices of the specified length
+
+#### [splitWhen](https://idlephp.tech/#splitWhen)
+
+```php
+splitWhen(callable $predicate, array $array): array
+```
+
+Splits an array by predicate.
+
+#### [splitWhenever](https://idlephp.tech/#splitWhenever)
+
+```php
+splitWhenever(callable $predicate, array $array): array
+```
+
+Splits an array into slices on every occurrence of a value.
+
 #### [take](https://idlephp.tech/#take)
 
 ```php
@@ -1079,7 +1111,7 @@ Escapes regular expression
 split(string $separator, string $s): array
 ```
 
-Splits string by `$separator`.
+Splits string by `$separator` regular expression.
 
 #### [startsWith](https://idlephp.tech/#startsWith)
 
