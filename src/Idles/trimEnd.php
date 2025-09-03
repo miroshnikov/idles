@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Strip characters from the beginning and end of a string.
+ * Strip characters from the end of a string.
  * 
  * @param string characters that need to be stripped
  * 
@@ -12,10 +12,10 @@
 
 namespace Idles;
 
-function trim(...$args)
+function trimEnd(...$args)
 {
     static $arity = 2;
     return curryN($arity, 
-        fn (string $characters, string $string) => \mb_trim($string, $characters)
+        fn (string $characters, string $string) => \mb_rtrim($string, $characters)
     )(...$args);
 }

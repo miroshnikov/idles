@@ -1145,6 +1145,22 @@ trim(string $characters, string $string): string
 
 Strip characters from the beginning and end of a string.
 
+#### [trimEnd](https://idlephp.tech/#trimEnd)
+
+```php
+trimEnd(string $characters, string $string): string
+```
+
+Strip characters from the end of a string.
+
+#### [trimStart](https://idlephp.tech/#trimStart)
+
+```php
+trimStart(string $characters, string $string): string
+```
+
+Strip characters from the beginning of a string.
+
 #### [words](https://idlephp.tech/#words)
 
 ```php
