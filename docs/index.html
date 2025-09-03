@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0" class="viewport">
-            <link rel='stylesheet' type='text/css' href='./assets/styles.3fa82ec78f4412643414.css'>
+            <link rel='stylesheet' type='text/css' href='./assets/styles.98e4208ae751c932c673.css'>
         <title>PHP Functional Library</title>
     <meta name="description" content="A PHP functional utility library, port of JavaScript Lodash and Ramda with lazy (idle) evaluation">
     <meta name="yandex-verification" content="7063684c222008b0">
@@ -1073,9 +1073,10 @@ nth(99, $list); // null</code></pre>
                                             <div>
                             <h4>Example</h4>
                             <pre><code class='language-php example line-numbers'>$a = [&#039;a&#039;,&#039;b&#039;,&#039;c&#039;,&#039;d&#039;,&#039;e&#039;];
-slice(1, 3, $a2); // [&#039;b&#039;,&#039;c&#039;]
-slice(1, -2, $a2); // [&#039;b&#039;,&#039;c&#039;]
-slice(-4, -2, $a2); // [&#039;b&#039;,&#039;c&#039;]</code></pre>
+slice(1, 3, $a);    // [&#039;b&#039;,&#039;c&#039;]
+slice(1, -2, $a);   // [&#039;b&#039;,&#039;c&#039;]
+slice(-4, -2, $a);  // [&#039;b&#039;,&#039;c&#039;]
+slice(2, null, $a); // [&#039;c&#039;,&#039;d&#039;,&#039;e&#039;]</code></pre>
                             <span class='copy'></span>
                         </div>
                     
@@ -3032,7 +3033,10 @@ juxt([filter($isOdd), remove($isOdd)])([1,2,3,4,5,6,7,8,9]);
                                             <div>
                             <h4>See also</h4>
                             <ul>
-                                                                    <li><a href='#applySpec'>applySpec</a></li>
+                                                                    <li><a href='#useWith'>useWith</a>, </li>
+                                                                    <li><a href='#on'>on</a>, </li>
+                                                                    <li><a href='#applySpec'>applySpec</a>, </li>
+                                                                    <li><a href='#ap'>ap</a></li>
                                                             </ul>
                         </div>
                         <div class="links">
@@ -3519,6 +3523,46 @@ tryCatch(
                         </div>
                         <div class="links">
                             <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/unary.php" 
+                                title="View source on GitHub"
+                                class="code">
+                            </a>
+                        </div>
+                                    </article>
+
+            
+                <article id='useWith'>
+                    <h3>useWith</h3>
+
+                    <ul>
+                                                                    </ul>
+
+                    <pre><code class='language-php'>useWith(callable $fn, array $transformers)</code></pre>
+                    
+                    <div>
+                        <p>Applies each transformer function to each argument.</p>
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                            <pre><code class='language-php example line-numbers'>$f = useWith(unapply(join(&#039; &#039;)), [toLower(...), toUpper(...)]);
+$f(&#039;HELLO&#039;, &#039;world!&#039;); // hello WORLD!</code></pre>
+                            <span class='copy'></span>
+                        </div>
+                    
+                    
+                                            <div>
+                            <h4>See also</h4>
+                            <ul>
+                                                                    <li><a href='#ap'>ap</a>, </li>
+                                                                    <li><a href='#juxt'>juxt</a>, </li>
+                                                                    <li><a href='#applySpec'>applySpec</a>, </li>
+                                                                    <li><a href='#on'>on</a></li>
+                                                            </ul>
+                        </div>
+                        <div class="links">
+                            <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/useWith.php" 
                                 title="View source on GitHub"
                                 class="code">
                             </a>
@@ -5703,6 +5747,54 @@ $pred([&#039;a&#039; =&gt; 1, &#039;b&#039; =&gt; 1]));   // false</code></pre>
             <h2>String</h2>
 
             
+                <article id='camelCase'>
+                    <h3>camelCase</h3>
+
+                    <ul>
+                                                                    </ul>
+
+                    <pre><code class='language-php'>camelCase(string $s): string</code></pre>
+                    
+                    <div>
+                        <p>Converts string to camel case.</p>
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                            <pre><code class='language-php example line-numbers'>camelCase(&#039;--foo-bar--&#039;); // fooBar</code></pre>
+                            <span class='copy'></span>
+                        </div>
+                    
+                    
+                                    </article>
+
+            
+                <article id='capitalize'>
+                    <h3>capitalize</h3>
+
+                    <ul>
+                                                                    </ul>
+
+                    <pre><code class='language-php'>capitalize(string $s): string</code></pre>
+                    
+                    <div>
+                        <p>Converts the first character of string to upper case and the remaining to lower case.</p>
+                    </div>
+
+                    
+                    
+                                            <div>
+                            <h4>Example</h4>
+                            <pre><code class='language-php example line-numbers'>capitalize(&#039;FRED&#039;); // Fred</code></pre>
+                            <span class='copy'></span>
+                        </div>
+                    
+                    
+                                    </article>
+
+            
                 <article id='escape'>
                     <h3>escape</h3>
 
@@ -6361,7 +6453,7 @@ just(113)
 
         </main>
     </div>
-            <script src='./assets/app.3fa82ec78f4412643414.js' defer></script>
+            <script src='./assets/app.98e4208ae751c932c673.js' defer></script>
         <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 </html>

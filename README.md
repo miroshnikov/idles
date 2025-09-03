@@ -665,6 +665,14 @@ unary(callable $fn): callable
 
 `ary(1, $fn)`
 
+#### [useWith](https://idlephp.tech/#useWith)
+
+```php
+useWith(callable $fn, array $transformers)
+```
+
+Applies each transformer function to each argument.
+
     
 ### Logic
 #### [allPass](https://idlephp.tech/#allPass)
@@ -1097,6 +1105,22 @@ Check if the `$test` satisfies the `$spec`
 
     
 ### String
+#### [camelCase](https://idlephp.tech/#camelCase)
+
+```php
+camelCase(string $s): string
+```
+
+Converts string to camel case.
+
+#### [capitalize](https://idlephp.tech/#capitalize)
+
+```php
+capitalize(string $s): string
+```
+
+Converts the first character of string to upper case and the remaining to lower case.
+
 #### [escape](https://idlephp.tech/#escape)
 
 ```php
