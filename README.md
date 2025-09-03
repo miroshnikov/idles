@@ -128,10 +128,10 @@ Gets the first element of iterable
 #### [indexOf](https://idlephp.tech/#indexOf)
 
 ```php
-indexOf($value, ?iterable $collection): int
+indexOf($value, ?iterable|string $collection): int
 ```
 
-Returns the index of the first occurrence of `$value` in `$collection`, else -1.
+Returns the index of the first occurrence of `$value` in iterable or string, else -1.
 
 #### [intersection](https://idlephp.tech/#intersection)
 
@@ -172,6 +172,14 @@ last(?iterable $collecton)
 ```
 
 Gets the last element of iterable
+
+#### [lastIndexOf](https://idlephp.tech/#lastIndexOf)
+
+```php
+lastIndexOf($value, ?iterable|string $collection): int
+```
+
+Returns the index of the last occurrence of `$value` in iterable or string, else -1.
 
 #### [nth](https://idlephp.tech/#nth)
 

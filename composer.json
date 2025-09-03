@@ -87,6 +87,7 @@
             "src/Idles/ifElse.php",
             "src/Idles/inc.php",
             "src/Idles/last.php",
+            "src/Idles/lastIndexOf.php",
             "src/Idles/lt.php",
             "src/Idles/lte.php",
             "src/Idles/map.php",
