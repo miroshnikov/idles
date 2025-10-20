@@ -1,0 +1,15 @@
+parameters:
+    level: 5
+    paths:
+        - src
+        - tests
+    excludePaths:
+        - src/Idles/camelCase.php
+    ignoreErrors:
+        - '#PHPDoc tag @param references unknown parameter: .+#'
+        -
+            message: '#While loop condition is always true.#'
+            path: src/Idles/iterate.php
+        -
+            identifier: parameterByRef.unusedType
+            path: src/Idles/modifyPath.php

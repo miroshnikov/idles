@@ -3,9 +3,9 @@
 /**
  * Splits a given array or string at a given index.
  * 
- * @param int The index where the array/string is split.
+ * @param int $index The index where the array/string is split.
  * 
- * @param array|string 
+ * @param array|string $arrayOrString
  * 
  * @return string[]|array
  */

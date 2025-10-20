@@ -3,9 +3,9 @@
 /**
  * Splits an array or string into slices of the specified length. Keys are not preserved.
  * 
- * @param int length of slice
+ * @param int $length length of slice
  * 
- * @param array|string 
+ * @param array|string $array
  * 
  * @return string[]|array
  */

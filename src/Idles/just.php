@@ -31,7 +31,7 @@ function just($value): Optional
             return $this->value;
         }
 
-        public function orElseThrow(\Exception $e = new \ValueError('No value on None')) 
+        public function orElseThrow(\Exception $e = new \Exception('No value on None')) 
         {
             return $this->value;
         }

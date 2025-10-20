@@ -12,5 +12,9 @@ function _iterate(callable $func, $value): iterable
 
 function iterate(...$args)
 {
-    return curryN(2, fn (callable $func, $value) => _iterate($func, $value))(...$args);
+    static $arity = 2;
+    return curryN(
+        $arity, 
+        fn (callable $func, $value) => _iterate($func, $value)
+    )(...$args);
 }

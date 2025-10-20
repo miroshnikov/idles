@@ -6,9 +6,9 @@
  * - none of the elements of the first output array satisfies the predicate; and
  * - if the second output array is non-empty, its first element satisfies the predicate.
  * 
- * @param callable predicate that determines where the array is split.
+ * @param callable $predicate that determines where the array is split.
  * 
- * @param array 
+ * @param array $array
  * 
  * @return array
  */

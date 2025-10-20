@@ -3,9 +3,9 @@
 /**
  * Applies each transformer function to each argument.
  * 
- * @param callable The function to wrap.
+ * @param callable $fn The function to wrap.
  * 
- * @param array Transformer functions
+ * @param array $transformers Transformer functions
  * 
  * @return mixed
  */

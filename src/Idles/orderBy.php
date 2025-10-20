@@ -15,7 +15,7 @@ function _orderBy(?iterable $collection, array $iteratees, array $orders): array
     }
 
     $orders = \array_pad(
-        \array_map(fn ($s) => \preg_match('/desc/i', \trim($s)) ? \SORT_DESC : \SORT_ASC, $orders ?? []),
+        \array_map(fn ($s) => \preg_match('/desc/i', \trim($s)) ? \SORT_DESC : \SORT_ASC, $orders),
         \count($iteratees),
         \SORT_ASC
     );

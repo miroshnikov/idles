@@ -26,7 +26,7 @@ function nothing(): Optional
             return $default;
         }
 
-        public function orElseThrow(\Exception $e = new \ValueError('No value on None')) 
+        public function orElseThrow(\Exception $e = new \Exception('No value on None')) 
         {
             throw $e;
         }

@@ -30,9 +30,20 @@ function &_modifyPath(?iterable &$array, /*string|array*/ $path, callable $updat
     return $array;
 }
 
+/**
+ * Creates new record by applying an $updater function to the value at the given $path.
+ *
+ * @param array|string|int $path
+ * @param callable      $updater
+ * @param ?iterable     $record
+ *
+ * @return mixed
+ */
+
 function modifyPath(...$args)
 {
-    return curryN(3, 
+    static $arity = 3;
+    return curryN($arity, 
         fn ($path, callable $updater, ?iterable $record) => _modifyPath($record, $path, $updater)
     )(...$args);
 }

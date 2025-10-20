@@ -3,9 +3,9 @@
 /**
  * Strip characters from the beginning of a string.
  * 
- * @param string characters that need to be stripped
+ * @param string $characters that need to be stripped
  * 
- * @param string string that will be trimmed
+ * @param string $string that will be trimmed
  * 
  * @return string
  */

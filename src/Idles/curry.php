@@ -45,10 +45,10 @@ function curryRight(callable $f): callable
 
 function curryN(...$args): callable
 {
-    return curry(fn (int $arity, callable $f) => _curry($f, false, $arity), 2)(...$args);
+    return curry(fn (int $arity, callable $f) => _curry($f, false, $arity))(...$args);
 }
 
 function curryRightN(...$args): callable
 {
-    return curry(fn (int $arity, callable $f) => _curry($f, true, $arity), 2)(...$args);
+    return curry(fn (int $arity, callable $f) => _curry($f, true, $arity))(...$args);
 }

@@ -3,7 +3,7 @@
 /**
  * Converts the first character of string to upper case and the remaining to lower case.
  * 
- * @param string 
+ * @param string $string 
  * 
  * @return string
  */

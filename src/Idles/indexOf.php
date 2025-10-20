@@ -3,9 +3,9 @@
 /**
  * Returns the index of the first occurrence of the item in array or string, else -1.
  * 
- * @param mixed the item to find
+ * @param mixed $value the item to find
  * 
- * @param ?iterable|string array or string to search in
+ * @param iterable|string $collection array or string to search in
  * 
  * @return string
  */

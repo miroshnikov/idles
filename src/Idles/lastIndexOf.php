@@ -1,16 +1,16 @@
 <?php
 
+namespace Idles;
+
 /**
  * Returns the position of the last occurrence of an item in an array or string, or -1.
  * 
- * @param mixed the item to find
+ * @param mixed $value the item to find
  * 
- * @param ?iterable|string array or string to search in
+ * @param iterable|string $collection array or string to search in
  * 
  * @return string
  */
-
-namespace Idles;
 
 function lastIndexOf(...$args)
 {

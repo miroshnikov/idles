@@ -5,7 +5,7 @@ namespace Idles;
 /**
  * Returns a function which returns its $nth argument.
  *
- * @param int      $n
+ * @param int $n
  *
  * @return callable
  */

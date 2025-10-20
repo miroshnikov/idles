@@ -3,9 +3,9 @@
 /**
  * Splits an array into slices on every occurrence of a value.
  * 
- * @param callable predicate that determines where the array or string is split.
+ * @param callable $predicate that determines where the array or string is split.
  * 
- * @param array 
+ * @param array $array
  * 
  * @return array
  */
