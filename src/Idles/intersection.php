@@ -4,7 +4,8 @@ namespace Idles;
 
 function intersection(...$args)
 {
-    return curryN(2, 
+    static $arity = 2;
+    return curryN($arity, 
         fn (?iterable $record1, ?iterable $record2) => 
             values(\array_unique(\array_intersect(collect($record1), collect($record2))), \SORT_REGULAR)
     )(...$args);
@@ -12,7 +13,8 @@ function intersection(...$args)
 
 function intersectionWith(...$args)
 {
-    return curryN(3, 
+    static $arity = 3;
+    return curryN($arity, 
         fn (callable $comparator, ?iterable $record1, ?iterable $record2) => 
             values(\array_unique(\array_uintersect(collect($record1), collect($record2), $comparator)), \SORT_REGULAR)
     )(...$args);
@@ -20,7 +22,8 @@ function intersectionWith(...$args)
 
 function intersectionBy(...$args)
 {
-    return curryN(3, 
+    static $arity = 3;
+    return curryN($arity, 
         fn (callable $iteratee, ?iterable $record1, ?iterable $record2) => 
             intersectionWith(fn ($a, $b) => $iteratee($a) <=> $iteratee($b), $record1, $record2)
     )(...$args);

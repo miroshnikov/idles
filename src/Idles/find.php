@@ -19,14 +19,16 @@ function _find(?iterable $collection, callable $predicate, int $fromIndex = 0)
 
 function find(...$args)
 {
-    return curryN(2, 
+    static $arity = 2;
+    return curryN($arity, 
         fn (callable $predicate, ?iterable $collection) => _find($collection, $predicate)
     )(...$args);
 }
 
 function findFrom(...$args)
 {
-    return curryN(3, 
+    static $arity = 3;
+    return curryN($arity, 
         fn (callable $predicate, int $fromIndex, ?iterable $collection) => _find($collection, $predicate, $fromIndex)
     )(...$args);
 }

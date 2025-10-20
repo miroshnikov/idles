@@ -14,7 +14,8 @@ function _groupBy(?iterable $collection, callable $iteratee): array
 
 function groupBy(...$args)
 {
-    return curryN(2, 
+    static $arity = 2;
+    return curryN($arity, 
         fn (callable $iteratee, ?iterable $collection) => _groupBy($collection, $iteratee)
     )(...$args);
 }

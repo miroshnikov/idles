@@ -4,7 +4,8 @@ namespace Idles;
 
 function gte(...$args)
 {
-    return curryN(2, 
+    static $arity = 2;
+    return curryN($arity, 
         function ($a, $b): bool {
             return $a >= $b;
         }

@@ -26,7 +26,8 @@ function _flatMapDepth(?iterable $collection, callable $iteratee, int $depth): i
 
 function flatMap(...$args)
 {
-    return curryN(2, 
+    static $arity = 2;
+    return curryN($arity, 
         fn (callable $iteratee, ?iterable $collection) => _flatMapDepth($collection, $iteratee, 1)
     )(...$args);
 }
@@ -38,14 +39,16 @@ function chain(...$args)
 
 function flatMapDeep(...$args)
 {
-    return curryN(2, 
+    static $arity = 2;
+    return curryN($arity, 
         fn (callable $iteratee, ?iterable $collection) => _flatMapDepth($collection, $iteratee, \PHP_INT_MAX)
     )(...$args);
 }
 
 function flatMapDepth(...$args)
 {
-    return curryN(3, 
+    static $arity = 3;
+    return curryN($arity, 
         fn (callable $iteratee, int $depth, ?iterable $collection) => _flatMapDepth($collection, $iteratee, $depth)
     )(...$args);
 }

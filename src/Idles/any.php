@@ -5,7 +5,7 @@ namespace Idles;
 function any(...$args)
 {
     static $arity = 2;
-    return curryN(2, 
+    return curryN($arity, 
         function (callable $predicate, ?iterable $collection): bool {
             $collection ??= [];
             foreach ($collection as $key => $value) {

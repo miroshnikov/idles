@@ -25,14 +25,16 @@ function _includes(?iterable $collection, $value, int $fromIndex = 0): bool
 
 function includes(...$args)
 {
-    return curryN(2, 
+    static $arity = 2;
+    return curryN($arity, 
         fn ($value, ?iterable $collection) => _includes($collection, $value)
     )(...$args);
 }
 
 function includesFrom(...$args)
 {
-    return curryN(3, 
+    static $arity = 3;
+    return curryN($arity, 
         fn ($value, int $fromIndex, ?iterable $collection) => _includes($collection, $value, $fromIndex)
     )(...$args);
 }

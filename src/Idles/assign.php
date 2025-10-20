@@ -17,7 +17,7 @@ function extendAll(...$args)
 function assign(...$args)
 {
     static $arity = 2;
-    return curryN(2, 
+    return curryN($arity, 
         fn (?iterable $record1, ?iterable $record2) => assignAll([$record1, $record2])
     )(...$args);
 }

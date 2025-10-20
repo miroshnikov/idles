@@ -6,7 +6,7 @@ function ary(...$args)
 {
     static $arity = 2;
     return curryN(
-        2,
+        $arity,
         fn (int $n, callable $fn) => fn (...$args) => $fn(...take($n, $args))
     )(...$args);
 }

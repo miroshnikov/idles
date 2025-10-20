@@ -19,16 +19,18 @@ function _findLastIndex(?iterable $collection, callable $predicate, ?int $fromIn
 
 function findLastIndex(...$args)
 {
+    static $arity = 2;
     return curryN(
-        2,
+        $arity,
         fn (callable $predicate, ?iterable $collection) => _findLastIndex($collection, $predicate)
     )(...$args);
 }
 
 function findLastIndexFrom(...$args)
 {
+    static $arity = 3;
     return curryN(
-        3,
+        $arity,
         fn (callable $predicate, int $fromIndex, ?iterable $collection) =>
             _findLastIndex($collection, $predicate, $fromIndex)
     )(...$args);

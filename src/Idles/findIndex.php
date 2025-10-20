@@ -21,14 +21,16 @@ function _findIndex(?iterable $collection, callable $predicate, int $fromIndex =
 
 function findIndex(...$args)
 {
-    return curryN(2, 
+    static $arity = 2;
+    return curryN($arity, 
         fn (callable $predicate, ?iterable $collection) => _findIndex($collection, $predicate)
     )(...$args);
 }
 
 function findIndexFrom(...$args)
 {
-    return curryN(3, 
+    static $arity = 3;
+    return curryN($arity, 
         fn (callable $predicate, int $fromIndex, ?iterable $collection) => _findIndex($collection, $predicate, $fromIndex)
     )(...$args);
 }

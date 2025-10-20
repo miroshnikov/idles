@@ -16,5 +16,8 @@ function _hasPath(?iterable $record, /*string|int|array*/ $path): bool
 
 function hasPath(...$args)
 {
-    return curryN(2, fn ($path, ?iterable $record) => _hasPath($record, $path))(...$args);
+    static $arity = 2;
+    return curryN($arity, 
+        fn ($path, ?iterable $record) => _hasPath($record, $path)
+    )(...$args);
 }

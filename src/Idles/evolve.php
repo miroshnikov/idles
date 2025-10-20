@@ -4,7 +4,8 @@ namespace Idles;
 
 function evolve(...$args)
 {
-    return curryN(2, 
+    static $arity = 2;
+    return curryN($arity, 
         function (array $transformations, ?iterable $record): array {
             $record = collect($record);
             $result = [];

@@ -4,7 +4,8 @@ namespace Idles;
 
 function filter(...$args)
 {
-    return curryN(2, 
+    static $arity = 2;
+    return curryN($arity, 
         function (callable $predicate, ?iterable $collection): iterable  {
             $collection ??= [];
         
