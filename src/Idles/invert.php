@@ -4,7 +4,8 @@ namespace Idles;
 
 function invert(...$args): array
 {
-    return curryN(1, 
+    static $arity = 1;
+    return curryN($arity, 
         fn (?iterable $collection) => \array_flip(collect($collection))
     )(...$args);
 }

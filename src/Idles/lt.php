@@ -4,9 +4,6 @@ namespace Idles;
 
 function lt(...$args)
 {
-    return curryN(2, 
-        function ($a, $b): bool {
-            return $a < $b;
-        }
-    )(...$args);
+    static $arity = 2;
+    return curryN($arity, fn ($a, $b) => $a < $b)(...$args);
 }

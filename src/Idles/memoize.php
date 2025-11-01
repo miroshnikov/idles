@@ -19,7 +19,8 @@ function memoize(...$args)
 
 function memoizeWith(...$args)
 {
-    return curryN(2, 
+    static $arity = 2;
+    return curryN($arity, 
         fn (callable $resolver, callable $func) => _memoize($func, $resolver)
     )(...$args);
 }

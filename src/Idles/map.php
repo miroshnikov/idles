@@ -35,8 +35,8 @@ function _map(?iterable $collection, ?callable $iteratee = null): iterable
 
 function map(...$args)
 {
-    return curryN(
-        2,
+    static $arity = 2;
+    return curryN($arity,
         fn (callable $iteratee, ?iterable $collection) => _map($collection, $iteratee)
     )(...$args);
 }
