@@ -2,9 +2,21 @@
 
 namespace Idles;
 
-function startsWith(...$args)
+/**
+ * If string starts with `$target`.
+ * 
+ * @param string $target
+ * @param string $s
+ * @return bool
+ * 
+ * @category String
+ * 
+ * @see endsWith()
+ */
+function startsWith(mixed ...$args)
 {
-    return curryN(2, 
-        fn (string $target, string $s): bool => \strncmp(\mb_substr($s, 0), $target, size($target)) === 0
+    static $arity = 2;
+    return curryN($arity, 
+        fn (string $target, string $s): bool => \strncmp(\mb_substr($s, 0), $target, length($target)) === 0
     )(...$args);
 }

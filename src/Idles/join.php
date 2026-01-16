@@ -2,7 +2,20 @@
 
 namespace Idles;
 
-function join(...$args)
+/**
+ * Joins iterable elements separated by `$separator`
+ * 
+ * @param string $separator
+ * @param ?iterable $collection
+ * @return string
+ * 
+ * @example ```
+ *   join('~', ['a', 'b', 'c']); // 'a~b~c'
+ * ```
+ * 
+ * @see split()
+ */
+function join(mixed ...$args)
 {
     static $arity = 2;
     return curryN($arity,

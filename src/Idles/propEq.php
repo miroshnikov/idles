@@ -2,17 +2,28 @@
 
 namespace Idles;
 
-function propEq(...$args)
+/**
+ * Returns $record[$key] == $value
+ * 
+ * @param array-key $key
+ * @param mixed $value
+ * @param ?iterable<mixed> $record
+ * @return bool
+ * 
+ * @example ```
+ *   propEq('a', 'A', ['a' => 'A']); // true
+ * ```
+ * 
+ * @category Record
+ * 
+ * @see whereEq()
+ * 
+ * @alias matchesProperty
+ */
+function propEq(mixed ...$args)
 {
     static $arity = 3;
-    return curryN(
-        3,
-        fn (/*string|int*/ $key, $value, ?iterable $record): bool => (collect($record)[$key] ?? null) == $value
+    return curryN($arity,
+        fn ($key, $value, ?iterable $record) => (collect($record)[$key] ?? null) == $value
     )(...$args);
-}
-
-function matchesProperty(...$args)
-{
-    static $arity = 3;
-    return propEq(...$args);
 }

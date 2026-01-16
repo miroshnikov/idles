@@ -2,10 +2,19 @@
 
 namespace Idles;
 
-function multiply(...$args)
+/**
+ * $a * $b
+ * 
+ * @param number $a
+ * @param number $b
+ * @return number
+ * 
+ * @category Math
+ * 
+ * @see add()
+ */
+function multiply(mixed ...$args)
 {
-    return curryN(
-        2,
-        fn (/*int|float*/ $a, /*int|float*/ $b) => $a * $b,
-    )(...$args);
+    static $arity = 2;
+    return curryN($arity, fn ($a, $b) => $a * $b)(...$args);
 }

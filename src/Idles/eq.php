@@ -2,12 +2,19 @@
 
 namespace Idles;
 
-function eq(...$args)
+/**
+ * `$a == $b`
+ * 
+ * @param mixed $a
+ * @param mixed $b
+ * @return bool
+ * 
+ * @category Util
+ * 
+ * @alias identical
+ */
+function eq(mixed ...$args)
 {
-    return curryN(2, fn ($a, $b) => $a == $b)(...$args);
-}
-
-function identical(...$args)
-{
-    return eq(...$args);
+    static $arity = 2;
+    return curryN($arity, fn ($a, $b) => $a == $b)(...$args);
 }

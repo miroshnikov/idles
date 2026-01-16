@@ -2,12 +2,25 @@
 
 namespace Idles;
 
-function lte(...$args)
+/**
+ * $a <= $b
+ * 
+ * @param number $a
+ * @param number $b
+ * @return bool
+ * 
+ * @example ```
+ *   lte(13)(13); // true
+ * ```
+ * 
+ * @category Math
+ * 
+ * @see gt()
+ * @see lt()
+ * @see gte()
+ */
+function lte(mixed ...$args)
 {
     static $arity = 2;
-    return curryN($arity, 
-        function ($a, $b): bool {
-            return $a <= $b;
-        }
-    )(...$args);
+    return curryN($arity, fn ($a, $b) => $a <= $b)(...$args);
 }

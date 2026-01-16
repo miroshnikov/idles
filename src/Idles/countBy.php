@@ -3,18 +3,23 @@
 namespace Idles;
 
 /**
- * Returns an array: [$iteratee($value) => number of times the $iteratee($value) was found in $collection]
+ * Returns an array<result of $iteratee($value), number of times the $iteratee($value) was found in $collection>
  *
- * @param callable      $iteratee
- * @param ?iterable     $collection
- *
- * @return array
+ * @param callable $iteratee
+ * @param ?iterable $collection
+ * @return array<mixed, int>
+ * 
+ * @example ```
+ *   $numbers = [1.0, 1.1, 1.2, 2.0, 3.0, 2.2];
+ *   countBy(\floor(...))($numbers);  // [1 => 3, 2 => 2, 3 => 1]
+ * ```
+ * 
+ * @category Array
  */
-
-function countBy(...$args)
+function countBy(mixed ...$args)
 {
     static $arity = 2;
-    return curryN(2, 
+    return curryN($arity, 
         function (callable $iteratee, ?iterable $collection): array {
             $collection ??= [];
             $result = [];

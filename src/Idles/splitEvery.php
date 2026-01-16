@@ -1,21 +1,28 @@
 <?php
 
-/**
- * Splits an array or string into slices of the specified length. Keys are not preserved.
- * 
- * @param int $length length of slice
- * 
- * @param array|string $array
- * 
- * @return string[]|array
- */
-
 namespace Idles;
 
-function splitEvery(...$args)
+/**
+ * Splits an array or string into slices of the specified length.
+ * 
+ * @param positive-int $length length of slice
+ * @param array|string $arrayOrString
+ * @return string[]|array
+ * 
+ * @example ```
+ *  splitEvery(3, [1, 2, 3, 4, 5, 6, 7]); // [[1, 2, 3], [4, 5, 6], [7]]
+ * ```
+ * 
+ * @category Array
+ * 
+ * @see slice()
+ * @see splitAt()
+ */
+function splitEvery(mixed ...$args)
 {
-    return curryN(2, 
-        fn (int $length, $array) =>
+    static $arity = 2;
+    return curryN($arity, 
+        fn ($length, $array) =>
             \is_array($array) ? 
                 \array_chunk($array, $length) :
                 \mb_str_split($array, $length)

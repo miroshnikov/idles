@@ -2,6 +2,40 @@
 
 namespace Idles;
 
+/**
+ * Like `zip` except that it accepts `$iteratee` to specify how grouped values should be combined.
+ * 
+ * @param callable(mixed $a, mixed $b):mixed $iteratee
+ * @param iterable<mixed> $a
+ * @param iterable<mixed> $b
+ * @return iterable<mixed>
+ * 
+ * @example ```
+ *  $a =  ['a', 'b' ];
+ *  $aa = ['AA','BB'];
+ *  zipWith(fn ($a,$b) => $a.'='.$b, $a, $aa);  // ["a=AA", "b=BB"]
+ * ```
+ * 
+ * @category Array
+ * 
+ * @see zip()
+ */
+function zipWith(mixed ...$args)
+{
+    static $arity = 3;
+    return curryN($arity,
+        fn (callable $iteratee, iterable $a, iterable $b) => _zipWith($iteratee, $a, $b)
+    )(...$args);
+}
+
+
+/**
+ * @internal 
+ * @ignore
+ * 
+ * @param iterable<iterable<mixed>> $arrays
+ * @return iterable<mixed>
+ */
 function _zipWith(callable $iteratee, iterable ...$arrays): iterable
 {
     if (!\count($arrays)) {
@@ -30,12 +64,4 @@ function _zipWith(callable $iteratee, iterable ...$arrays): iterable
         }
         private $iteratee;
     };
-}
-
-function zipWith(...$args)
-{
-    return curryN(
-        3,
-        fn (callable $iteratee, iterable $a, iterable $b) => _zipWith($iteratee, $a, $b)
-    )(...$args);
 }

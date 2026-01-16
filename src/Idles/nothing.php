@@ -2,6 +2,19 @@
 
 namespace Idles;
 
+/**
+ * Returns an empty `Optional`.
+ * 
+ * @return Optional
+ * 
+ * @example ```
+ *  nothing()->map(\strtoupper(...))->orElse('ABC'); // ABC
+ * ```
+ * @category Util
+ * 
+ * @see Optional
+ * @see just()
+ */
 function nothing(): Optional
 {
     return new class implements Optional
@@ -16,17 +29,17 @@ function nothing(): Optional
             return true;
         }
 
-        public function get() 
+        public function get(): mixed
         {
             throw new \RuntimeException("Illegal get() call on None");
         }
 
-        function orElse($default) 
+        function orElse(mixed $default): mixed 
         {
             return $default;
         }
 
-        public function orElseThrow(\Exception $e = new \Exception('No value on None')) 
+        public function orElseThrow(\Exception $e = new \Exception('No value on None')): mixed
         {
             throw $e;
         }

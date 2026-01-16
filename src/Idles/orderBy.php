@@ -2,7 +2,52 @@
 
 namespace Idles;
 
-function _orderBy(?iterable $collection, array $iteratees, array $orders): array
+/**
+ * Like `sortBy` but allows specifying the sort orders.
+ * 
+ * @param array<callable(mixed $value):mixed> $iteratees 
+ * @param array<'asc'|'desc'> $orders
+ * @param ?iterable<mixed> $collection
+ * @return array<mixed>
+ * 
+ * @example ```
+ *  $users = [
+ *      [ 'user' => 'fred',   'age' => 48 ],
+ *      [ 'user' => 'barney', 'age' => 34 ],
+ *      [ 'user' => 'fred',   'age' => 40 ],
+ *      [ 'user' => 'barney', 'age' => 36 ]
+ *  ];
+ *  orderBy([property('user'), property('age')], ['asc', 'desc'], $users);
+ *  // [
+ *  //     [ 'user' => 'barney', 'age' => 36 ],
+ *  //     [ 'user' => 'barney', 'age' => 34 ],
+ *  //     [ 'user' => 'fred',   'age' => 48 ],
+ *  //     [ 'user' => 'fred',   'age' => 40 ]
+ *  // ]
+ * ```
+ * 
+ * @category Collection
+ * 
+ * @see sortBy()
+ */
+function orderBy(mixed ...$args)
+{
+    static $arity = 3;
+    return curryN($arity,
+        fn (array $iteratees, array $orders, ?iterable $collection) => _orderBy($collection, $iteratees, $orders)
+    )(...$args);
+}
+
+/** 
+ * @internal 
+ * @ignore
+ * 
+ * @param ?iterable<mixed> $collection
+ * @param array<callable(mixed $value):mixed> $iteratees 
+ * @param array<'asc'|'desc'> $orders
+ * @return array<mixed>
+ */
+function _orderBy(?iterable $collection, array $iteratees, array $orders)
 {
     $collection = collect($collection ?? []);
 
@@ -24,12 +69,4 @@ function _orderBy(?iterable $collection, array $iteratees, array $orders): array
     \array_multisort(...$arrays);
 
     return map(fn ($i) => $collection[$i], last($arrays));
-}
-
-function orderBy(...$args)
-{
-    return curryN(
-        3,
-        fn (array $iteratees, array $orders, ?iterable $collection) => _orderBy($collection, $iteratees, $orders)
-    )(...$args);
 }

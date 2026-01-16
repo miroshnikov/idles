@@ -1,18 +1,20 @@
 <?php
 
+namespace Idles;
+
 /**
  * Strip characters from the beginning of a string.
  * 
  * @param string $characters that need to be stripped
- * 
  * @param string $string that will be trimmed
- * 
  * @return string
+ * 
+ * @category String
+ * 
+ * @see trim()
+ * @see trimEnd()
  */
-
-namespace Idles;
-
-function trimStart(...$args)
+function trimStart(mixed ...$args)
 {
     static $arity = 2;
     return curryN($arity, 

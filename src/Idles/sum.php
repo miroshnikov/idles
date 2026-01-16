@@ -5,14 +5,18 @@ namespace Idles;
 /**
  * Sums elements in $collection
  *
- * @param ?iterable     $collection
- *
+ * @param ?iterable<mixed> $collection
  * @return int|float
+ * 
+ * @example ```
+ *  sum([4, 2, 8, 6]); // 20
+ * ```
+ * 
+ * @category Math
+ * 
+ * @see sumBy()
  */
-
-function sum(...$args)
+function sum(?iterable $collection): int|float
 {
-    return curryN(1, 
-        fn (?iterable $collection) => \Idles\_sumBy($collection, fn ($v) => $v)
-    )(...$args);
+    return sumBy(identity(...), $collection);
 }

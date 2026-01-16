@@ -1,16 +1,24 @@
 <?php
 
-/**
- * @param string $separator doesn't use /pattern/ delimiters
- * 
- * @return string[]|false
- */
-
 namespace Idles;
 
-function split(...$args)
+/**
+ * Splits string by `$separator` regular expression.
+ * 
+ * @param string $separator doesn't use /pattern/ delimiters
+ * @param string $s
+ * @return string[]|false
+ * 
+ * @example ```
+ *  split('\W+', 'aa bb'); // ['aa', 'bb']
+ * ```
+ * 
+ * @category String
+ * 
+ * @see join()
+ */
+function split(mixed ...$args)
 {
-    return curryN(2, 
-        fn (string $separator, string $s): array => \mb_split($separator, $s)
-    )(...$args);
+    static $arity = 2;
+    return curryN($arity, fn (string $separator, string $s) => \mb_split($separator, $s))(...$args);
 }

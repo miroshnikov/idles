@@ -1,22 +1,20 @@
 <?php
 
+namespace Idles;
+
 /**
  * Splits an array into slices on every occurrence of a value.
  * 
- * @param callable $predicate that determines where the array or string is split.
- * 
- * @param array $array
- * 
- * @return array
+ * @param callable(mixed $value):bool $predicate that determines where the array is split
+ * @param ?iterable<mixed> $iterable
+ * @return array<mixed>
  */
-
-namespace Idles;
-
-function splitWhenever(...$args)
+function splitWhenever(mixed ...$args)
 {
-    return curryN(2, 
-        function (callable $predicate, array $array) {
-            $array = toArray($array);
+    static $arity = 2;
+    return curryN($arity, 
+        function (callable $predicate, iterable $iterable) {
+            $array = collect($iterable);
             $parts = [];
             $prev = 0;
             for ($i = 0; $i < \count($array); ++$i) {

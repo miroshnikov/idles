@@ -2,10 +2,19 @@
 
 namespace Idles;
 
-function round(...$args)
+/**
+ * Rounds $number to specified $precision
+ * 
+ * @param int $precision
+ * @param int|float $number
+ * @return float
+ * 
+ * @category Math
+ */
+function round(mixed ...$args)
 {
-    return curryN(
-        2,
-        fn (int $precision, /*int|float*/ $number): float => \round($number, $precision),
+    static $arity = 2;
+    return curryN($arity,
+        fn (int $precision, $number): float => \round($number, $precision),
     )(...$args);
 }

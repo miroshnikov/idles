@@ -2,19 +2,19 @@
 
 namespace Idles;
 
+/** 
+ * @internal 
+ * @ignore
+ */
 function toArray($value): array
 {
-    if (\is_array($value)) {
-        return $value;
-    }
-
     if (\is_iterable($value)) {
-        return \iterator_to_array($value);
+        return collect($value);
     }
 
     if (\is_object($value)) {
         return \get_object_vars($value);
     }
 
-    return is_callable($value) ? [$value()] : [$value];
+    return \is_callable($value) ? [$value()] : [$value];
 }

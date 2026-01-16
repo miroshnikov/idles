@@ -2,12 +2,17 @@
 
 namespace Idles;
 
-function compose(callable ...$funcs): callable
+/**
+ * Like `pipe` but invokes the functions from right to left.
+ * 
+ * @param callable ...$fns
+ * @return callable
+ * 
+ * @alias flowRight
+ * 
+ * @category Function
+ */
+function compose(callable ...$fns): callable
 {
-    return pipe(...\array_reverse($funcs));
-}
-
-function flowRight(array $funcs): callable
-{
-    return pipe(...\array_reverse(flattenDeep($funcs)));
+    return pipe(...\array_reverse($fns));
 }

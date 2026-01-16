@@ -1,25 +1,28 @@
 <?php
 
-/**
- * Takes an array and a predicate and returns a pair of arrays with the following properties:
- * - the result of concatenating the two output arrays is equivalent to the input array;
- * - none of the elements of the first output array satisfies the predicate; and
- * - if the second output array is non-empty, its first element satisfies the predicate.
- * 
- * @param callable $predicate that determines where the array is split.
- * 
- * @param array $array
- * 
- * @return array
- */
-
 namespace Idles;
 
-function splitWhen(...$args)
+/**
+ * Splits an array by predicate.
+ * 
+ * @param callable(mixed $value, array-key $key, iterable $collection):bool $predicate
+ * @param iterable<mixed> $iterable
+ * @return array<mixed>
+ * 
+ * @example ```
+ *  splitWhen(equals(2), [1, 2, 3, 1, 2, 3]); // [[1], [2, 3, 1, 2, 3]]
+ * ```
+ * 
+ * @category Array
+ * 
+ * @see slice()
+ */
+function splitWhen(mixed ...$args)
 {
-    return curryN(2, 
-        function (callable $predicate, $array) {
-            $array = toArray($array);
+    static $arity = 2;
+    return curryN($arity, 
+        function (callable $predicate, iterable $iterable) {
+            $array = collect($iterable);
             $i = findIndex($predicate, $array);
             return $i >= 0 ? splitAt($i, $array) : [$array, []];
         }

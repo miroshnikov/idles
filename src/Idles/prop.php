@@ -3,20 +3,24 @@
 namespace Idles;
 
 /**
- * @param string|int    $key
- * @param ?iterable     $record
+ * Return the specified property.
  * 
- * @return mixed|null
+ * @param array-key $key
+ * @param ?iterable<mixed> $record
+ * @return mixed
+ * 
+ * @example ```
+ *   propOr('NO', 'b', ['a' => 'A']); // 'NO'
+ * ```
+ * 
+ * @category Record
+ * 
+ * @see path()
+ * 
+ * @alias property
  */
-
-function prop(...$args)
+function prop(mixed ...$args)
 {
-    return curryN(2, 
-        fn ($key, ?iterable $record) => collect($record)[$key] ?? null
-    )(...$args);
-}
-
-function property(...$args)
-{
-    return prop(...$args);
+    static $arity = 2;
+    return curryN($arity, fn ($key, ?iterable $record) => collect($record)[$key] ?? null)(...$args);
 }

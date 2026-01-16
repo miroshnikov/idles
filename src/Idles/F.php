@@ -2,12 +2,18 @@
 
 namespace Idles;
 
-function stubFalse(...$_): bool
+/**
+ * Always returns `false`
+ * 
+ * @param mixed ...$args
+ * @return false
+ * 
+ * @category Util
+ * 
+ * @alias stubFalse
+ */
+function F(mixed ...$_): bool
 {
     return false;
 }
 
-function F(...$_): bool
-{
-    return false;
-}

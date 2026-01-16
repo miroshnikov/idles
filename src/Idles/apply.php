@@ -5,13 +5,19 @@ namespace Idles;
 /**
  * Calls $fn(...$args)
  *
- * @param callable      $fn
- * @param ?iterable     $args
- *
+ * @param callable(mixed...):mixed $fn
+ * @param ?iterable<mixed> $args
  * @return mixed
+ * 
+ * @example ```
+ *   apply(\max(...), [1, 2, 3, -99, 42, 6, 7]); // 42
+ * ```
+ * 
+ * @category Function
+ * 
+ * @see unapply()
  */
-
-function apply(...$args)
+function apply(mixed ...$args)
 {
     static $arity = 2;
     return curryN($arity, 

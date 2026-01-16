@@ -2,6 +2,20 @@
 
 namespace Idles;
 
+/**
+ * Removes duplicates using `===`. 
+ * 
+ * @param ?iterable<mixed> $collection
+ * @return array<mixed>
+ * 
+ * @example ```
+ *  uniq([1, 1, 2, '1']); // [1, 2, '1']
+ * ```
+ * 
+ * @category Array
+ * 
+ * @see without()
+ */
 function uniq(?iterable $collection): array
 {
     $res = [];

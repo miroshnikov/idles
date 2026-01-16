@@ -2,10 +2,47 @@
 
 namespace Idles;
 
-function _slice(?iterable $collection, int $start = 0, ?int $end = null): iterable
+/**
+ * Returns a slice of iterable or string from `$start` up to, but not including `$end`.
+ * 
+ * @template T of iterable<mixed>|string
+ * @param int $start
+ * @param ?int $end
+ * @param T|null $collection
+ * @return T
+ * 
+ * @category Array
+ * 
+ * @see take()
+ * @see takeRight()
+ * @see drop()
+ * @see dropRight()
+ * @see head()
+ * @see last()
+ */
+function slice(mixed ...$args)
+{
+    static $arity = 3;
+    return curryN($arity, 
+        fn (int $start, ?int $end, iterable|null|string $collection) => _slice($collection, $start, $end)
+    )(...$args);
+}
+
+/** 
+ * @internal 
+ * @ignore
+ * 
+ * @param iterable<mixed>|null|string $collection
+ * @return iterable<int,mixed>|string
+ */
+function _slice(iterable|null|string $collection, int $start = 0, ?int $end = null): iterable|string
 {
     if (!$collection) {
         return [];
+    }
+
+    if (\is_string($collection)) {
+        return \mb_substr($collection, $start, $end);
     }
     
     if (($start < 0 || $end < 0) && !\is_array($collection)) {
@@ -17,12 +54,12 @@ function _slice(?iterable $collection, int $start = 0, ?int $end = null): iterab
         $start = $start >= 0 ? $start : \max(0, $length + $start);
         $end = $end ?? $length;
         $end = \max(0, $end >= 0 ? $end - $start : $length + $end - 1);
-        return \array_slice($collection, $start, $end);
+        return \array_values(\array_slice($collection, $start, $end));
     }
 
     return new class($collection, $start, $end) extends \IteratorIterator
     {
-        public function __construct($it, $start, $end)
+        public function __construct(\Traversable $it, private ?int $start, private ?int $end)
         {
             parent::__construct($it);
             $this->start = $start;
@@ -55,14 +92,5 @@ function _slice(?iterable $collection, int $start = 0, ?int $end = null): iterab
         }
 
         private int $i = 0;
-        private ?int $start = 0;
-        private ?int $end = 0;
     };
-}
-
-function slice(...$args)
-{
-    return curryN(3, 
-        fn (int $start, ?int $end, ?iterable $collection) => _slice($collection, $start, $end)
-    )(...$args);
 }

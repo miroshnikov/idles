@@ -2,12 +2,17 @@
 
 namespace Idles;
 
-function stubTrue(...$_): bool
-{
-    return true;
-}
-
-function T(...$_): bool
+/**
+ * Always returns `true`
+ * 
+ * @param mixed ...$args
+ * @return true
+ * 
+ * @category Util
+ * 
+ * @alias stubTrue
+ */
+function T(mixed ...$_): bool
 {
     return true;
 }

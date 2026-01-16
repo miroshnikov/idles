@@ -3,8 +3,6 @@ parameters:
     paths:
         - src
         - tests
-    excludePaths:
-        - src/Idles/camelCase.php
     ignoreErrors:
         - '#PHPDoc tag @param references unknown parameter: .+#'
         -
@@ -13,3 +11,4 @@ parameters:
         -
             identifier: parameterByRef.unusedType
             path: src/Idles/modifyPath.php
+    treatPhpDocTypesAsCertain: false

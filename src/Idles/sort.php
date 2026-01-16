@@ -2,9 +2,32 @@
 
 namespace Idles;
 
-function sort(callable $comparator, ?iterable $collection): array
+/**
+ * Sorts `$collection` using `$comparator` comparison (`$a <=> $b`) function.
+ * 
+ * @param callable(mixed $a,mixed $b):int $comparator -1|0|1
+ * @param ?iterable<mixed> $collection
+ * @return array<mixed>
+ * 
+ * @example ```
+ *  $diff = fn ($a, $b) => $a - $b;
+ *  sort($diff, [4,2,7,5]); // [2, 4, 5, 7]
+ * ```
+ * 
+ * @category Collection
+ * 
+ * @see sortBy()
+ * @see sortWith()
+ * @see orderBy()
+ */
+function sort(mixed ...$args)
 {
-    $collection = collect($collection);
-    \usort($collection, $comparator);
-    return $collection;
+    static $arity = 2;
+    return curryN($arity, 
+        function (callable $comparator, ?iterable $collection) {
+            $collection = collect($collection);
+            \usort($collection, $comparator);
+            return $collection;
+        }
+    )(...$args);
 }

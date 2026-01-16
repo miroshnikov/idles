@@ -2,10 +2,19 @@
 
 namespace Idles;
 
-function modulo(...$args)
+/**
+ * $a % $b
+ * 
+ * @param number $a
+ * @param number $b
+ * @return number
+ * 
+ * @category Math
+ * 
+ * @see divide()
+ */
+function modulo(mixed ...$args)
 {
-    return curryN(
-        2,
-        fn (/*int|float*/ $a, /*int|float*/ $b) => $b % $a,
-    )(...$args);
+    static $arity = 2;
+    return curryN($arity, fn ($a, $b) => $b % $a)(...$args);
 }

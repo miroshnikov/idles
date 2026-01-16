@@ -3,16 +3,19 @@
 namespace Idles;
 
 /**
- * Returns the position of the last occurrence of an item in an array or string, or -1.
+ * Returns the index of the last occurrence of `$value` in iterable or string, else `-1`.
  * 
- * @param mixed $value the item to find
+ * @param mixed $item
+ * @param iterable<mixed>|string $collection
+ * @return int
  * 
- * @param iterable|string $collection array or string to search in
+ * @category Array
  * 
- * @return string
+ * @see indexOf()
+ * @see findIndex()
+ * @see find()
  */
-
-function lastIndexOf(...$args)
+function lastIndexOf(mixed ...$args)
 {
     static $arity = 2;
     return curryN($arity, 

@@ -2,8 +2,9 @@
 
 namespace Idles;
 
-/**
- * @param string|int|array $value 
+/** 
+ * @internal 
+ * @ignore
  */
 function toPath($value): array
 {

@@ -2,10 +2,25 @@
 
 namespace Idles;
 
-function uniqWith(...$args)
+/**
+ * Like `uniq` but uses `$predicate` to compare elements.
+ * 
+ * @param callable(mixed $a, mixed $b):bool $predicate
+ * @param ?iterable<mixed> $collection
+ * @return array<mixed>
+ * 
+ * @example ```
+ *  uniqWith(fn ($a, $b) => $a == $b)([1, '1', 2, 1]); // [1, 2]
+ * ```
+ * 
+ * @category Array
+ * 
+ * @see uniq()
+ */
+function uniqWith(mixed ...$args)
 {
-    return curryN(
-        2,
+    static $arity = 2;
+    return curryN($arity,
         function (callable $predicate, ?iterable $collection): array {
             $res = [];
             foreach ($collection ?? [] as $findVal) {

@@ -5,15 +5,14 @@ namespace Idles;
 /**
  * Returns fn (...$args) => $fn($args)
  *
- * @param callable      $fn
- *
+ * @param callable $fn
  * @return callable
+ * 
+ * @category Function
+ * 
+ * @see apply()
  */
-
-function unapply(...$args)
+function unapply(callable $fn)
 {
-    static $arity = 1;
-    return curryN($arity, 
-        fn (callable $fn) => fn (...$args) => $fn($args)
-    )(...$args);
+    return fn (...$args) => $fn($args);
 }

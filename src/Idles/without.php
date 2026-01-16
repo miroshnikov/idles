@@ -2,6 +2,38 @@
 
 namespace Idles;
 
+/**
+ * Returns `$iterable` without `$values`.
+ * 
+ * @param array<mixed> $values
+ * @param ?iterable<mixed> $collection
+ * @return iterable<mixed>
+ * 
+ * @example ```
+ *  without([1, 2], [2, 1, 2, 3]);  // [3]
+ * ```
+ * 
+ * @category Record
+ * 
+ * @see filter()
+ */
+function without(mixed ...$args)
+{
+    static $arity = 2;
+    return curryN($arity, 
+        fn (array $values, ?iterable $collection) => _without($collection, ...$values)
+    )(...$args);
+}
+
+
+/** 
+ * @internal 
+ * @ignore
+ * 
+ * @param ?iterable<mixed> $collection
+ * @param array<mixed> $values
+ * @return iterable<mixed>
+ */
 function _without(?iterable $collection, ...$values): iterable
 {
     $collection ??= [];
@@ -12,24 +44,18 @@ function _without(?iterable $collection, ...$values): iterable
 
     return new \Idles\Iterators\ValuesIterator(
         new class($collection, $values) extends \FilterIterator {
-            public function __construct($it, $exclude) 
+            /**
+             * @param array<mixed> $exclude
+             */
+            public function __construct($it, private array $exclude) 
             {
                 parent::__construct($it);
-                $this->exclude = $exclude;
             }
     
             public function accept(): bool
             {
                 return !\in_array($this->getInnerIterator()->current(), $this->exclude);
             }
-            private $exclude;
         }
     );
-}
-
-function without(...$args)
-{
-    return curryN(2, 
-        fn (array $values, ?iterable $collection) => _without($collection, ...$values)
-    )(...$args);
 }

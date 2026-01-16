@@ -3,22 +3,21 @@
 namespace Idles;
 
 /**
- * Return the $key property or the first argument
+ * Return the $key property or `$default`.
  *
- * @param mixed         $default
- * @param string|int    $key
- * @param ?iterable     $record
- *
+ * @param mixed $default
+ * @param array-key $key
+ * @param ?iterable<mixed> $record
  * @return mixed
+ * 
+ * @category Record
+ * 
+ * @alias propertyOr
  */
-function propOr(...$args)
+function propOr(mixed ...$args)
 {
-    return curryN(3, 
+    static $arity = 3;
+    return curryN($arity, 
         fn ($default, $key, ?iterable $record) => collect($record)[$key] ?? $default
     )(...$args);
-}
-
-function propertyOr(...$args)
-{
-    return propOr(...$args);
 }

@@ -9,7 +9,65 @@ use \Idles\Iterators\{
     ValuesIterator
 };
 
+/**
+ * Maps and flattens
+ * 
+ * @param callable(mixed $value, array-key $key, iterable $collection):mixed $iteratee
+ * @param ?iterable $collection
+ * @return iterable<int,mixed>
+ * 
+ * @example ```
+ *   flatMap(fn ($n) => [$n, $n], [1,2]); // [1, 1, 2, 2]
+ * ```
+ * 
+ * @see flatMapDepth()
+ * @see map()
+ * @see flatten()
+ * 
+ * @alias chain
+ */
+function flatMap(mixed ...$args)
+{
+    static $arity = 2;
+    return curryN($arity, 
+        fn (callable $iteratee, ?iterable $collection) => _flatMapDepth($collection, $iteratee, 1)
+    )(...$args);
+}
 
+/**
+ * Maps and flattens the mapped results up to `$depth` times
+ * 
+ * @param callable(mixed $value, array-key $key, iterable $collection):mixed $iteratee
+ * @param int $depth
+ * @param ?iterable $collection
+ * @return iterable<int,mixed>
+ * 
+ * @example ```
+ *   flatMapDepth(fn ($n) => [[[$n, $n]]], 2, [1, 2]); // [[1, 1], [2, 2]];
+ * ```
+ * 
+ * @category Collection
+ * 
+ * @see flatMap()
+ * 
+ * @alias flatMapDeep
+ */
+function flatMapDepth(mixed ...$args)
+{
+    static $arity = 3;
+    return curryN($arity, 
+        fn (callable $iteratee, int $depth, ?iterable $collection) => _flatMapDepth($collection, $iteratee, $depth)
+    )(...$args);
+}
+
+
+
+/** 
+ * @internal 
+ * @ignore
+ * @param ?iterable<mixed> $collection
+ * @return iterable<mixed>
+ */
 function _flatMapDepth(?iterable $collection, callable $iteratee, int $depth): iterable
 {
     $collection ??= [];
@@ -22,33 +80,4 @@ function _flatMapDepth(?iterable $collection, callable $iteratee, int $depth): i
     $it = new FlattenIteratorIterator(new MapRecursiveIterator($collection, $iteratee));
     $it->setMaxDepth($depth);
     return new ValuesIterator($it);
-}
-
-function flatMap(...$args)
-{
-    static $arity = 2;
-    return curryN($arity, 
-        fn (callable $iteratee, ?iterable $collection) => _flatMapDepth($collection, $iteratee, 1)
-    )(...$args);
-}
-
-function chain(...$args)
-{
-    return flatMap(...$args);
-}
-
-function flatMapDeep(...$args)
-{
-    static $arity = 2;
-    return curryN($arity, 
-        fn (callable $iteratee, ?iterable $collection) => _flatMapDepth($collection, $iteratee, \PHP_INT_MAX)
-    )(...$args);
-}
-
-function flatMapDepth(...$args)
-{
-    static $arity = 3;
-    return curryN($arity, 
-        fn (callable $iteratee, int $depth, ?iterable $collection) => _flatMapDepth($collection, $iteratee, $depth)
-    )(...$args);
 }

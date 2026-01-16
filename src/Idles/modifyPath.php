@@ -2,7 +2,43 @@
 
 namespace Idles;
 
-function &_modifyPath(?iterable &$array, /*string|array*/ $path, callable $updater): array
+/**
+ * Creates new record by applying an `$updater` function to the value at the given `$path`.
+ *
+ * @param array<array-key>|array-key $path
+ * @param callable(mixed):mixed $updater
+ * @param ?iterable<mixed> $record
+ * @return array<mixed>
+ * 
+ * @example ```
+ *  $a = [ 'a' => [ [ 'b' => [ 'c' => 3 ] ] ] ];
+ *  modifyPath(['a',0,'b','c'], fn ($n) => $n*$n, $a); // [ 'a' => [ [ 'b' => [ 'c' => 9 ] ] ] ]
+ * ```
+ * 
+ * @category Record
+ * 
+ * @see setPath()
+ * 
+ * @alias update
+ */
+function modifyPath(mixed ...$args)
+{
+    static $arity = 3;
+    return curryN($arity, 
+        fn ($path, callable $updater, ?iterable $record) => _modifyPath($record, $path, $updater)
+    )(...$args);
+}
+
+
+/** 
+ * @internal 
+ * @ignore
+ * 
+ * @param ?iterable<mixed> $array
+ * @param array<array-key>|array-key $path
+ * @return array<mixed>
+ */
+function &_modifyPath(?iterable &$array, $path, callable $updater): array
 {
     if (!$array) {
         $array = [];
@@ -28,27 +64,4 @@ function &_modifyPath(?iterable &$array, /*string|array*/ $path, callable $updat
         }
     }
     return $array;
-}
-
-/**
- * Creates new record by applying an $updater function to the value at the given $path.
- *
- * @param array|string|int $path
- * @param callable      $updater
- * @param ?iterable     $record
- *
- * @return mixed
- */
-
-function modifyPath(...$args)
-{
-    static $arity = 3;
-    return curryN($arity, 
-        fn ($path, callable $updater, ?iterable $record) => _modifyPath($record, $path, $updater)
-    )(...$args);
-}
-
-function update(...$args)
-{
-    return modifyPath(...$args);
 }

@@ -1,33 +1,47 @@
 <?php
 
-/**
- * Returns the index of the first occurrence of the item in array or string, else -1.
- * 
- * @param mixed $value the item to find
- * 
- * @param iterable|string $collection array or string to search in
- * 
- * @return string
- */
-
 namespace Idles;
 
-function indexOf(...$args)
+/**
+ * Returns the index of the first occurrence of the item in an iterable or string, else `-1`.
+ * 
+ * @param mixed $item
+ * @param iterable|string $collection
+ * @return int
+ * 
+ * @category Array
+ * 
+ * @see lastIndexOf()
+ * @see findIndex()
+ * @see find()
+ */
+function indexOf(mixed ...$args)
 {
     static $arity = 2;
     return curryN($arity, 
-        fn ($value, $collection) => 
+        fn ($item, $collection) => 
             \is_string($collection) ? 
-                \mb_strpos($collection, $value) :
-                findIndex(fn ($v) => $v == $value, $collection)
+                \mb_strpos($collection, $item) :
+                findIndex(fn ($v) => $v == $item, $collection)
     )(...$args);
 }
 
-function indexOfFrom(...$args)
+
+/**
+ * Returns the index of the first occurrence of the item in an iterable or string, starting from `$fromIndex`, else `-1`.
+ * 
+ * @param mixed $item
+ * @param int $fromIndex
+ * @param iterable|string $collection
+ * @return int
+ * 
+ * @category Array
+ */
+function indexOfFrom(mixed ...$args)
 {
     static $arity = 3;
     return curryN($arity, 
-        fn ($value, int $fromIndex, ?iterable $collection) => 
-            findIndexFrom(fn ($v) => $v == $value, $fromIndex, $collection)
+        fn ($item, int $fromIndex, ?iterable $collection) => 
+            findIndexFrom(fn ($v) => $v == $item, $fromIndex, $collection)
     )(...$args);
 }

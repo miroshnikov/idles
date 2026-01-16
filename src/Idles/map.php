@@ -2,6 +2,38 @@
 
 namespace Idles;
 
+/**
+ * Run each element in `$collection` through `$iteratee`.
+ * 
+ * @param callable $iteratee
+ * @param ?iterable<array-key,mixed> $collection
+ * @return iterable<int,mixed>
+ * 
+ * @example ```
+ *   map(fn ($n) => $n * $n, [4, 8]); // [16, 64]
+ * ```
+ * 
+ * @category Collection
+ * 
+ * @see reduce()
+ * 
+ * @alias mapValues
+ */
+function map(mixed ...$args)
+{
+    static $arity = 2;
+    return curryN($arity,
+        fn (callable $iteratee, ?iterable $collection) => _map($collection, $iteratee)
+    )(...$args);
+}
+
+/** 
+ * @internal 
+ * @ignore
+ * 
+ * @param ?iterable<array-key,mixed> $collection
+ * @return iterable<int,mixed>
+ */
 function _map(?iterable $collection, ?callable $iteratee = null): iterable
 {
     $collection ??= [];
@@ -31,17 +63,4 @@ function _map(?iterable $collection, ?callable $iteratee = null): iterable
 
         private $iteratee;
     };
-}
-
-function map(...$args)
-{
-    static $arity = 2;
-    return curryN($arity,
-        fn (callable $iteratee, ?iterable $collection) => _map($collection, $iteratee)
-    )(...$args);
-}
-
-function mapValues(...$args)
-{
-    return map(...$args);
 }

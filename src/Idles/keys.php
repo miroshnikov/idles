@@ -2,6 +2,20 @@
 
 namespace Idles;
 
+/**
+ * Returns an indexed iterable of keys in `$record`.
+ * 
+ * @param ?iterable<string,mixed> $record
+ * @return iterable<string>
+ * 
+ * @example ```
+ *   keys([ 'a'=> 1, 'b'=> 2, 'c'=> 3 ]); // ['a', 'b', 'c']
+ * ```
+ * 
+ * @category Record
+ * 
+ * @see values()
+ */
 function keys(?iterable $record): iterable
 {
     $record ??= [];
@@ -12,7 +26,7 @@ function keys(?iterable $record): iterable
 
     return new Iterators\ValuesIterator(
         new class ($record) extends \IteratorIterator {
-            public function __construct($i)
+            public function __construct(\Traversable $i)
             {
                 parent::__construct($i);
             }
