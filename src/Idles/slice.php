@@ -11,6 +11,14 @@ namespace Idles;
  * @param T|null $collection
  * @return T
  * 
+ * @example ```
+ *  $a = ['a','b','c','d','e'];
+ *  slice(1, 3, $a);    // ['b','c']
+ *  slice(1, -2, $a);   // ['b','c']
+ *  slice(-4, -2, $a);  // ['b','c']
+ *  slice(2, null, $a); // ['c','d','e']
+ * ```
+ * 
  * @category Array
  * 
  * @see take()
@@ -19,6 +27,9 @@ namespace Idles;
  * @see dropRight()
  * @see head()
  * @see last()
+ * 
+ * @idles-lazy
+ * @idles-reindexed
  */
 function slice(mixed ...$args)
 {

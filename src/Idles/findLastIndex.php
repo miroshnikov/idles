@@ -7,7 +7,7 @@ namespace Idles;
  * 
  * @param callable(mixed $value, array-key $key, iterable $collection):bool $predicate
  * @param ?iterable $collection
- * @return int
+ * @return positive-int|-1
  * 
  * @example ```
  *   findLastIndexFrom(fn ($v) => $v == 'b', 2, ['a', 'b', 'a', 'b']); // 1
@@ -30,7 +30,7 @@ function findLastIndex(mixed ...$args)
  * @param callable(mixed $value, array-key $key, iterable $collection):bool $predicate
  * @param int $fromIndex
  * @param ?iterable $collection
- * @return int
+ * @return positive-int|-1
  * 
  * @category Collection
  */

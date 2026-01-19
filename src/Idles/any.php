@@ -7,7 +7,7 @@ namespace Idles;
  * 
  * @param callable(mixed $value, mixed $key):bool  $predicate
  * @param ?iterable $collection
- * @return callable|bool
+ * @return bool
  * 
  * @example ```
  *   $users = [

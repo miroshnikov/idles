@@ -15,6 +15,8 @@ namespace Idles;
  * ```
  * 
  * @category Record
+ * 
+ * @idles-lazy
  */
 function omit(mixed ...$args)
 {

@@ -8,6 +8,14 @@ namespace Idles;
  * @param callable(mixed $value):bool $predicate that determines where the array is split
  * @param ?iterable<mixed> $iterable
  * @return array<mixed>
+ * 
+ * @example ```
+ *  splitWhenever(equals(2), [1, 2, 3, 2, 4, 5, 2, 6, 7]); // [[1], [3], [4, 5], [6, 7]]
+ * ```
+ * 
+ * @category Array
+ * 
+ * @see slice()
  */
 function splitWhenever(mixed ...$args)
 {

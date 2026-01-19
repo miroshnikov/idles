@@ -15,6 +15,9 @@ namespace Idles;
  * @category Record
  * 
  * @alias entries
+ * 
+ * @idles-lazy
+ * @idles-reindexed
  */
 function toPairs(?iterable $record): iterable
 {

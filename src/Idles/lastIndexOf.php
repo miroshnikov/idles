@@ -7,7 +7,11 @@ namespace Idles;
  * 
  * @param mixed $item
  * @param iterable<mixed>|string $collection
- * @return int
+ * @return positive-int|-1
+ * 
+ * @example ```
+ *  lastIndexOf(3, [-1,3,3,0,1,2,3,4]); // 6
+ * ```
  * 
  * @category Array
  * 

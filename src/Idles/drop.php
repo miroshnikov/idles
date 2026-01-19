@@ -18,6 +18,9 @@ namespace Idles;
  * 
  * @see dropRight()
  * @see slice()
+ * 
+ * @idles-lazy
+ * @idles-reindexed
  */
 function drop(mixed ...$args)
 {

@@ -16,6 +16,8 @@ namespace Idles;
  * @category Array
  * 
  * @see uniq()
+ * 
+ * @idles-reindexed
  */
 function uniqWith(mixed ...$args)
 {

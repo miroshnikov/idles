@@ -18,6 +18,9 @@ namespace Idles;
  * @category Array
  * 
  * @see zipWith()
+ * 
+ * @idles-lazy
+ * @idles-reindexed
  */
 function zip(mixed ...$args)
 {

@@ -27,6 +27,8 @@ namespace Idles;
  * @see sort()
  * @see sortBy()
  * @see orderBy()
+ * @see ascend()
+ * @see descend()
  */
 function sortWith(mixed ...$args)
 {

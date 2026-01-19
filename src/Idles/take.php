@@ -17,6 +17,8 @@ namespace Idles;
  * 
  * @see slice()
  * @see head()
+ * 
+ * @idles-lazy
  */
 function take(mixed ...$args)
 {

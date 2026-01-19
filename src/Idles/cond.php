@@ -5,7 +5,7 @@ namespace Idles;
 /**
  * Iterates over `$pairs` and invokes the corresponding function of the first predicate to return truthy.
  * 
- * @param array<array{callable,callable}> $pairs array of [predicate, function] tupels
+ * @param array<array{callable(mixed):bool,callable}> $pairs array of [predicate, function] tuples.
  * @return callable
  * 
  * @example ```

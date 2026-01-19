@@ -5,9 +5,9 @@ namespace Idles;
 /**
  * Calculates the sum of two numbers.
  * 
- * @param int|float $a The first number in an addition. 
- * @param int|float $b The second number in an addition.
- * @return int|float the total
+ * @param number $a The first number in an addition. 
+ * @param number $b The second number in an addition.
+ * @return number the total
  * 
  * @example 
  *  add(100)(13); // 113

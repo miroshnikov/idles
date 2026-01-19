@@ -15,6 +15,8 @@ namespace Idles;
  * @category Array
  * 
  * @see without()
+ * 
+ * @idles-reindexed
  */
 function uniq(?iterable $collection): array
 {

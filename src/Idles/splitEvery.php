@@ -17,6 +17,8 @@ namespace Idles;
  * 
  * @see slice()
  * @see splitAt()
+ * 
+ * @idles-reindexed
  */
 function splitEvery(mixed ...$args)
 {

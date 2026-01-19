@@ -5,7 +5,7 @@ namespace Idles;
 /**
  * Sorts `$collection` using `$comparator` comparison (`$a <=> $b`) function.
  * 
- * @param callable(mixed $a,mixed $b):int $comparator -1|0|1
+ * @param callable(mixed $a,mixed $b):int $comparator returns -1|0|1
  * @param ?iterable<mixed> $collection
  * @return array<mixed>
  * 

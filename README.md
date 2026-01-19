@@ -28,1284 +28,1309 @@ Go to __[https://idlephp.tech](https://idlephp.tech)__ for more details, documen
 
 ## Documentation
 
-### Array
-#### [concat](https://idlephp.tech/#concat)
+
+### [add](https://idlephp.tech/#add)
 
 ```php
-concat(?iterable $array, $value): iterable
+add($a, $b)
 ```
 
-Concatinates `$array` with additional iterables/values
+<p>Calculates the sum of two numbers.</p>
 
-#### [count](https://idlephp.tech/#count)
+### [all](https://idlephp.tech/#all)
 
 ```php
-count(callable $predicate, ?iterable $collection): int
+all($predicate, $collection)
 ```
 
-Counts the number of items in `$collection` matching the `$predicate`
+<p>Checks if <code>$predicate</code> returns truthy for <strong>all</strong> elements of <code>$collection</code>. Stop once it returns falsey.</p>
 
-#### [countBy](https://idlephp.tech/#countBy)
+### [allPass](https://idlephp.tech/#allPass)
 
 ```php
-countBy(callable $iteratee, ?iterable $collection): array
+allPass($predicates)
 ```
 
-Returns an array: [`$iteratee($value)` => number of times the `$iteratee($value)` was found in `$collection`]
+<p>Returns a function that checks if its arguments pass all <code>$predicates</code>.</p>
 
-#### [drop](https://idlephp.tech/#drop)
-
-```php
-drop(int $n, ?iterable $collection): iterable
-```
-
-Skips the first `$n` elemens and returns the rest of the iterable
-
-#### [dropRight](https://idlephp.tech/#dropRight)
-
-```php
-dropRight(int $n, ?iterable $collection): iterable
-```
-
-Skips the last `$n` elements
-
-#### [findIndex](https://idlephp.tech/#findIndex)
-
-```php
-findIndex(callable $predicate, ?iterable $collection): int
-```
-
-Like `find` but returns the index of the first element predicate returns truthy for, `-1` if not found
-
-#### [findLastIndex](https://idlephp.tech/#findLastIndex)
-
-```php
-findLastIndex(callable $predicate, ?iterable $collection): int
-```
-
-Like `find` but returns the index of the last element predicate returns truthy for, `-1` if not found
-
-#### [flatten](https://idlephp.tech/#flatten)
-
-```php
-flatten(?iterable $collection): iterable
-```
-
-Flattens iterable a single level deep.
-
-#### [flattenDeep](https://idlephp.tech/#flattenDeep)
-
-```php
-flattenDeep(?iterable $collection): iterable
-```
-
-Recursively flattens iterable.
-
-#### [flattenDepth](https://idlephp.tech/#flattenDepth)
-
-```php
-flattenDepth(int $depth, ?iterable $collection): iterable
-```
-
-Recursively flatten array up to depth times.
-
-#### [fromPairs](https://idlephp.tech/#fromPairs)
-
-```php
-fromPairs(?iterable $collection): array
-```
-
-Creates a new record from a list key-value pairs. The inverse of `toPairs`.
-
-#### [head](https://idlephp.tech/#head)
-
-```php
-head(?iterable $collecton)
-```
-
-Gets the first element of iterable
-
-#### [indexOf](https://idlephp.tech/#indexOf)
-
-```php
-indexOf($value, ?iterable|string $collection): int
-```
-
-Returns the index of the first occurrence of `$value` in iterable or string, else -1.
-
-#### [intersection](https://idlephp.tech/#intersection)
-
-```php
-intersection(?iterable $record1, ?iterable $record2): array
-```
-
-Returns unique values that are included in both records
-
-#### [intersectionBy](https://idlephp.tech/#intersectionBy)
-
-```php
-intersectionBy(callable $iteratee, ?iterable $record1, ?iterable $record2): array
-```
-
-Like `intersection` but invokes `$iteratee` for each element before comparison.
-
-#### [intersectionWith](https://idlephp.tech/#intersectionWith)
-
-```php
-intersectionWith(callable $comparator, ?iterable $record1, ?iterable $record2): array
-```
-
-Like `intersection` but invokes `$comparator` to compare elements.
-
-#### [join](https://idlephp.tech/#join)
-
-```php
-join(string $separator, ?iterable $collection): string
-```
-
-Joins iterable elements separated by `$separator`
-
-#### [last](https://idlephp.tech/#last)
-
-```php
-last(?iterable $collecton)
-```
-
-Gets the last element of iterable
-
-#### [lastIndexOf](https://idlephp.tech/#lastIndexOf)
-
-```php
-lastIndexOf($value, ?iterable|string $collection): int
-```
-
-Returns the index of the last occurrence of `$value` in iterable or string, else -1.
-
-#### [nth](https://idlephp.tech/#nth)
-
-```php
-nth(int $offset, ?iterable $collection)
-```
-
-Returns the `$offset` element. If `$offset` is negative the element at index length + `$offset` is returned.
-
-#### [remove](https://idlephp.tech/#remove)
-
-```php
-remove(int $start, int $count, ?iterable $iterable): array
-```
-
-Removes items from `$iterable` starting at `$start` and containing `$count` elements.
-
-#### [slice](https://idlephp.tech/#slice)
-
-```php
-slice(int $start, int ?$end, ?iterable $collection): iterable
-```
-
-Retruns a slice of `$iterable` from `$start` up to, but not including, `$end`.
-
-#### [splitAt](https://idlephp.tech/#splitAt)
-
-```php
-splitAt(int $index, array|string $array): array
-```
-
-Splits a given array or string at a given index.
-
-#### [splitEvery](https://idlephp.tech/#splitEvery)
-
-```php
-splitEvery(int $length, array|string $array): array
-```
-
-Splits an array or string into slices of the specified length
-
-#### [splitWhen](https://idlephp.tech/#splitWhen)
-
-```php
-splitWhen(callable $predicate, array $array): array
-```
-
-Splits an array by predicate.
-
-#### [splitWhenever](https://idlephp.tech/#splitWhenever)
-
-```php
-splitWhenever(callable $predicate, array $array): array
-```
-
-Splits an array into slices on every occurrence of a value.
-
-#### [take](https://idlephp.tech/#take)
-
-```php
-take(int $n, ?iterable $collection): iterable
-```
-
-Takes n first elements from iterable
-
-#### [takeRight](https://idlephp.tech/#takeRight)
-
-```php
-takeRight(int $n, ?iterable $collection): array
-```
-
-Returns a slice of iterable with n elements taken from the end.
-
-#### [uniq](https://idlephp.tech/#uniq)
-
-```php
-uniq(?iterable $collection): array
-```
-
-Removes duplicates using `===`
-
-#### [uniqueBy](https://idlephp.tech/#uniqueBy)
-
-```php
-uniqBy(callable $iteratee, ?iterable $collection): array
-```
-
-Like `uniq` but apply `$iteratee` fist
-
-#### [uniqWith](https://idlephp.tech/#uniqWith)
-
-```php
-uniqWith(callable $predicate, ?iterable $collection): array
-```
-
-Like `uniq` but uses `$predicate` to compare elements
-
-#### [without](https://idlephp.tech/#without)
-
-```php
-without(array $values, ?iterable $collection): iterable
-```
-
-Returns `$iterable` without `$values`
-
-#### [zip](https://idlephp.tech/#zip)
-
-```php
-zip(iterable $a, iterable $b): iterable
-```
-
-Creates an iterable of grouped elements, the first of which contains the first elements of the given iterables, the second of which contains the second elements, and so on.
-
-#### [zipWith](https://idlephp.tech/#zipWith)
-
-```php
-zipWith(callable $iteratee, iterable $a, iterable $b): iterable
-```
-
-Like `zip` except that it accepts `$iteratee` to specify how grouped values should be combined.
-
-    
-### Collection
-#### [all](https://idlephp.tech/#all)
-
-```php
-all(?callable $predicate, ?iterable $collection): bool
-```
-
-Checks if `$predicate` returns `truthy` for all elements of `$collection`. Stop once it returns `falsey`
-
-#### [any](https://idlephp.tech/#any)
-
-```php
-any(callable $predicate, ?iterable $collection): bool
-```
-
-Checks if `$predicate` returns truthy for any element of `$collection`. Stops on first found.
-
-#### [each](https://idlephp.tech/#each)
-
-```php
-each(callable $iteratee, ?iterable $collection): iterable
-```
-
-Iterates over elements of `$collection`. Iteratee may exit iteration early by returning `false`.
-
-#### [filter](https://idlephp.tech/#filter)
-
-```php
-filter(callable $predicate, ?iterable $collection): iterable
-```
-
-Returns elements `$predicate` returns truthy for.
-
-#### [find](https://idlephp.tech/#find)
-
-```php
-find(?callable $predicate, ?iterable $collection)
-```
-
-Returns the first element `$predicate` returns truthy for.
-
-#### [flatMap](https://idlephp.tech/#flatMap)
-
-```php
-flatMap(callable $iteratee, ?iterable $collection): iterable
-```
-
-Maps then flatten
-
-#### [flatMapDeep](https://idlephp.tech/#flatMapDeep)
-
-```php
-flatMapDeep(callable $iteratee, ?iterable $collection): iterable
-```
-
-Like `flatMap` but recursively flattens the results.
-
-#### [flatMapDepth](https://idlephp.tech/#flatMapDepth)
-
-```php
-flatMapDepth(callable $iteratee, int $depth, ?iterable $collection): iterable
-```
-
-Like `flatMap` but flattens the mapped results up to `$depth` times
-
-#### [groupBy](https://idlephp.tech/#groupBy)
-
-```php
-groupBy(callable $iteratee, ?iterable $collection): array
-```
-
-Creates an array composed of keys generated from running each value through `$iteratee`.
-
-#### [includes](https://idlephp.tech/#includes)
-
-```php
-includes($value, ?iterable $collection): bool
-```
-
-Checks if `$value` is in `$collection`.
-
-#### [indexBy](https://idlephp.tech/#indexBy)
-
-```php
-indexBy(callable $iteratee, ?iterable $collection): iterable
-```
-
-Creates a record composed of keys generated from the results of running each element of `$collection` through `$iteratee`.
-
-#### [map](https://idlephp.tech/#map)
-
-```php
-map(callable $iteratee, ?iterable $collection)
-```
-
-Run each element in `$collection` through `$iteratee`.
-
-#### [orderBy](https://idlephp.tech/#orderBy)
-
-```php
-orderBy(array $iteratees, array $orders, ?iterable $collection)
-```
-
-Like `sortBy` but allows specifying the sort orders
-
-#### [partition](https://idlephp.tech/#partition)
-
-```php
-partition(callable $predicate, ?iterable $collection): array
-```
-
-Split `$collection` into two groups, the first of which contains elements `$predicate` returns truthy for, the second of which contains elements `$predicate` returns falsey for.
-
-#### [reduce](https://idlephp.tech/#reduce)
-
-```php
-reduce(callable $iteratee, $accumulator, ?iterable $collection)
-```
-
-Reduces `$collection` to a value which is the accumulated result of running each element in collection through `$iteratee`
-
-#### [resolve](https://idlephp.tech/#resolve)
-
-```php
-resolve(array $resolvers, array $record): array
-```
-
-Adds new properties to `$record` using `$resolvers`.
-
-#### [sort](https://idlephp.tech/#sort)
-
-```php
-sort(array $comparator, ?iterable $collection): array
-```
-
-Sorts `$collection` using `$comparator` comparison (`$a <=> $b`) function
-
-#### [sortBy](https://idlephp.tech/#sortBy)
-
-```php
-sortBy(array $comparators, ?iterable $collection): array
-```
-
-Sorts `$collection` in ascending order according to `$comparators`.
-
-#### [sortWith](https://idlephp.tech/#sortWith)
-
-```php
-sortWith(array $comparators, ?iterable $collection): array
-```
-
-Sorts a `$collection` according to an array of comparison (`$a <=> $b`) functions
-
-#### [values](https://idlephp.tech/#values)
-
-```php
-values(?iterable $collection): iterable
-```
-
-Returns an indexed iterable of values in `$collection`.
-
-    
-### Function
-#### [always](https://idlephp.tech/#always)
+### [always](https://idlephp.tech/#always)
 
 ```php
 always($value)
 ```
 
-Returns a function that always returns the given value.
+<p>Returns a function that always returns the given value.</p>
 
-#### [apply](https://idlephp.tech/#apply)
+### [any](https://idlephp.tech/#any)
 
 ```php
-apply(callable $fn, ?iterable $args)
+any($predicate, $collection)
 ```
 
-Calls `$fn(...$args)`
+<p>Checks if <code>$predicate</code> returns truthy for <strong>any</strong> element of <code>$collection</code>. Stops on first found.</p>
 
-#### [applyTo](https://idlephp.tech/#applyTo)
+### [anyPass](https://idlephp.tech/#anyPass)
 
 ```php
-applyTo($value, callable $interceptor)
+anyPass($predicates)
 ```
 
-Returns `$interceptor($value)`.
+<p>Returns a function that checks if its arguments pass any of the <code>$predicates</code>.</p>
 
-#### [ary](https://idlephp.tech/#ary)
+### [apply](https://idlephp.tech/#apply)
 
 ```php
-ary(int $n, callable $fn): callable
+apply($fn, $args)
 ```
 
-Creates a function that invokes `$fn`, with up to `$n` arguments, ignoring any additional arguments.
+<p>Calls $fn(...$args)</p>
 
-#### [ascend](https://idlephp.tech/#ascend)
+### [applyTo](https://idlephp.tech/#applyTo)
 
 ```php
-ascend(callable $func, $a, $b): callable
+applyTo($value, $interceptor)
 ```
 
-Makes an ascending comparator function out of a function that returns a value that can be compared with `<=>`
+<p>Returns the result of <code>$interceptor($value)</code>.</p>
 
-#### [attempt](https://idlephp.tech/#attempt)
+### [ary](https://idlephp.tech/#ary)
 
 ```php
-attempt(callable $fn)
+ary($n, $fn)
 ```
 
-Calls `$fn`, returning either the result or the caught exception.
+<p>Creates a function that invokes <code>$fn</code>, with up to <code>$n</code> arguments, ignoring any additional arguments.</p>
 
-#### [compose](https://idlephp.tech/#compose)
+### [ascend](https://idlephp.tech/#ascend)
 
 ```php
-compose(callable ...$funcs): callable
+ascend($fn, $a, $b)
 ```
 
-Like `pipe` but invokes the functions from right to left.
+<p>Makes an ascending comparator function out of a function that returns a value that can be compared with <code>&lt;=&gt;</code>.</p>
 
-#### [curry](https://idlephp.tech/#curry)
+### [attempt](https://idlephp.tech/#attempt)
 
 ```php
-curry(callable $f): callable
+attempt($fn, $args)
 ```
 
-`\Idles\_` const may be used as a placeholder.
+<p>Calls <code>$fn</code>, returning either the result or the caught exception.</p>
 
-#### [curryRight](https://idlephp.tech/#curryRight)
+### [both](https://idlephp.tech/#both)
 
 ```php
-curryRight(callable $f): callable
+both($fn1, $fn2)
 ```
 
-Like `curry` but arguments are prepended.
+<p>Resulting function returns <code>$fn1(...$args)</code> if it is falsy or <code>$fn2(...$args)</code> otherwise, short-circuited.</p>
 
-#### [descend](https://idlephp.tech/#descend)
+### [camelCase](https://idlephp.tech/#camelCase)
 
 ```php
-descend(callable $func, $a, $b): callable
+camelCase($s)
 ```
 
-Makes an descending comparator function out of a function that returns a value that can be compared with `<=>`
+<p>Converts string to camel case.</p>
 
-#### [flip](https://idlephp.tech/#flip)
+### [capitalize](https://idlephp.tech/#capitalize)
 
 ```php
-flip(callable $fn): callable
+capitalize($string)
 ```
 
-Returns a new curried function with the first two arguments reversed
+<p>Converts the first character of string to upper case and the remaining to lower case.</p>
 
-#### [juxt](https://idlephp.tech/#juxt)
+### [collect](https://idlephp.tech/#collect)
 
 ```php
-juxt(array $funcs): callable
+collect($collection)
 ```
 
-Applies a list of functions to a list of values.
+<p>Collects any iterable into array</p>
 
-#### [memoize](https://idlephp.tech/#memoize)
+### [compose](https://idlephp.tech/#compose)
 
 ```php
-memoize(callable $func): callable
+compose(...$fns)
 ```
 
-Creates a function that memoizes the result of `$func`. `$resolver` returns map cache key, args[0] by default.
+<p>Like <code>pipe</code> but invokes the functions from right to left.</p>
 
-#### [negate](https://idlephp.tech/#negate)
+### [concat](https://idlephp.tech/#concat)
 
 ```php
-negate(callable $predicate): callable
+concat($iterable, $value)
 ```
 
-Creates a function that negates the result of the `$predicate` function.
+<p>Concatinates an iterable with an iterable/value.</p>
 
-#### [nthArg](https://idlephp.tech/#nthArg)
+### [concatAll](https://idlephp.tech/#concatAll)
 
 ```php
-nthArg(int $n): callable
+concatAll($values)
 ```
 
-Returns a function which returns its `$n`th argument.
+<p>Concatinates an iterable with additional iterables/values</p>
 
-#### [once](https://idlephp.tech/#once)
+### [cond](https://idlephp.tech/#cond)
 
 ```php
-once(callable $fn): callable
+cond($pairs)
 ```
 
-`$fn` is only called once, the first value is returned in subsequent invocations.
+<p>Iterates over <code>$pairs</code> and invokes the corresponding function of the first predicate to return truthy.</p>
 
-#### [partial](https://idlephp.tech/#partial)
+### [count](https://idlephp.tech/#count)
 
 ```php
-partial(callable $fn, array $partials): callable
+count($predicate, $collection)
 ```
 
-Creates a function that invokes `$fn` with `$partials` prepended to the arguments. `\Idles\_` const may be used as a placeholder.
+<p>Counts the number of items in <code>$collection</code> matching the <code>$predicate</code></p>
 
-#### [partialRight](https://idlephp.tech/#partialRight)
+### [countBy](https://idlephp.tech/#countBy)
 
 ```php
-partialRight(callable $fn, array $partials): callable
+countBy($iteratee, $collection)
 ```
 
-Like `partial` but `$partials` are appended.
+<p>Returns an <code>array&lt;result of $iteratee($value), number of times the $iteratee($value) was found in $collection&gt;</code></p>
 
-#### [pipe](https://idlephp.tech/#pipe)
+### [curry](https://idlephp.tech/#curry)
 
 ```php
-pipe(callable ...$funcs): callable
+curry($fn)
 ```
 
-Left-to-right function composition. The first argument may have any arity; the remaining arguments must be unary.
+<p><code>\Idles\_</code> const may be used as a placeholder.</p>
 
-#### [rearg](https://idlephp.tech/#rearg)
+### [curryN](https://idlephp.tech/#curryN)
 
 ```php
-rearg(array $indexes, callable $f): callable
+curryN($arity, $fn)
 ```
 
-Returns a function that invokes `$f` with arguments rearranged by `props($indexes)`
+<p>Curry with fixed arity. <code>\Idles\_</code> const may be used as a placeholder.</p>
 
-#### [tap](https://idlephp.tech/#tap)
+### [curryRight](https://idlephp.tech/#curryRight)
 
 ```php
-tap(callable $interceptor, $value)
+curryRight($f)
 ```
 
-Calls `$interceptor($value)` then returns the original `$value`
+<p>Like <code>curry</code> but arguments are prepended.</p>
 
-#### [times](https://idlephp.tech/#times)
+### [curryRightN](https://idlephp.tech/#curryRightN)
 
 ```php
-times(callable $iteratee, int $n): array
+curryRightN($arity, $f)
 ```
 
-Calls the iteratee `$n` times, returning an array of the results of each invocation.
+<p>Like <code>curryN</code> but arguments are prepended.</p>
 
-#### [tryCatch](https://idlephp.tech/#tryCatch)
+### [dec](https://idlephp.tech/#dec)
 
 ```php
-tryCatch(callable $tryer, callable $catcher, $value)
+dec($number)
 ```
 
-Calls `$tryer`, if it throws, calls `$catcher`
+<p>Returns $number - 1</p>
 
-#### [unapply](https://idlephp.tech/#unapply)
+### [defaultTo](https://idlephp.tech/#defaultTo)
 
 ```php
-unapply(callable $fn)
+defaultTo($default, $value)
 ```
 
-Returns `fn (...$args) => $fn($args)`
+<p>Returns the first argument if it is truthy, otherwise the second argument.</p>
 
-#### [unary](https://idlephp.tech/#unary)
+### [descend](https://idlephp.tech/#descend)
 
 ```php
-unary(callable $fn): callable
+descend($fn, $a, $b)
 ```
 
-`ary(1, $fn)`
+<p>Makes an descending comparator function out of a function that returns a value that can be compared with &lt;=&gt;.</p>
 
-#### [useWith](https://idlephp.tech/#useWith)
+### [divide](https://idlephp.tech/#divide)
 
 ```php
-useWith(callable $fn, array $transformers)
+divide($a, $b)
 ```
 
-Applies each transformer function to each argument.
+<p>Returns $a / $b</p>
 
-    
-### Logic
-#### [allPass](https://idlephp.tech/#allPass)
+### [drop](https://idlephp.tech/#drop)
 
 ```php
-allPass(array $predicates): callable
+drop($n, $collection)
 ```
 
-Returns a function that checks if its arguments pass all `$predicates`.
+<p>Skips the first <code>$n</code> elemens and returns the rest of iterable or string.</p>
 
-#### [anyPass](https://idlephp.tech/#anyPass)
+### [dropLast](https://idlephp.tech/#dropLast)
 
 ```php
-anyPass(array $predicates): callable
+dropLast($n, $collection)
 ```
 
-Returns a function that checks if its arguments pass any of the `$predicates`.
+<p>Skips the last <code>$n</code> elements of iterable or string.</p>
 
-#### [both](https://idlephp.tech/#both)
+### [each](https://idlephp.tech/#each)
 
 ```php
-both(callable $func1, callable $func2): callable
+each($iteratee, $collection)
 ```
 
-Resulting function returns `$func1(...$args)` if it is falsy or `$func2(...$args)` otherwise, short-circuited
+<p>Iterates over elements of <code>$collection</code>. Iteratee may exit iteration early by returning <code>false</code>.</p>
 
-#### [cond](https://idlephp.tech/#cond)
+### [either](https://idlephp.tech/#either)
 
 ```php
-cond(array $pairs): callable
+either($fn1, $fn2)
 ```
 
-Iterates over `$pairs` and invokes the corresponding function of the first predicate to return truthy.
+<p>Resulting function returns <code>$fn1(...$args)</code> if it is truthy or <code>$fn2(...$args)</code> otherwise, short-circuited.</p>
 
-#### [defaultTo](https://idlephp.tech/#defaultTo)
+### [eq](https://idlephp.tech/#eq)
 
 ```php
-defaultTo($default)($value)
+eq($a, $b)
 ```
 
-Returns `$value` ?? `$default`
+<p><code>$a == $b</code></p>
 
-#### [either](https://idlephp.tech/#either)
+### [equals](https://idlephp.tech/#equals)
 
 ```php
-either(callable $func1, callable $func2): callable
+equals($a, $b)
 ```
 
-Resulting function returns `$func1(...$args)` if it is truthy or `$func2(...$args)` otherwise, short-circuited.
+<p><code>$a === $b</code></p>
 
-#### [ifElse](https://idlephp.tech/#ifElse)
+### [escapeRegExp](https://idlephp.tech/#escapeRegExp)
 
 ```php
-ifElse(callable $predicate, callable $onTrue, callable $onFalse): callable
+escapeRegExp($s)
 ```
 
-Resulting function returns `$onTrue(...$args)` if `$predicate(...$args)` is truthy or `$onFalse(...$args)` otherwise.
+<p>Escapes regular expression.</p>
 
-#### [not](https://idlephp.tech/#not)
+### [evolve](https://idlephp.tech/#evolve)
 
 ```php
-not($a): bool
+evolve($transformations, $record)
 ```
 
-returns `!$a`
+<p>Creates a new record by recursively calling transformation functions with <code>$record</code> properties.</p>
 
-#### [unless](https://idlephp.tech/#unless)
+### [F](https://idlephp.tech/#F)
 
 ```php
-unless(callable $predicate, callable $whenFalse, mixed $value)
+F(...$args)
 ```
 
-Returns `$predicate($value) ? $value : $whenFalse($value)`
+<p>Always returns <code>false</code></p>
 
-#### [when](https://idlephp.tech/#when)
+### [filter](https://idlephp.tech/#filter)
 
 ```php
-when(callable $predicate, callable $whenTrue, mixed $value)
+filter($predicate, $collection)
 ```
 
-Returns `$predicate($value) ? $whenTrue($value) : $value`
+<p>Returns elements <code>$predicate</code> returns truthy for.</p>
 
-    
-### Math
-#### [add](https://idlephp.tech/#add)
+### [find](https://idlephp.tech/#find)
 
 ```php
-add(int|float $a, int|float $b): int|float
+find($predicate, $collection)
 ```
 
-$a + $b
+<p>Returns the first element <code>$predicate</code> returns truthy for.</p>
 
-#### [dec](https://idlephp.tech/#dec)
+### [findFrom](https://idlephp.tech/#findFrom)
 
 ```php
-dec(int $number): int
+findFrom($predicate, $fromIndex, $collection)
 ```
 
-Returns $number - 1
+<p>Returns the first element <code>$predicate</code> returns truthy for starting from <code>$fromIndex</code>.</p>
 
-#### [divide](https://idlephp.tech/#divide)
+### [findIndex](https://idlephp.tech/#findIndex)
 
 ```php
-divide(int|float $a, int|float $b): int|float
+findIndex($predicate, $collection)
 ```
 
-$a / $b
+<p>Returns the index of the first element predicate returns truthy for or <code>-1</code> if not found.</p>
 
-#### [gt](https://idlephp.tech/#gt)
+### [findIndexFrom](https://idlephp.tech/#findIndexFrom)
 
 ```php
-gt($a, $b): bool
+findIndexFrom($predicate, $fromIndex, $collection)
 ```
 
-$a > $b
+<p>Returns the index of the first element <code>$predicate</code> returns truthy for starting from <code>$fromIndex</code>.</p>
 
-#### [gte](https://idlephp.tech/#gte)
+### [findLastIndex](https://idlephp.tech/#findLastIndex)
 
 ```php
-gte($a, $b): bool
+findLastIndex($predicate, $collection)
 ```
 
-$a >= $b
+<p>Returns the index of the last element predicate returns truthy for, -1 if not found.</p>
 
-#### [inc](https://idlephp.tech/#inc)
+### [findLastIndexFrom](https://idlephp.tech/#findLastIndexFrom)
 
 ```php
-inc(int $number): int
+findLastIndexFrom($predicate, $fromIndex, $collection)
 ```
 
-Returns $number + 1
+<p>Returns the index of the last element <code>$predicate</code> returns truthy for starting from <code>$fromIndex</code>.</p>
 
-#### [lt](https://idlephp.tech/#lt)
+### [flatMap](https://idlephp.tech/#flatMap)
 
 ```php
-lt($a, $b): bool
+flatMap($iteratee, $collection)
 ```
 
-$a < $b
+<p>Maps and flattens.</p>
 
-#### [lte](https://idlephp.tech/#lte)
+### [flatMapDepth](https://idlephp.tech/#flatMapDepth)
 
 ```php
-lte($a, $b): bool
+flatMapDepth($iteratee, $depth, $collection)
 ```
 
-$a <= $b
+<p>Maps and flattens the mapped results up to <code>$depth</code> times.</p>
 
-#### [modulo](https://idlephp.tech/#modulo)
+### [flatten](https://idlephp.tech/#flatten)
 
 ```php
-modulo(int|float $a, int|float $b): int
+flatten($collection)
 ```
 
-$a % $b
+<p>Flattens iterable a single level deep.</p>
 
-#### [multiply](https://idlephp.tech/#multiply)
+### [flattenDepth](https://idlephp.tech/#flattenDepth)
 
 ```php
-multiply(int|float $a, int|float $b): int|float
+flattenDepth($depth, $collection)
 ```
 
-$a * $b
+<p>Recursively flatten array up to <code>$depth</code> times.</p>
 
-#### [round](https://idlephp.tech/#round)
+### [flip](https://idlephp.tech/#flip)
 
 ```php
-round(int $precision, int|float $number): float
+flip($fn)
 ```
 
-Rounds `$number`to specified `$precision`
+<p>Returns a new curried function with the first two arguments reversed.</p>
 
-#### [subtract](https://idlephp.tech/#subtract)
+### [fromPairs](https://idlephp.tech/#fromPairs)
 
 ```php
-subtract(int|float $a, int|float $b): int|float
+fromPairs($collection)
 ```
 
-$a - $b
+<p>Creates a new record from a list key-value pairs. The inverse of <code>toPairs</code>.</p>
 
-#### [sum](https://idlephp.tech/#sum)
+### [groupBy](https://idlephp.tech/#groupBy)
 
 ```php
-sum(?iterable $collection): int|float
+groupBy($iteratee, $collection)
 ```
 
-Sums elements in iterable
+<p>Creates an array composed of keys generated from running each value through <code>$iteratee</code>.</p>
 
-#### [sumBy](https://idlephp.tech/#sumBy)
+### [gt](https://idlephp.tech/#gt)
 
 ```php
-sumBy(?callable $iteratee, ?iterable $collection): int|float
+gt($a, $b)
 ```
 
-Like `sum` but `$iteratee` is invoked for each element in iterable to generate the value to be summed.
+<p>$a &gt; $b</p>
 
-    
-### Record
-#### [assignDeep](https://idlephp.tech/#assignDeep)
+### [gte](https://idlephp.tech/#gte)
 
 ```php
-assignDeep(array $iterables): array
+gte($a, $b)
 ```
 
-Merges properties recursively, numeric keys are overwritten.
+<p>$a &gt;= $b</p>
 
-#### [defaults](https://idlephp.tech/#defaults)
+### [has](https://idlephp.tech/#has)
 
 ```php
-defaults(?iterable $record1, ?iterable $record2): array
+has($key, $record)
 ```
 
-Merges properties from right to left, numeric keys are overwritten.
+<p>Checks if <code>$record</code> has <code>$key</code>.</p>
 
-#### [evolve](https://idlephp.tech/#evolve)
+### [hasPath](https://idlephp.tech/#hasPath)
 
 ```php
-evolve(array $transformations, ?iterable $record): array
+hasPath($path, $record)
 ```
 
-Creates a new record by recursively calling transformation functions with `$record` properties.
+<p>Checks if <code>$path</code> exists in <code>$record</code>.</p>
 
-#### [extend](https://idlephp.tech/#extend)
+### [head](https://idlephp.tech/#head)
 
 ```php
-extend(?iterable $source1, ?iterable $source2): array
+head($collecton)
 ```
 
-Merges properties, numeric keys are overwritten.
+<p>Gets the first element of <code>$collecton</code>.</p>
 
-#### [has](https://idlephp.tech/#has)
-
-```php
-has(string|int $key, ?iterable $record): bool
-```
-
-Checks if `$record` has `$key`
-
-#### [hasPath](https://idlephp.tech/#hasPath)
-
-```php
-hasPath(string|int|array $path, ?iterable $record): bool
-```
-
-Checks if `$path` exists in `$record`
-
-#### [invert](https://idlephp.tech/#invert)
-
-```php
-invert(?iterable $collection): array
-```
-
-Replaces keys with values. Duplicate keys are overwritten.
-
-#### [keys](https://idlephp.tech/#keys)
-
-```php
-keys(?iterable $record): iterable
-```
-
-Returns an indexed iterable of keys in `$record`.
-
-#### [merge](https://idlephp.tech/#merge)
-
-```php
-merge(?iterable $source1, ?iterable $source2): array
-```
-
-Merges properties, numeric keys are appended.
-
-#### [mergeDeep](https://idlephp.tech/#mergeDeep)
-
-```php
-mergeDeep(array $iterables): array
-```
-
-Merges properties recursively, numeric keys are appended.
-
-#### [mergeLeft](https://idlephp.tech/#mergeLeft)
-
-```php
-mergeLeft(?iterable $left, ?iterable $right): array
-```
-
-calls `merge($right, $left)`
-
-#### [mergeWith](https://idlephp.tech/#mergeWith)
-
-```php
-mergeWith(callable $customizer, ?iterable $left, ?iterable $right): array
-```
-
-Like `merge` but if a key exists in both records, `$customizer` is called to the values associated with the key
-
-#### [modifyPath](https://idlephp.tech/#modifyPath)
-
-```php
-modifyPath(array|string|int $path, callable $updater, ?iterable $record)
-```
-
-Creates new record by applying an `$updater` function to the value at the given `$path`.
-
-#### [objOf](https://idlephp.tech/#objOf)
-
-```php
-objOf(string $key, $value): array
-```
-
-Creates an `array` containing a single key => value pair.
-
-#### [omit](https://idlephp.tech/#omit)
-
-```php
-omit(array $keys, ?iterable $collection): iterable
-```
-
-The opposite of `pick`. Returns record without `$keys`.
-
-#### [omitBy](https://idlephp.tech/#omitBy)
-
-```php
-omitBy(callable $predicate, ?iterable $record): iterable
-```
-
-The opposite of `pickBy`. Returns properties of `$record` that `$predicate` returns falsey for.
-
-#### [path](https://idlephp.tech/#path)
-
-```php
-path(array|string $path, ?iterable $collection)
-```
-
-Retrieve the value at a given path.
-
-#### [paths](https://idlephp.tech/#paths)
-
-```php
-paths(array $paths, ?iterable $collection): array
-```
-
-Keys in, values out. Order is preserved.
-
-#### [pick](https://idlephp.tech/#pick)
-
-```php
-pick(array $keys, ?iterable $collection): iterable
-```
-
-Returns record containing only `$keys`
-
-#### [pickBy](https://idlephp.tech/#pickBy)
-
-```php
-pickBy(callable $predicate, ?iterable $record): iterable
-```
-
-Returns record containing only keys `$predicate` returns truthy for.
-
-#### [pluck](https://idlephp.tech/#pluck)
-
-```php
-pluck(string|int $key, ?iterable $collection)
-```
-
-Returns a new array by plucking the same named property off all records in the array supplied.
-
-#### [project](https://idlephp.tech/#project)
-
-```php
-project(array $props, ?iterable $collection)
-```
-
-Like SQL `select` statement.
-
-#### [prop](https://idlephp.tech/#prop)
-
-```php
-prop(string|int $key, ?iterable $record)
-```
-
-Return the specified property.
-
-#### [propEq](https://idlephp.tech/#propEq)
-
-```php
-propEq(string|int $key, $value, ?iterable $record): bool
-```
-
-Returns $record[$key] == $value
-
-#### [setPath](https://idlephp.tech/#setPath)
-
-```php
-setPath($path, $value, ?iterable $record)
-```
-
-Return copy `$record` with `$path` set  with `$value`
-
-#### [toPairs](https://idlephp.tech/#toPairs)
-
-```php
-toPairs(?iterable $record): iterable
-```
-
-Converts a record into an array of `[$key, $value]`
-
-#### [where](https://idlephp.tech/#where)
-
-```php
-where(array $spec, ?iterable $record): bool
-```
-
-Checks if `$record` satisfies the spec by invoking the `$spec` properties with the corresponding properties of `$record`.
-
-#### [whereAny](https://idlephp.tech/#whereAny)
-
-```php
-whereAny(array $spec, ?iterable $record): bool
-```
-
-Checks if `$record` satisfies the spec by invoking the `$spec` properties with the corresponding properties of `$record`. Returns `true` if at least one of the predicates returns `true`.
-
-#### [whereEq](https://idlephp.tech/#whereEq)
-
-```php
-whereEq(array $spec, ?iterable $test): bool
-```
-
-Check if the `$test` satisfies the `$spec`
-
-    
-### String
-#### [camelCase](https://idlephp.tech/#camelCase)
-
-```php
-camelCase(string $s): string
-```
-
-Converts string to camel case.
-
-#### [capitalize](https://idlephp.tech/#capitalize)
-
-```php
-capitalize(string $s): string
-```
-
-Converts the first character of string to upper case and the remaining to lower case.
-
-#### [escape](https://idlephp.tech/#escape)
-
-```php
-escape(string $s): string
-```
-
-Converts the characters "&", "<", ">", '"', and "'" to their corresponding HTML entities.
-
-#### [escapeRegExp](https://idlephp.tech/#escapeRegExp)
-
-```php
-escapeRegExp(string $regexp): string
-```
-
-Escapes regular expression
-
-#### [split](https://idlephp.tech/#split)
-
-```php
-split(string $separator, string $s): array
-```
-
-Splits string by `$separator` regular expression.
-
-#### [startsWith](https://idlephp.tech/#startsWith)
-
-```php
-startsWith(string $target, string $s): bool
-```
-
-If string starts with `$target`.
-
-#### [toLower](https://idlephp.tech/#toLower)
-
-```php
-toLower(string $s): string
-```
-
-Converts string to lower case
-
-#### [toUpper](https://idlephp.tech/#toUpper)
-
-```php
-toUpper(string $s): string
-```
-
-Converts string to upper case
-
-#### [trim](https://idlephp.tech/#trim)
-
-```php
-trim(string $characters, string $string): string
-```
-
-Strip characters from the beginning and end of a string.
-
-#### [trimEnd](https://idlephp.tech/#trimEnd)
-
-```php
-trimEnd(string $characters, string $string): string
-```
-
-Strip characters from the end of a string.
-
-#### [trimStart](https://idlephp.tech/#trimStart)
-
-```php
-trimStart(string $characters, string $string): string
-```
-
-Strip characters from the beginning of a string.
-
-#### [words](https://idlephp.tech/#words)
-
-```php
-words(string $pattern, string $string): array
-```
-
-Splits string into an array of its words.
-
-    
-### Util
-#### [collect](https://idlephp.tech/#collect)
-
-```php
-collect(?iterable $iterable): array
-```
-
-Collects any iterable into `array`
-
-#### [eq](https://idlephp.tech/#eq)
-
-```php
-eq($a, $b): bool
-```
-
-`$a` == `$b`
-
-#### [equals](https://idlephp.tech/#equals)
-
-```php
-equals($a, $b): bool
-```
-
-`$a` === `$b`
-
-#### [F](https://idlephp.tech/#F)
-
-```php
-F(...$args): bool
-```
-
-Always returns `false`
-
-#### [identity](https://idlephp.tech/#identity)
+### [identity](https://idlephp.tech/#identity)
 
 ```php
 identity($value)
 ```
 
-Returns the first argument it receives.
+<p>Returns the first argument it receives.</p>
 
-#### [iterate](https://idlephp.tech/#iterate)
-
-```php
-iterate(callable $f, $value): iterable
-```
-
-Returns a generator of `$value`, `$f($value)`, `$f($f($value))` etc.
-
-#### [just](https://idlephp.tech/#just)
+### [ifElse](https://idlephp.tech/#ifElse)
 
 ```php
-just($value): Optional
+ifElse($predicate, $onTrue, $onFalse)
 ```
 
-Returns an Optional with the specified non-null value
+<p>Resulting function returns <code>$onTrue(...$args)</code> if <code>$predicate(...$args)</code> is truthy or <code>$onFalse(...$args)</code> otherwise.</p>
 
-#### [nothing](https://idlephp.tech/#nothing)
+### [inc](https://idlephp.tech/#inc)
 
 ```php
-nothing(): Optional
+inc($number)
 ```
 
-Returns an empty Optional
+<p>Returns <code>$number + 1</code></p>
 
-#### [now](https://idlephp.tech/#now)
+### [includes](https://idlephp.tech/#includes)
 
 ```php
-now(): int
+includes($value, $collection)
 ```
 
-Returns the timestamp of the number of seconds
+<p>Checks if <code>$value</code> is in iterable/string.</p>
 
-#### [Optional](https://idlephp.tech/#Optional)
+### [includesFrom](https://idlephp.tech/#includesFrom)
 
 ```php
-just(mixed $value): Optional
+includesFrom($value, $fromIndex, $collection)
 ```
 
-Maybe/Option monad (container) which may or may not contain a non-null value. Has methods:
+<p>Checks if <code>$value</code> is in iterable/string, starting from <code>$fromIndex</code>.</p>
 
-`isPresent(): bool` - `true` if not empty              
-`isEmpty(): bool` - `true` if empty        
-`get(): mixed` - returns value, throw exception if empty         
-`orElse(mixed $default): mixed` - returns the contained value if the optional is nonempty or `$default`        
-`orElseThrow(Exception $e)` - returns the contained value, if present, otherwise throw an exception        
-`map(callable $f): Optional` - If a value is present, apply the `$f` to it, and if the result is non-null, return an Optional describing the result       
-`flatMap(callable $f): Optional` - use instead of `map` if `$f` returns Optional          
-`filter(callable $predicate): Optional` - if a value is present and matches the `$predicate`, return an Optional with the value, otherwise an empty Optional.  
-
-#### [size](https://idlephp.tech/#size)
+### [indexBy](https://idlephp.tech/#indexBy)
 
 ```php
-size(array|Countable|object|string|callable $value): int
+indexBy($iteratee, $collection)
 ```
 
-Returns size of a countable, number of parameters of a function, lenght of string or number of properties of an object
+<p>Creates a record composed of keys generated from the results of running each element of $collection through $iteratee.</p>
 
-#### [T](https://idlephp.tech/#T)
+### [indexOf](https://idlephp.tech/#indexOf)
 
 ```php
-T(...$args): bool
+indexOf($item, $collection)
 ```
 
-Always returns `true`
+<p>Returns the index of the first occurrence of the item in an iterable or string, else <code>-1</code>.</p>
+
+### [indexOfFrom](https://idlephp.tech/#indexOfFrom)
+
+```php
+indexOfFrom($item, $fromIndex, $collection)
+```
+
+<p>Returns the index of the first occurrence of the item in an iterable or string, starting from <code>$fromIndex</code>, else <code>-1</code>.</p>
+
+### [intersection](https://idlephp.tech/#intersection)
+
+```php
+intersection($array1, $array2)
+```
+
+<p>Returns unique values that are included in both arrays.</p>
+
+### [intersectionBy](https://idlephp.tech/#intersectionBy)
+
+```php
+intersectionBy($iteratee, $array1, $array2)
+```
+
+<p>Like intersection but invokes <code>$iteratee</code> for each element before comparison.</p>
+
+### [intersectionWith](https://idlephp.tech/#intersectionWith)
+
+```php
+intersectionWith($comparator, $array1, $array2)
+```
+
+<p>Like <code>intersection</code> but invokes <code>$comparator</code> to compare elements.</p>
+
+### [invert](https://idlephp.tech/#invert)
+
+```php
+invert($collection)
+```
+
+<p>Replaces keys with values. Duplicate keys are overwritten.</p>
+
+### [iterate](https://idlephp.tech/#iterate)
+
+```php
+iterate($fn, $value)
+```
+
+<p>Returns a generator of <code>$value</code>, <code>$f($value)</code>, <code>$f($f($value))</code> etc.</p>
+
+### [join](https://idlephp.tech/#join)
+
+```php
+join($separator, $collection)
+```
+
+<p>Joins iterable elements separated by <code>$separator</code>.</p>
+
+### [just](https://idlephp.tech/#just)
+
+```php
+just($value)
+```
+
+<p>Returns an Optional with the specified non-null value</p>
+
+### [juxt](https://idlephp.tech/#juxt)
+
+```php
+juxt($iteratees)
+```
+
+<p>Applies a list of functions to a list of values.</p>
+
+### [keys](https://idlephp.tech/#keys)
+
+```php
+keys($record)
+```
+
+<p>Returns an indexed iterable of keys in <code>$record</code>.</p>
+
+### [last](https://idlephp.tech/#last)
+
+```php
+last($collecton)
+```
+
+<p>Gets the last element of iterable.</p>
+
+### [lastIndexOf](https://idlephp.tech/#lastIndexOf)
+
+```php
+lastIndexOf($item, $collection)
+```
+
+<p>Returns the index of the last occurrence of <code>$value</code> in iterable or string, else <code>-1</code>.</p>
+
+### [length](https://idlephp.tech/#length)
+
+```php
+length($value)
+```
+
+<p>Returns size of a countable, number of parameters of a function, lenght of string or number of properties of an object.</p>
+
+### [lt](https://idlephp.tech/#lt)
+
+```php
+lt($a, $b)
+```
+
+<p>$a &lt; $b</p>
+
+### [lte](https://idlephp.tech/#lte)
+
+```php
+lte($a, $b)
+```
+
+<p>$a &lt;= $b</p>
+
+### [map](https://idlephp.tech/#map)
+
+```php
+map($iteratee, $collection)
+```
+
+<p>Run each element in <code>$collection</code> through <code>$iteratee</code>.</p>
+
+### [memoize](https://idlephp.tech/#memoize)
+
+```php
+memoize($fn)
+```
+
+<p>Creates a function that memoizes the result of <code>$fn</code>.</p>
+
+### [memoizeWith](https://idlephp.tech/#memoizeWith)
+
+```php
+memoizeWith($resolver, $fn)
+```
+
+<p>Creates a function that memoizes the result of <code>$fn</code>. <code>$resolver</code> returns map cache key (args[0] by default).</p>
+
+### [mergeAll](https://idlephp.tech/#mergeAll)
+
+```php
+mergeAll($iterables)
+```
+
+<p>Merges properties, numeric keys are <strong>replaced</strong>.</p>
+
+### [merge](https://idlephp.tech/#merge)
+
+```php
+merge($left, $right)
+```
+
+<p>Merges properties, numeric keys are <strong>replaced</strong>.</p>
+
+### [mergeDeep](https://idlephp.tech/#mergeDeep)
+
+```php
+mergeDeep($left, $right)
+```
+
+<p>Merges properties recursively, numeric keys are <strong>replaced</strong>.</p>
+
+### [mergeWith](https://idlephp.tech/#mergeWith)
+
+```php
+mergeWith($customizer, $left, $right)
+```
+
+<p>Like <code>merge</code> but if a key exists in both records, <code>$customizer</code> is called to the values associated with the key.</p>
+
+### [modifyPath](https://idlephp.tech/#modifyPath)
+
+```php
+modifyPath($path, $updater, $record)
+```
+
+<p>Creates new record by applying an <code>$updater</code> function to the value at the given <code>$path</code>.</p>
+
+### [modulo](https://idlephp.tech/#modulo)
+
+```php
+modulo($a, $b)
+```
+
+<p>$a % $b</p>
+
+### [multiply](https://idlephp.tech/#multiply)
+
+```php
+multiply($a, $b)
+```
+
+<p>$a * $b</p>
+
+### [negate](https://idlephp.tech/#negate)
+
+```php
+negate($predicate)
+```
+
+<p>Creates a function that negates the result of the <code>$predicate</code> function.</p>
+
+### [not](https://idlephp.tech/#not)
+
+```php
+not($a)
+```
+
+<p>returns !$a</p>
+
+### [nothing](https://idlephp.tech/#nothing)
+
+```php
+nothing()
+```
+
+<p>Returns an empty <code>Optional</code>.</p>
+
+### [now](https://idlephp.tech/#now)
+
+```php
+now()
+```
+
+<p>Returns the timestamp of the number of seconds</p>
+
+### [nth](https://idlephp.tech/#nth)
+
+```php
+nth($offset, $collection)
+```
+
+<p>Returns the <code>$offset</code> element. If <code>$offset</code> is negative the element at index length + <code>$offset</code> is returned.</p>
+
+### [nthArg](https://idlephp.tech/#nthArg)
+
+```php
+nthArg($n)
+```
+
+<p>Returns a function which returns its <code>$nth</code> argument.</p>
+
+### [objOf](https://idlephp.tech/#objOf)
+
+```php
+objOf($key, $value)
+```
+
+<p>Creates an array containing a single <code>key =&gt; value</code> pair.</p>
+
+### [omit](https://idlephp.tech/#omit)
+
+```php
+omit($keys, $collection)
+```
+
+<p>The opposite of <code>pick</code>. Returns record without <code>$keys</code>.</p>
+
+### [omitBy](https://idlephp.tech/#omitBy)
+
+```php
+omitBy($predicate, $collection)
+```
+
+<p>The opposite of <code>pickBy</code>. Returns properties of <code>$record</code> that $predicate returns <code>falsey</code> for.</p>
+
+### [once](https://idlephp.tech/#once)
+
+```php
+once($fn)
+```
+
+<p><code>$fn</code> is only called once, the first value is returned in subsequent invocations.</p>
+
+### [orderBy](https://idlephp.tech/#orderBy)
+
+```php
+orderBy($iteratees, $orders, $collection)
+```
+
+<p>Like <code>sortBy</code> but allows specifying the sort orders.</p>
+
+### [partial](https://idlephp.tech/#partial)
+
+```php
+partial($fn, $partials)
+```
+
+<p>Creates a function that invokes <code>$fn</code> with <code>$partials</code> prepended to the arguments. <code>\Idles\_</code> const may be used as a placeholder.</p>
+
+### [partialRight](https://idlephp.tech/#partialRight)
+
+```php
+partialRight($fn, $partials)
+```
+
+<p>Like partial but <code>$partials</code> are <strong>appended</strong>.</p>
+
+### [partition](https://idlephp.tech/#partition)
+
+```php
+partition($predicate, $collection)
+```
+
+<p>Split <code>$collection</code> into two groups, the first of which contains elements <code>$predicate</code> returns truthy for, the second of which contains elements <code>$predicate</code> returns falsey for.</p>
+
+### [path](https://idlephp.tech/#path)
+
+```php
+path($path, $collection)
+```
+
+<p>Retrieve the value at a given path.</p>
+
+### [pathOr](https://idlephp.tech/#pathOr)
+
+```php
+pathOr($default, $path, $collection)
+```
+
+<p>Retrieve the value at a given path. If path is not found, the <code>$default</code> is returned.</p>
+
+### [paths](https://idlephp.tech/#paths)
+
+```php
+paths($paths, $collection)
+```
+
+<p>Keys in, values out. Order is preserved.</p>
+
+### [pick](https://idlephp.tech/#pick)
+
+```php
+pick($keys, $collection)
+```
+
+<p>Returns record containing only <code>$keys</code>.</p>
+
+### [pickBy](https://idlephp.tech/#pickBy)
+
+```php
+pickBy($predicate, $collection)
+```
+
+<p>Returns record containing only keys $predicate returns truthy for.</p>
+
+### [pipe](https://idlephp.tech/#pipe)
+
+```php
+pipe(...$fns)
+```
+
+<p>Left-to-right function composition. The first argument may have any arity; the remaining arguments must be unary.</p>
+
+### [flow](https://idlephp.tech/#flow)
+
+```php
+flow($funcs)
+```
+
+<p>Left-to-right function composition. The first argument may have any arity; the remaining arguments must be unary.</p>
+
+### [pluck](https://idlephp.tech/#pluck)
+
+```php
+pluck($key, $collection)
+```
+
+<p>Returns a new array by plucking the same named property off all records in the array supplied.</p>
+
+### [project](https://idlephp.tech/#project)
+
+```php
+project($props, $collection)
+```
+
+<p>Like SQL <code>select</code> statement.</p>
+
+### [prop](https://idlephp.tech/#prop)
+
+```php
+prop($key, $record)
+```
+
+<p>Return the specified property.</p>
+
+### [propEq](https://idlephp.tech/#propEq)
+
+```php
+propEq($key, $value, $record)
+```
+
+<p>Returns $record[$key] == $value</p>
+
+### [propOr](https://idlephp.tech/#propOr)
+
+```php
+propOr($default, $key, $record)
+```
+
+<p>Return the $key property or <code>$default</code>.</p>
+
+### [rearg](https://idlephp.tech/#rearg)
+
+```php
+rearg($indexes, $fn)
+```
+
+<p>Returns a curried function that invokes <code>$fn</code> with arguments rearranged according to <code>$indexes</code>.</p>
+
+### [reduce](https://idlephp.tech/#reduce)
+
+```php
+reduce($iteratee, $accumulator, $collection)
+```
+
+<p>Reduces <code>$collection</code> to a value which is the accumulated result of running each element in collection through <code>$iteratee</code>.</p>
+
+### [remove](https://idlephp.tech/#remove)
+
+```php
+remove($start, $count, $iterable)
+```
+
+<p>Removes items from <code>$iterable</code> starting at $start and containing <code>$count</code> elements.</p>
+
+### [resolve](https://idlephp.tech/#resolve)
+
+```php
+resolve($resolvers, $record)
+```
+
+<p>Adds new properties to <code>$record</code> using <code>$resolvers</code>.</p>
+
+### [round](https://idlephp.tech/#round)
+
+```php
+round($precision, $number)
+```
+
+<p>Rounds $number to specified $precision</p>
+
+### [setPath](https://idlephp.tech/#setPath)
+
+```php
+setPath($path, $value, $record)
+```
+
+<p>Return copy of <code>$record</code> with <code>$path</code> set with <code>$value</code>.</p>
+
+### [slice](https://idlephp.tech/#slice)
+
+```php
+slice($start, $end, $collection)
+```
+
+<p>Returns a slice of iterable or string from <code>$start</code> up to, but not including <code>$end</code>.</p>
+
+### [sort](https://idlephp.tech/#sort)
+
+```php
+sort($comparator, $collection)
+```
+
+<p>Sorts <code>$collection</code> using <code>$comparator</code> comparison (<code>$a &lt;=&gt; $b</code>) function.</p>
+
+### [sortBy](https://idlephp.tech/#sortBy)
+
+```php
+sortBy($iteratees, $collection)
+```
+
+<p>Sorts <code>$collection</code> in ascending order according to <code>$comparators</code>.</p>
+
+### [sortWith](https://idlephp.tech/#sortWith)
+
+```php
+sortWith($comparators, $collection)
+```
+
+<p>Sorts a <code>$collection</code> according to an array of comparison (<code>$a &lt;=&gt; $b</code>) functions.</p>
+
+### [split](https://idlephp.tech/#split)
+
+```php
+split($separator, $s)
+```
+
+<p>Splits string by <code>$separator</code> regular expression.</p>
+
+### [splitAt](https://idlephp.tech/#splitAt)
+
+```php
+splitAt($index, $arrayOrString)
+```
+
+<p>Splits a given array or string at a given index.</p>
+
+### [splitEvery](https://idlephp.tech/#splitEvery)
+
+```php
+splitEvery($length, $arrayOrString)
+```
+
+<p>Splits an array or string into slices of the specified length.</p>
+
+### [splitWhen](https://idlephp.tech/#splitWhen)
+
+```php
+splitWhen($predicate, $iterable)
+```
+
+<p>Splits an array by predicate.</p>
+
+### [splitWhenever](https://idlephp.tech/#splitWhenever)
+
+```php
+splitWhenever($predicate, $iterable)
+```
+
+<p>Splits an array into slices on every occurrence of a value.</p>
+
+### [startsWith](https://idlephp.tech/#startsWith)
+
+```php
+startsWith($target, $s)
+```
+
+<p>If string starts with <code>$target</code>.</p>
+
+### [subtract](https://idlephp.tech/#subtract)
+
+```php
+subtract($a, $b)
+```
+
+<p>$a - $b</p>
+
+### [sum](https://idlephp.tech/#sum)
+
+```php
+sum($collection)
+```
+
+<p>Sums elements in $collection</p>
+
+### [sumBy](https://idlephp.tech/#sumBy)
+
+```php
+sumBy($iteratee, $collection)
+```
+
+<p>Sums elements, $iteratee is invoked for each element in $collection to generate the value to be summed.</p>
+
+### [T](https://idlephp.tech/#T)
+
+```php
+T(...$args)
+```
+
+<p>Always returns <code>true</code></p>
+
+### [take](https://idlephp.tech/#take)
+
+```php
+take($n, $collection)
+```
+
+<p>Takes <code>$n</code> first elements from iterable.</p>
+
+### [takeLast](https://idlephp.tech/#takeLast)
+
+```php
+takeLast($n, $collection)
+```
+
+<p>Returns a slice of iterable with <code>$n</code> elements taken from the end.</p>
+
+### [tap](https://idlephp.tech/#tap)
+
+```php
+tap($interceptor, $value)
+```
+
+<p>Calls <code>$interceptor($value)</code> then returns the original <code>$value</code>.</p>
+
+### [times](https://idlephp.tech/#times)
+
+```php
+times($iteratee, $n)
+```
+
+<p>Calls the iteratee <code>$n</code> times, returning an array of the results of each invocation.</p>
+
+### [toLower](https://idlephp.tech/#toLower)
+
+```php
+toLower($s)
+```
+
+<p>Converts string to lower case.</p>
+
+### [toPairs](https://idlephp.tech/#toPairs)
+
+```php
+toPairs($record)
+```
+
+<p>Converts a record into an array of <code>[$key, $value]</code>.</p>
+
+### [toUpper](https://idlephp.tech/#toUpper)
+
+```php
+toUpper($s)
+```
+
+<p>Converts string to upper case.</p>
+
+### [trim](https://idlephp.tech/#trim)
+
+```php
+trim($characters, $string)
+```
+
+<p>Strip characters from the beginning and end of a string.</p>
+
+### [trimEnd](https://idlephp.tech/#trimEnd)
+
+```php
+trimEnd($characters, $string)
+```
+
+<p>Strip characters from the end of a string.</p>
+
+### [trimStart](https://idlephp.tech/#trimStart)
+
+```php
+trimStart($characters, $string)
+```
+
+<p>Strip characters from the beginning of a string.</p>
+
+### [tryCatch](https://idlephp.tech/#tryCatch)
+
+```php
+tryCatch($tryer, $catcher, $value)
+```
+
+<p>Calls <code>$tryer</code>, if it throws, calls <code>$catcher</code>.</p>
+
+### [unapply](https://idlephp.tech/#unapply)
+
+```php
+unapply($fn)
+```
+
+<p>Returns fn (...$args) =&gt; $fn($args)</p>
+
+### [unary](https://idlephp.tech/#unary)
+
+```php
+unary($fn)
+```
+
+<p><code>ary(1, $fn)</code></p>
+
+### [uniq](https://idlephp.tech/#uniq)
+
+```php
+uniq($collection)
+```
+
+<p>Removes duplicates using <code>===</code>.</p>
+
+### [uniqBy](https://idlephp.tech/#uniqBy)
+
+```php
+uniqBy($iteratee, $collection)
+```
+
+<p>Like <code>uniq</code> but apply <code>$iteratee</code> fist.</p>
+
+### [uniqWith](https://idlephp.tech/#uniqWith)
+
+```php
+uniqWith($predicate, $collection)
+```
+
+<p>Like <code>uniq</code> but uses <code>$predicate</code> to compare elements.</p>
+
+### [unless](https://idlephp.tech/#unless)
+
+```php
+unless($predicate, $whenFalse, $value)
+```
+
+<p>Returns <code>$predicate($value) ? $value : $whenFalse($value)</code>.</p>
+
+### [useWith](https://idlephp.tech/#useWith)
+
+```php
+useWith($fn, $transformers)
+```
+
+<p>Applies each transformer function to each argument. Returns a new curried functions.</p>
+
+### [values](https://idlephp.tech/#values)
+
+```php
+values($collection)
+```
+
+<p>Returns an indexed iterable of values in <code>$collection</code>.</p>
+
+### [when](https://idlephp.tech/#when)
+
+```php
+when($predicate, $whenTrue, $value)
+```
+
+<p>Returns <code>$predicate($value) ? $whenTrue($value) : $value</code>.</p>
+
+### [where](https://idlephp.tech/#where)
+
+```php
+where($spec, $record)
+```
+
+<p>Checks if <code>$record</code> satisfies the spec by invoking the <code>$spec</code> properties with the corresponding properties of $record.</p>
+
+### [whereAny](https://idlephp.tech/#whereAny)
+
+```php
+whereAny($spec, $record)
+```
+
+<p>Checks if <code>$record</code> satisfies the spec by invoking the $spec properties with the corresponding properties of <code>$record</code>. Returns true if at least one of the predicates returns true.</p>
+
+### [whereEq](https://idlephp.tech/#whereEq)
+
+```php
+whereEq($spec, $test)
+```
+
+<p>Check if the <code>$test</code> satisfies the <code>$spec</code>.</p>
+
+### [without](https://idlephp.tech/#without)
+
+```php
+without($values, $collection)
+```
+
+<p>Returns <code>$iterable</code> without <code>$values</code>.</p>
+
+### [words](https://idlephp.tech/#words)
+
+```php
+words($pattern, $s)
+```
+
+<p>Splits string into an array of its words.</p>
+
+### [zip](https://idlephp.tech/#zip)
+
+```php
+zip($a, $b)
+```
+
+<p>Creates a new iterable out of the two supplied by pairing up equally-positioned items from both iterables.</p>
+
+### [zipAll](https://idlephp.tech/#zipAll)
+
+```php
+zipAll($iterables)
+```
+
+<p>Same as <code>zip</code> but for many iterables.</p>
+
+### [zipWith](https://idlephp.tech/#zipWith)
+
+```php
+zipWith($iteratee, $a, $b)
+```
+
+<p>Like <code>zip</code> except that it accepts <code>$iteratee</code> to specify how grouped values should be combined.</p>
 
     

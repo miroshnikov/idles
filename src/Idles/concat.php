@@ -3,12 +3,42 @@
 namespace Idles;
 
 /**
- * Concatinates `$array` with additional iterables/values
+ * Concatinates an iterable with an iterable/value.
+ * 
+ * @param iterable<mixed> $iterable
+ * @param iterable<mixed>|mixed $value
+ * @return iterable<mixed> Numerically indexed concatenated iterable
+ * 
+ * @example ```
+ *   concat(['a','b'], ['c', 'd']); // ['a', 'b', 'c', 'd']
+ *   concat(['a','b'], 'C');  // ['a', 'b', 'C']
+ * ```
+ * 
+ * @category Array
+ * 
+ * @see merge()
+ * 
+ * @idles-lazy
+ * @idles-reindexed
+ */
+function concat(mixed ...$args)
+{
+    static $arity = 2;
+    return curryN($arity, 
+        fn (?iterable $iterable, $value): iterable => concatAll([$iterable, $value])
+    )(...$args);
+}
+
+/**
+ * Concatinates an iterable with additional iterables/values
  * 
  * @param array<iterable<mixed>|mixed> $values
  * @return iterable<mixed> Numerically indexed concatenated iterable
  * 
  * @category Array
+ * 
+ * @idles-lazy
+ * @idles-reindexed
  */
 function concatAll(array $values)
 {
@@ -30,28 +60,4 @@ function concatAll(array $values)
         $i->append(\is_a($v, '\Iterator') ? $v : new \ArrayIterator(\is_array($v) ? $v : [$v]));
     }
     return new Iterators\ValuesIterator($i);
-}
-
-/**
- * Concatinates two iterables
- * 
- * @param iterable<mixed> $a
- * @param iterable<mixed> $b
- * @return iterable<mixed> Numerically indexed concatenated iterable
- * 
- * @example ```
- *   concat(['a','b'], ['c', 'd'])' // ['a', 'b', 'c', 'd']
- *   concat(['a','b'], 'C');  // ['a', 'b', 'C']
- * ```
- * 
- * @category Array
- * 
- * @see merge()
- */
-function concat(mixed ...$args)
-{
-    static $arity = 2;
-    return curryN(2, 
-        fn (?iterable $array, $value): iterable => concatAll([$array, $value])
-    )(...$args);
 }

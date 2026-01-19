@@ -9,7 +9,7 @@ namespace Idles;
  * @param callable(T):numeric|string|array $fn
  * @param T $a
  * @param T $b
- * @return -1|0|1 $a < $b | $a == $b | $a > $b
+ * @return -1|0|1 $a<$b | $a==$b | $a>$b
  * 
  * @example ```
  *   $byAge = descend(prop('age'));

@@ -6,8 +6,12 @@ namespace Idles;
  * Returns the index of the first occurrence of the item in an iterable or string, else `-1`.
  * 
  * @param mixed $item
- * @param iterable|string $collection
- * @return int
+ * @param iterable<mixed>|string $collection
+ * @return positive-int|-1
+ * 
+ * @example ```
+ *  indexOf(2, [1, 2, 1, 2]); // 1
+ * ```
  * 
  * @category Array
  * 
@@ -32,8 +36,8 @@ function indexOf(mixed ...$args)
  * 
  * @param mixed $item
  * @param int $fromIndex
- * @param iterable|string $collection
- * @return int
+ * @param iterable<mixed>|string $collection
+ * @return positive-int|-1
  * 
  * @category Array
  */

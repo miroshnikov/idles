@@ -3,11 +3,11 @@
 namespace Idles;
 
 /**
- * Returns an array<result of $iteratee($value), number of times the $iteratee($value) was found in $collection>
+ * Returns an `array<result of $iteratee($value), number of times the $iteratee($value) was found in $collection>`
  *
- * @param callable $iteratee
+ * @param callable(mixed $value):array-key $iteratee
  * @param ?iterable $collection
- * @return array<mixed, int>
+ * @return array<array-key,int>
  * 
  * @example ```
  *   $numbers = [1.0, 1.1, 1.2, 2.0, 3.0, 2.2];
@@ -15,6 +15,8 @@ namespace Idles;
  * ```
  * 
  * @category Array
+ * 
+ * @see count()
  */
 function countBy(mixed ...$args)
 {

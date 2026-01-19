@@ -5,14 +5,14 @@ namespace Idles;
 /**
  * $a - $b
  * 
- * @param int $a
- * @param int $b
- * @return int
+ * @param number $a
+ * @param number $b
+ * @return number
  * 
  * @category Math
  */
-function subtract(int ...$args)
+function subtract(mixed ...$args)
 {
     static $arity = 2;
-    return curryN($arity, fn (int $a, int $b) => $a - $b)(...$args);
+    return curryN($arity, fn ($a, $b) => $a - $b)(...$args);
 }

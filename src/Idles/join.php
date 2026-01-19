@@ -3,7 +3,7 @@
 namespace Idles;
 
 /**
- * Joins iterable elements separated by `$separator`
+ * Joins iterable elements separated by `$separator`.
  * 
  * @param string $separator
  * @param ?iterable $collection
@@ -12,6 +12,8 @@ namespace Idles;
  * @example ```
  *   join('~', ['a', 'b', 'c']); // 'a~b~c'
  * ```
+ * 
+ * @category Array
  * 
  * @see split()
  */

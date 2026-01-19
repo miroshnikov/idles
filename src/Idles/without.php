@@ -16,6 +16,9 @@ namespace Idles;
  * @category Record
  * 
  * @see filter()
+ * 
+ * @idles-lazy
+ * @idles-reindexed
  */
 function without(mixed ...$args)
 {

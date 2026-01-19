@@ -15,6 +15,8 @@ namespace Idles;
  * @category Record
  * 
  * @see values()
+ * 
+ * @idles-lazy
  */
 function keys(?iterable $record): iterable
 {

@@ -3,7 +3,7 @@
 namespace Idles;
 
 /**
- * Checks if `$value` is in $collection.
+ * Checks if `$value` is in iterable/string.
  * 
  * @param mixed $value
  * @param iterable<mixed>|null|string $collection
@@ -25,7 +25,7 @@ function includes(mixed ...$args)
 }
 
 /**
- * Checks if `$value` is in $collection, starting from `$fromIndex`.
+ * Checks if `$value` is in iterable/string, starting from `$fromIndex`.
  * 
  * @param mixed $value
  * @param int $fromIndex

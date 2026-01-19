@@ -5,7 +5,7 @@ namespace Idles;
 /**
  * Left-to-right function composition. The first argument may have any arity; the remaining arguments must be unary.
  * 
- * @param callable ...$funcs
+ * @param callable ...$fns
  * @return callable
  * 
  * @example ```
@@ -17,13 +17,13 @@ namespace Idles;
  * @see flow()
  * @see compose()
  */
-function pipe(callable ...$funcs): callable
+function pipe(callable ...$fns): callable
 {
-    if (empty($funcs)) {
+    if (empty($fns)) {
         return fn($arg) => $arg;
     }
-    $first = \array_shift($funcs);
-    return \array_reduce($funcs, fn($pipe, $f) => fn(...$args) => $f($pipe(...$args)), $first);
+    $first = \array_shift($fns);
+    return \array_reduce($fns, fn($pipe, $f) => fn(...$args) => $f($pipe(...$args)), $first);
 }
 
 /**

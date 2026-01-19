@@ -17,6 +17,8 @@ namespace Idles;
  * ```
  * 
  * @category Util
+ * 
+ * @idles-lazy
  */
 function iterate(mixed ...$args)
 {

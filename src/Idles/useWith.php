@@ -6,7 +6,7 @@ namespace Idles;
  * Applies each transformer function to each argument. Returns a new curried functions.
  * 
  * @param callable $fn The function to wrap.
- * @param array $transformers Transformer functions
+ * @param array<callable> $transformers Transformer functions
  * @return callable
  * 
  * @example ```

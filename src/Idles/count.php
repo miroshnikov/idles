@@ -5,7 +5,7 @@ namespace Idles;
 /**
  * Counts the number of items in `$collection` matching the `$predicate`
  *
- * @param callable(mixed $v):bool $predicates
+ * @param callable(mixed $v):bool $predicate
  * @param ?iterable $collection
  * @return non-negative-int
  * 

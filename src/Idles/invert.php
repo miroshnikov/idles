@@ -5,8 +5,8 @@ namespace Idles;
 /**
  * Replaces keys with values. Duplicate keys are overwritten.
  * 
- * @param ?iterable<mixed> $collection
- * @return array<mixed>
+ * @param ?iterable<array-key> $collection
+ * @return array<array-key>
  * 
  * @example ```
  *  invert([ 'a' => 1, 'b' => 2, 'c' => 1 ]); // [1 => 'c', 2 => 'b']

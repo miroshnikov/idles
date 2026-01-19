@@ -5,8 +5,8 @@ namespace Idles;
 /**
  * Removes items from `$iterable` starting at $start and containing `$count` elements.
  * 
- * @param int $start
- * @param int $count
+ * @param positive-int $start
+ * @param positive-int $count
  * @param ?iterable<mixed> $iterable
  * @return array<mixed>
  * 

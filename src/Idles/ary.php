@@ -5,7 +5,7 @@ namespace Idles;
 /**
  * Creates a function that invokes `$fn`, with up to `$n` arguments, ignoring any additional arguments.
  *
- * @param int $n
+ * @param positive-int $n
  * @param callable $fn
  * @return callable
  * 

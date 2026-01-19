@@ -5,9 +5,9 @@ namespace Idles;
 /**
  * Sums elements, $iteratee is invoked for each element in $collection to generate the value to be summed.
  *
- * @param callable(mixed $value):int|float $iteratee
+ * @param callable(mixed $value):number $iteratee
  * @param ?iterable<mixed> $collection
- * @return int|float
+ * @return number
  * 
  * @example ```
  *  $ns = [[ 'n'=> 4 ], [ 'n'=> 2 ], [ 'n'=> 8 ], [ 'n'=> 6 ]];

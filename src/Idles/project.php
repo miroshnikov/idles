@@ -6,8 +6,8 @@ namespace Idles;
  * Like SQL `select` statement.
  * 
  * @param array<array-key> $props
- * @param ?iterable<mixed> $collection
- * @return iterable<mixed>
+ * @param ?iterable<array<mixed>> $collection
+ * @return iterable<array<mixed>>
  * 
  * @example ```
  *   $kids =  [
@@ -23,6 +23,8 @@ namespace Idles;
  * @see pluck()
  * @see props()
  * @see prop()
+ * 
+ * @idles-lazy
  */
 function project(mixed ...$args)
 {

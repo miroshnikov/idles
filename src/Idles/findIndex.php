@@ -7,10 +7,10 @@ namespace Idles;
  * 
  * @param callable(mixed $value, array-key $key, iterable $collection):bool $predicate
  * @param ?iterable $collection
- * @return int
+ * @return positive-int|-1
  * 
  * @example ```
- *   findIndex(['b', 'a', 'b', 'c'], fn ($v) => $v == 'b', 1); // 2
+ *   findIndex(fn ($v) => $v == 'b', ['a', 'b', 'c'])); // 1
  * ```
  * 
  * @category Collection
@@ -29,7 +29,7 @@ function findIndex(mixed ...$args)
  * @param callable(mixed $value, array-key $key, iterable $collection):bool $predicate
  * @param int $fromIndex
  * @param ?iterable $collection
- * @return int
+ * @return positive-int|-1
  * 
  * @example ```
  *   findIndexFrom(fn ($v) => $v == 'b', -2, ['a','b','a','b','c']) // 3 

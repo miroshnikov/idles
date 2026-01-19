@@ -17,6 +17,8 @@ namespace Idles;
  * 
  * @see without()
  * @see omit()
+ * 
+ * @idles-lazy
  */
 function omitBy(mixed ...$args)
 {

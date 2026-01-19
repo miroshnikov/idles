@@ -3,11 +3,16 @@
 namespace Idles;
 
 /**
- * Resulting function returns `$func1(...$args)` if it is falsy or `$func2(...$args)` otherwise, short-circuited.
+ * Resulting function returns `$fn1(...$args)` if it is falsy or `$fn2(...$args)` otherwise, short-circuited.
  * 
  * @param callable $fn1
  * @param callable $fn2
  * @return callable
+ * 
+ * @example ```
+ *  both(identity(...), always(''))('value');  // ''
+ *  both(always('a'), identity(...))('b');     // b
+ * ```
  * 
  * @category Logic
  * 

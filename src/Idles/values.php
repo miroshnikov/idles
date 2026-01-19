@@ -15,6 +15,9 @@ namespace Idles;
  * @category Collection
  * 
  * @see keys()
+ * 
+ * @idles-lazy
+ * @idles-reindexed
  */
 function values(?iterable $collection): iterable
 {

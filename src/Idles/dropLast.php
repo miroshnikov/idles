@@ -20,6 +20,8 @@ namespace Idles;
  * @see slice()
  * 
  * @alias dropRight
+ * 
+ * @idles-reindexed
  */
 function dropLast(mixed ...$args)
 {

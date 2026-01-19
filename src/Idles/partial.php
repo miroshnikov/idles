@@ -3,7 +3,7 @@
 namespace Idles;
 
 /**
- * Creates a function that invokes `$fn` with `$partials` prepended to the arguments. \Idles\_ const may be used as a placeholder.
+ * Creates a function that invokes `$fn` with `$partials` prepended to the arguments. `\Idles\_` const may be used as a placeholder.
  * 
  * @param callable $fn
  * @param array<mixed> $partials
@@ -27,7 +27,7 @@ function partial(mixed ...$args)
 }
 
 /**
- * Like partial but $partials are __appended__.
+ * Like partial but `$partials` are __appended__.
  * 
  * @param callable $fn
  * @param array<mixed> $partials

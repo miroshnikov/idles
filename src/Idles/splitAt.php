@@ -5,7 +5,7 @@ namespace Idles;
 /**
  * Splits a given array or string at a given index.
  * 
- * @param int $index The index where the array/string is split.
+ * @param positive-int $index The index where the array/string is split.
  * @param array|string $arrayOrString
  * @return string[]|array
  * 

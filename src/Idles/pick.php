@@ -17,6 +17,8 @@ namespace Idles;
  * @category Record
  * 
  * @see pickBy()
+ * 
+ * @idles-lazy
  */
 function pick(mixed ...$args)
 {
@@ -42,6 +44,8 @@ function pick(mixed ...$args)
  * @category Record
  * 
  * @see pick()
+ * 
+ * @idles-lazy
  */
 function pickBy(mixed ...$args)
 {

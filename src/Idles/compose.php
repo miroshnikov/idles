@@ -8,9 +8,15 @@ namespace Idles;
  * @param callable ...$fns
  * @return callable
  * 
- * @alias flowRight
+ * @example ```
+ *  compose('\strtoupper', fn ($s) => 'hello '.$s, '\trim')(' fred '); // 'HELLO FRED'
+ * ```
  * 
  * @category Function
+ * 
+ * @see pipe()
+ * 
+ * @alias flowRight
  */
 function compose(callable ...$fns): callable
 {

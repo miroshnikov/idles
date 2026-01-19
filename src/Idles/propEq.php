@@ -17,8 +17,6 @@ namespace Idles;
  * @category Record
  * 
  * @see whereEq()
- * 
- * @alias matchesProperty
  */
 function propEq(mixed ...$args)
 {

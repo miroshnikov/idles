@@ -10,6 +10,8 @@ namespace Idles;
  * @param T $value
  * @return T
  * 
+ * @category Function
+ * 
  * @phpstan-ignore method.templateTypeNotInParameter 
  */
 function tap(mixed ...$args)

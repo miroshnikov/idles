@@ -23,6 +23,9 @@ use \Idles\Iterators\{
  * @see flattenDepth()
  * 
  * @alias unnest
+ * 
+ * @idles-lazy
+ * @idles-reindexed
  */
 function flatten(mixed ...$args)
 {
@@ -42,6 +45,9 @@ function flatten(mixed ...$args)
  * @category Array
  * 
  * @see flatten()
+ * 
+ * @idles-lazy
+ * @idles-reindexed
  */
 function flattenDepth(mixed ...$args)
 {
@@ -50,7 +56,6 @@ function flattenDepth(mixed ...$args)
         fn (int $depth, ?iterable $collection) => _flattenDepth($collection, $depth)
     )(...$args);
 }
-
 
 
 /** 

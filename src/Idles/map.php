@@ -18,6 +18,8 @@ namespace Idles;
  * @see reduce()
  * 
  * @alias mapValues
+ * 
+ * @idles-lazy
  */
 function map(mixed ...$args)
 {

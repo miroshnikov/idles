@@ -10,7 +10,7 @@ use \Idles\Iterators\{
 };
 
 /**
- * Maps and flattens
+ * Maps and flattens.
  * 
  * @param callable(mixed $value, array-key $key, iterable $collection):mixed $iteratee
  * @param ?iterable $collection
@@ -20,11 +20,16 @@ use \Idles\Iterators\{
  *   flatMap(fn ($n) => [$n, $n], [1,2]); // [1, 1, 2, 2]
  * ```
  * 
+ * @category Collection
+ * 
  * @see flatMapDepth()
  * @see map()
  * @see flatten()
  * 
  * @alias chain
+ * 
+ * @idles-lazy
+ * @idles-reindexed
  */
 function flatMap(mixed ...$args)
 {
@@ -35,7 +40,7 @@ function flatMap(mixed ...$args)
 }
 
 /**
- * Maps and flattens the mapped results up to `$depth` times
+ * Maps and flattens the mapped results up to `$depth` times.
  * 
  * @param callable(mixed $value, array-key $key, iterable $collection):mixed $iteratee
  * @param int $depth
@@ -50,7 +55,8 @@ function flatMap(mixed ...$args)
  * 
  * @see flatMap()
  * 
- * @alias flatMapDeep
+ * @idles-lazy
+ * @idles-reindexed
  */
 function flatMapDepth(mixed ...$args)
 {
