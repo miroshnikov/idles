@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0" class="viewport">
-            <link rel='stylesheet' type='text/css' href='./assets/styles.1ac8da106e1563025785.css'>
+            <link rel='stylesheet' type='text/css' href='./assets/styles.14fa686ef132d3a069cd.css'>
         <title>PHP Functional Library</title>
     <meta name="description" content="A PHP functional utility library, port of JavaScript Lodash and Ramda with lazy (idle) evaluation">
     <meta name="yandex-verification" content="7063684c222008b0">
@@ -4319,6 +4319,75 @@ $greet('Alice'); // Hello, Alice!
             </div>
 
         </article>
+            <article id='flow' data-category="Function">
+            <header>
+                <h2>
+                    <a href="#flow">
+                        flow
+                    </a>
+                </h2>
+                <ul>
+                                                            <li>
+                        Function
+                    </li>
+                </ul>
+            </header>
+
+            <pre><code class='language-php'>flow($funcs)</code></pre>
+
+            <div>
+                <p>Left-to-right function composition. The first argument may have any arity; the remaining arguments must be unary.</p>
+            </div>
+
+                                        <div>
+                    <h3>Parameters</h3>
+                    <table>
+                                                    <tr>
+                                <td>
+                                    <pre><code class='language-php'>callable[]</code></pre>
+                                </td>
+                                <td>
+                                    $funcs
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                                            </table>
+                </div>
+            
+                            <div>
+                    <h3>Returns</h3>
+                    <table>
+                        <tr>
+                            <td>
+                                <pre><code class='language-php example'>callable</code></pre> 
+                            </td>
+                            <td> 
+                                <pre></pre>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            
+            
+            
+                            <div>
+                    <h3>See also</h3>
+                    <ul>
+                                                    <li><a href='#pipe'>pipe</a>, </li>
+                                                    <li><a href='#compose'>compose</a></li>
+                                            </ul>
+                </div>
+            
+            <div class="links">
+                <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/pipe.php.php" 
+                    title="View source on GitHub"
+                    class="code">
+                </a>
+            </div>
+
+        </article>
             <article id='fromPairs' data-category="Array">
             <header>
                 <h2>
@@ -6947,81 +7016,6 @@ $greet('Alice'); // Hello, Alice!
             </div>
 
         </article>
-            <article id='mergeAll' data-category="Record">
-            <header>
-                <h2>
-                    <a href="#mergeAll">
-                        mergeAll
-                    </a>
-                </h2>
-                <ul>
-                                                            <li>
-                        Record
-                    </li>
-                </ul>
-            </header>
-
-            <pre><code class='language-php'>mergeAll($iterables)</code></pre>
-
-            <div>
-                <p>Merges properties, numeric keys are <strong>replaced</strong>.</p>
-            </div>
-
-                                        <div>
-                    <h3>Parameters</h3>
-                    <table>
-                                                    <tr>
-                                <td>
-                                    <pre><code class='language-php'>array&lt;iterable&lt;mixed&gt;&gt;</code></pre>
-                                </td>
-                                <td>
-                                    $iterables
-                                </td>
-                                <td>
-                                    
-                                </td>
-                            </tr>
-                                            </table>
-                </div>
-            
-                            <div>
-                    <h3>Returns</h3>
-                    <table>
-                        <tr>
-                            <td>
-                                <pre><code class='language-php example'>mixed[]</code></pre> 
-                            </td>
-                            <td> 
-                                <pre></pre>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            
-            
-                            <div>
-                    <h3>Aliases</h3>
-                    <ul>
-                                                    <li id="asign">asign, </li>
-                                                    <li id="extend">extend</li>
-                                            </ul>
-                </div>
-            
-                            <div>
-                    <h3>See also</h3>
-                    <ul>
-                                                    <li><a href='#concat'>concat</a></li>
-                                            </ul>
-                </div>
-            
-            <div class="links">
-                <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/merge.php.php" 
-                    title="View source on GitHub"
-                    class="code">
-                </a>
-            </div>
-
-        </article>
             <article id='merge' data-category="Record">
             <header>
                 <h2>
@@ -7091,6 +7085,81 @@ $greet('Alice'); // Hello, Alice!
                 </div>
             
             
+            
+            <div class="links">
+                <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/merge.php.php" 
+                    title="View source on GitHub"
+                    class="code">
+                </a>
+            </div>
+
+        </article>
+            <article id='mergeAll' data-category="Record">
+            <header>
+                <h2>
+                    <a href="#mergeAll">
+                        mergeAll
+                    </a>
+                </h2>
+                <ul>
+                                                            <li>
+                        Record
+                    </li>
+                </ul>
+            </header>
+
+            <pre><code class='language-php'>mergeAll($iterables)</code></pre>
+
+            <div>
+                <p>Merges properties, numeric keys are <strong>replaced</strong>.</p>
+            </div>
+
+                                        <div>
+                    <h3>Parameters</h3>
+                    <table>
+                                                    <tr>
+                                <td>
+                                    <pre><code class='language-php'>array&lt;iterable&lt;mixed&gt;&gt;</code></pre>
+                                </td>
+                                <td>
+                                    $iterables
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                                            </table>
+                </div>
+            
+                            <div>
+                    <h3>Returns</h3>
+                    <table>
+                        <tr>
+                            <td>
+                                <pre><code class='language-php example'>mixed[]</code></pre> 
+                            </td>
+                            <td> 
+                                <pre></pre>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            
+            
+                            <div>
+                    <h3>Aliases</h3>
+                    <ul>
+                                                    <li id="asign">asign, </li>
+                                                    <li id="extend">extend</li>
+                                            </ul>
+                </div>
+            
+                            <div>
+                    <h3>See also</h3>
+                    <ul>
+                                                    <li><a href='#concat'>concat</a></li>
+                                            </ul>
+                </div>
             
             <div class="links">
                 <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/merge.php.php" 
@@ -8273,6 +8342,74 @@ $greet('Alice'); // Hello, Alice!
             </div>
 
         </article>
+            <article id='Optional' data-category="Util">
+            <header>
+                <h2>
+                    <a href="#Optional">
+                        Optional
+                    </a>
+                </h2>
+                <ul>
+                                                            <li>
+                        Util
+                    </li>
+                </ul>
+            </header>
+
+            <pre><code class='language-php'>interface Optional
+{
+    /**
+     * @return bool true if not empty
+     */
+    public function isPresent(): bool;
+    /**
+     * @return bool true if empty
+     */
+    public function isEmpty(): bool;
+    /**
+     * Returns value, throw exception if empty
+     */
+    public function get(): mixed;
+    /**
+     * Returns the contained value if the optional is nonempty or `$default`
+     */
+    public function orElse(mixed $default): mixed;
+    /**
+     * Returns the contained value, if present, otherwise throw an exception
+     */
+    public function orElseThrow(\Exception $e = new \Exception('No value on None')): mixed;
+    /**
+     * If a value is present, apply the `$fn` to it, and if the result is non-null, return an Optional describing the result
+     */
+    public function map(callable $fn): Optional;
+    /**
+     * Use instead of map if $f returns Optional
+     */
+    public function flatMap(callable $fn): Optional;
+    /**
+     * If a value is present and matches the `$predicate`, return an Optional with the value, otherwise an empty Optional.
+     */
+    public function filter(callable $predicate): Optional;
+}
+</code></pre>
+
+            <div>
+                <p>Maybe/Option monad (container) which may or may not contain a non-null value.</p>
+            </div>
+
+                        
+            
+            
+            
+            
+            <div class="links">
+                <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/Optional.php" 
+                    title="View source on GitHub"
+                    class="code">
+                </a>
+            </div>
+
+        </article>
             <article id='orderBy' data-category="Collection">
             <header>
                 <h2>
@@ -9172,75 +9309,6 @@ $greet('Alice'); // Hello, Alice!
                     <h3>See also</h3>
                     <ul>
                                                     <li><a href='#flow'>flow</a>, </li>
-                                                    <li><a href='#compose'>compose</a></li>
-                                            </ul>
-                </div>
-            
-            <div class="links">
-                <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/pipe.php.php" 
-                    title="View source on GitHub"
-                    class="code">
-                </a>
-            </div>
-
-        </article>
-            <article id='flow' data-category="Function">
-            <header>
-                <h2>
-                    <a href="#flow">
-                        flow
-                    </a>
-                </h2>
-                <ul>
-                                                            <li>
-                        Function
-                    </li>
-                </ul>
-            </header>
-
-            <pre><code class='language-php'>flow($funcs)</code></pre>
-
-            <div>
-                <p>Left-to-right function composition. The first argument may have any arity; the remaining arguments must be unary.</p>
-            </div>
-
-                                        <div>
-                    <h3>Parameters</h3>
-                    <table>
-                                                    <tr>
-                                <td>
-                                    <pre><code class='language-php'>callable[]</code></pre>
-                                </td>
-                                <td>
-                                    $funcs
-                                </td>
-                                <td>
-                                    
-                                </td>
-                            </tr>
-                                            </table>
-                </div>
-            
-                            <div>
-                    <h3>Returns</h3>
-                    <table>
-                        <tr>
-                            <td>
-                                <pre><code class='language-php example'>callable</code></pre> 
-                            </td>
-                            <td> 
-                                <pre></pre>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            
-            
-            
-                            <div>
-                    <h3>See also</h3>
-                    <ul>
-                                                    <li><a href='#pipe'>pipe</a>, </li>
                                                     <li><a href='#compose'>compose</a></li>
                                             </ul>
                 </div>
@@ -13819,7 +13887,7 @@ $greet('Alice'); // Hello, Alice!
 
         </main>
     </div>
-            <script src='./assets/app.1ac8da106e1563025785.js' defer></script>
+            <script src='./assets/app.14fa686ef132d3a069cd.js' defer></script>
         <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 </html>

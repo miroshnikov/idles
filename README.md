@@ -429,6 +429,14 @@ flip($fn)
 
 <p>Returns a new curried function with the first two arguments reversed.</p>
 
+### [flow](https://idlephp.tech/#flow)
+
+```php
+flow($funcs)
+```
+
+<p>Left-to-right function composition. The first argument may have any arity; the remaining arguments must be unary.</p>
+
 ### [fromPairs](https://idlephp.tech/#fromPairs)
 
 ```php
@@ -685,18 +693,18 @@ memoizeWith($resolver, $fn)
 
 <p>Creates a function that memoizes the result of <code>$fn</code>. <code>$resolver</code> returns map cache key (args[0] by default).</p>
 
-### [mergeAll](https://idlephp.tech/#mergeAll)
-
-```php
-mergeAll($iterables)
-```
-
-<p>Merges properties, numeric keys are <strong>replaced</strong>.</p>
-
 ### [merge](https://idlephp.tech/#merge)
 
 ```php
 merge($left, $right)
+```
+
+<p>Merges properties, numeric keys are <strong>replaced</strong>.</p>
+
+### [mergeAll](https://idlephp.tech/#mergeAll)
+
+```php
+mergeAll($iterables)
 ```
 
 <p>Merges properties, numeric keys are <strong>replaced</strong>.</p>
@@ -821,6 +829,49 @@ once($fn)
 
 <p><code>$fn</code> is only called once, the first value is returned in subsequent invocations.</p>
 
+### [Optional](https://idlephp.tech/#Optional)
+
+```php
+interface Optional
+{
+    /**
+     * @return bool true if not empty
+     */
+    public function isPresent(): bool;
+    /**
+     * @return bool true if empty
+     */
+    public function isEmpty(): bool;
+    /**
+     * Returns value, throw exception if empty
+     */
+    public function get(): mixed;
+    /**
+     * Returns the contained value if the optional is nonempty or `$default`
+     */
+    public function orElse(mixed $default): mixed;
+    /**
+     * Returns the contained value, if present, otherwise throw an exception
+     */
+    public function orElseThrow(\Exception $e = new \Exception('No value on None')): mixed;
+    /**
+     * If a value is present, apply the `$fn` to it, and if the result is non-null, return an Optional describing the result
+     */
+    public function map(callable $fn): Optional;
+    /**
+     * Use instead of map if $f returns Optional
+     */
+    public function flatMap(callable $fn): Optional;
+    /**
+     * If a value is present and matches the `$predicate`, return an Optional with the value, otherwise an empty Optional.
+     */
+    public function filter(callable $predicate): Optional;
+}
+
+```
+
+<p>Maybe/Option monad (container) which may or may not contain a non-null value.</p>
+
 ### [orderBy](https://idlephp.tech/#orderBy)
 
 ```php
@@ -897,14 +948,6 @@ pickBy($predicate, $collection)
 
 ```php
 pipe(...$fns)
-```
-
-<p>Left-to-right function composition. The first argument may have any arity; the remaining arguments must be unary.</p>
-
-### [flow](https://idlephp.tech/#flow)
-
-```php
-flow($funcs)
 ```
 
 <p>Left-to-right function composition. The first argument may have any arity; the remaining arguments must be unary.</p>
