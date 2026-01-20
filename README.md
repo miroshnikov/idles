@@ -16,7 +16,7 @@ The iterable collection parameter is usually supplied last to make currying conv
 Go to __[https://idlephp.tech](https://idlephp.tech)__ for more details, documentation and examples.
 
 ## Requirements
-`PHP 7.4` or higher
+`PHP 8.4` or higher
 
 ## Installation
 `composer require miroshnikov/idles`
