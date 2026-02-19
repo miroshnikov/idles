@@ -3,7 +3,7 @@
 namespace Idles;
 
 /**
- * Returns the first argument if it is truthy, otherwise the second argument.
+ * Returns `$value` if it is truthy, otherwise `$default`.
  * 
  * @param mixed $default
  * @param mixed $value
@@ -20,7 +20,7 @@ namespace Idles;
 function defaultTo(mixed ...$args)
 {
     static $arity = 2;
-    return curryN(2, 
+    return curryN($arity, 
         fn ($default, $value) => $value ? $value : $default
     )(...$args);
 }

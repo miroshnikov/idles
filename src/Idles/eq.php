@@ -11,6 +11,9 @@ namespace Idles;
  * 
  * @category Util
  * 
+ * @see gt()
+ * @see lt()
+ * 
  * @alias identical
  */
 function eq(mixed ...$args)

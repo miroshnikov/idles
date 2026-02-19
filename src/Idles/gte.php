@@ -5,8 +5,9 @@ namespace Idles;
 /**
  * $a >= $b
  * 
- * @param number $a
- * @param number $b
+ * @template T of mixed
+ * @param T $a
+ * @param T $b
  * @return bool
  * 
  * @example ```

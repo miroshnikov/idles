@@ -7,7 +7,7 @@ namespace Idles;
  * 
  * @param mixed $a
  * @param mixed $b
- * @return bool
+ * @return \Closure|bool
  * 
  * @category Util
  * 

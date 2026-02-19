@@ -243,7 +243,7 @@ dec($number)
 defaultTo($default, $value)
 ```
 
-<p>Returns the first argument if it is truthy, otherwise the second argument.</p>
+<p>Returns <code>$value</code> if it is truthy, otherwise <code>$default</code>.</p>
 
 ### [descend](https://idlephp.tech/#descend)
 
@@ -588,6 +588,22 @@ invert($collection)
 ```
 
 <p>Replaces keys with values. Duplicate keys are overwritten.</p>
+
+### [isEmpty](https://idlephp.tech/#isEmpty)
+
+```php
+isEmpty($value)
+```
+
+<p>Returns result of <code>empty($value)</code>.</p>
+
+### [isNotEmpty](https://idlephp.tech/#isNotEmpty)
+
+```php
+isNotEmpty($value)
+```
+
+<p>Returns result of <code>!empty($value)</code>.</p>
 
 ### [iterate](https://idlephp.tech/#iterate)
 

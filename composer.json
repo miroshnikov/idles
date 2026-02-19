@@ -75,6 +75,8 @@
             "src/Idles/indexOf.php",
             "src/Idles/intersection.php",
             "src/Idles/invert.php",
+            "src/Idles/isEmpty.php",
+            "src/Idles/isNotEmpty.php",
             "src/Idles/iterate.php",
             "src/Idles/join.php",
             "src/Idles/just.php",

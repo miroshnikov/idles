@@ -7,7 +7,7 @@ namespace Idles;
  * 
  * @param string $target
  * @param string $s
- * @return bool
+ * @return \Closure|bool
  * 
  * @category String
  * 

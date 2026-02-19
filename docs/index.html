@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0" class="viewport">
-            <link rel='stylesheet' type='text/css' href='./assets/styles.7fe2d75d8f45237ac0f4.css'>
+            <link rel='stylesheet' type='text/css' href='./assets/styles.fb0ec5be3f646496ca41.css'>
         <title>PHP Functional Library</title>
     <meta name="description" content="A PHP functional utility library, port of JavaScript Lodash and Ramda with lazy (idle) evaluation">
     <meta name="yandex-verification" content="7063684c222008b0">
@@ -2297,7 +2297,7 @@ $greet('Alice'); // Hello, Alice!
             <pre><code class='language-php'>defaultTo($default, $value)</code></pre>
 
             <div>
-                <p>Returns the first argument if it is truthy, otherwise the second argument.</p>
+                <p>Returns <code>$value</code> if it is truthy, otherwise <code>$default</code>.</p>
             </div>
 
                                         <div>
@@ -2982,6 +2982,13 @@ $greet('Alice'); // Hello, Alice!
                                             </ul>
                 </div>
             
+                            <div>
+                    <h3>See also</h3>
+                    <ul>
+                                                    <li><a href='#gt'>gt</a>, </li>
+                                                    <li><a href='#lt'>lt</a></li>
+                                            </ul>
+                </div>
             
             <div class="links">
                 <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/eq.php.php" 
@@ -3044,7 +3051,7 @@ $greet('Alice'); // Hello, Alice!
                     <table>
                         <tr>
                             <td>
-                                <pre><code class='language-php example'>bool</code></pre> 
+                                <pre><code class='language-php example'>\Closure|bool</code></pre> 
                             </td>
                             <td> 
                                 <pre></pre>
@@ -4565,12 +4572,16 @@ $greet('Alice'); // Hello, Alice!
                 <p>$a &gt; $b</p>
             </div>
 
+                            <div>
+                    <h3>Template types</h3>
+                    <pre><code class='language-php'>T of mixed</code></pre>
+                </div>
                                         <div>
                     <h3>Parameters</h3>
                     <table>
                                                     <tr>
                                 <td>
-                                    <pre><code class='language-php'>\number</code></pre>
+                                    <pre><code class='language-php'>\T</code></pre>
                                 </td>
                                 <td>
                                     $a
@@ -4581,7 +4592,7 @@ $greet('Alice'); // Hello, Alice!
                             </tr>
                                                     <tr>
                                 <td>
-                                    <pre><code class='language-php'>\number</code></pre>
+                                    <pre><code class='language-php'>\T</code></pre>
                                 </td>
                                 <td>
                                     $b
@@ -4651,12 +4662,16 @@ $greet('Alice'); // Hello, Alice!
                 <p>$a &gt;= $b</p>
             </div>
 
+                            <div>
+                    <h3>Template types</h3>
+                    <pre><code class='language-php'>T of mixed</code></pre>
+                </div>
                                         <div>
                     <h3>Parameters</h3>
                     <table>
                                                     <tr>
                                 <td>
-                                    <pre><code class='language-php'>\number</code></pre>
+                                    <pre><code class='language-php'>\T</code></pre>
                                 </td>
                                 <td>
                                     $a
@@ -4667,7 +4682,7 @@ $greet('Alice'); // Hello, Alice!
                             </tr>
                                                     <tr>
                                 <td>
-                                    <pre><code class='language-php'>\number</code></pre>
+                                    <pre><code class='language-php'>\T</code></pre>
                                 </td>
                                 <td>
                                     $b
@@ -5982,6 +5997,130 @@ $greet('Alice'); // Hello, Alice!
             </div>
 
         </article>
+            <article id='isEmpty' data-category="Logic">
+            <header>
+                <h2>
+                    <a href="#isEmpty">
+                        isEmpty
+                    </a>
+                </h2>
+                <ul>
+                                                            <li>
+                        Logic
+                    </li>
+                </ul>
+            </header>
+
+            <pre><code class='language-php'>isEmpty($value)</code></pre>
+
+            <div>
+                <p>Returns result of <code>empty($value)</code>.</p>
+            </div>
+
+                                        <div>
+                    <h3>Parameters</h3>
+                    <table>
+                                                    <tr>
+                                <td>
+                                    <pre><code class='language-php'>mixed</code></pre>
+                                </td>
+                                <td>
+                                    $value
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                                            </table>
+                </div>
+            
+                            <div>
+                    <h3>Returns</h3>
+                    <table>
+                        <tr>
+                            <td>
+                                <pre><code class='language-php example'>bool</code></pre> 
+                            </td>
+                            <td> 
+                                <pre></pre>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            
+            
+            
+            
+            <div class="links">
+                <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/isEmpty.php.php" 
+                    title="View source on GitHub"
+                    class="code">
+                </a>
+            </div>
+
+        </article>
+            <article id='isNotEmpty' data-category="Logic">
+            <header>
+                <h2>
+                    <a href="#isNotEmpty">
+                        isNotEmpty
+                    </a>
+                </h2>
+                <ul>
+                                                            <li>
+                        Logic
+                    </li>
+                </ul>
+            </header>
+
+            <pre><code class='language-php'>isNotEmpty($value)</code></pre>
+
+            <div>
+                <p>Returns result of <code>!empty($value)</code>.</p>
+            </div>
+
+                                        <div>
+                    <h3>Parameters</h3>
+                    <table>
+                                                    <tr>
+                                <td>
+                                    <pre><code class='language-php'>mixed</code></pre>
+                                </td>
+                                <td>
+                                    $value
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                                            </table>
+                </div>
+            
+                            <div>
+                    <h3>Returns</h3>
+                    <table>
+                        <tr>
+                            <td>
+                                <pre><code class='language-php example'>bool</code></pre> 
+                            </td>
+                            <td> 
+                                <pre></pre>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            
+            
+            
+            
+            <div class="links">
+                <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/isNotEmpty.php.php" 
+                    title="View source on GitHub"
+                    class="code">
+                </a>
+            </div>
+
+        </article>
             <article id='iterate' data-category="Util">
             <header>
                 <h2>
@@ -6630,12 +6769,16 @@ $greet('Alice'); // Hello, Alice!
                 <p>$a &lt; $b</p>
             </div>
 
+                            <div>
+                    <h3>Template types</h3>
+                    <pre><code class='language-php'>T of mixed</code></pre>
+                </div>
                                         <div>
                     <h3>Parameters</h3>
                     <table>
                                                     <tr>
                                 <td>
-                                    <pre><code class='language-php'>\number</code></pre>
+                                    <pre><code class='language-php'>\T</code></pre>
                                 </td>
                                 <td>
                                     $a
@@ -6646,7 +6789,7 @@ $greet('Alice'); // Hello, Alice!
                             </tr>
                                                     <tr>
                                 <td>
-                                    <pre><code class='language-php'>\number</code></pre>
+                                    <pre><code class='language-php'>\T</code></pre>
                                 </td>
                                 <td>
                                     $b
@@ -6716,12 +6859,16 @@ $greet('Alice'); // Hello, Alice!
                 <p>$a &lt;= $b</p>
             </div>
 
+                            <div>
+                    <h3>Template types</h3>
+                    <pre><code class='language-php'>T of mixed</code></pre>
+                </div>
                                         <div>
                     <h3>Parameters</h3>
                     <table>
                                                     <tr>
                                 <td>
-                                    <pre><code class='language-php'>\number</code></pre>
+                                    <pre><code class='language-php'>\T</code></pre>
                                 </td>
                                 <td>
                                     $a
@@ -6732,7 +6879,7 @@ $greet('Alice'); // Hello, Alice!
                             </tr>
                                                     <tr>
                                 <td>
-                                    <pre><code class='language-php'>\number</code></pre>
+                                    <pre><code class='language-php'>\T</code></pre>
                                 </td>
                                 <td>
                                     $b
@@ -6805,12 +6952,16 @@ $greet('Alice'); // Hello, Alice!
                 <p>Run each element in <code>$collection</code> through <code>$iteratee</code>.</p>
             </div>
 
+                            <div>
+                    <h3>Template types</h3>
+                    <pre><code class='language-php'>T of mixed</code></pre>
+                </div>
                                         <div>
                     <h3>Parameters</h3>
                     <table>
                                                     <tr>
                                 <td>
-                                    <pre><code class='language-php'>callable</code></pre>
+                                    <pre><code class='language-php'>callable(\T $value, array-key $key, iterable&lt;array-key, \T&gt; $collection): \U</code></pre>
                                 </td>
                                 <td>
                                     $iteratee
@@ -6821,7 +6972,7 @@ $greet('Alice'); // Hello, Alice!
                             </tr>
                                                     <tr>
                                 <td>
-                                    <pre><code class='language-php'>?iterable&lt;array-key, mixed&gt;</code></pre>
+                                    <pre><code class='language-php'>?iterable&lt;array-key, \T&gt;</code></pre>
                                 </td>
                                 <td>
                                     $collection
@@ -6838,7 +6989,7 @@ $greet('Alice'); // Hello, Alice!
                     <table>
                         <tr>
                             <td>
-                                <pre><code class='language-php example'>iterable&lt;int, mixed&gt;</code></pre> 
+                                <pre><code class='language-php example'>\Closure|iterable&lt;\U&gt;</code></pre> 
                             </td>
                             <td> 
                                 <pre></pre>
@@ -11219,7 +11370,7 @@ $greet('Alice'); // Hello, Alice!
                     <table>
                         <tr>
                             <td>
-                                <pre><code class='language-php example'>bool</code></pre> 
+                                <pre><code class='language-php example'>\Closure|bool</code></pre> 
                             </td>
                             <td> 
                                 <pre></pre>
@@ -13901,7 +14052,7 @@ $greet('Alice'); // Hello, Alice!
 
         </main>
     </div>
-            <script src='./assets/app.7fe2d75d8f45237ac0f4.js' defer></script>
+            <script src='./assets/app.fb0ec5be3f646496ca41.js' defer></script>
         <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 </html>

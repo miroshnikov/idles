@@ -5,9 +5,11 @@ namespace Idles;
 /**
  * Run each element in `$collection` through `$iteratee`.
  * 
- * @param callable $iteratee
- * @param ?iterable<array-key,mixed> $collection
- * @return iterable<int,mixed>
+ * @template T
+ * @template U
+ * @param callable(T $value, array-key $key, iterable<array-key,T> $collection):U $iteratee
+ * @param ?iterable<array-key,T> $collection
+ * @return \Closure|iterable<U>
  * 
  * @example ```
  *   map(fn ($n) => $n * $n, [4, 8]); // [16, 64]
