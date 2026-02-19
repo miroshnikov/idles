@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0" class="viewport">
-            <link rel='stylesheet' type='text/css' href='./assets/styles.fb0ec5be3f646496ca41.css'>
+            <link rel='stylesheet' type='text/css' href='./assets/styles.a634472a84b521d41764.css'>
         <title>PHP Functional Library</title>
     <meta name="description" content="A PHP functional utility library, port of JavaScript Lodash and Ramda with lazy (idle) evaluation">
     <meta name="yandex-verification" content="7063684c222008b0">
@@ -1235,7 +1235,7 @@ $greet('Alice'); // Hello, Alice!
                 </ul>
             </header>
 
-            <pre><code class='language-php'>camelCase($s)</code></pre>
+            <pre><code class='language-php'>camelCase($string)</code></pre>
 
             <div>
                 <p>Converts string to camel case.</p>
@@ -1249,7 +1249,7 @@ $greet('Alice'); // Hello, Alice!
                                     <pre><code class='language-php'>string</code></pre>
                                 </td>
                                 <td>
-                                    $s
+                                    $string
                                 </td>
                                 <td>
                                     
@@ -3091,7 +3091,7 @@ $greet('Alice'); // Hello, Alice!
                 </ul>
             </header>
 
-            <pre><code class='language-php'>escapeRegExp($s)</code></pre>
+            <pre><code class='language-php'>escapeRegExp($string)</code></pre>
 
             <div>
                 <p>Escapes regular expression.</p>
@@ -3105,7 +3105,7 @@ $greet('Alice'); // Hello, Alice!
                                     <pre><code class='language-php'>string</code></pre>
                                 </td>
                                 <td>
-                                    $s
+                                    $string
                                 </td>
                                 <td>
                                     
@@ -8682,6 +8682,294 @@ $greet('Alice'); // Hello, Alice!
             </div>
 
         </article>
+            <article id='pad' data-category="String">
+            <header>
+                <h2>
+                    <a href="#pad">
+                        pad
+                    </a>
+                </h2>
+                <ul>
+                                                            <li>
+                        String
+                    </li>
+                </ul>
+            </header>
+
+            <pre><code class='language-php'>pad($padChars, $length, $string)</code></pre>
+
+            <div>
+                <p>Pad a string on the left and right sides to a certain length with padding characters.</p>
+            </div>
+
+                                        <div>
+                    <h3>Parameters</h3>
+                    <table>
+                                                    <tr>
+                                <td>
+                                    <pre><code class='language-php'>string</code></pre>
+                                </td>
+                                <td>
+                                    $padChars
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                                                    <tr>
+                                <td>
+                                    <pre><code class='language-php'>non-negative-int</code></pre>
+                                </td>
+                                <td>
+                                    $length
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                                                    <tr>
+                                <td>
+                                    <pre><code class='language-php'>string</code></pre>
+                                </td>
+                                <td>
+                                    $string
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                                            </table>
+                </div>
+            
+                            <div>
+                    <h3>Returns</h3>
+                    <table>
+                        <tr>
+                            <td>
+                                <pre><code class='language-php example'>\Closure|string</code></pre> 
+                            </td>
+                            <td> 
+                                <pre></pre>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            
+                            <div>
+                    <h3>Examples</h3>
+                    <pre><code class='language-php example line-numbers'> pad(&#039;_-&#039;, 8, &#039;abc&#039;); // _-abc_-_</code></pre>
+                    <span class='copy'></span>
+                </div>
+            
+            
+                            <div>
+                    <h3>See also</h3>
+                    <ul>
+                                                    <li><a href='#padStart'>padStart</a>, </li>
+                                                    <li><a href='#padEnd'>padEnd</a></li>
+                                            </ul>
+                </div>
+            
+            <div class="links">
+                <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/pad.php.php" 
+                    title="View source on GitHub"
+                    class="code">
+                </a>
+            </div>
+
+        </article>
+            <article id='padEnd' data-category="String">
+            <header>
+                <h2>
+                    <a href="#padEnd">
+                        padEnd
+                    </a>
+                </h2>
+                <ul>
+                                                            <li>
+                        String
+                    </li>
+                </ul>
+            </header>
+
+            <pre><code class='language-php'>padEnd($padChars, $length, $string)</code></pre>
+
+            <div>
+                <p>Pad a string on the right side to a certain length with padding characters.</p>
+            </div>
+
+                                        <div>
+                    <h3>Parameters</h3>
+                    <table>
+                                                    <tr>
+                                <td>
+                                    <pre><code class='language-php'>string</code></pre>
+                                </td>
+                                <td>
+                                    $padChars
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                                                    <tr>
+                                <td>
+                                    <pre><code class='language-php'>non-negative-int</code></pre>
+                                </td>
+                                <td>
+                                    $length
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                                                    <tr>
+                                <td>
+                                    <pre><code class='language-php'>string</code></pre>
+                                </td>
+                                <td>
+                                    $string
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                                            </table>
+                </div>
+            
+                            <div>
+                    <h3>Returns</h3>
+                    <table>
+                        <tr>
+                            <td>
+                                <pre><code class='language-php example'>\Closure|string</code></pre> 
+                            </td>
+                            <td> 
+                                <pre></pre>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            
+                            <div>
+                    <h3>Examples</h3>
+                    <pre><code class='language-php example line-numbers'> padEnd(&#039;_-&#039;, 6, &#039;abc&#039;); // abc_-_</code></pre>
+                    <span class='copy'></span>
+                </div>
+            
+            
+                            <div>
+                    <h3>See also</h3>
+                    <ul>
+                                                    <li><a href='#pad'>pad</a>, </li>
+                                                    <li><a href='#padStart'>padStart</a></li>
+                                            </ul>
+                </div>
+            
+            <div class="links">
+                <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/padEnd.php.php" 
+                    title="View source on GitHub"
+                    class="code">
+                </a>
+            </div>
+
+        </article>
+            <article id='padStart' data-category="String">
+            <header>
+                <h2>
+                    <a href="#padStart">
+                        padStart
+                    </a>
+                </h2>
+                <ul>
+                                                            <li>
+                        String
+                    </li>
+                </ul>
+            </header>
+
+            <pre><code class='language-php'>padStart($padChars, $length, $string)</code></pre>
+
+            <div>
+                <p>Pad a string on the left side to a certain length with padding characters.</p>
+            </div>
+
+                                        <div>
+                    <h3>Parameters</h3>
+                    <table>
+                                                    <tr>
+                                <td>
+                                    <pre><code class='language-php'>string</code></pre>
+                                </td>
+                                <td>
+                                    $padChars
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                                                    <tr>
+                                <td>
+                                    <pre><code class='language-php'>non-negative-int</code></pre>
+                                </td>
+                                <td>
+                                    $length
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                                                    <tr>
+                                <td>
+                                    <pre><code class='language-php'>string</code></pre>
+                                </td>
+                                <td>
+                                    $string
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                                            </table>
+                </div>
+            
+                            <div>
+                    <h3>Returns</h3>
+                    <table>
+                        <tr>
+                            <td>
+                                <pre><code class='language-php example'>\Closure|string</code></pre> 
+                            </td>
+                            <td> 
+                                <pre></pre>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            
+                            <div>
+                    <h3>Examples</h3>
+                    <pre><code class='language-php example line-numbers'> padStart(&#039;_-&#039;, 6, &#039;abc&#039;); // _-_abc</code></pre>
+                    <span class='copy'></span>
+                </div>
+            
+            
+                            <div>
+                    <h3>See also</h3>
+                    <ul>
+                                                    <li><a href='#pad'>pad</a>, </li>
+                                                    <li><a href='#padEnd'>padEnd</a></li>
+                                            </ul>
+                </div>
+            
+            <div class="links">
+                <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/padStart.php.php" 
+                    title="View source on GitHub"
+                    class="code">
+                </a>
+            </div>
+
+        </article>
             <article id='partial' data-category="Function">
             <header>
                 <h2>
@@ -10906,7 +11194,7 @@ $greet('Alice'); // Hello, Alice!
                 </ul>
             </header>
 
-            <pre><code class='language-php'>split($separator, $s)</code></pre>
+            <pre><code class='language-php'>split($separator, $string)</code></pre>
 
             <div>
                 <p>Splits string by <code>$separator</code> regular expression.</p>
@@ -10931,7 +11219,7 @@ $greet('Alice'); // Hello, Alice!
                                     <pre><code class='language-php'>string</code></pre>
                                 </td>
                                 <td>
-                                    $s
+                                    $string
                                 </td>
                                 <td>
                                     
@@ -11331,7 +11619,7 @@ $greet('Alice'); // Hello, Alice!
                 </ul>
             </header>
 
-            <pre><code class='language-php'>startsWith($target, $s)</code></pre>
+            <pre><code class='language-php'>startsWith($target, $string)</code></pre>
 
             <div>
                 <p>If string starts with <code>$target</code>.</p>
@@ -11356,7 +11644,7 @@ $greet('Alice'); // Hello, Alice!
                                     <pre><code class='language-php'>string</code></pre>
                                 </td>
                                 <td>
-                                    $s
+                                    $string
                                 </td>
                                 <td>
                                     
@@ -12037,7 +12325,7 @@ $greet('Alice'); // Hello, Alice!
                 </ul>
             </header>
 
-            <pre><code class='language-php'>toLower($s)</code></pre>
+            <pre><code class='language-php'>toLower($string)</code></pre>
 
             <div>
                 <p>Converts string to lower case.</p>
@@ -12051,7 +12339,7 @@ $greet('Alice'); // Hello, Alice!
                                     <pre><code class='language-php'>string</code></pre>
                                 </td>
                                 <td>
-                                    $s
+                                    $string
                                 </td>
                                 <td>
                                     
@@ -12178,7 +12466,7 @@ $greet('Alice'); // Hello, Alice!
                 </ul>
             </header>
 
-            <pre><code class='language-php'>toUpper($s)</code></pre>
+            <pre><code class='language-php'>toUpper($string)</code></pre>
 
             <div>
                 <p>Converts string to upper case.</p>
@@ -12192,7 +12480,7 @@ $greet('Alice'); // Hello, Alice!
                                     <pre><code class='language-php'>string</code></pre>
                                 </td>
                                 <td>
-                                    $s
+                                    $string
                                 </td>
                                 <td>
                                     
@@ -13716,10 +14004,10 @@ $greet('Alice'); // Hello, Alice!
                 </ul>
             </header>
 
-            <pre><code class='language-php'>words($pattern, $s)</code></pre>
+            <pre><code class='language-php'>words($pattern, $string)</code></pre>
 
             <div>
-                <p>Splits string into an array of its words.</p>
+                <p>Splits string into an array of words.</p>
             </div>
 
                                         <div>
@@ -13741,7 +14029,7 @@ $greet('Alice'); // Hello, Alice!
                                     <pre><code class='language-php'>string</code></pre>
                                 </td>
                                 <td>
-                                    $s
+                                    $string
                                 </td>
                                 <td>
                                     
@@ -14052,7 +14340,7 @@ $greet('Alice'); // Hello, Alice!
 
         </main>
     </div>
-            <script src='./assets/app.fb0ec5be3f646496ca41.js' defer></script>
+            <script src='./assets/app.a634472a84b521d41764.js' defer></script>
         <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 </html>

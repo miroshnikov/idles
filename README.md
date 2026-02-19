@@ -128,7 +128,7 @@ both($fn1, $fn2)
 ### [camelCase](https://idlephp.tech/#camelCase)
 
 ```php
-camelCase($s)
+camelCase($string)
 ```
 
 <p>Converts string to camel case.</p>
@@ -312,7 +312,7 @@ equals($a, $b)
 ### [escapeRegExp](https://idlephp.tech/#escapeRegExp)
 
 ```php
-escapeRegExp($s)
+escapeRegExp($string)
 ```
 
 <p>Escapes regular expression.</p>
@@ -896,6 +896,30 @@ orderBy($iteratees, $orders, $collection)
 
 <p>Like <code>sortBy</code> but allows specifying the sort orders.</p>
 
+### [pad](https://idlephp.tech/#pad)
+
+```php
+pad($padChars, $length, $string)
+```
+
+<p>Pad a string on the left and right sides to a certain length with padding characters.</p>
+
+### [padEnd](https://idlephp.tech/#padEnd)
+
+```php
+padEnd($padChars, $length, $string)
+```
+
+<p>Pad a string on the right side to a certain length with padding characters.</p>
+
+### [padStart](https://idlephp.tech/#padStart)
+
+```php
+padStart($padChars, $length, $string)
+```
+
+<p>Pad a string on the left side to a certain length with padding characters.</p>
+
 ### [partial](https://idlephp.tech/#partial)
 
 ```php
@@ -1091,7 +1115,7 @@ sortWith($comparators, $collection)
 ### [split](https://idlephp.tech/#split)
 
 ```php
-split($separator, $s)
+split($separator, $string)
 ```
 
 <p>Splits string by <code>$separator</code> regular expression.</p>
@@ -1131,7 +1155,7 @@ splitWhenever($predicate, $iterable)
 ### [startsWith](https://idlephp.tech/#startsWith)
 
 ```php
-startsWith($target, $s)
+startsWith($target, $string)
 ```
 
 <p>If string starts with <code>$target</code>.</p>
@@ -1203,7 +1227,7 @@ times($iteratee, $n)
 ### [toLower](https://idlephp.tech/#toLower)
 
 ```php
-toLower($s)
+toLower($string)
 ```
 
 <p>Converts string to lower case.</p>
@@ -1219,7 +1243,7 @@ toPairs($record)
 ### [toUpper](https://idlephp.tech/#toUpper)
 
 ```php
-toUpper($s)
+toUpper($string)
 ```
 
 <p>Converts string to upper case.</p>
@@ -1363,10 +1387,10 @@ without($values, $collection)
 ### [words](https://idlephp.tech/#words)
 
 ```php
-words($pattern, $s)
+words($pattern, $string)
 ```
 
-<p>Splits string into an array of its words.</p>
+<p>Splits string into an array of words.</p>
 
 ### [zip](https://idlephp.tech/#zip)
 
