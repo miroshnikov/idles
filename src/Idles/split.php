@@ -6,7 +6,7 @@ namespace Idles;
  * Splits string by `$separator` regular expression.
  * 
  * @param string $separator doesn't use /pattern/ delimiters
- * @param string $s
+ * @param string $string
  * @return string[]|false
  * 
  * @example ```
@@ -20,5 +20,7 @@ namespace Idles;
 function split(mixed ...$args)
 {
     static $arity = 2;
-    return curryN($arity, fn (string $separator, string $s) => \mb_split($separator, $s))(...$args);
+    return curryN($arity, 
+        fn (string $separator, string $string) => \mb_split($separator, $string)
+    )(...$args);
 }

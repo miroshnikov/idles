@@ -5,12 +5,12 @@ namespace Idles;
 /**
  * Converts string to lower case.
  * 
- * @param string $s
+ * @param string $string
  * @return string
  * 
  * @category String
  */
-function toLower(string $s): string
+function toLower(string $string): string
 {
-    return \mb_strtolower($s);
+    return \mb_strtolower($string);
 }

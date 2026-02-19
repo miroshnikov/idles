@@ -6,7 +6,7 @@ namespace Idles;
  * If string starts with `$target`.
  * 
  * @param string $target
- * @param string $s
+ * @param string $string
  * @return \Closure|bool
  * 
  * @category String
@@ -17,6 +17,6 @@ function startsWith(mixed ...$args)
 {
     static $arity = 2;
     return curryN($arity, 
-        fn (string $target, string $s): bool => \strncmp(\mb_substr($s, 0), $target, length($target)) === 0
+        fn (string $target, string $string) => \strncmp(\mb_substr($string, 0), $target, length($target)) === 0
     )(...$args);
 }

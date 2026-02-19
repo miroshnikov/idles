@@ -5,12 +5,12 @@ namespace Idles;
 /**
  * Converts string to upper case.
  * 
- * @param string $s
+ * @param string $string
  * @return string
  * 
  * @category String
  */
-function toUpper(string $s): string
+function toUpper(string $string): string
 {
-    return \mb_strtoupper($s);
+    return \mb_strtoupper($string);
 }

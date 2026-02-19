@@ -5,12 +5,12 @@ namespace Idles;
 /**
  * Escapes regular expression.
  * 
- * @param string $s
+ * @param string $string
  * @return string
  * 
  * @category String
  */
-function escapeRegExp(string $s): string
+function escapeRegExp(string $string): string
 {
-    return \preg_quote($s);
+    return \preg_quote($string);
 }

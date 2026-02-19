@@ -3,10 +3,10 @@
 namespace Idles;
 
 /**
- * Splits string into an array of its words.
+ * Splits string into an array of words.
  * 
  * @param string $pattern doesn't use /pattern/ delimiters
- * @param string $s
+ * @param string $string
  * @return array<string>
  * 
  * @example ```
@@ -20,7 +20,9 @@ namespace Idles;
 function words(mixed ...$args)
 {
     static $arity = 2;
-    return curryN($arity, fn (string $pattern, string $s) => _words($s, $pattern))(...$args);
+    return curryN($arity, 
+        fn (string $pattern, string $string) => _words($string, $pattern)
+    )(...$args);
 }
 
 

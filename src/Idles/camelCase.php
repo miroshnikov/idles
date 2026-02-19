@@ -5,7 +5,7 @@ namespace Idles;
 /**
  * Converts string to camel case.
  * 
- * @param string $s
+ * @param string $string
  * @return string
  * 
  * @example ```
