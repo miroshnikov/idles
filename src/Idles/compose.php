@@ -9,7 +9,7 @@ namespace Idles;
  * @return callable
  * 
  * @example ```
- *  compose('\strtoupper', fn ($s) => 'hello '.$s, '\trim')(' fred '); // 'HELLO FRED'
+ *  compose(\strtoupper(...), fn ($s) => 'hello '.$s, '\trim')(' fred '); // 'HELLO FRED'
  * ```
  * 
  * @category Function

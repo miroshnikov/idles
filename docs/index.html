@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0" class="viewport">
-            <link rel='stylesheet' type='text/css' href='./assets/styles.a634472a84b521d41764.css'>
+            <link rel='stylesheet' type='text/css' href='./assets/styles.e0a3d08bbe03b1bb3ab7.css'>
         <title>PHP Functional Library</title>
     <meta name="description" content="A PHP functional utility library, port of JavaScript Lodash and Ramda with lazy (idle) evaluation">
     <meta name="yandex-verification" content="7063684c222008b0">
@@ -1474,7 +1474,7 @@ $greet('Alice'); // Hello, Alice!
             
                             <div>
                     <h3>Examples</h3>
-                    <pre><code class='language-php example line-numbers'> compose(&#039;\strtoupper&#039;, fn ($s) =&gt; &#039;hello &#039;.$s, &#039;\trim&#039;)(&#039; fred &#039;); // &#039;HELLO FRED&#039;</code></pre>
+                    <pre><code class='language-php example line-numbers'> compose(\strtoupper(...), fn ($s) =&gt; &#039;hello &#039;.$s, &#039;\trim&#039;)(&#039; fred &#039;); // &#039;HELLO FRED&#039;</code></pre>
                     <span class='copy'></span>
                 </div>
             
@@ -6749,6 +6749,59 @@ $greet('Alice'); // Hello, Alice!
             </div>
 
         </article>
+            <article id='lowerFirst' data-category="String">
+            <header>
+                <h2>
+                    <a href="#lowerFirst">
+                        lowerFirst
+                    </a>
+                </h2>
+                <ul>
+                                                            <li>
+                        String
+                    </li>
+                </ul>
+            </header>
+
+            <pre><code class='language-php'>lowerFirst()</code></pre>
+
+            <div>
+                <p>Converts the first character of string to lower case.</p>
+            </div>
+
+                        
+                            <div>
+                    <h3>Returns</h3>
+                    <table>
+                        <tr>
+                            <td>
+                                <pre><code class='language-php example'>string</code></pre> 
+                            </td>
+                            <td> 
+                                <pre></pre>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            
+            
+            
+                            <div>
+                    <h3>See also</h3>
+                    <ul>
+                                                    <li><a href='#toLower'>toLower</a>, </li>
+                                                    <li><a href='#upperFirst'>upperFirst</a></li>
+                                            </ul>
+                </div>
+            
+            <div class="links">
+                <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/lowerFirst.php.php" 
+                    title="View source on GitHub"
+                    class="code">
+                </a>
+            </div>
+
+        </article>
             <article id='lt' data-category="Math">
             <header>
                 <h2>
@@ -11416,7 +11469,8 @@ $greet('Alice'); // Hello, Alice!
             
                             <div>
                     <h3>Examples</h3>
-                    <pre><code class='language-php example line-numbers'> splitEvery(3, [1, 2, 3, 4, 5, 6, 7]); // [[1, 2, 3], [4, 5, 6], [7]]</code></pre>
+                    <pre><code class='language-php example line-numbers'> splitEvery(3, [1, 2, 3, 4, 5, 6, 7]); // [[1, 2, 3], [4, 5, 6], [7]]
+ splitEvery(3, &#039;foobarbaz&#039;); // [&#039;foo&#039;, &#039;bar&#039;, &#039;baz&#039;]</code></pre>
                     <span class='copy'></span>
                 </div>
             
@@ -11971,6 +12025,79 @@ $greet('Alice'); // Hello, Alice!
             
             <div class="links">
                 <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/t.php.php" 
+                    title="View source on GitHub"
+                    class="code">
+                </a>
+            </div>
+
+        </article>
+            <article id='tail' data-category="Array">
+            <header>
+                <h2>
+                    <a href="#tail">
+                        tail
+                    </a>
+                </h2>
+                <ul>
+                                                            <li>
+                        Array
+                    </li>
+                </ul>
+            </header>
+
+            <pre><code class='language-php'>tail($collection)</code></pre>
+
+            <div>
+                <p>Returns all but the first element of the iterable or string</p>
+            </div>
+
+                            <div>
+                    <h3>Template types</h3>
+                    <pre><code class='language-php'>T of iterable&lt;mixed&gt;|string</code></pre>
+                </div>
+                                        <div>
+                    <h3>Parameters</h3>
+                    <table>
+                                                    <tr>
+                                <td>
+                                    <pre><code class='language-php'>\T|null</code></pre>
+                                </td>
+                                <td>
+                                    $collection
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                                            </table>
+                </div>
+            
+                            <div>
+                    <h3>Returns</h3>
+                    <table>
+                        <tr>
+                            <td>
+                                <pre><code class='language-php example'>\T</code></pre> 
+                            </td>
+                            <td> 
+                                <pre></pre>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            
+            
+            
+                            <div>
+                    <h3>See also</h3>
+                    <ul>
+                                                    <li><a href='#head'>head</a>, </li>
+                                                    <li><a href='#drop'>drop</a></li>
+                                            </ul>
+                </div>
+            
+            <div class="links">
+                <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/tail.php.php" 
                     title="View source on GitHub"
                     class="code">
                 </a>
@@ -13357,6 +13484,60 @@ $greet('Alice'); // Hello, Alice!
             </div>
 
         </article>
+            <article id='upperFirst' data-category="String">
+            <header>
+                <h2>
+                    <a href="#upperFirst">
+                        upperFirst
+                    </a>
+                </h2>
+                <ul>
+                                                            <li>
+                        String
+                    </li>
+                </ul>
+            </header>
+
+            <pre><code class='language-php'>upperFirst()</code></pre>
+
+            <div>
+                <p>Converts the first character of string to upper case.</p>
+            </div>
+
+                        
+                            <div>
+                    <h3>Returns</h3>
+                    <table>
+                        <tr>
+                            <td>
+                                <pre><code class='language-php example'>string</code></pre> 
+                            </td>
+                            <td> 
+                                <pre></pre>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            
+            
+            
+                            <div>
+                    <h3>See also</h3>
+                    <ul>
+                                                    <li><a href='#capitalize'>capitalize</a>, </li>
+                                                    <li><a href='#camelCase'>camelCase</a>, </li>
+                                                    <li><a href='#lowerFirst'>lowerFirst</a></li>
+                                            </ul>
+                </div>
+            
+            <div class="links">
+                <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/upperFirst.php.php" 
+                    title="View source on GitHub"
+                    class="code">
+                </a>
+            </div>
+
+        </article>
             <article id='useWith' data-category="Function">
             <header>
                 <h2>
@@ -14340,7 +14521,7 @@ $greet('Alice'); // Hello, Alice!
 
         </main>
     </div>
-            <script src='./assets/app.a634472a84b521d41764.js' defer></script>
+            <script src='./assets/app.e0a3d08bbe03b1bb3ab7.js' defer></script>
         <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 </html>

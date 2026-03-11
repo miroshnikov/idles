@@ -669,6 +669,14 @@ length($value)
 
 <p>Returns size of a countable, number of parameters of a function, lenght of string or number of properties of an object.</p>
 
+### [lowerFirst](https://idlephp.tech/#lowerFirst)
+
+```php
+lowerFirst()
+```
+
+<p>Converts the first character of string to lower case.</p>
+
 ### [lt](https://idlephp.tech/#lt)
 
 ```php
@@ -1192,6 +1200,14 @@ T(...$args)
 
 <p>Always returns <code>true</code></p>
 
+### [tail](https://idlephp.tech/#tail)
+
+```php
+tail($collection)
+```
+
+<p>Returns all but the first element of the iterable or string</p>
+
 ### [take](https://idlephp.tech/#take)
 
 ```php
@@ -1327,6 +1343,14 @@ unless($predicate, $whenFalse, $value)
 ```
 
 <p>Returns <code>$predicate($value) ? $value : $whenFalse($value)</code>.</p>
+
+### [upperFirst](https://idlephp.tech/#upperFirst)
+
+```php
+upperFirst()
+```
+
+<p>Converts the first character of string to upper case.</p>
 
 ### [useWith](https://idlephp.tech/#useWith)
 

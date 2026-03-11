@@ -48,12 +48,12 @@ function slice(mixed ...$args)
  */
 function _slice(iterable|null|string $collection, int $start = 0, ?int $end = null): iterable|string
 {
-    if (!$collection) {
-        return [];
-    }
-
     if (\is_string($collection)) {
         return \mb_substr($collection, $start, $end);
+    }
+
+    if (!$collection) {
+        return [];
     }
     
     if (($start < 0 || $end < 0) && !\is_array($collection)) {
