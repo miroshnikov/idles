@@ -125,6 +125,14 @@ both($fn1, $fn2)
 
 <p>Resulting function returns <code>$fn1(...$args)</code> if it is falsy or <code>$fn2(...$args)</code> otherwise, short-circuited.</p>
 
+### [c](https://idlephp.tech/#c)
+
+```php
+c($var)
+```
+
+<p>Returns variable if it can be called as a function or throws.</p>
+
 ### [camelCase](https://idlephp.tech/#camelCase)
 
 ```php
@@ -672,7 +680,7 @@ length($value)
 ### [lowerFirst](https://idlephp.tech/#lowerFirst)
 
 ```php
-lowerFirst()
+lowerFirst($string)
 ```
 
 <p>Converts the first character of string to lower case.</p>
@@ -1206,7 +1214,7 @@ T(...$args)
 tail($collection)
 ```
 
-<p>Returns all but the first element of the iterable or string</p>
+<p>Returns all but the first element of the iterable or string.</p>
 
 ### [take](https://idlephp.tech/#take)
 
@@ -1344,10 +1352,18 @@ unless($predicate, $whenFalse, $value)
 
 <p>Returns <code>$predicate($value) ? $value : $whenFalse($value)</code>.</p>
 
+### [update](https://idlephp.tech/#update)
+
+```php
+update($index, $value, $collection)
+```
+
+<p>Returns a new copy of the array with the element at the provided index replaced with the given value.</p>
+
 ### [upperFirst](https://idlephp.tech/#upperFirst)
 
 ```php
-upperFirst()
+upperFirst($string)
 ```
 
 <p>Converts the first character of string to upper case.</p>

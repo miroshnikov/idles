@@ -18,8 +18,7 @@ namespace Idles;
  * @category Record
  * 
  * @see setPath()
- * 
- * @alias update
+ * @see update()
  */
 function modifyPath(mixed ...$args)
 {

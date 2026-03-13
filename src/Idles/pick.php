@@ -33,7 +33,7 @@ function pick(mixed ...$args)
  * 
  * @param callable(mixed $value, array-key $key):bool $predicate
  * @param ?iterable<mixed> $collection
- * @return iterable<mixed>
+ * @return \Closure|iterable<mixed>
  * 
  * @example ```
  *   $isUpperCase = fn ($val, $key) => \strtoupper($key) == $key;

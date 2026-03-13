@@ -25,8 +25,7 @@ namespace Idles;
 function all(mixed ...$args)
 {
     static $arity = 2;
-    return curryN(
-        2,
+    return curryN($arity,
         fn (callable $predicate, ?iterable $collection) => _all($predicate, $collection)
     )(...$args);
 }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0" class="viewport">
-            <link rel='stylesheet' type='text/css' href='./assets/styles.e0a3d08bbe03b1bb3ab7.css'>
+            <link rel='stylesheet' type='text/css' href='./assets/styles.67e290975b93b7497e25.css'>
         <title>PHP Functional Library</title>
     <meta name="description" content="A PHP functional utility library, port of JavaScript Lodash and Ramda with lazy (idle) evaluation">
     <meta name="yandex-verification" content="7063684c222008b0">
@@ -1215,6 +1215,68 @@ $greet('Alice'); // Hello, Alice!
             
             <div class="links">
                 <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/both.php.php" 
+                    title="View source on GitHub"
+                    class="code">
+                </a>
+            </div>
+
+        </article>
+            <article id='c' data-category="">
+            <header>
+                <h2>
+                    <a href="#c">
+                        c
+                    </a>
+                </h2>
+                <ul>
+                                                            <li>
+                        
+                    </li>
+                </ul>
+            </header>
+
+            <pre><code class='language-php'>c($var)</code></pre>
+
+            <div>
+                <p>Returns variable if it can be called as a function or throws.</p>
+            </div>
+
+                                        <div>
+                    <h3>Parameters</h3>
+                    <table>
+                                                    <tr>
+                                <td>
+                                    <pre><code class='language-php'>mixed</code></pre>
+                                </td>
+                                <td>
+                                    $var
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                                            </table>
+                </div>
+            
+                            <div>
+                    <h3>Returns</h3>
+                    <table>
+                        <tr>
+                            <td>
+                                <pre><code class='language-php example'>callable</code></pre> 
+                            </td>
+                            <td> 
+                                <pre></pre>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            
+            
+            
+            
+            <div class="links">
+                <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/c.php.php" 
                     title="View source on GitHub"
                     class="code">
                 </a>
@@ -6763,13 +6825,29 @@ $greet('Alice'); // Hello, Alice!
                 </ul>
             </header>
 
-            <pre><code class='language-php'>lowerFirst()</code></pre>
+            <pre><code class='language-php'>lowerFirst($string)</code></pre>
 
             <div>
                 <p>Converts the first character of string to lower case.</p>
             </div>
 
-                        
+                                        <div>
+                    <h3>Parameters</h3>
+                    <table>
+                                                    <tr>
+                                <td>
+                                    <pre><code class='language-php'>string</code></pre>
+                                </td>
+                                <td>
+                                    $string
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                                            </table>
+                </div>
+            
                             <div>
                     <h3>Returns</h3>
                     <table>
@@ -7631,17 +7709,12 @@ $greet('Alice'); // Hello, Alice!
                     <span class='copy'></span>
                 </div>
             
-                            <div>
-                    <h3>Alias</h3>
-                    <ul>
-                                                    <li id="update">update</li>
-                                            </ul>
-                </div>
             
                             <div>
                     <h3>See also</h3>
                     <ul>
-                                                    <li><a href='#setPath'>setPath</a></li>
+                                                    <li><a href='#setPath'>setPath</a>, </li>
+                                                    <li><a href='#update'>update</a></li>
                                             </ul>
                 </div>
             
@@ -9720,7 +9793,7 @@ $greet('Alice'); // Hello, Alice!
                     <table>
                         <tr>
                             <td>
-                                <pre><code class='language-php example'>iterable&lt;mixed&gt;</code></pre> 
+                                <pre><code class='language-php example'>\Closure|iterable&lt;mixed&gt;</code></pre> 
                             </td>
                             <td> 
                                 <pre></pre>
@@ -12048,7 +12121,7 @@ $greet('Alice'); // Hello, Alice!
             <pre><code class='language-php'>tail($collection)</code></pre>
 
             <div>
-                <p>Returns all but the first element of the iterable or string</p>
+                <p>Returns all but the first element of the iterable or string.</p>
             </div>
 
                             <div>
@@ -13484,6 +13557,102 @@ $greet('Alice'); // Hello, Alice!
             </div>
 
         </article>
+            <article id='update' data-category="Array">
+            <header>
+                <h2>
+                    <a href="#update">
+                        update
+                    </a>
+                </h2>
+                <ul>
+                                                            <li>
+                        Array
+                    </li>
+                </ul>
+            </header>
+
+            <pre><code class='language-php'>update($index, $value, $collection)</code></pre>
+
+            <div>
+                <p>Returns a new copy of the array with the element at the provided index replaced with the given value.</p>
+            </div>
+
+                                        <div>
+                    <h3>Parameters</h3>
+                    <table>
+                                                    <tr>
+                                <td>
+                                    <pre><code class='language-php'>int</code></pre>
+                                </td>
+                                <td>
+                                    $index
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                                                    <tr>
+                                <td>
+                                    <pre><code class='language-php'>mixed</code></pre>
+                                </td>
+                                <td>
+                                    $value
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                                                    <tr>
+                                <td>
+                                    <pre><code class='language-php'>?iterable&lt;mixed&gt;</code></pre>
+                                </td>
+                                <td>
+                                    $collection
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                                            </table>
+                </div>
+            
+                            <div>
+                    <h3>Returns</h3>
+                    <table>
+                        <tr>
+                            <td>
+                                <pre><code class='language-php example'>\Closure|mixed[]</code></pre> 
+                            </td>
+                            <td> 
+                                <pre></pre>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            
+                            <div>
+                    <h3>Examples</h3>
+                    <pre><code class='language-php example line-numbers'> update(1, &#039;_&#039;, [&#039;a&#039;, &#039;b&#039;, &#039;c&#039;]); // [&#039;a&#039;, &#039;_&#039;, &#039;c&#039;]</code></pre>
+                    <span class='copy'></span>
+                </div>
+            
+            
+                            <div>
+                    <h3>See also</h3>
+                    <ul>
+                                                    <li><a href='#modifyPath'>modifyPath</a>, </li>
+                                                    <li><a href='#setPath'>setPath</a></li>
+                                            </ul>
+                </div>
+            
+            <div class="links">
+                <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/update.php.php" 
+                    title="View source on GitHub"
+                    class="code">
+                </a>
+            </div>
+
+        </article>
             <article id='upperFirst' data-category="String">
             <header>
                 <h2>
@@ -13498,13 +13667,29 @@ $greet('Alice'); // Hello, Alice!
                 </ul>
             </header>
 
-            <pre><code class='language-php'>upperFirst()</code></pre>
+            <pre><code class='language-php'>upperFirst($string)</code></pre>
 
             <div>
                 <p>Converts the first character of string to upper case.</p>
             </div>
 
-                        
+                                        <div>
+                    <h3>Parameters</h3>
+                    <table>
+                                                    <tr>
+                                <td>
+                                    <pre><code class='language-php'>string</code></pre>
+                                </td>
+                                <td>
+                                    $string
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                                            </table>
+                </div>
+            
                             <div>
                     <h3>Returns</h3>
                     <table>
@@ -14521,7 +14706,7 @@ $greet('Alice'); // Hello, Alice!
 
         </main>
     </div>
-            <script src='./assets/app.e0a3d08bbe03b1bb3ab7.js' defer></script>
+            <script src='./assets/app.67e290975b93b7497e25.js' defer></script>
         <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 </html>

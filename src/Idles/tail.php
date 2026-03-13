@@ -3,7 +3,7 @@
 namespace Idles;
 
 /**
- * Returns all but the first element of the iterable or string
+ * Returns all but the first element of the iterable or string.
  * 
  * @template T of iterable<mixed>|string
  * @param T|null $collection

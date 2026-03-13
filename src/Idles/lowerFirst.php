@@ -5,6 +5,7 @@ namespace Idles;
 /**
  * Converts the first character of string to lower case.
  * 
+ * @param string $string
  * @return string
  * 
  * @category String
