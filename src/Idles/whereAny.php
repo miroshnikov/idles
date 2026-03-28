@@ -7,7 +7,7 @@ namespace Idles;
  * 
  * @param array<string,callable(mixed):bool> $spec
  * @param ?iterable<string,mixed> $record
- * @return bool
+ * @return \Closure|bool
  * 
  * @example ```
  *  $objects = [
@@ -33,7 +33,7 @@ function whereAny(mixed ...$args)
         function (array $spec, ?iterable $record): bool {
             $record = collect($record);
             foreach ($spec as $prop => $f) {
-                if (\array_key_exists($prop, $record) && $f($record[$prop])) {
+                if ($f($record[$prop] ?? null)) {
                     return true;
                 }
             }

@@ -6,7 +6,7 @@ namespace Idles;
  * @internal 
  * @ignore
  */
-function toArray($value): array
+function toArray(mixed $value): array
 {
     if (\is_iterable($value)) {
         return collect($value);

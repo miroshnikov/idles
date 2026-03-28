@@ -7,7 +7,7 @@ namespace Idles;
  * 
  * @param array<string,mixed> $spec
  * @param ?iterable<string,mixed> $test
- * @return bool
+ * @return \Closure|bool
  * 
  * @example ```
  *  $pred = whereEq(['a' => 1, 'b' => 2]);
@@ -30,7 +30,12 @@ function whereEq(mixed ...$args)
     return curryN($arity, 
         function (array $spec, ?iterable $test): bool {
             $test = collect($test);
-            return \array_replace_recursive($test, $spec) === $test;
+            foreach ($spec as $prop => $v) {
+                if (($test[$prop] ?? null) !== $v) {
+                    return false;
+                }
+            }
+            return true;
         }
     )(...$args);
 }

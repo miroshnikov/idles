@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0" class="viewport">
-            <link rel='stylesheet' type='text/css' href='./assets/styles.67e290975b93b7497e25.css'>
+            <link rel='stylesheet' type='text/css' href='./assets/styles.634379fb7ddcc48dc18b.css'>
         <title>PHP Functional Library</title>
     <meta name="description" content="A PHP functional utility library, port of JavaScript Lodash and Ramda with lazy (idle) evaluation">
     <meta name="yandex-verification" content="7063684c222008b0">
@@ -1215,68 +1215,6 @@ $greet('Alice'); // Hello, Alice!
             
             <div class="links">
                 <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/both.php.php" 
-                    title="View source on GitHub"
-                    class="code">
-                </a>
-            </div>
-
-        </article>
-            <article id='c' data-category="">
-            <header>
-                <h2>
-                    <a href="#c">
-                        c
-                    </a>
-                </h2>
-                <ul>
-                                                            <li>
-                        
-                    </li>
-                </ul>
-            </header>
-
-            <pre><code class='language-php'>c($var)</code></pre>
-
-            <div>
-                <p>Returns variable if it can be called as a function or throws.</p>
-            </div>
-
-                                        <div>
-                    <h3>Parameters</h3>
-                    <table>
-                                                    <tr>
-                                <td>
-                                    <pre><code class='language-php'>mixed</code></pre>
-                                </td>
-                                <td>
-                                    $var
-                                </td>
-                                <td>
-                                    
-                                </td>
-                            </tr>
-                                            </table>
-                </div>
-            
-                            <div>
-                    <h3>Returns</h3>
-                    <table>
-                        <tr>
-                            <td>
-                                <pre><code class='language-php example'>callable</code></pre> 
-                            </td>
-                            <td> 
-                                <pre></pre>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            
-            
-            
-            
-            <div class="links">
-                <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/c.php.php" 
                     title="View source on GitHub"
                     class="code">
                 </a>
@@ -10238,7 +10176,7 @@ $greet('Alice'); // Hello, Alice!
                     <table>
                         <tr>
                             <td>
-                                <pre><code class='language-php example'>bool</code></pre> 
+                                <pre><code class='language-php example'>\Closure|bool</code></pre> 
                             </td>
                             <td> 
                                 <pre></pre>
@@ -10257,7 +10195,9 @@ $greet('Alice'); // Hello, Alice!
                             <div>
                     <h3>See also</h3>
                     <ul>
-                                                    <li><a href='#whereEq'>whereEq</a></li>
+                                                    <li><a href='#whereEq'>whereEq</a>, </li>
+                                                    <li><a href='#propSatisfies'>propSatisfies</a>, </li>
+                                                    <li><a href='#equals'>equals</a></li>
                                             </ul>
                 </div>
             
@@ -10353,6 +10293,102 @@ $greet('Alice'); // Hello, Alice!
             
             <div class="links">
                 <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/propOr.php.php" 
+                    title="View source on GitHub"
+                    class="code">
+                </a>
+            </div>
+
+        </article>
+            <article id='propSatisfies' data-category="Record">
+            <header>
+                <h2>
+                    <a href="#propSatisfies">
+                        propSatisfies
+                    </a>
+                </h2>
+                <ul>
+                                                            <li>
+                        Record
+                    </li>
+                </ul>
+            </header>
+
+            <pre><code class='language-php'>propSatisfies($predicate, $key, $record)</code></pre>
+
+            <div>
+                <p>Returns <code>$predicate($record[$key])</code></p>
+            </div>
+
+                                        <div>
+                    <h3>Parameters</h3>
+                    <table>
+                                                    <tr>
+                                <td>
+                                    <pre><code class='language-php'>callable(mixed): bool</code></pre>
+                                </td>
+                                <td>
+                                    $predicate
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                                                    <tr>
+                                <td>
+                                    <pre><code class='language-php'>array-key</code></pre>
+                                </td>
+                                <td>
+                                    $key
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                                                    <tr>
+                                <td>
+                                    <pre><code class='language-php'>?iterable&lt;mixed&gt;</code></pre>
+                                </td>
+                                <td>
+                                    $record
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                                            </table>
+                </div>
+            
+                            <div>
+                    <h3>Returns</h3>
+                    <table>
+                        <tr>
+                            <td>
+                                <pre><code class='language-php example'>\Closure|bool</code></pre> 
+                            </td>
+                            <td> 
+                                <pre></pre>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            
+                            <div>
+                    <h3>Examples</h3>
+                    <pre><code class='language-php example line-numbers'>  propSatisfies(fn ($x) =&gt; $x &gt; 0, &#039;x&#039;, [&#039;x&#039; =&gt; 1, &#039;y&#039; =&gt; 2]); // true</code></pre>
+                    <span class='copy'></span>
+                </div>
+            
+            
+                            <div>
+                    <h3>See also</h3>
+                    <ul>
+                                                    <li><a href='#propEq'>propEq</a>, </li>
+                                                    <li><a href='#whereEq'>whereEq</a></li>
+                                            </ul>
+                </div>
+            
+            <div class="links">
+                <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/propSatisfies.php.php" 
                     title="View source on GitHub"
                     class="code">
                 </a>
@@ -14039,7 +14075,7 @@ $greet('Alice'); // Hello, Alice!
                     <table>
                         <tr>
                             <td>
-                                <pre><code class='language-php example'>bool</code></pre> 
+                                <pre><code class='language-php example'>\Closure|bool</code></pre> 
                             </td>
                             <td> 
                                 <pre></pre>
@@ -14131,7 +14167,7 @@ $greet('Alice'); // Hello, Alice!
                     <table>
                         <tr>
                             <td>
-                                <pre><code class='language-php example'>bool</code></pre> 
+                                <pre><code class='language-php example'>\Closure|bool</code></pre> 
                             </td>
                             <td> 
                                 <pre></pre>
@@ -14224,7 +14260,7 @@ $greet('Alice'); // Hello, Alice!
                     <table>
                         <tr>
                             <td>
-                                <pre><code class='language-php example'>bool</code></pre> 
+                                <pre><code class='language-php example'>\Closure|bool</code></pre> 
                             </td>
                             <td> 
                                 <pre></pre>
@@ -14706,7 +14742,7 @@ $greet('Alice'); // Hello, Alice!
 
         </main>
     </div>
-            <script src='./assets/app.67e290975b93b7497e25.js' defer></script>
+            <script src='./assets/app.634379fb7ddcc48dc18b.js' defer></script>
         <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 </html>

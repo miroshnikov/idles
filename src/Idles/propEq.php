@@ -8,7 +8,7 @@ namespace Idles;
  * @param array-key $key
  * @param mixed $value
  * @param ?iterable<mixed> $record
- * @return bool
+ * @return \Closure|bool
  * 
  * @example ```
  *   propEq('a', 'A', ['a' => 'A']); // true
@@ -17,6 +17,8 @@ namespace Idles;
  * @category Record
  * 
  * @see whereEq()
+ * @see propSatisfies()
+ * @see equals()
  */
 function propEq(mixed ...$args)
 {

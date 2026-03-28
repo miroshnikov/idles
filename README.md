@@ -125,14 +125,6 @@ both($fn1, $fn2)
 
 <p>Resulting function returns <code>$fn1(...$args)</code> if it is falsy or <code>$fn2(...$args)</code> otherwise, short-circuited.</p>
 
-### [c](https://idlephp.tech/#c)
-
-```php
-c($var)
-```
-
-<p>Returns variable if it can be called as a function or throws.</p>
-
 ### [camelCase](https://idlephp.tech/#camelCase)
 
 ```php
@@ -1047,6 +1039,14 @@ propOr($default, $key, $record)
 ```
 
 <p>Return the $key property or <code>$default</code>.</p>
+
+### [propSatisfies](https://idlephp.tech/#propSatisfies)
+
+```php
+propSatisfies($predicate, $key, $record)
+```
+
+<p>Returns <code>$predicate($record[$key])</code></p>
 
 ### [rearg](https://idlephp.tech/#rearg)
 
