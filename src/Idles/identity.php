@@ -5,7 +5,7 @@ namespace Idles;
 /**
  * Returns the first argument it receives.
  * 
- * @template T of iterable<mixed>|string
+ * @template T of mixed
  * @param T $value
  * @return T
  * 

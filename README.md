@@ -637,6 +637,14 @@ juxt($iteratees)
 
 <p>Applies a list of functions to a list of values.</p>
 
+### [kebabCase](https://idlephp.tech/#kebabCase)
+
+```php
+kebabCase($string)
+```
+
+<p>Converts <code>string</code> to kebab case.</p>
+
 ### [keys](https://idlephp.tech/#keys)
 
 ```php
@@ -1072,6 +1080,14 @@ remove($start, $count, $iterable)
 
 <p>Removes items from <code>$iterable</code> starting at $start and containing <code>$count</code> elements.</p>
 
+### [replace](https://idlephp.tech/#replace)
+
+```php
+replace($pattern, $replacement, $string)
+```
+
+<p>Replace a regex match in a string with a replacement.</p>
+
 ### [resolve](https://idlephp.tech/#resolve)
 
 ```php
@@ -1103,6 +1119,14 @@ slice($start, $end, $collection)
 ```
 
 <p>Returns a slice of iterable or string from <code>$start</code> up to, but not including <code>$end</code>.</p>
+
+### [snakeCase](https://idlephp.tech/#snakeCase)
+
+```php
+snakeCase($string)
+```
+
+<p>Converts <code>string</code> to snake case.</p>
 
 ### [sort](https://idlephp.tech/#sort)
 

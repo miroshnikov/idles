@@ -16,7 +16,7 @@ namespace Idles;
  *      [ 'user' => 'fred',   'age' => 40 ],
  *      [ 'user' => 'barney', 'age' => 34 ]
  *  ];
- *  sortBy([property('user'), property('age')], $users);
+ *  sortBy([prop('user'), prop('age')], $users);
  *  // [
  *  //     [ 'user' => 'barney', 'age' => 34 ],
  *  //     [ 'user' => 'barney', 'age' => 36 ],
