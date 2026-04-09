@@ -709,6 +709,14 @@ map($iteratee, $collection)
 
 <p>Run each element in <code>$collection</code> through <code>$iteratee</code>.</p>
 
+### [mapKeys](https://idlephp.tech/#mapKeys)
+
+```php
+mapKeys($iteratee, $collection)
+```
+
+<p>Transforms an object by converting the keys to new values.</p>
+
 ### [memoize](https://idlephp.tech/#memoize)
 
 ```php
@@ -1064,6 +1072,14 @@ rearg($indexes, $fn)
 
 <p>Returns a curried function that invokes <code>$fn</code> with arguments rearranged according to <code>$indexes</code>.</p>
 
+### [rebuild](https://idlephp.tech/#rebuild)
+
+```php
+rebuild($convert, $collection)
+```
+
+<p>Transforms an object into a new one, applying to every key-value pair a function creating zero, one, or many new key-value pairs, and combining the results into a single object.</p>
+
 ### [reduce](https://idlephp.tech/#reduce)
 
 ```php
@@ -1079,6 +1095,14 @@ remove($start, $count, $iterable)
 ```
 
 <p>Removes items from <code>$iterable</code> starting at $start and containing <code>$count</code> elements.</p>
+
+### [renameKeys](https://idlephp.tech/#renameKeys)
+
+```php
+renameKeys($mapping, $collection)
+```
+
+<p>Converts an object to a new one by changing all keys that are also found as keys in a mapping object to their corresponding values from that object.</p>
 
 ### [replace](https://idlephp.tech/#replace)
 

@@ -18,6 +18,7 @@ namespace Idles;
  * @category Record
  * 
  * @see renameKeys()
+ * @see rebuild()
  * @see map()
  */
 function mapKeys(mixed ...$args)
