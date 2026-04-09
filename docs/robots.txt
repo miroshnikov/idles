@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://idlephp.tech/sitemap.xml
