@@ -37,6 +37,7 @@
             "src/Idles/ascend.php",
             "src/Idles/attempt.php",
             "src/Idles/both.php",
+            "src/Idles/call.php",
             "src/Idles/camelcase.php",
             "src/Idles/capitalize.php",
             "src/Idles/collect.php",

@@ -22,8 +22,7 @@ namespace Idles;
 function both(mixed ...$args)
 {
     static $arity = 2;
-    return curryN(
-        2,
+    return curryN($arity,
         fn (callable $fn1, callable $fn2) => function (...$args) use ($fn1, $fn2) { 
             $res1 = $fn1(...$args);
             return $res1 ? $fn2(...$args) : $res1;

@@ -3,7 +3,7 @@
 namespace Idles;
 
 /**
- * Calls $fn(...$args)
+ * Calls $fn(...$args).
  *
  * @param callable(mixed...):mixed $fn
  * @param ?iterable<mixed> $args

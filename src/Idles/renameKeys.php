@@ -6,8 +6,8 @@ namespace Idles;
  * Converts an object to a new one by changing all keys that are also found as keys in a mapping object to their corresponding values from that object.
  * 
  * @param array<array-key,array-key> $mapping
- * @param ?iterable<array-key,T> $collection
- * @return \Closure|iterable<U>
+ * @param ?iterable<array-key,mixed> $collection
+ * @return \Closure|iterable<array-key,mixed>
  * 
  * @example ```
  *  $mapping = ['name' => 'firstName', 'address' => 'street'];

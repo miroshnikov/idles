@@ -83,7 +83,7 @@ anyPass($predicates)
 apply($fn, $args)
 ```
 
-<p>Calls $fn(...$args)</p>
+<p>Calls $fn(...$args).</p>
 
 ### [applyTo](https://idlephp.tech/#applyTo)
 
@@ -124,6 +124,14 @@ both($fn1, $fn2)
 ```
 
 <p>Resulting function returns <code>$fn1(...$args)</code> if it is falsy or <code>$fn2(...$args)</code> otherwise, short-circuited.</p>
+
+### [call](https://idlephp.tech/#call)
+
+```php
+call($fn, ...$args)
+```
+
+<p>Calls $fn(...$args).</p>
 
 ### [camelCase](https://idlephp.tech/#camelCase)
 

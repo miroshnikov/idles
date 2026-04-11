@@ -11,7 +11,7 @@ namespace Idles;
  * 
  * @category Util
  */
-function collect(?iterable $collection): array
+function collect(mixed $collection): array
 {
     $collection ??= [];
     if (\is_array($collection)) {

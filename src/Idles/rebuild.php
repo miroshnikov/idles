@@ -7,7 +7,7 @@ namespace Idles;
  * 
  * @param callable(array-key $key, mixed $value): array<array{array-key, mixed}> $convert
  * @param ?iterable $collection
- * @return \Closure|iterable<mixed>
+ * @return \Closure|iterable<array-key,mixed>
  * 
  * @example ```
  *  rebuild(

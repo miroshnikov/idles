@@ -8,8 +8,8 @@ namespace Idles;
  * @template T of array-key
  * @template U of array-key
  * @param callable(T $key):U $iteratee
- * @param ?iterable<array-key,T> $collection
- * @return \Closure|iterable<U>
+ * @param ?iterable<T,mixed> $collection
+ * @return \Closure|iterable<U,mixed>
  * 
  * @example ```
  *   mapKeys(toUpper(...), ['foo' => 1, 'bar' => 2]); // ['FOO' => 1, 'BAR' => 2]

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0" class="viewport">
-            <link rel='stylesheet' type='text/css' href='./assets/styles.28563057db3258689a63.css'>
+            <link rel='stylesheet' type='text/css' href='./assets/styles.28f1c8a856c43b28b0b2.css'>
         <title>PHP Functional Library</title>
     <meta name="description" content="A PHP functional utility library, port of JavaScript Lodash and Ramda with lazy (idle) evaluation">
     <meta name="yandex-verification" content="7063684c222008b0">
@@ -698,7 +698,7 @@ $greet('Alice'); // Hello, Alice!
             <pre><code class='language-php'>apply($fn, $args)</code></pre>
 
             <div>
-                <p>Calls $fn(...$args)</p>
+                <p>Calls $fn(...$args).</p>
             </div>
 
                                         <div>
@@ -1215,6 +1215,94 @@ $greet('Alice'); // Hello, Alice!
             
             <div class="links">
                 <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/both.php.php" 
+                    title="View source on GitHub"
+                    class="code">
+                </a>
+            </div>
+
+        </article>
+            <article id='call' data-category="Function">
+            <header>
+                <h2>
+                    <a href="#call">
+                        call
+                    </a>
+                </h2>
+                <ul>
+                                                            <li>
+                        Function
+                    </li>
+                </ul>
+            </header>
+
+            <pre><code class='language-php'>call($fn, ...$args)</code></pre>
+
+            <div>
+                <p>Calls $fn(...$args).</p>
+            </div>
+
+                            <div>
+                    <h3>Template types</h3>
+                    <pre><code class='language-php'>T of mixed</code></pre>
+                </div>
+                                        <div>
+                    <h3>Parameters</h3>
+                    <table>
+                                                    <tr>
+                                <td>
+                                    <pre><code class='language-php'>callable(mixed ...): \T</code></pre>
+                                </td>
+                                <td>
+                                    $fn
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                                                    <tr>
+                                <td>
+                                    <pre><code class='language-php'>mixed</code></pre>
+                                </td>
+                                <td>
+                                    ...$args
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                                            </table>
+                </div>
+            
+                            <div>
+                    <h3>Returns</h3>
+                    <table>
+                        <tr>
+                            <td>
+                                <pre><code class='language-php example'>\Closure|\T</code></pre> 
+                            </td>
+                            <td> 
+                                <pre></pre>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            
+                            <div>
+                    <h3>Examples</h3>
+                    <pre><code class='language-php example line-numbers'> call(add(...))(1, 2); // 3</code></pre>
+                    <span class='copy'></span>
+                </div>
+            
+            
+                            <div>
+                    <h3>See also</h3>
+                    <ul>
+                                                    <li><a href='#apply'>apply</a></li>
+                                            </ul>
+                </div>
+            
+            <div class="links">
+                <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/call.php.php" 
                     title="View source on GitHub"
                     class="code">
                 </a>
@@ -7202,7 +7290,7 @@ $greet('Alice'); // Hello, Alice!
                             </tr>
                                                     <tr>
                                 <td>
-                                    <pre><code class='language-php'>?iterable&lt;array-key, \T&gt;</code></pre>
+                                    <pre><code class='language-php'>?iterable&lt;\T, mixed&gt;</code></pre>
                                 </td>
                                 <td>
                                     $collection
@@ -7219,7 +7307,7 @@ $greet('Alice'); // Hello, Alice!
                     <table>
                         <tr>
                             <td>
-                                <pre><code class='language-php example'>\Closure|iterable&lt;\U&gt;</code></pre> 
+                                <pre><code class='language-php example'>\Closure|iterable&lt;\U, mixed&gt;</code></pre> 
                             </td>
                             <td> 
                                 <pre></pre>
@@ -10694,7 +10782,7 @@ $greet('Alice'); // Hello, Alice!
                     <table>
                         <tr>
                             <td>
-                                <pre><code class='language-php example'>\Closure|iterable&lt;mixed&gt;</code></pre> 
+                                <pre><code class='language-php example'>\Closure|iterable&lt;array-key, mixed&gt;</code></pre> 
                             </td>
                             <td> 
                                 <pre></pre>
@@ -10956,7 +11044,7 @@ $greet('Alice'); // Hello, Alice!
                             </tr>
                                                     <tr>
                                 <td>
-                                    <pre><code class='language-php'>?iterable&lt;array-key, \T&gt;</code></pre>
+                                    <pre><code class='language-php'>?iterable&lt;array-key, mixed&gt;</code></pre>
                                 </td>
                                 <td>
                                     $collection
@@ -10973,7 +11061,7 @@ $greet('Alice'); // Hello, Alice!
                     <table>
                         <tr>
                             <td>
-                                <pre><code class='language-php example'>\Closure|iterable&lt;\U&gt;</code></pre> 
+                                <pre><code class='language-php example'>\Closure|iterable&lt;array-key, mixed&gt;</code></pre> 
                             </td>
                             <td> 
                                 <pre></pre>
@@ -15232,7 +15320,7 @@ $greet('Alice'); // Hello, Alice!
 
         </main>
     </div>
-            <script src='./assets/app.28563057db3258689a63.js' defer></script>
+            <script src='./assets/app.28f1c8a856c43b28b0b2.js' defer></script>
         <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 </html>
