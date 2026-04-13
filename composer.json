@@ -44,6 +44,7 @@
             "src/Idles/compose.php",
             "src/Idles/concat.php",
             "src/Idles/cond.php",
+            "src/Idles/converge.php",
             "src/Idles/count.php",
             "src/Idles/countby.php",
             "src/Idles/curry.php",

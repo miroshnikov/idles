@@ -3,7 +3,7 @@
 namespace Idles;
 
 /**
- * Checks if `$record` has `$key`.
+ * Checks if `$record` has `$key` by calling `array_key_exists()`.
  * 
  * @param array-key $key
  * @param ?iterable<mixed> $record

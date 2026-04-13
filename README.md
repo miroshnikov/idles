@@ -168,7 +168,7 @@ compose(...$fns)
 ### [concat](https://idlephp.tech/#concat)
 
 ```php
-concat($iterable, $value)
+concat($first, $second)
 ```
 
 <p>Concatinates an iterable with an iterable/value.</p>
@@ -188,6 +188,14 @@ cond($pairs)
 ```
 
 <p>Iterates over <code>$pairs</code> and invokes the corresponding function of the first predicate to return truthy.</p>
+
+### [converge](https://idlephp.tech/#converge)
+
+```php
+converge($afterFn, $functions)
+```
+
+<p>Resulting function will call each function with input arguments and pass results to <code>$afterFn</code>.</p>
 
 ### [count](https://idlephp.tech/#count)
 
@@ -483,7 +491,7 @@ gte($a, $b)
 has($key, $record)
 ```
 
-<p>Checks if <code>$record</code> has <code>$key</code>.</p>
+<p>Checks if <code>$record</code> has <code>$key</code> by calling <code>array_key_exists()</code>.</p>
 
 ### [hasPath](https://idlephp.tech/#hasPath)
 

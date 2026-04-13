@@ -5,9 +5,9 @@ namespace Idles;
 /**
  * Concatinates an iterable with an iterable/value.
  * 
- * @param iterable<mixed> $iterable
- * @param iterable<mixed>|mixed $value
- * @return iterable<mixed> Numerically indexed concatenated iterable
+ * @param iterable<mixed>|string $first
+ * @param iterable<mixed>|string $second
+ * @return iterable<mixed> Numerically indexed concatenated iterable or string
  * 
  * @example ```
  *   concat(['a','b'], ['c', 'd']); // ['a', 'b', 'c', 'd']
@@ -25,7 +25,7 @@ function concat(mixed ...$args)
 {
     static $arity = 2;
     return curryN($arity, 
-        fn (?iterable $iterable, $value): iterable => concatAll([$iterable, $value])
+        fn ($first, $second) => concatAll([$first, $second])
     )(...$args);
 }
 
@@ -45,12 +45,17 @@ function concatAll(array $values)
     if (empty($values)) {
         return [];
     }
+
+    if (\is_string($values[0])) {
+        return \array_reduce($values, fn ($res, $s) => $res.$s, '');
+    }
+
     $array = \array_shift($values);
     $array = \is_iterable($array) ? $array : [$array];
     if (\is_array($array)) {
         return \array_merge(
             collect(values($array)), 
-            ...map(fn ($v) => values(collect(\is_iterable($v) ? $v : [$v])), $values)
+            ...(array) map(fn ($v) => values(collect(\is_iterable($v) ? $v : [$v])), $values)
         );
     }
 

@@ -5,9 +5,9 @@ namespace Idles;
 /**
  * Checks if `$predicate` returns truthy for __any__ element of `$collection`. Stops on first found.
  * 
- * @param callable(mixed $value, mixed $key):bool  $predicate
- * @param ?iterable $collection
- * @return bool
+ * @param callable(mixed $value, array-key $key):bool  $predicate
+ * @param ?iterable<array-key,mixed> $collection
+ * @return \Closure|bool
  * 
  * @example ```
  *   $users = [

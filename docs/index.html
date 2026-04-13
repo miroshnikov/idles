@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0" class="viewport">
-            <link rel='stylesheet' type='text/css' href='./assets/styles.28f1c8a856c43b28b0b2.css'>
+            <link rel='stylesheet' type='text/css' href='./assets/styles.4167322239627b816b06.css'>
         <title>PHP Functional Library</title>
     <meta name="description" content="A PHP functional utility library, port of JavaScript Lodash and Ramda with lazy (idle) evaluation">
     <meta name="yandex-verification" content="7063684c222008b0">
@@ -529,7 +529,7 @@ $greet('Alice'); // Hello, Alice!
                     <table>
                                                     <tr>
                                 <td>
-                                    <pre><code class='language-php'>callable(mixed $value, mixed $key): bool</code></pre>
+                                    <pre><code class='language-php'>callable(mixed $value, array-key $key): bool</code></pre>
                                 </td>
                                 <td>
                                     $predicate
@@ -540,7 +540,7 @@ $greet('Alice'); // Hello, Alice!
                             </tr>
                                                     <tr>
                                 <td>
-                                    <pre><code class='language-php'>?iterable</code></pre>
+                                    <pre><code class='language-php'>?iterable&lt;array-key, mixed&gt;</code></pre>
                                 </td>
                                 <td>
                                     $collection
@@ -557,7 +557,7 @@ $greet('Alice'); // Hello, Alice!
                     <table>
                         <tr>
                             <td>
-                                <pre><code class='language-php example'>bool</code></pre> 
+                                <pre><code class='language-php example'>\Closure|bool</code></pre> 
                             </td>
                             <td> 
                                 <pre></pre>
@@ -1608,7 +1608,7 @@ $greet('Alice'); // Hello, Alice!
                 </ul>
             </header>
 
-            <pre><code class='language-php'>concat($iterable, $value)</code></pre>
+            <pre><code class='language-php'>concat($first, $second)</code></pre>
 
             <div>
                 <p>Concatinates an iterable with an iterable/value.</p>
@@ -1619,10 +1619,10 @@ $greet('Alice'); // Hello, Alice!
                     <table>
                                                     <tr>
                                 <td>
-                                    <pre><code class='language-php'>iterable&lt;mixed&gt;</code></pre>
+                                    <pre><code class='language-php'>iterable&lt;mixed&gt;|string</code></pre>
                                 </td>
                                 <td>
-                                    $iterable
+                                    $first
                                 </td>
                                 <td>
                                     
@@ -1630,10 +1630,10 @@ $greet('Alice'); // Hello, Alice!
                             </tr>
                                                     <tr>
                                 <td>
-                                    <pre><code class='language-php'>iterable&lt;mixed&gt;|mixed</code></pre>
+                                    <pre><code class='language-php'>iterable&lt;mixed&gt;|string</code></pre>
                                 </td>
                                 <td>
-                                    $value
+                                    $second
                                 </td>
                                 <td>
                                     
@@ -1650,7 +1650,7 @@ $greet('Alice'); // Hello, Alice!
                                 <pre><code class='language-php example'>iterable&lt;mixed&gt;</code></pre> 
                             </td>
                             <td> 
-                                <pre>Numerically indexed concatenated iterable</pre>
+                                <pre>Numerically indexed concatenated iterable or string</pre>
                             </td>
                         </tr>
                     </table>
@@ -1821,6 +1821,91 @@ $greet('Alice'); // Hello, Alice!
             
             <div class="links">
                 <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/cond.php.php" 
+                    title="View source on GitHub"
+                    class="code">
+                </a>
+            </div>
+
+        </article>
+            <article id='converge' data-category="Function">
+            <header>
+                <h2>
+                    <a href="#converge">
+                        converge
+                    </a>
+                </h2>
+                <ul>
+                                                            <li>
+                        Function
+                    </li>
+                </ul>
+            </header>
+
+            <pre><code class='language-php'>converge($afterFn, $functions)</code></pre>
+
+            <div>
+                <p>Resulting function will call each function with input arguments and pass results to <code>$afterFn</code>.</p>
+            </div>
+
+                                        <div>
+                    <h3>Parameters</h3>
+                    <table>
+                                                    <tr>
+                                <td>
+                                    <pre><code class='language-php'>callable</code></pre>
+                                </td>
+                                <td>
+                                    $afterFn
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                                                    <tr>
+                                <td>
+                                    <pre><code class='language-php'>non-empty-list&lt;callable&gt;</code></pre>
+                                </td>
+                                <td>
+                                    $functions
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                                            </table>
+                </div>
+            
+                            <div>
+                    <h3>Returns</h3>
+                    <table>
+                        <tr>
+                            <td>
+                                <pre><code class='language-php example'>\Closure</code></pre> 
+                            </td>
+                            <td> 
+                                <pre></pre>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            
+                            <div>
+                    <h3>Examples</h3>
+                    <pre><code class='language-php example line-numbers'> $average = converge(divide(...), [sum(...), length(...)]);
+ $average([1, 2, 3, 4, 5, 6, 7]); // 4</code></pre>
+                    <span class='copy'></span>
+                </div>
+            
+            
+                            <div>
+                    <h3>See also</h3>
+                    <ul>
+                                                    <li><a href='#useWith'>useWith</a></li>
+                                            </ul>
+                </div>
+            
+            <div class="links">
+                <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/converge.php.php" 
                     title="View source on GitHub"
                     class="code">
                 </a>
@@ -4837,7 +4922,7 @@ $greet('Alice'); // Hello, Alice!
             <pre><code class='language-php'>has($key, $record)</code></pre>
 
             <div>
-                <p>Checks if <code>$record</code> has <code>$key</code>.</p>
+                <p>Checks if <code>$record</code> has <code>$key</code> by calling <code>array_key_exists()</code>.</p>
             </div>
 
                                         <div>
@@ -15320,7 +15405,7 @@ $greet('Alice'); // Hello, Alice!
 
         </main>
     </div>
-            <script src='./assets/app.28f1c8a856c43b28b0b2.js' defer></script>
+            <script src='./assets/app.4167322239627b816b06.js' defer></script>
         <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 </html>
