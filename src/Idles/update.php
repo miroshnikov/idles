@@ -16,8 +16,8 @@ namespace Idles;
  * 
  * @category Array
  * 
- * @see modifyPath()
  * @see setPath()
+ * @see adjust()
  */
 function update(mixed ...$args)
 {

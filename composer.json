@@ -25,6 +25,7 @@
         "files": [
             "src/Idles/_.php",
             "src/Idles/add.php",
+            "src/Idles/adjust.php",
             "src/Idles/all.php",
             "src/Idles/allPass.php",
             "src/Idles/always.php",

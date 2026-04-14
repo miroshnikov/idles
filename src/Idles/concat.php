@@ -7,7 +7,7 @@ namespace Idles;
  * 
  * @param iterable<mixed>|string $first
  * @param iterable<mixed>|string $second
- * @return iterable<mixed> Numerically indexed concatenated iterable or string
+ * @return \Closure|iterable<mixed> Numerically indexed concatenated iterable or string
  * 
  * @example ```
  *   concat(['a','b'], ['c', 'd']); // ['a', 'b', 'c', 'd']

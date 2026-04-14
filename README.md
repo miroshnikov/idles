@@ -37,6 +37,14 @@ add($a, $b)
 
 <p>Calculates the sum of two numbers.</p>
 
+### [adjust](https://idlephp.tech/#adjust)
+
+```php
+adjust($key, $fn, $collection)
+```
+
+<p>Applies a function to the value at the given key of an array.</p>
+
 ### [all](https://idlephp.tech/#all)
 
 ```php
