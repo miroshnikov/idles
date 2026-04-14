@@ -76,6 +76,7 @@
             "src/Idles/includes.php",
             "src/Idles/indexBy.php",
             "src/Idles/indexOf.php",
+            "src/Idles/insert.php",
             "src/Idles/intersection.php",
             "src/Idles/invert.php",
             "src/Idles/isEmpty.php",

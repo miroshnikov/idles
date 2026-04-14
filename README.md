@@ -581,6 +581,14 @@ indexOfFrom($item, $fromIndex, $collection)
 
 <p>Returns the index of the first occurrence of the item in an iterable or string, starting from <code>$fromIndex</code>, else <code>-1</code>.</p>
 
+### [insert](https://idlephp.tech/#insert)
+
+```php
+insert($index, $element, $array)
+```
+
+<p>Inserts the <code>$element</code> at the specified <code>$index</code>.</p>
+
 ### [intersection](https://idlephp.tech/#intersection)
 
 ```php

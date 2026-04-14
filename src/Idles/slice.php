@@ -9,7 +9,7 @@ namespace Idles;
  * @param int $start
  * @param ?int $end
  * @param T|null $collection
- * @return T
+ * @return \Closure|T
  * 
  * @example ```
  *  $a = ['a','b','c','d','e'];
