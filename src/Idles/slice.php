@@ -61,11 +61,12 @@ function _slice(iterable|null|string $collection, int $start = 0, ?int $end = nu
     }
 
     if (\is_array($collection)) {
-        $length = \count($collection);
-        $start = $start >= 0 ? $start : \max(0, $length + $start);
-        $end = $end ?? $length;
-        $end = \max(0, $end >= 0 ? $end - $start : $length + $end - 1);
-        return \array_values(\array_slice($collection, $start, $end));
+        $count = \count($collection);
+        $offset = \max(0, $start >= 0 ? $start : $count + $start);
+        $end = $end ?? $count;
+        $end = $end >= 0 ? $end : $count + $end;
+        $length = \max(0, $end - $offset);
+        return \array_values(\array_slice($collection, $offset, $length));
     }
 
     return new class($collection, $start, $end) extends \IteratorIterator
