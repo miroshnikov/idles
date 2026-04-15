@@ -22,5 +22,6 @@ namespace Idles;
 function prop(mixed ...$args)
 {
     static $arity = 2;
-    return curryN($arity, fn ($key, ?iterable $record) => collect($record)[$key] ?? null)(...$args);
+    return curryN($arity, fn ($key, ?iterable $record) => 
+        collect($record)[$key] ?? null)(...$args);
 }

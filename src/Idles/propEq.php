@@ -5,8 +5,8 @@ namespace Idles;
 /**
  * Returns $record[$key] == $value
  * 
- * @param array-key $key
  * @param mixed $value
+ * @param array-key $key
  * @param ?iterable<mixed> $record
  * @return \Closure|bool
  * 
@@ -24,6 +24,11 @@ function propEq(mixed ...$args)
 {
     static $arity = 3;
     return curryN($arity,
-        fn ($key, $value, ?iterable $record) => (collect($record)[$key] ?? null) == $value
+        function ($value, $key, ?iterable $record) {
+            $record = collect($record);
+            return \array_key_exists($key, $record) 
+                ? equals($record[$key], $value)
+                : false;
+        }
     )(...$args);
 }

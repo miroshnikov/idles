@@ -2,8 +2,6 @@
 
 namespace Idles;
 
-class Undefined {}
-
 /**
  * If a record has a `$value` at `$path` in `equals()` terms.
  * 

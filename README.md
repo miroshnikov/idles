@@ -1083,7 +1083,7 @@ prop($key, $record)
 ### [propEq](https://idlephp.tech/#propEq)
 
 ```php
-propEq($key, $value, $record)
+propEq($value, $key, $record)
 ```
 
 <p>Returns $record[$key] == $value</p>
