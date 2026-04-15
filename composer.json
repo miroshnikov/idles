@@ -123,6 +123,7 @@
             "src/Idles/padStart.php",
             "src/Idles/partition.php",
             "src/Idles/path.php",
+            "src/Idles/pathEq.php",
             "src/Idles/paths.php",
             "src/Idles/pick.php",
             "src/Idles/pipe.php",

@@ -1008,6 +1008,14 @@ path($path, $collection)
 
 <p>Retrieve the value at a given path.</p>
 
+### [pathEq](https://idlephp.tech/#pathEq)
+
+```php
+pathEq($value, $path, $record)
+```
+
+<p>If a record has a <code>$value</code> at <code>$path</code> in <code>equals()</code> terms.</p>
+
 ### [pathOr](https://idlephp.tech/#pathOr)
 
 ```php

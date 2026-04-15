@@ -25,7 +25,9 @@ namespace Idles;
 function path(mixed ...$args)
 {
     static $arity = 2;
-    return curryN($arity, fn ($path, ?iterable $collection) => _path($collection, $path))(...$args);
+    return curryN($arity, 
+        fn ($path, ?iterable $collection) => _path($collection, $path)
+    )(...$args);
 }
 
 /**
@@ -52,7 +54,9 @@ function path(mixed ...$args)
 function pathOr(mixed ...$args)
 {
     static $arity = 3;
-    return curryN($arity, fn ($default, $path, ?iterable $collection) => _path($collection, $path, $default))(...$args);
+    return curryN($arity, 
+        fn ($default, $path, ?iterable $collection) => _path($collection, $path, $default)
+    )(...$args);
 }
 
 /** 

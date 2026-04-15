@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0" class="viewport">
-            <link rel='stylesheet' type='text/css' href='./assets/styles.1d40b1ca5d43a89c0f3c.css'>
+            <link rel='stylesheet' type='text/css' href='./assets/styles.1a374885dc14e880760e.css'>
         <title>PHP Functional Library</title>
     <meta name="description" content="A PHP functional utility library, port of JavaScript Lodash and Ramda with lazy (idle) evaluation">
     <meta name="yandex-verification" content="7063684c222008b0">
@@ -5947,7 +5947,7 @@ $greet('Alice'); // Hello, Alice!
                     <table>
                                                     <tr>
                                 <td>
-                                    <pre><code class='language-php'>int</code></pre>
+                                    <pre><code class='language-php'>positive-int</code></pre>
                                 </td>
                                 <td>
                                     $index
@@ -5969,7 +5969,7 @@ $greet('Alice'); // Hello, Alice!
                             </tr>
                                                     <tr>
                                 <td>
-                                    <pre><code class='language-php'>array</code></pre>
+                                    <pre><code class='language-php'>mixed[]</code></pre>
                                 </td>
                                 <td>
                                     $array
@@ -5986,7 +5986,7 @@ $greet('Alice'); // Hello, Alice!
                     <table>
                         <tr>
                             <td>
-                                <pre><code class='language-php example'>array</code></pre> 
+                                <pre><code class='language-php example'>\Closure|array</code></pre> 
                             </td>
                             <td> 
                                 <pre></pre>
@@ -9905,6 +9905,103 @@ $greet('Alice'); // Hello, Alice!
             
             <div class="links">
                 <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/path.php.php" 
+                    title="View source on GitHub"
+                    class="code">
+                </a>
+            </div>
+
+        </article>
+            <article id='pathEq' data-category="Record">
+            <header>
+                <h2>
+                    <a href="#pathEq">
+                        pathEq
+                    </a>
+                </h2>
+                <ul>
+                                                            <li>
+                        Record
+                    </li>
+                </ul>
+            </header>
+
+            <pre><code class='language-php'>pathEq($value, $path, $record)</code></pre>
+
+            <div>
+                <p>If a record has a <code>$value</code> at <code>$path</code> in <code>equals()</code> terms.</p>
+            </div>
+
+                                        <div>
+                    <h3>Parameters</h3>
+                    <table>
+                                                    <tr>
+                                <td>
+                                    <pre><code class='language-php'>mixed</code></pre>
+                                </td>
+                                <td>
+                                    $value
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                                                    <tr>
+                                <td>
+                                    <pre><code class='language-php'>(array-key)|array&lt;array-key&gt;|string</code></pre>
+                                </td>
+                                <td>
+                                    $path
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                                                    <tr>
+                                <td>
+                                    <pre><code class='language-php'>array&lt;array-key, mixed&gt;</code></pre>
+                                </td>
+                                <td>
+                                    $record
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                                            </table>
+                </div>
+            
+                            <div>
+                    <h3>Returns</h3>
+                    <table>
+                        <tr>
+                            <td>
+                                <pre><code class='language-php example'>\Closure|bool</code></pre> 
+                            </td>
+                            <td> 
+                                <pre></pre>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            
+                            <div>
+                    <h3>Examples</h3>
+                    <pre><code class='language-php example line-numbers'> pathEq(&#039;c&#039;, [0, &#039;a&#039;, &#039;b&#039;], [[&#039;a&#039; =&gt; [&#039;b&#039; =&gt; &#039;c&#039;]]]); // true</code></pre>
+                    <span class='copy'></span>
+                </div>
+            
+            
+                            <div>
+                    <h3>See also</h3>
+                    <ul>
+                                                    <li><a href='#propEq'>propEq</a>, </li>
+                                                    <li><a href='#whereEq'>whereEq</a>, </li>
+                                                    <li><a href='#hasPath'>hasPath</a></li>
+                                            </ul>
+                </div>
+            
+            <div class="links">
+                <a href="https://github.com/miroshnikov/idles/blob/main/src/Idles/pathEq.php.php" 
                     title="View source on GitHub"
                     class="code">
                 </a>
@@ -15596,7 +15693,7 @@ $greet('Alice'); // Hello, Alice!
 
         </main>
     </div>
-            <script src='./assets/app.1d40b1ca5d43a89c0f3c.js' defer></script>
+            <script src='./assets/app.1a374885dc14e880760e.js' defer></script>
         <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 </html>
