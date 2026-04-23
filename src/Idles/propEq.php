@@ -3,7 +3,7 @@
 namespace Idles;
 
 /**
- * Returns $record[$key] == $value
+ * Returns `$record[$key] === $value` or `false` if the `$key` doesn't exist.
  * 
  * @param mixed $value
  * @param array-key $key
